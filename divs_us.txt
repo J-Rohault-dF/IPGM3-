@@ -1,0 +1,68 @@
+Alabama
+Alaska
+Arizona
+Arkansas
+California
+Colorado
+Connecticut
+Delaware
+Florida
+Georgia
+Hawaii
+Idaho
+Illinois
+Indiana
+Iowa
+Kansas
+Kentucky
+Louisiana
+Maine
+Maryland
+Massachusetts
+Michigan
+Minnesota
+Mississippi
+Missouri
+Montana
+Nebraska
+Nevada
+New Hampshire
+New Jersey
+New Mexico
+New York
+North Carolina
+North Dakota
+Ohio
+Oklahoma
+Oregon
+Pennsylvania
+Rhode Island
+South Carolina
+South Dakota
+Tennessee
+Texas
+Utah
+Vermont
+Virginia
+Washington
+West Virginia
+Wisconsin
+Wyoming
+District of Columbia
+
+Pacific: Alaska; Washington; Oregon; California; Hawaii
+Mountain: Montana; Idaho; Wyoming; Nevada; Utah; Colorado; Arizona; New Mexico
+West North Central: North Dakota; South Dakota; Nebraska; Kansas; Minnesota; Iowa; Missouri
+East North Central: Wisconsin; Michigan; Illinois; Indiana; Ohio
+West South Central: Oklahoma; Arkansas; Texas; Louisiana
+East South Central: Kentucky; Tennessee; Mississippi; Alabama
+South Atlantic: Delaware; Maryland; District of Columbia; West Virginia; Virginia; North Carolina; South Carolina; Georgia; Florida
+Middle Atlantic: New York; New Jersey; Pennsylvania
+New England: Maine; New Hampshire; Massachusetts; Connecticut; Rhode Island; Vermont
+
+West: Pacific; Mountain
+Midwest: West North Central; East North Central
+South: West South Central; East South Central; South Atlantic
+Northeast: Middle Atlantic; New England
+
+National: West; Midwest; South; Northeast
