@@ -56,6 +56,13 @@ class Result:
 	
 	def hasCandidate(self, cand: str) -> bool:
 		return cand in self.getCandidates()
+	
+	def getWinner(self) -> str:
+		s = ('', 0)
+		for k,v in self.results.items():
+			if v > s[1] and k != '@':
+				s = (k, v)
+		return s[0]
 
 
 

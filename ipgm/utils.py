@@ -74,3 +74,14 @@ def allEquals(l: list) -> bool:
 	for i in l:
 		if i != p: return False
 	return True
+
+def getProbsFromResDict(d: dict) -> set[str, float]:
+	d = {k: v for k,v in sorted(d.items(), key=lambda item: item[1], reverse=True)}
+	k1, k2 = list(d.keys())[0], list(d.keys())[1]
+	m = d[k1] - d[k2]
+	
+	return (k1, m)
+
+def getRankInDict(d: dict, s: str):
+	ls = [k for k in sorted(d.keys(), key=lambda x: d[x], reverse=True)]
+	return ls.index(s)

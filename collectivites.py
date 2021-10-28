@@ -2,7 +2,7 @@ from ipgm.utils import *
 
 def getFirstLevelDivs(src: str) -> list[str]:
 	with open(src, 'r', encoding='utf8') as divs:
-		allLines = [line.strip() for line in divs if (line != '\n' and ':' not in line)]
+		allLines = [line.strip() for line in divs if (line.strip() != '' and ':' not in line)]
 	return allLines
 
 def getOverLevelDivs(src: str) -> dict[str, list[str]]:
