@@ -36,10 +36,10 @@ allDivs = AllDivs('divs_fr.txt')
 t1 = loadDataTable('2017T1.csv')
 t2 = loadDataTable('2017T2.csv')
 
-mx = importMatrices('Odoxa_20211020.polld')
+mx = importMatrices('pollDefs/Harris_20211028.polld')
 
-#for hg in [('1_XB', ['2_EM_EZ', '2_EM_MLP', '2_EM_XB', '2_EM_JLM']), ('1_VP', ['2_EM_VP']), ('1_MB', [])]:
-for hg in [('1_XB', []), ('1_XB_EZ', ['2_EM_MLP']), ('1_VP_EZ', []), ('1_MB_EZ', [])]:
+for hg in [('1_XB', ['2_EM_EZ', '2_EM_MLP', '2_EM_XB', '2_EM_JLM']), ('1_VP', ['2_EM_VP']), ('1_MB', [])]:
+#for hg in [('1_XB', []), ('1_XB_EZ', ['2_EM_MLP']), ('1_VP_EZ', []), ('1_MB_EZ', [])]:
 	h = hg[0]
 
 	#Extrapolate R1
@@ -57,17 +57,17 @@ for hg in [('1_XB', []), ('1_XB_EZ', ['2_EM_MLP']), ('1_VP_EZ', []), ('1_MB_EZ',
 	print('HYPOTHESIS {h}\n'.format(h=h)+makeTweetText(r1.get('National', allDivs=allDivs).toPercentages(), mx['sampleSize']))
 
 	#Export and map
-	#exportMap(r1, 'basemap_collectivites.svg', '{h}.svg'.format(h=h), allDivs=allDivs, partiesColors=partiesColors)
+	exportMap(r1, 'basemap_collectivites.svg', '{h}.svg'.format(h=h), allDivs=allDivs, partiesColors=partiesColors)
 
 
 
 	for hh in hg[1]:
 		#Extrapolate R1
-		r2t1 = extrapolateResults(t1, mx['components_{h}_2017T1_2022T2'.format(h=hh)])
+		#r2t1 = extrapolateResults(t1, mx['components_{h}_2017T1_2022T2'.format(h=hh)])
 		#r2t2 = extrapolateResults(t2, mx['components_{h}_2017T2_2022T2'.format(h=hh)])
 		r2r1 = extrapolateResults(r1, mx['components_{h}_2022T1_2022T2'.format(h=hh)])
-		r2s = averageResultsSet(r2t1, r2r1, allDivs=allDivs)#, r2t2, r2r1, allDivs=allDivs)
-		#r2s = deepcopy(r2r1)
+		#r2s = averageResultsSet(r2t1, r2r1, allDivs=allDivs)#, r2t2, r2r1, allDivs=allDivs)
+		r2s = deepcopy(r2r1)
 
 		#Redresse R2
 		r2 = deepcopy(r2s)
@@ -78,7 +78,7 @@ for hg in [('1_XB', []), ('1_XB_EZ', ['2_EM_MLP']), ('1_VP_EZ', []), ('1_MB_EZ',
 		print('HYPOTHESIS {h}\n'.format(h=hh)+makeTweetText(r2.get('National', allDivs=allDivs).toPercentages(), mx['sampleSize']))
 
 		#Export and map
-		#exportMap(r2, 'basemap_collectivites.svg', '{h}.svg'.format(h=hh), allDivs=allDivs, partiesColors=partiesColors)
+		exportMap(r2, 'basemap_collectivites.svg', '{h}.svg'.format(h=hh), allDivs=allDivs, partiesColors=partiesColors)
 
 	print('\n\n')
 
