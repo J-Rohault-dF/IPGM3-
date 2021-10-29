@@ -54,7 +54,7 @@ for hg in [('1_XB', ['2_EM_EZ', '2_EM_MLP', '2_EM_XB', '2_EM_JLM']), ('1_VP', ['
 		r1 = redressementResults(r1, mx['scores_{h}_2022T1'.format(h=h)][i], allDivs=allDivs)
 
 	#Tweet text
-	print('HYPOTHESIS {h}\n'.format(h=h)+makeTweetText(r1.get('National', allDivs=allDivs).toPercentages(), mx['sampleSize']))
+	print('HYPOTHESIS {h}\n'.format(h=h)+makeTweetText(r1.get('National', allDivs=allDivs).toPercentages(), mx['sampleSize'], top=2))
 
 	#Export and map
 	exportMap(r1, 'basemap_collectivites.svg', '{h}.svg'.format(h=h), allDivs=allDivs, partiesColors=partiesColors)
@@ -75,7 +75,7 @@ for hg in [('1_XB', ['2_EM_EZ', '2_EM_MLP', '2_EM_XB', '2_EM_JLM']), ('1_VP', ['
 			r2 = redressementResults(r2, mx['scores_{h}_2022T2'.format(h=hh)][i], allDivs=allDivs)
 
 		#Tweet text
-		print('HYPOTHESIS {h}\n'.format(h=hh)+makeTweetText(r2.get('National', allDivs=allDivs).toPercentages(), mx['sampleSize']))
+		print('HYPOTHESIS {h}\n'.format(h=hh)+makeTweetText(r2.get('National', allDivs=allDivs).toPercentages(), mx['sampleSize'], top=1))
 
 		#Export and map
 		exportMap(r2, 'basemap_collectivites.svg', '{h}.svg'.format(h=hh), allDivs=allDivs, partiesColors=partiesColors)

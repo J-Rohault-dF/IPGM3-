@@ -16,7 +16,7 @@ def simulOneRes(res: Result, stdev: float, sampleSize: int) -> Result:
 
 
 
-def qualifyingChances(res: Result, amountOfSims: int, stdev: float, sampleSize: int) -> dict[str, float]:
+def rankingChances(res: Result, amountOfSims: int, stdev: float, sampleSize: int, top: int) -> dict[str, float]:
 	#Do N times:
 	allCands = [x for x in res.getCandidates() if x != '@']
 
@@ -27,7 +27,7 @@ def qualifyingChances(res: Result, amountOfSims: int, stdev: float, sampleSize: 
 		n = simulOneRes(res, stdev, sampleSize)
 		# Store the rank of each candidate
 		for c in allCands:
-			if getRankInDict(n.results, c) < 2:
+			if getRankInDict(n.results, c) < top:
 				ls[c] += 1
 	
 	#Return the chances for each candidate to get some rann
