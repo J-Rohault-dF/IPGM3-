@@ -40,6 +40,7 @@ def redressementResults(initialRes: ResultsSet, targetRes: ResultPerc, allDivs: 
 
 			#Compute the percentages then convert it back to results format
 			percs: ResultPerc = res.toPercentages().getAddedDict(diff)
+			percs.zipZeroes()
 			fRes.append(Result.fromPercentages(percs))
 		
 		else:

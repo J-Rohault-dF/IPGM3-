@@ -83,3 +83,6 @@ class ResultPerc:
 	
 	def removedCand(self, cand: str):
 		return ResultPerc(self.name, {k:v for k,v in self.results.items() if k != cand}, self.totalVotes*(1-self.get(cand)))
+
+	def zipZeroes(self):
+		self.results = {k: max(v,0) for k,v in self.results.items()}
