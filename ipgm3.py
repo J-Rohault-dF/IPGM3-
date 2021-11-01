@@ -38,6 +38,10 @@ t2 = loadDataTable('2017T2.csv')
 
 mx = importMatrices('pollDefs/Elabe_20211027.polld')
 
+doExportTxt = False
+doExportMap = False
+doExportCsv = True
+
 allRounds = {}
 
 for hk, hv in mx.items():
@@ -65,9 +69,9 @@ for hk, hv in mx.items():
 	allRounds[hk] = r
 
 	#Tweet text
-	print('HYPOTHESIS {h}\n'.format(h=hk)+makeTweetText(r.get('National', allDivs=allDivs).toPercentages(), hv['sampleSize'], top=2))
+	if doExportTxt: print('HYPOTHESIS {h}\n'.format(h=hk)+makeTweetText(r.get('National', allDivs=allDivs).toPercentages(), hv['sampleSize'], top=2))
 
 	#Export and map
-	exportMap(r, 'basemap_collectivites.svg', '{h}.svg'.format(h=hk), allDivs=allDivs, partiesColors=partiesColors)
+	if doExportCsv: saveDataTable('exports/{h}.csv'.format(h=hk), r)
+	if doExportMap: exportMap(r, 'basemap_collectivites.svg', '{h}.svg'.format(h=hk), allDivs=allDivs, partiesColors=partiesColors)
 
-	print('\n')
