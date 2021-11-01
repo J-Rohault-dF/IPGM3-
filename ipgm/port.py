@@ -68,7 +68,7 @@ def importMatrices(src: str):
 		for component in allText.split('/'):
 
 			#Extract the contents and parse in arguments
-			args = [x for x in component.split('\n') if (len(x) > 0 and x[0] in ['$', '#', '°', ';', ':', '§', '=', '¤'])]
+			args = [x for x in component.split('\n') if (len(x) > 0 and x[0] in ['$', '#', '°', ';', ':', '§', '=', '¤', '£'])]
 			#Use exec() to create the variables
 
 			#If it's (), define list of candidates
@@ -84,10 +84,13 @@ def importMatrices(src: str):
 				#List of candidates
 				hypothesis = getArgs(args, '#')[0]
 				candidates = getArgs(args, '§')[0].split(',')
-				sampleSize = getArgs(args, '¤')[0]
+				sampleSize = int(getArgs(args, '¤')[0])
 				
-				allReturning['candidates_{0}'.format(hypothesis)] = candidates
-				allReturning['sampleSize'] = int(sampleSize)
+				appendDictInDict(allReturning, hypothesis, 'candidates', candidates)
+				appendDictInDict(allReturning, hypothesis, 'sampleSize', sampleSize)
+				
+				if getArgs(args, '£') != []:
+					appendDictInDict(allReturning, hypothesis, 'based_on', getArgs(args, '£')[0])
 
 			elif '[' in component:
 				#List of scores
@@ -109,7 +112,7 @@ def importMatrices(src: str):
 					scores[k] = ResultPerc.fromVotelessDict(k, d)
 				
 				#scoreTable = {(k,[float(x) for x in v.split(',')]) for k,v in scoreTable.items()}
-				allReturning['scores_{0}_{1}'.format(hypothesis, label)] = scores
+				appendDictInDict(allReturning, hypothesis, 'scores_{0}'.format(label), scores)
 
 			elif '{' in component:
 				#VTMatrix
@@ -129,7 +132,7 @@ def importMatrices(src: str):
 						scaling = (1 - l[finals.index('@')])
 						l = [v*scaling for k,v in dict(zip(finals,l)).items() if (k != '@')]
 				
-				vtm = VTMatrix(initials, finals, percentMatrix(transfersMatrix))
-				allReturning['components_{0}_{1}'.format(hypothesis, label)] = vtm
+				vtm = VTMatrix(initials, finals, transfersMatrix)
+				appendDictInDict(allReturning, hypothesis, 'matrix_{0}'.format(label), vtm)
 
 		return allReturning

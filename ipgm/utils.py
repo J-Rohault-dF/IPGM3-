@@ -85,3 +85,11 @@ def getProbsFromResDict(d: dict) -> set[str, float]:
 def getRankInDict(d: dict, s: str):
 	ls = [k for k in sorted(d.keys(), key=lambda x: d[x], reverse=True)]
 	return ls.index(s)
+
+def appendInDict(d: dict[str, list], k, v):
+	if k in d.keys(): d[k].append(v)
+	else: d[k] = [v]
+
+def appendDictInDict(d: dict[str, dict], dk, k, v):
+	if dk in d.keys(): d[dk][k] = v
+	else: d[dk] = {k: v}
