@@ -37,21 +37,21 @@ def rankingChances(res: Result, amountOfSims: int, stdev: float, sampleSize: int
 
 def simulOneNat(ress: ResultsSet, stdev: float, sampleSize: int, allDivs: AllDivs) -> ResultsSet:
 	#Generate national swing
-	nat = Result.fromPercentages(simulOneRes(ress.get('National', allDivs=allDivs), stdev, sampleSize))
+	nat = simulOneRes(ress.get('National', allDivs=allDivs), stdev, sampleSize)
 
 	#Generate swing for all depts
 	for r in ress.listOfResults:
-		r = Result.fromPercentages(simulOneRes(r, stdev, sampleSize))
+		r = simulOneRes(r, stdev, sampleSize)
 
 	#Redresse all depts according to the national swinged result
-	ress = redressementResults(ress, nat, allDivs=allDivs)
+	ress = redressementResults(ress, nat.toPercentages(), allDivs=allDivs)
 
 	#return new rs
 	return ress
 
 
 
-def simulMany(ress: ResultsSet, amountOfSims: int, stdev: float, sampleSize: int, allDivs: AllDivs):
+def simulMany(ress: ResultsSet, amountOfSims: int, stdev: float, sampleSize: int, allDivs: AllDivs) -> dict:
 	
 	ls = dict(zip( allDivs.allDivs, [ {} for _ in range(len(allDivs.allDivs))]))
 
