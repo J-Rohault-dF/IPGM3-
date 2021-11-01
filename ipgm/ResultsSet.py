@@ -3,7 +3,7 @@ from ipgm.Result import *
 
 #Set of multiple results
 class ResultsSet:
-	listOfResults = []
+	listOfResults: list[Result] = []
 
 	def __init__(self, listOfResults: list=[]):
 		self.listOfResults = listOfResults
