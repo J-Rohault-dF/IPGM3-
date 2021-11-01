@@ -31,12 +31,12 @@ partiesColors = {
 
 
 
-allDivs = AllDivs('divs_fr.txt')
+allDivs = AllDivs('data/divs_fr.txt')
 
-t1 = loadDataTable('2017T1.csv')
-t2 = loadDataTable('2017T2.csv')
+t1 = loadDataTable('data/2017T1.csv')
+t2 = loadDataTable('data/2017T2.csv')
 
-mx = importMatrices('pollDefs/Elabe_20211027.polld')
+mx = importMatrices('data/pollDefs/Elabe_20211027.polld')
 
 doExportTxt = False
 doExportMap = False
@@ -73,5 +73,5 @@ for hk, hv in mx.items():
 
 	#Export and map
 	if doExportCsv: saveDataTable('exports/{h}.csv'.format(h=hk), r)
-	if doExportMap: exportMap(r, 'basemap_collectivites.svg', '{h}.svg'.format(h=hk), allDivs=allDivs, partiesColors=partiesColors)
+	if doExportMap: exportMap(r, 'data/basemap_collectivites.svg', '{h}.svg'.format(h=hk), allDivs=allDivs, partiesColors=partiesColors)
 

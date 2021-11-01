@@ -28,7 +28,7 @@ partiesColors = {
 
 
 
-allDivs = AllDivs('divs_fr.txt')
+allDivs = AllDivs('data/divs_fr.txt')
 
 #Load table
 r = loadDataTable('exports/1_XB.csv')
@@ -39,7 +39,7 @@ r = loadDataTable('exports/1_XB.csv')
 
 #Simulate many and export map
 sm = simulMany(r, 1000, 4, 1000, allDivs=allDivs)
-exportMapProbs(sm, 'basemap_collectivites.svg', 'manySims.svg', allDivs=allDivs, partiesColors=partiesColors)
+exportMapProbs(sm, 'data/basemap_collectivites.svg', 'manySims.svg', allDivs=allDivs, partiesColors=partiesColors)
 
 #Compute potential electoral college (only doing 1ev per dept right now)
 EV = {k: [0, 0, 0] for k in r.get('National', allDivs).getCandidates()}
