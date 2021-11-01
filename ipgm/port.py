@@ -22,6 +22,16 @@ def loadDataTable(src: str) -> ResultsSet:
 
 
 
+def saveDataTable(src: str, rs: ResultsSet):
+	ls = []
+	ls.append(';'.join([''] + [str(x) for x in rs.listOfResults[0].results.keys()]))
+	for r in rs.listOfResults:
+		ls.append(';'.join([r.name] + [str(x) for x in r.results.values()]))
+	with open(src, 'w', encoding='utf8') as exportFile:
+		exportFile.write('\n'.join(ls))
+
+
+
 #Fonction pour exporter une classe NationalResults en tableau de pourcentages, retire automatiquement les '@'
 def exportPercentages(src: str, natRes: ResultsSet, collectivites: list):
 	candidates = list(natRes.get(collectivites[0]).results.keys())
