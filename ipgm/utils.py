@@ -18,6 +18,11 @@ def percentMatrix(m: list) -> list:
 		m[i] = [x*0.01 for x in m[i]]
 	return m
 
+def mean(l: list) -> float:
+	return sum(l)/len(l)
+
+def mean(d: dict) -> float:
+	return sum(d.values())/len(d)
 
 #Unpacks divisions from otherCollectivites
 def unpackDivisions(name: str, originalList: list, unpackingList: dict) -> list:
@@ -49,6 +54,10 @@ def unionLists(l1: list, l2: list) -> list:
 #Replaces every value with their share of the total list
 def percentList(l: list) -> list:
 	return [x/sum(l) for x in l]
+
+#Replaces every value with their share of the total dict
+def percentDict(d: dict) -> dict:
+	return {k: v/sum(d.values()) for k,v in d.items()}
 
 #Gets the args in a .vtm file
 def getArgs(args: list, k: str) -> list:

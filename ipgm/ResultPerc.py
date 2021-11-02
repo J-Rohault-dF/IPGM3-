@@ -65,6 +65,15 @@ class ResultPerc:
 		
 		return ResultPerc(self.name, finalRes, self.totalVotes)
 
+	def getMultipliedDict(self, other: dict[str, float], doReweight: bool = False) -> ResultPerc:
+		allKeys = unionLists(self.getCandidates(), other)
+		finalRes = {}
+		for k in allKeys:
+			finalRes[k] = ( self.results[k] if self.hasCandidate(k) else 0 ) * ( other[k] if k in other.keys() else 0 )
+		
+		if doReweight: return ResultPerc(self.name, percentDict(finalRes), self.totalVotes)
+		else: return ResultPerc(self.name, percentDict(finalRes), self.totalVotes*mean(finalRes))
+
 	def getSubstracted(self, other: ResultPerc) -> dict[str, float]:
 		allKeys = unionLists(self.getCandidates(), other.getCandidates())
 		finalRes = {}
@@ -73,6 +82,18 @@ class ResultPerc:
 			finalRes[k] = ( self.results[k] if k in self.getCandidates() else 0 ) - ( other.results[k] if k in other.getCandidates() else 0 )
 		
 		return finalRes
+
+	def getDivided(self, other: ResultPerc) -> dict[str, float]:
+		allKeys = unionLists(self.getCandidates(), other.getCandidates())
+		finalRes = {}
+
+		for k in allKeys:
+			finalRes[k] = ( self.results[k] if k in self.getCandidates() else 0 ) / ( other.results[k] if k in other.getCandidates() else 1 )
+		
+		return finalRes
+	
+	def getReadjusted(self):
+		return {k: v/sum(self.results.values()) for k,v in self.results.items()}
 
 	def display(self):
 		print('{0}: {1} total votes - '.format(self.name, self.totalVotes) + ', '.join(['{0}: {1}'.format(x, formatPerc(self.results[x])) for x in sorted(self.results, key=self.results.__getitem__, reverse=True)]))
