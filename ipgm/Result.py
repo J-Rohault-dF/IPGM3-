@@ -78,6 +78,7 @@ def averageResults(*args: Result) -> Result:
 		fRes[c] = averageList([p.get(c) if p.hasCandidate(c) else 0 for p in percentages])
 
 	if allEquals([x.name for x in args]): fName = args[0].name
+	elif len([x.name for x in args if x.name != '']) == 1: fName = [x.name for x in args if x.name != ''][0]
 	else: fName = 'Average of {0}'.format(getSetList([x.name for x in args]).__str__())
 
 	return Result.fromPercentages(ResultPerc(fName, fRes, averageList([x.totalVotes for x in percentages])))
