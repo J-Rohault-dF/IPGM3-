@@ -1,0 +1,236 @@
+(
+#1_XB
+§Nathalie Arthaud,Philippe Poutou,Fabien Roussel,Jean-Luc Mélenchon,Arnaud Montebourg,Anne Hidalgo,Yannick Jadot,Emmanuel Macron,Jean-Christophe Lagarde,Xavier Bertrand,Nicolas Dupont-Aignan,Florian Philippot,Marine Le Pen,Éric Zemmour,François Asselineau,Jean Lassalle
+¤2003
+)
+/
+{
+$2017T1_2022T1
+#1_XB
+:VTM:Jean-Luc Mélenchon,Arnaud Montebourg,Anne Hidalgo,Yannick Jadot,Emmanuel Macron,Xavier Bertrand,Nicolas Dupont-Aignan,Marine Le Pen,Éric Zemmour
+=internalAbs
+;Jean-Luc Mélenchon: 52, 2, 5, 12, 6, 5, 0, 4, 4
+;Benoît Hamon:       7, 6, 24, 39, 5, 8, 0, 2, 2
+;Emmanuel Macron:    3, 1, 5, 7, 67, 8, 0, 3, 5
+;François Fillon:    0, 1, 1, 2, 14, 46, 0, 5, 30
+;Marine Le Pen:      2, 0, 0, 1, 1, 3, 1, 58, 33
+}
+/
+[
+$2022T1
+#1_XB
+=internalAbs
+°National: 1, 1, 2, 10, 2, 5, 8, 23, 0, 14, 1, 1, 15, 17, 0, 0
+]
+
+/
+
+(
+#2_EM_EZ
+£1_XB
+§Emmanuel Macron,Éric Zemmour,@
+¤2003
+)
+/
+{
+$2022T1_2022T2
+#2_EM_EZ
+=internalAbs
+:VTM:Emmanuel Macron,Éric Zemmour,@
+;Jean-Luc Mélenchon: 29, 14, 57
+;Anne Hidalgo:       43, 10, 47
+;Yannick Jadot:      47, 5, 48
+;Emmanuel Macron:    95, 2, 3
+;Xavier Bertrand:    36, 27, 37
+;Marine Le Pen:      12, 46, 42
+;Éric Zemmour:       2, 96, 2
+}
+/
+[
+$2022T2
+#2_EM_EZ
+=internalAbs
+°National: 57, 43, 0
+]
+
+/
+
+(
+#2_EM_MLP
+£1_XB
+§Emmanuel Macron,Marine Le Pen,@
+¤2003
+)
+/
+{
+$2022T1_2022T2
+#2_EM_MLP
+=internalAbs
+:VTM:Emmanuel Macron,Marine Le Pen,@
+;Jean-Luc Mélenchon: 30, 24, 46
+;Anne Hidalgo:       50, 7, 43
+;Yannick Jadot:      49, 5, 46
+;Emmanuel Macron:    95, 2, 3
+;Xavier Bertrand:    31, 26, 43
+;Marine Le Pen:      2, 93, 5
+;Éric Zemmour:       9, 73, 18
+}
+/
+[
+$2022T2
+#2_EM_MLP
+=internalAbs
+°National: 54, 46, 0
+]
+
+/
+
+(
+#2_EM_XB
+£1_XB
+§Emmanuel Macron,Xavier Bertrand,@
+¤2003
+)
+/
+{
+$2022T1_2022T2
+#2_EM_XB
+=internalAbs
+:VTM:Emmanuel Macron,Xavier Bertrand,@
+;Jean-Luc Mélenchon: 26, 16, 58
+;Anne Hidalgo:       37, 21, 42
+;Yannick Jadot:      38, 14, 48
+;Emmanuel Macron:    95, 2, 3
+;Xavier Bertrand:    3, 97, 0
+;Marine Le Pen:      14, 24, 62
+;Éric Zemmour:       13, 38, 49
+}
+/
+[
+$2022T2
+#2_EM_XB
+=internalAbs
+°National: 54, 46, 0
+]
+
+/
+
+(
+#2_EM_JLM
+£1_XB
+§Emmanuel Macron,Jean-Luc Mélenchon,@
+¤2003
+)
+/
+{
+$2022T1_2022T2
+#2_EM_JLM
+=internalAbs
+:VTM:Emmanuel Macron,Jean-Luc Mélenchon,@
+;Jean-Luc Mélenchon: 93, 3, 4
+;Anne Hidalgo:       34, 38, 28
+;Yannick Jadot:      40, 27, 33
+;Emmanuel Macron:    4, 94, 3
+;Xavier Bertrand:    5, 40, 55
+;Marine Le Pen:      22, 17, 61
+;Éric Zemmour:       9, 32, 59
+}
+/
+[
+$2022T2
+#2_EM_JLM
+=internalAbs
+°National: 62, 38, 0
+]
+
+
+
+/
+
+
+
+(
+#1_VP
+§Nathalie Arthaud,Philippe Poutou,Fabien Roussel,Jean-Luc Mélenchon,Arnaud Montebourg,Anne Hidalgo,Yannick Jadot,Emmanuel Macron,Jean-Christophe Lagarde,Valérie Pécresse,Nicolas Dupont-Aignan,Florian Philippot,Marine Le Pen,Éric Zemmour,François Asselineau,Jean Lassalle
+¤2003
+)
+/
+{
+$2017T1_2022T1
+#1_VP
+:VTM:Jean-Luc Mélenchon,Arnaud Montebourg,Anne Hidalgo,Yannick Jadot,Emmanuel Macron,Valérie Pécresse,Nicolas Dupont-Aignan,Marine Le Pen,Éric Zemmour
+=internalAbs
+;Jean-Luc Mélenchon: 51, 3, 5, 14, 6, 2, 1, 4, 5
+;Benoît Hamon:       7, 6, 25, 40, 7, 2, 0, 2, 3
+;Emmanuel Macron:    3, 2, 4, 7, 68, 6, 1, 3, 5
+;François Fillon:    0, 1, 1, 2, 16, 39, 1, 6, 31
+;Marine Le Pen:      0, 0, 0, 1, 1, 2, 2, 60, 32
+}
+/
+[
+$2022T1
+#1_VP
+=internalAbs
+°National: 1, 1, 2, 10, 2, 5, 9, 24, 0, 10, 2, 1, 16, 17, 0, 0
+]
+
+/
+
+(
+#2_EM_VP
+£1_VP
+§Emmanuel Macron,Valérie Pécresse,@
+¤2003
+)
+/
+{
+$2022T1_2022T2
+#2_EM_VP
+=internalAbs
+:VTM:Emmanuel Macron,Valérie Pécresse,@
+;Jean-Luc Mélenchon: 23, 20, 57
+;Anne Hidalgo:       39, 17, 44
+;Yannick Jadot:      36, 15, 49
+;Emmanuel Macron:    93, 4, 3
+;Valérie Pécresse:   2, 96, 2
+;Marine Le Pen:      10, 23, 67
+;Éric Zemmour:       12, 41, 47
+}
+/
+[
+$2022T2
+#2_EM_VP
+=internalAbs
+°National: 57, 43, 0
+]
+
+
+
+/
+
+
+
+(
+#1_MB
+§Nathalie Arthaud,Philippe Poutou,Fabien Roussel,Jean-Luc Mélenchon,Arnaud Montebourg,Anne Hidalgo,Yannick Jadot,Emmanuel Macron,Jean-Christophe Lagarde,Michel Barnier,Nicolas Dupont-Aignan,Florian Philippot,Marine Le Pen,Éric Zemmour,François Asselineau,Jean Lassalle
+¤2003
+)
+/
+{
+$2017T1_2022T1
+#1_MB
+:VTM:Jean-Luc Mélenchon,Arnaud Montebourg,Anne Hidalgo,Yannick Jadot,Emmanuel Macron,Michel Barnier,Nicolas Dupont-Aignan,Marine Le Pen,Éric Zemmour
+=internalAbs
+;Jean-Luc Mélenchon: 53, 2, 4, 13, 5, 3, 1, 4, 4
+;Benoît Hamon:       7, 7, 24, 40, 6, 2, 0, 4, 2
+;Emmanuel Macron:    3, 4, 4, 8, 69, 5, 0, 2, 5
+;François Fillon:    0, 0, 1, 3, 16, 37, 0, 7, 33
+;Marine Le Pen:      0, 0, 0, 1, 1, 2, 1, 59, 34
+}
+/
+[
+$2022T1
+#1_MB
+=internalAbs
+°National: 1, 1, 2, 10, 2, 5, 9, 24, 0, 9, 2, 1, 16, 18, 0, 0
+]

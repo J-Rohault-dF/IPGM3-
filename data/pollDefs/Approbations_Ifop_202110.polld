@@ -1,0 +1,137 @@
+(
+#1_Nicolas_Hulot
+§Approuve,Désapprouve,,@
+¤0
+)
+/
+{
+$2017T1_2022T1
+#1_Nicolas_Hulot
+=internalAbs
+:VTM:Approuve,Désapprouve,,@
+;Jean-Luc Mélenchon:    75,25,0,0
+;Benoît Hamon:          83,17,0,0
+;Emmanuel Macron:       70,30,0,0
+;François Fillon:       65,35,0,0
+,Nicolas Dupont-Aignan: 63,37,0,0
+;Marine Le Pen:         63,37,0,0
+}
+/
+[
+$2022T1
+#1_Nicolas_Hulot
+=internalAbs
+°National: 63, 26, 11, 0
+]
+
+/
+
+(
+#1_Édouard_Philippe
+§Approuve,Désapprouve,,@
+¤0
+)
+/
+{
+$2017T1_2022T1
+#1_Édouard_Philippe
+=internalAbs
+:VTM:Approuve,Désapprouve,,@
+;Jean-Luc Mélenchon:    40,60,0,0
+;Benoît Hamon:          43,57,0,0
+;Emmanuel Macron:       80,20,0,0
+;François Fillon:       73,27,0,0
+,Nicolas Dupont-Aignan: 57,43,0,0
+;Marine Le Pen:         52,48,0,0
+}
+/
+[
+$2022T1
+#1_Édouard_Philippe
+=internalAbs
+°National: 58, 32, 10, 0
+]
+
+/
+
+(
+#1_Roselyne_Bachelot
+§Approuve,Désapprouve,,@
+¤0
+)
+/
+{
+$2017T1_2022T1
+#1_Roselyne_Bachelot
+=internalAbs
+:VTM:Approuve,Désapprouve,,@
+;Jean-Luc Mélenchon:    40,60,0,0
+;Benoît Hamon:          51,49,0,0
+;Emmanuel Macron:       75,25,0,0
+;François Fillon:       69,31,0,0
+,Nicolas Dupont-Aignan: 74,26,0,0
+;Marine Le Pen:         46,54,0,0
+}
+/
+[
+$2022T1
+#1_Roselyne_Bachelot
+=internalAbs
+°National: 56, 32, 12, 0
+]
+
+/
+
+(
+#1_Martine_Aubry
+§Approuve,Désapprouve,,@
+¤0
+)
+/
+{
+$2017T1_2022T1
+#1_Martine_Aubry
+=internalAbs
+:VTM:Approuve,Désapprouve,,@
+;Jean-Luc Mélenchon:    70,30,0,0
+;Benoît Hamon:          86,14,0,0
+;Emmanuel Macron:       50,50,0,0
+;François Fillon:       27,73,0,0
+,Nicolas Dupont-Aignan: 53,47,0,0
+;Marine Le Pen:         42,58,0,0
+}
+/
+[
+$2022T1
+#1_Martine_Aubry
+=internalAbs
+°National: 49, 37, 14, 0
+]
+
+/
+
+(
+#1_Emmanuel_Macron
+§Approuve,Désapprouve,,@
+¤0
+)
+/
+{
+$2017T1_2022T1
+#1_Emmanuel_Macron
+=internalAbs
+:VTM:Approuve,Désapprouve,,@
+;Jean-Luc Mélenchon:    27,73,0,0
+;Benoît Hamon:          30,70,0,0
+;Emmanuel Macron:       81,19,0,0
+;François Fillon:       64,36,0,0
+,Nicolas Dupont-Aignan: 45,55,0,0
+;Marine Le Pen:         17,83,0,0
+}
+/
+[
+$2022T1
+#1_Emmanuel_Macron
+=internalAbs
+°National: 47, 52, 1, 0
+]
