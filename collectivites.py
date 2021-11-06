@@ -5,11 +5,17 @@ class AllDivs:
 	overLevel = {}
 	allDivs = []
 
-	def __init__(self, src: str):
+	def __init__(self, src: str, ignore: str = []):
 		with open(src, 'r', encoding='utf8') as divs:
-			allFirstLines = [line.strip() for line in divs if (line.strip() != '' and ':' not in line)]
+			allFirstLines = [line.strip() for line in divs if (line.strip() != '' and ':' not in line and line.strip() not in ignore)]
 			divs.seek(0)
 			allOverLines = {line.split(':')[0].strip(): [x.strip() for x in line.split(':')[1].split(';')] for line in divs if ':' in line}
+		
+		for i in ignore: #Handles ignored divs
+			for j in allOverLines[i]:
+				allFirstLines.remove(j)
+			del allOverLines[i]
+			allFirstLines.append(i)
 		
 		self.firstLevel = allFirstLines
 		self.overLevel = allOverLines
