@@ -108,6 +108,9 @@ Polynésie-Française
 Nouvelle-Calédonie
 Français vivant hors de France
 
+Saint-Martin et Saint-Barthélémy:Saint-Martin;Saint-Barthélémy
+Circonscription départementale du Rhône:Rhône;Métropole de Lyon
+
 Alsace:Haut-Rhin;Bas-Rhin
 Aquitaine:Dordogne;Lot-et-Garonne;Gironde;Landes;Pyrénées-Atlantiques
 Auvergne:Allier;Puy-de-Dôme;Cantal;Haute-Loire
@@ -129,7 +132,7 @@ Pays de la Loire:Mayenne;Sarthe;Maine-et-Loire;Loire-Atlantique;Vendée
 Picardie:Somme;Oise;Aisne
 Poitou-Charentes:Deux-Sèvres;Vienne;Charente-Maritime;Charente
 Provence-Alpes-Côte-d'Azur:Hautes-Alpes;Alpes-de-Haute-Provence;Vaucluse;Bouches-du-Rhône;Var;Alpes-Maritimes
-Rhône-Alpes:Loire;Rhône;Métropole de Lyon;Ain;Haute-Savoie;Savoie;Isère;Drôme;Ardèche
+Rhône-Alpes:Loire;Circonscription départementale du Rhône;Ain;Haute-Savoie;Savoie;Isère;Drôme;Ardèche
 	
 Auvergne-Rhône-Alpes:Auvergne;Rhône-Alpes
 Bourgogne-Franche-Comté:Bourgogne;Franche-Comté
@@ -141,10 +144,8 @@ Nouvelle-Aquitaine:Aquitaine;Poitou-Charentes;Limousin
 Occitanie:Midi-Pyrénées;Languedoc-Roussillon
 Pays-de-la-Loire:Pays de la Loire
 
-Saint-Martin et Saint-Barthélémy:Saint-Martin;Saint-Barthélémy
-
 DROM:Guadeloupe;Martinique;Guyane;Réunion;Mayotte
-COM:Saint-Martin;Saint-Barthélémy;Wallis-et-Futuna;Polynésie-Française;Nouvelle-Calédonie;Saint-Pierre-et-Miquelon
+COM:Saint-Martin et Saint-Barthélémy;Wallis-et-Futuna;Polynésie-Française;Nouvelle-Calédonie;Saint-Pierre-et-Miquelon
 Outre-Mers:DROM;COM
 
 Région Parisienne:Île-de-France
