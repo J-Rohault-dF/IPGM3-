@@ -1,3 +1,5 @@
+import random
+
 def sumProductDict(a: dict, b: dict) -> float:
 	allKeys = unionLists(list(a.keys()), list(b.keys()))
 	c = 0
@@ -102,3 +104,6 @@ def appendInDict(d: dict[str, list], k, v):
 def appendDictInDict(d: dict[str, dict], dk, k, v):
 	if dk in d.keys(): d[dk][k] = v
 	else: d[dk] = {k: v}
+
+def getRandomAlphanumeric(k: int):
+	return ''.join(random.choices(list('ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'), k=k))

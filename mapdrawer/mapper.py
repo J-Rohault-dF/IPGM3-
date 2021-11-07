@@ -1,4 +1,3 @@
-import csv
 import math
 import xml.etree.ElementTree as etree
 import os
