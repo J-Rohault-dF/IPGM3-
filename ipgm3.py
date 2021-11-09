@@ -14,8 +14,11 @@ partiesColors = {
 'Yannick Jadot': Color('#00c000'),
 'Anne Hidalgo': Color('#ff8080'),
 'Emmanuel Macron': Color('#ffeb00'),
-'Xavier Bertrand': Color('#0066cc'),
-'Valérie Pécresse': Color('#0066cc'),
+'Xavier Bertrand': Color('#0066cc'), #LR candidate
+'Valérie Pécresse': Color('#0066cc'), #LR candidate
+'Michel Barnier': Color('#0066cc'), #LR candidate
+'Éric Ciotti': Color('#0066cc'), #LR candidate
+'Philippe Juvin': Color('#0066cc'), #LR candidate
 'Marine Le Pen': Color('#627cad'), #not same as wp
 'Éric Zemmour': Color('#d99536'),
 
@@ -26,7 +29,7 @@ partiesColors = {
 'Philippe Poutou': Color('#bb0000'),
 'François Asselineau': Color('#118088'),
 'Nathalie Arthaud': Color('#8e2f2f'),
-'Jacques Cheminade': Color('#eedd00'),
+'Jacques Cheminade': Color('#eedd00'), #to replace with orange
 
 'Approuve': Color('#82bf40'),
 'Désapprouve': Color('#bf409d'),
@@ -34,24 +37,17 @@ partiesColors = {
 
 
 
-allDivs = AllDivs('data/divs_fr.txt', ['Circonscription départementale du Rhône', 'Saint-Martin et Saint-Barthélémy'])
+allDivs = AllDivs('data/divs_fr.txt')
 
 t1 = loadDataTable('data/2017T1.csv')
 t2 = loadDataTable('data/2017T2.csv')
 te = loadDataTable('data/2019TE.csv')
 
-#r_test = t1.get('Rhône',allDivs).getAdded(t1.get('Métropole de Lyon',allDivs))
-#r_test.name = 'Circonscription départementale du Rhône'
-#t1.listOfResults.append(r_test)
-#r_test2 = t1.get('Saint-Martin',allDivs).getAdded(t1.get('Saint-Barthélémy',allDivs))
-#r_test2.name = 'Saint-Martin et Saint-Barthélémy'
-#t1.listOfResults.append(r_test2)
+mx = importMatrices('data/pollDefs/Ifop_20211105.polld')
 
-mx = importMatrices('data/pollDefs/EZ-JLM_nonserious.polld')
-
-doExportTxt = False
+doExportTxt = True
 doExportMap = True
-doExportCsv = False
+doExportCsv = True
 
 allRounds = {}
 
@@ -74,18 +70,18 @@ for hk, hv in mx.items():
 	#Redresse R1
 	r = deepcopy(rs)
 	curScores = hv[('scores_2022T{n}'.format(n=tn))]
-	#for i in sorted(curScores, key=lambda x: allDivs.getSortingKeys(x)):
-	for i in ['National']:
+	for i in sorted(curScores, key=lambda x: allDivs.getSortingKeys(x)):
+	#for i in ['National']:
 		r = redressementResults(r, curScores[i], allDivs=allDivs)
 	
 	#Put it in allRounds
 	allRounds[hk] = r
 
 	#Tweet text
-	if doExportTxt: print('HYPOTHESIS {h}\n'.format(h=hk)+makeTweetText(r.get('National', allDivs=allDivs).toPercentages(), hv['sampleSize'], top=tn))
+	if doExportTxt: print('HYPOTHESIS {h}\n'.format(h=hk)+makeTweetText(r.get('National', allDivs=allDivs).toPercentages(), hv['sampleSize'], top=(2 if tn==1 else 1)))
 
 	#Export and map
 	if doExportCsv: saveDataTable('exports/{h}.csv'.format(h=hk), r)
-	if doExportMap: exportMap(r, 'data/basemap_collectivites.svg', '{h}.svg'.format(h=hk), allDivs=allDivs, partiesColors=partiesColors)
+	if doExportMap: exportMap(r, 'data/basemap_collectivites.svg', '{h}_.svg'.format(h=hk), allDivs=allDivs, partiesColors=partiesColors)
 	#if doExportMap: exportMap(r, 'data/basemap_depts.svg', '{h}.svg'.format(h=hk), allDivs=allDivs, partiesColors=partiesColors)
 
