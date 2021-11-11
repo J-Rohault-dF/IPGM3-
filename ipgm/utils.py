@@ -105,5 +105,11 @@ def appendDictInDict(d: dict[str, dict], dk, k, v):
 	if dk in d.keys(): d[dk][k] = v
 	else: d[dk] = {k: v}
 
+def unpackPairSets(s: set) -> list:
+	l = []
+	for k,v in s:
+		l += [k]*v
+	return l
+
 def getRandomAlphanumeric(k: int):
 	return ''.join(random.choices(list('ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'), k=k))
