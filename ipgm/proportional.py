@@ -4,7 +4,7 @@ import math
 def proportionalLargestRemainder(res: Result, sn: int, quotaType: str, threshold: float = 0) -> dict[str, int]:
 
 	r = res.results
-	r = {k: v for k,v in r.items() if (v/sum(r.values()) > threshold)}
+	r = {k: v for k,v in sorted(r.items(), key=lambda x: x[1], reverse=True) if (v/sum(r.values()) > threshold)}
 	vn = sum(r.values())
 
 	if quotaType == 'Hare': quota = vn / sn
@@ -38,8 +38,7 @@ def proportionalHighestAverage(res: Result, sn: int, methodType: str, threshold:
 
 	r = res.results
 	r = {k: v for k,v in r.items() if (v/sum(r.values()) > threshold)}
-	vn = sum(r.values())
-	seats = {k: (0 if methodType not in ['Huntington-Hill', 'Adams'] else 1) for k in r.keys()}
+	seats = {x[0]: (0 if methodType not in ['Huntington-Hill', 'Adams'] else 1) for x in sorted(r.items(), key=lambda x: x[1], reverse=True)}
 
 	averages = {k: (v/getDivisor(seats[k], methodType)) for k,v in r.items()}
 
