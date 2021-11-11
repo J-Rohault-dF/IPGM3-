@@ -43,7 +43,7 @@ t1 = loadDataTable('data/2017T1.csv')
 t2 = loadDataTable('data/2017T2.csv')
 te = loadDataTable('data/2019TE.csv')
 
-mx = importMatrices('data/pollDefs/Ifop_20211105.polld')
+mx = importMatrices('data/pollDefs/Harris_20211108.polld')
 
 doExportTxt = True
 doExportMap = True
@@ -82,6 +82,6 @@ for hk, hv in mx.items():
 
 	#Export and map
 	if doExportCsv: saveDataTable('exports/{h}.csv'.format(h=hk), r)
-	if doExportMap: exportMap(r, 'data/basemap_collectivites.svg', '{h}_.svg'.format(h=hk), allDivs=allDivs, partiesColors=partiesColors)
+	if doExportMap: exportMap(r, 'data/basemap_collectivites.svg', '{h}.svg'.format(h=hk), allDivs=allDivs, partiesColors=partiesColors)
 	#if doExportMap: exportMap(r, 'data/basemap_depts.svg', '{h}.svg'.format(h=hk), allDivs=allDivs, partiesColors=partiesColors)
 
