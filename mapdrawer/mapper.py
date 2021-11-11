@@ -57,14 +57,13 @@ def exportMap(res: ResultsSet, mapSrc: str, mapTarget: str, allDivs: AllDivs, pa
 		xmlR = etree.parse(originalMap)
 	
 	#Third, color in the final map
-	with open(mapTarget,'w',encoding='utf8') as svg:
-		#For each path:
-		for i in xmlR.getroot().find('{http://www.w3.org/2000/svg}g'):
-			#If id is in the deps list, replace the fill
-			if i.get('id') in allDivs.allDivs:
-				i.set('style', i.get('style').replace('000000', getWinningColorR(res.get(i.get('id'), allDivs=allDivs, quiet=True), partiesColors)))
-					
-		xmlR.write(mapTarget)
+	#For each path:
+	for i in xmlR.getroot().find('{http://www.w3.org/2000/svg}g'):
+		#If id is in the deps list, replace the fill
+		if i.get('id') in allDivs.allDivs:
+			i.set('style', i.get('style').replace('000000', getWinningColorR(res.get(i.get('id'), allDivs=allDivs, quiet=True), partiesColors)))
+	
+	xmlR.write(mapTarget)
 	
 	print('inkscape --export-type=png {0}'.format(mapTarget))
 
@@ -82,14 +81,13 @@ def exportMapProbs(probs: list[dict[str, float]], mapSrc: str, mapTarget: str, a
 		xmlR = etree.parse(originalMap)
 	
 	#Third, color in the final map
-	with open(mapTarget,'w',encoding='utf8') as svg:
-		#For each path:
-		for i in xmlR.getroot().find('{http://www.w3.org/2000/svg}g'):
-			#If id is in the deps list, replace the fill
-			if i.get('id') in allDivs.allDivs:
-				i.set('style', i.get('style').replace('000000', getWinningColorP(probs[i.get('id')], partiesColors)))
-					
-		xmlR.write(mapTarget)
+	#For each path:
+	for i in xmlR.getroot().find('{http://www.w3.org/2000/svg}g'):
+		#If id is in the deps list, replace the fill
+		if i.get('id') in allDivs.allDivs:
+			i.set('style', i.get('style').replace('000000', getWinningColorP(probs[i.get('id')], partiesColors)))
+	
+	xmlR.write(mapTarget)
 	
 	print('inkscape --export-type=png {0}'.format(mapTarget))
 
