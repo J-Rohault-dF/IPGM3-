@@ -1,3 +1,5 @@
+import copy
+
 from colour import *
 
 def getShade(color: Color, thisShade: int):
@@ -10,6 +12,9 @@ def getShade(color: Color, thisShade: int):
 	#etc.
 	#16: 90%
 	thisShade -= 1
+	
+	color = copy.deepcopy(color)
+
 	if -1 < thisShade < numShades:
 		sn = numShades-1-thisShade
 		color.luminance = (sn+0.5)/numShades
