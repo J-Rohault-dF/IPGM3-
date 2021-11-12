@@ -3,7 +3,7 @@ import math
 
 def proportionalLargestRemainder(res: Result, sn: int, quotaType: str, threshold: float = 0) -> dict[str, int]:
 
-	r = res.results
+	r = res.getCleanResults()
 	r = {k: v for k,v in sorted(r.items(), key=lambda x: x[1], reverse=True) if (v/sum(r.values()) > threshold)}
 	vn = sum(r.values())
 
@@ -36,7 +36,7 @@ def getDivisor(seats: int, methodType: str) -> float:
 
 def proportionalHighestAverage(res: Result, sn: int, methodType: str, threshold: float = 0) -> dict[str, int]:
 
-	r = res.results
+	r = res.getCleanResults()
 	r = {k: v for k,v in r.items() if (v/sum(r.values()) > threshold)}
 	seats = {x[0]: (0 if methodType not in ['Huntington-Hill', 'Adams'] else 1) for x in sorted(r.items(), key=lambda x: x[1], reverse=True)}
 
