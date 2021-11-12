@@ -4,6 +4,7 @@ import os
 import subprocess
 from ipgm.ResultsSet import *
 from mapdrawer.colors import *
+from mapdrawer.seatsdrawer import *
 
 def getMaxK(d):
 	k = ''
@@ -20,8 +21,8 @@ def getWinningColor(d: dict, partiesColors: dict) -> str:
 	kp = d[k]
 	indexInTable = math.floor(kp*20)-2
 
-	if hasPartyColor(k, partiesColors):
-		return getShade(getPartyColor(k, partiesColors), indexInTable).hex_l[1:]
+	if k in partiesColors:
+		return getShade(partiesColors[k], indexInTable).hex_l[1:]
 	else:
 		print('missing color for {0} ({1}%)'.format(k, kp))
 		return '000000'
@@ -50,7 +51,21 @@ def getWinningColorP(d: dict[str, float], partiesColors: dict) -> str:
 
 
 
-def exportMap(res: ResultsSet, mapSrc: str, mapTarget: str, allDivs: AllDivs, partiesColors: dict):
+def mapColorerPercs(res: ResultsSet, allDivs: AllDivs, partiesColors: dict[str, Color], xmlR: etree.ElementTree):
+	for i in xmlR.getroot().find('{http://www.w3.org/2000/svg}g'):
+		#If id is in the deps list, replace the fill
+		if i.get('id') in allDivs.allDivs:
+			i.set('style', i.get('style').replace('000000', getWinningColorR(res.get(i.get('id'), allDivs=allDivs, quiet=True), partiesColors)))
+
+def mapColorerProbs(probs: list[dict[str, float]], allDivs: AllDivs, partiesColors: dict[str, Color], xmlR: etree.ElementTree):
+	for i in xmlR.getroot().find('{http://www.w3.org/2000/svg}g'):
+		#If id is in the deps list, replace the fill
+		if i.get('id') in allDivs.allDivs:
+			i.set('style', i.get('style').replace('000000', getWinningColorP(probs[i.get('id')], partiesColors)))
+
+
+
+def exportMap(res: ResultsSet, mapSrc: str, mapTarget: str, allDivs: AllDivs, partiesColors: dict[str, Color]):
 	mapTarget = 'exports/'+mapTarget
 
 	with open(mapSrc, 'r', encoding='utf8') as originalMap:
@@ -58,10 +73,7 @@ def exportMap(res: ResultsSet, mapSrc: str, mapTarget: str, allDivs: AllDivs, pa
 	
 	#Third, color in the final map
 	#For each path:
-	for i in xmlR.getroot().find('{http://www.w3.org/2000/svg}g'):
-		#If id is in the deps list, replace the fill
-		if i.get('id') in allDivs.allDivs:
-			i.set('style', i.get('style').replace('000000', getWinningColorR(res.get(i.get('id'), allDivs=allDivs, quiet=True), partiesColors)))
+	mapColorerPercs(res, allDivs, partiesColors, xmlR)
 	
 	xmlR.write(mapTarget)
 	
@@ -74,6 +86,7 @@ def exportMap(res: ResultsSet, mapSrc: str, mapTarget: str, allDivs: AllDivs, pa
 
 
 
+
 def exportMapProbs(probs: list[dict[str, float]], mapSrc: str, mapTarget: str, allDivs: AllDivs, partiesColors: dict):
 	mapTarget = 'exports/'+mapTarget
 
@@ -82,10 +95,7 @@ def exportMapProbs(probs: list[dict[str, float]], mapSrc: str, mapTarget: str, a
 	
 	#Third, color in the final map
 	#For each path:
-	for i in xmlR.getroot().find('{http://www.w3.org/2000/svg}g'):
-		#If id is in the deps list, replace the fill
-		if i.get('id') in allDivs.allDivs:
-			i.set('style', i.get('style').replace('000000', getWinningColorP(probs[i.get('id')], partiesColors)))
+	mapColorerProbs(probs, allDivs, partiesColors, xmlR)
 	
 	xmlR.write(mapTarget)
 	
@@ -93,5 +103,38 @@ def exportMapProbs(probs: list[dict[str, float]], mapSrc: str, mapTarget: str, a
 
 	t = subprocess.run(['inkscape','--export-type=png','{0}'.format(mapTarget)], shell=True)
 
+	print('Opening map...')
+	os.system(mapTarget.replace('.svg','.png').replace('/','\\'))
+
+
+
+def exportSeatsMap(res: ResultsSet, seats: dict[str, dict[str, int]], mapSrc: str, mapTarget: str, allDivs: AllDivs, partiesColors: dict, scale: float = 1):
+	mapTarget = 'exports/'+mapTarget
+
+	with open(mapSrc, 'r', encoding='utf8') as originalMap:
+		xmlR = etree.parse(originalMap)
+	
+	#Color in the map
+	mapColorerPercs(res, allDivs, partiesColors, xmlR)
+
+	#Put the seats & color them
+	group = etree.Element('{http://www.w3.org/2000/svg}g', attrib={'id': 'allSeats-{id}'.format(id=getRandomAlphanumeric(4))})
+	for i in xmlR.getroot().find('{http://www.w3.org/2000/svg}g'):
+		#If id is in the deps list, put the seats
+		if i.get('id') in seats.keys():
+			divName = i.get('id')
+			c = drawCircles(getCenter(i), sum(seats[divName].values()), divName.replace(' ','-'), 2.2777781*scale, 0.569444*scale, 5.52238*scale)
+			colorsSeats = [(partiesColors[k], v) for k,v in seats[divName].items()]
+			c = colorCircles(c, divName, colorsSeats)
+			group.append(c)
+
+	xmlR.getroot().find('{http://www.w3.org/2000/svg}g').append(group)
+	
+	xmlR.write(mapTarget)
+	
+	print('inkscape --export-type=png {0}'.format(mapTarget))
+	
+	t = subprocess.run(['inkscape','--export-type=png','{0}'.format(mapTarget)], shell=True)
+	
 	print('Opening map...')
 	os.system(mapTarget.replace('.svg','.png').replace('/','\\'))

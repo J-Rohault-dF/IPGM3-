@@ -16,17 +16,31 @@ seatsArrangements: dict[int, list[int]] = {
 	10: [3, 4, 3],
 	11: [3, 4, 4],
 	12: [4, 4, 4],
+	12: [4, 4, 4],
+	13: [4, 5, 4],
+	14: [5, 5, 4],
+	15: [5, 5, 5],
+	17: [6, 6, 5],
+	26: [6, 7, 7, 6],
+	28: [5, 6, 6, 6, 5],
+	38: [7, 8, 8, 8, 7],
+	52: [8, 9, 9, 9, 9, 8],
 }
 
+def argsFind(l: list[list], s: str) -> int:
+	for i in range(len(l)):
+		if l[i][0] == s: return i
+	return None
+
 def replaceFill(s: str, f: Color) -> str:
-	args = [{x[0]: x[1] for x in l.split(':')} for l in s.split(';')]
-	args['fill'] = str(f)
+	args = [l.split(':') for l in s.split(';')]
+	args[argsFind(args, 'fill')] = ['fill', str(f)]
 	return ';'.join([':'.join(x) for x in args])
 
 
 #Function to draw 1 circle (with given id)
 def drawOneCircle(pos: set[float, float], givenId: str, radius: float, strokeWidth, fillColor: Color = Color('#c0c0c0'), strokeColor: Color = Color('#000000')) -> etree.Element:
-	circle = etree.Element('svg:circle', attrib={
+	circle = etree.Element('{http://www.w3.org/2000/svg}circle', attrib={
 		'style': 'fill:{fillColor};fill-opacity:1;stroke:{strokeColor};stroke-width:{strokeWidth};stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1'.format(fillColor=fillColor, strokeColor=strokeColor, strokeWidth=strokeWidth),
 		'id': givenId,
 		'cx': str(pos[0]),
@@ -37,7 +51,7 @@ def drawOneCircle(pos: set[float, float], givenId: str, radius: float, strokeWid
 
 #Function to draw N circles (with given dept id)
 def drawCircles(pos: set[float, float], number: int, givenId: str, circlesSize: float, strokeSize: float, distanceBetweenCenters: float) -> etree.Element:
-	circles = etree.Element('svg:g', attrib={'id': 'seats-circles-{gid}'.format(gid=givenId)})
+	circles = etree.Element('{http://www.w3.org/2000/svg}g', attrib={'id': 'seats-circles-{gid}'.format(gid=givenId)})
 	
 	#Find the seats arrangement
 	seatsArrangement = seatsArrangements[number]
@@ -65,8 +79,12 @@ def colorCircles(seats: etree.Element, searchId: str, data: list[set[Color, int]
 		raise ValueError('Seats for {sid} have {n} seats but are being modified to have {ni}'.format(sid=searchId, n=len(seats), ni=sum([x[1] for x in data])))
 	
 	counter = 0
-	for s in seats.iter():
+	for s in [x for x in seats.iter()][1:]:
 		s.set('style', replaceFill(s.get('style'), colors[counter]))
 		counter += 1
 	
 	return seats
+
+def getCenter(e: etree.Element) -> set[float, float]:
+	if e.get('{http://en.wikipedia.org/wiki/Main_Page}cx') == None: return (0, 0)
+	return (float(e.get('{http://en.wikipedia.org/wiki/Main_Page}cx')), float(e.get('{http://en.wikipedia.org/wiki/Main_Page}cy')))
