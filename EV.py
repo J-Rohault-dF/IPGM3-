@@ -166,3 +166,5 @@ for i in sm.keys():
 	elif m > 0.6: EV[k1][1] += electoralVotes[i]
 	elif m > 0.3: EV[k1][2] += electoralVotes[i]
 	else: EV['tossup'] += electoralVotes[i]
+
+print(EV)
