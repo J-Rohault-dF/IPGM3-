@@ -63,6 +63,9 @@ class Result:
 			if v > s[1] and k != '@':
 				s = (k, v)
 		return s[0]
+	
+	def getCleanResults(self) -> dict[str, int|float]:
+		return {k: v for k,v in self.results.items() if ('@' not in k and k != '')}
 
 
 
