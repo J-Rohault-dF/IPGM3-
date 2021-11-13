@@ -2,12 +2,13 @@ from copy import *
 from ipgm.utils import *
 from ipgm.port import *
 from ipgm.mainFuncs import *
-from ipgm.additions import *
+from ipgm.proportional import *
+from twitterTextAdditions import *
 
 from collectivites import *
 from mapdrawer.mapper import *
 
-allDivs = AllDivs('divs_us.txt')
+allDivs = AllDivs('data/divs_us.txt')
 
 partiesColors = {
 	'Biden': Color('#3333FF'),
@@ -22,12 +23,21 @@ partiesColors = {
 	'Green': Color('#00882b'),
 }
 
+#Get seats data
+with open('data/seats_us.csv','r',encoding='utf8') as seatsDataFile:
+	seatsDataTemp = [y.split(';') for y in [x for x in seatsDataFile.read().split('\n')]]
+	seatsData = {x[0]: {'seats': int(x[1]), 'layout': x[2], 'orientation': x[3], 'cx': toFloat(x[4]), 'cy': toFloat(x[5])} for x in seatsDataTemp[1:]}
+
+seatsPerState = {k: v['seats'] for k,v in seatsData.items()}
+
+
+
 #Party affiliation
 #Biden Approval (?)
-fV = loadDataTable('us_stats/2020_US_Vote.csv') #2020 vote
+fV = loadDataTable('data/us_stats/2020_US_Vote.csv') #2020 vote
 #Swing state (?)
 #2020 Vote Method
-rS = loadDataTable('us_stats/2019_US_Race.csv')#Race
+rS = loadDataTable('data/us_stats/2019_US_Race.csv') #Race
 #Age
 #Education
 #Income
@@ -38,16 +48,18 @@ rS = loadDataTable('us_stats/2019_US_Race.csv')#Race
 #Religion
 #Vaccination status
 
-mx = importMatrices('us_parties.polld')
+mx = importMatrices('data/pollDefs/us_parties.polld')
 
 allExtrapolations = []
 for i,j in [(fV, '2020_Parties'), (rS, '2019_Race')]:
-	allExtrapolations.append(extrapolateResults(i, mx['components_Echelon_{0}'.format(j)]))
+	allExtrapolations.append(extrapolateResults(i, mx['Echelon']['matrix_{0}'.format(j)]))
 
-r = averageResultsSet(*allExtrapolations, allDivs=allDivs)
+rs = averageResultsSet(*allExtrapolations, allDivs=allDivs)
 
-rs = deepcopy(r)
+r = deepcopy(rs)
 for i in ['West', 'Midwest', 'South', 'Northeast', 'National']:
-	rs = redressementResults(rs, mx['scores_Echelon_Parties'][i], allDivs=allDivs)
+	r = redressementResults(r, mx['Echelon']['scores_Parties'][i], allDivs=allDivs)
 
-exportMap(rs, 'basemap_us_states.svg', 'redressed_us_Parties_Race.svg', allDivs=allDivs, partiesColors=partiesColors)
+seatsParties = {x.name: proportionalHighestAverage(x, seatsPerState[x.name], 'D\'Hondt') for x in r.listOfResults if x.name in seatsPerState}
+
+exportSeatsMap(r, seatsParties, seatsData, 'data/basemap_us_states.svg', 'redressed_us_Parties_Race.svg', allDivs=allDivs, partiesColors=partiesColors, scale=3)
