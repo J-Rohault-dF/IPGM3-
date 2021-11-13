@@ -113,3 +113,7 @@ def unpackPairSets(s: set) -> list:
 
 def getRandomAlphanumeric(k: int):
 	return ''.join(random.choices(list('ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'), k=k))
+
+def toFloat(s: str) -> float:
+	if s == '': return 0
+	else: return float(s)

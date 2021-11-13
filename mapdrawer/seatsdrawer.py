@@ -50,22 +50,37 @@ def drawOneCircle(pos: set[float, float], givenId: str, radius: float, strokeWid
 	return circle
 
 #Function to draw N circles (with given dept id)
-def drawCircles(pos: set[float, float], number: int, givenId: str, circlesSize: float, strokeSize: float, distanceBetweenCenters: float) -> etree.Element:
+def drawCircles(seatsData: dict[str, any], givenId: str, circlesSize: float, strokeSize: float, distanceBetweenCenters: float) -> etree.Element:
 	circles = etree.Element('{http://www.w3.org/2000/svg}g', attrib={'id': 'seats-circles-{gid}'.format(gid=givenId)})
 	
+	cx, cy = seatsData['cx'], seatsData['cy']
+	orient = seatsData['orientation']
+	totalSeats = seatsData['seats']
+
+	seatsNumbers = []
+	#TODO: Re-number seats based on the orientation
+	if orient == '': seatsNumbers = [x for x in range(0, totalSeats)]
+	elif orient == 'M': seatsNumbers = [totalSeats-x for x in range(0, totalSeats)] #Mirror
+	elif orient == 'R':
+		circles.set('transform', 'rotate(90,{cx},{cy})'.format(cx=cx, cy=cy))
+		seatsNumbers = [x for x in range(0, totalSeats)] #TODO: Alternate between the rows
+	elif orient == 'L':
+		circles.set('transform', 'rotate(-90,{cx},{cy})'.format(cx=cx, cy=cy))
+		seatsNumbers = [x for x in range(0, totalSeats)] #TODO: Same as for R but flipped
+	
 	#Find the seats arrangement
-	seatsArrangement = seatsArrangements[number]
-	fullHeight = (len(seatsArrangement)-1)*distanceBetweenCenters
+	seatsLayout = seatsArrangements[totalSeats][seatsData['layout']]
+	fullHeight = (len(seatsLayout)-1)*distanceBetweenCenters
 	counter = 0
 
 	#Create the circles and put them all in the group
-	for ri in range(len(seatsArrangement)):
-		row = seatsArrangement[ri]
+	for ri in range(len(seatsLayout)):
+		row = seatsLayout[ri]
 		#Get the leftmost circle
 		rowLength = (row-1)*distanceBetweenCenters
 		for ci in range(row):
-			cPos = (pos[0]-(rowLength/2)+(distanceBetweenCenters*ci), pos[1]-(fullHeight/2)+(distanceBetweenCenters*ri))
-			circles.append(drawOneCircle(cPos, 'circle-{gid}-{n}'.format(gid=givenId, n=counter), circlesSize, strokeSize, Color('#c0c0c0')))
+			cPos = (cx-(rowLength/2)+(distanceBetweenCenters*ci), cy-(fullHeight/2)+(distanceBetweenCenters*ri))
+			circles.append(drawOneCircle(cPos, 'circle-{gid}-{n}'.format(gid=givenId, n=seatsNumbers[counter]), circlesSize, strokeSize, Color('#c0c0c0')))
 			counter += 1
 
 	return circles

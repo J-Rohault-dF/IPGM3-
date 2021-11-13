@@ -108,7 +108,7 @@ def exportMapProbs(probs: list[dict[str, float]], mapSrc: str, mapTarget: str, a
 
 
 
-def exportSeatsMap(res: ResultsSet, seats: dict[str, dict[str, int]], mapSrc: str, mapTarget: str, allDivs: AllDivs, partiesColors: dict, scale: float = 1):
+def exportSeatsMap(res: ResultsSet, seatsParties: dict[str, dict[str, int]], seatsData: dict[str, dict[str, any]], mapSrc: str, mapTarget: str, allDivs: AllDivs, partiesColors: dict, scale: float = 1):
 	mapTarget = 'exports/'+mapTarget
 
 	with open(mapSrc, 'r', encoding='utf8') as originalMap:
@@ -121,10 +121,10 @@ def exportSeatsMap(res: ResultsSet, seats: dict[str, dict[str, int]], mapSrc: st
 	group = etree.Element('{http://www.w3.org/2000/svg}g', attrib={'id': 'allSeats-{id}'.format(id=getRandomAlphanumeric(4))})
 	for i in xmlR.getroot().find('{http://www.w3.org/2000/svg}g'):
 		#If id is in the deps list, put the seats
-		if i.get('id') in seats.keys():
+		if i.get('id') in seatsParties.keys():
 			divName = i.get('id')
-			c = drawCircles(getCenter(i), sum(seats[divName].values()), divName.replace(' ','-'), 2.2777781*scale, 0.569444*scale, 5.52238*scale)
-			colorsSeats = [(partiesColors[k], v) for k,v in seats[divName].items()]
+			c = drawCircles(seatsData[divName], divName.replace(' ','-'), 2.2777781*scale, 0.569444*scale, 5.52238*scale)
+			colorsSeats = [(partiesColors[k], v) for k,v in seatsParties[divName].items()]
 			c = colorCircles(c, divName, colorsSeats)
 			group.append(c)
 
