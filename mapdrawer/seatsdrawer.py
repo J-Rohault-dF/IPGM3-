@@ -2,29 +2,29 @@ import xml.etree.ElementTree as etree
 from ipgm.utils import *
 from colour import *
 
-seatsArrangements: dict[int, list[int]] = {
-	0: [],
-	1: [1],
-	2: [2],
-	3: [1, 2],
-	4: [2, 2],
-	5: [2, 3],
-	6: [3, 3],
-	7: [2, 3, 2],
-	8: [3, 3, 2],
-	9: [3, 3, 3],
-	10: [3, 4, 3],
-	11: [3, 4, 4],
-	12: [4, 4, 4],
-	12: [4, 4, 4],
-	13: [4, 5, 4],
-	14: [5, 5, 4],
-	15: [5, 5, 5],
-	17: [6, 6, 5],
-	26: [6, 7, 7, 6],
-	28: [5, 6, 6, 6, 5],
-	38: [7, 8, 8, 8, 7],
-	52: [8, 9, 9, 9, 9, 8],
+seatsArrangements: dict[int, dict[str, list[int]]] = {
+	0: {'Regular': []},
+	1: {'Regular': [1]},
+	2: {'Regular': [2]},
+	3: {'Regular': [1, 2]},
+	4: {'Regular': [2, 2]},
+	5: {'Regular': [2, 3]},
+	6: {'Regular': [3, 3]},
+	7: {'Regular': [2, 3, 2]},
+	8: {'Regular': [3, 3, 2]},
+	9: {'Regular': [3, 3, 3]},
+	10: {'Regular': [3, 4, 3]},
+	11: {'Regular': [3, 4, 4]},
+	12: {'Regular': [4, 4, 4]},
+	12: {'Regular': [4, 4, 4]},
+	13: {'Regular': [4, 5, 4]},
+	14: {'Regular': [5, 5, 4]},
+	15: {'Regular': [5, 5, 5]},
+	17: {'Regular': [6, 6, 5]},
+	26: {'Regular': [6, 7, 7, 6]},
+	28: {'Regular': [5, 6, 6, 6, 5]},
+	38: {'Regular': [7, 8, 8, 8, 7]},
+	52: {'Regular': [8, 9, 9, 9, 9, 8]},
 }
 
 def argsFind(l: list[list], s: str) -> int:
@@ -49,29 +49,43 @@ def drawOneCircle(pos: set[float, float], givenId: str, radius: float, strokeWid
 	})
 	return circle
 
+def genAlternating(layout: list[int], reverse: bool = False): #Terrible implementation, please don't look at this code
+	cols = [[] for x in layout]
+	scores = [x/2 for x in layout]
+	counter = 0
+	while counter <= sum(flattenList(layout)):
+		print(scores, max(scores))
+		for i in range(len(layout)):
+			if scores[i] == max(scores):
+				cols[i].append(counter)
+				scores[i] -= 1
+				counter += 1
+	return flattenList(cols)
+
+
+
 #Function to draw N circles (with given dept id)
-def drawCircles(seatsData: dict[str, any], givenId: str, circlesSize: float, strokeSize: float, distanceBetweenCenters: float) -> etree.Element:
+def drawCircles(seatsData: dict[str, str|int], givenId: str, circlesSize: float, strokeSize: float, distanceBetweenCenters: float) -> etree.Element:
 	circles = etree.Element('{http://www.w3.org/2000/svg}g', attrib={'id': 'seats-circles-{gid}'.format(gid=givenId)})
 	
 	cx, cy = seatsData['cx'], seatsData['cy']
 	orient = seatsData['orientation']
 	totalSeats = seatsData['seats']
+	
+	#Find the seats layout
+	seatsLayout = seatsArrangements[totalSeats][seatsData['layout']]
+	fullHeight = (len(seatsLayout)-1)*distanceBetweenCenters
+	counter = 0
 
 	seatsNumbers = []
-	#TODO: Re-number seats based on the orientation
 	if orient == '': seatsNumbers = [x for x in range(0, totalSeats)]
 	elif orient == 'M': seatsNumbers = [totalSeats-x for x in range(0, totalSeats)] #Mirror
 	elif orient == 'R':
 		circles.set('transform', 'rotate(90,{cx},{cy})'.format(cx=cx, cy=cy))
-		seatsNumbers = [x for x in range(0, totalSeats)] #TODO: Alternate between the rows
+		seatsNumbers = genAlternating(seatsLayout)
 	elif orient == 'L':
 		circles.set('transform', 'rotate(-90,{cx},{cy})'.format(cx=cx, cy=cy))
-		seatsNumbers = [x for x in range(0, totalSeats)] #TODO: Same as for R but flipped
-	
-	#Find the seats arrangement
-	seatsLayout = seatsArrangements[totalSeats][seatsData['layout']]
-	fullHeight = (len(seatsLayout)-1)*distanceBetweenCenters
-	counter = 0
+		seatsNumbers = genAlternating(seatsLayout, reverse=True)
 
 	#Create the circles and put them all in the group
 	for ri in range(len(seatsLayout)):
@@ -94,7 +108,8 @@ def colorCircles(seats: etree.Element, searchId: str, data: list[set[Color, int]
 		raise ValueError('Seats for {sid} have {n} seats but are being modified to have {ni}'.format(sid=searchId, n=len(seats), ni=sum([x[1] for x in data])))
 	
 	counter = 0
-	for s in [x for x in seats.iter()][1:]:
+	for i in range(len([x for x in seats.iter()][1:])):
+		s = [x for x in seats.iter() if x.get('id') == 'circle-{gid}-{n}'.format(gid=searchId.replace(' ','-'), n=i)][0]
 		s.set('style', replaceFill(s.get('style'), colors[counter]))
 		counter += 1
 	
