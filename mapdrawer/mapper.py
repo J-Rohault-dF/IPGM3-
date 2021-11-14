@@ -81,8 +81,8 @@ def exportMap(res: ResultsSet, mapSrc: str, mapTarget: str, allDivs: AllDivs, pa
 
 	t = subprocess.run(['inkscape','--export-type=png','{0}'.format(mapTarget)], shell=True)
 
-	print('Opening map...')
-	os.system(mapTarget.replace('.svg','.png').replace('/','\\'))
+	#print('Opening map...')
+	#os.system(mapTarget.replace('.svg','.png').replace('/','\\'))
 
 
 
@@ -103,8 +103,8 @@ def exportMapProbs(probs: list[dict[str, float]], mapSrc: str, mapTarget: str, a
 
 	t = subprocess.run(['inkscape','--export-type=png','{0}'.format(mapTarget)], shell=True)
 
-	print('Opening map...')
-	os.system(mapTarget.replace('.svg','.png').replace('/','\\'))
+	#print('Opening map...')
+	#os.system(mapTarget.replace('.svg','.png').replace('/','\\'))
 
 
 
@@ -136,5 +136,5 @@ def exportSeatsMap(res: ResultsSet, seatsParties: dict[str, dict[str, int]], sea
 	
 	t = subprocess.run(['inkscape','--export-type=png','{0}'.format(mapTarget)], shell=True)
 	
-	print('Opening map...')
-	os.system(mapTarget.replace('.svg','.png').replace('/','\\'))
+	#print('Opening map...')
+	#os.system(mapTarget.replace('.svg','.png').replace('/','\\'))
