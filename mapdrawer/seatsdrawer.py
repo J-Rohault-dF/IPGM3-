@@ -6,19 +6,19 @@ seatsArrangements: dict[int, dict[str, list[int]]] = {
 	0: {'Regular': []},
 	1: {'Regular': [1]},
 	2: {'Regular': [2]},
-	3: {'Regular': [1, 2]},
+	3: {'Regular': [2, 1]},
 	4: {'Regular': [2, 2]},
-	5: {'Regular': [2, 3]},
+	5: {'Regular': [3, 2]},
 	6: {'Regular': [3, 3]},
-	7: {'Regular': [2, 3, 2]},
+	7: {'Regular': [2, 3, 2], 'Wide': [4, 3]},
 	8: {'Regular': [3, 3, 2]},
-	9: {'Regular': [3, 3, 3]},
+	9: {'Regular': [3, 3, 3], 'Wide': [5, 4], 'Long': [2, 2, 2, 2, 1]},
 	10: {'Regular': [3, 4, 3]},
 	11: {'Regular': [3, 4, 4]},
 	12: {'Regular': [4, 4, 4]},
 	12: {'Regular': [4, 4, 4]},
 	13: {'Regular': [4, 5, 4]},
-	14: {'Regular': [5, 5, 4]},
+	14: {'Regular': [5, 5, 4], 'Wide': [7, 7]},
 	15: {'Regular': [5, 5, 5]},
 	17: {'Regular': [6, 6, 5]},
 	26: {'Regular': [6, 7, 7, 6]},
@@ -53,13 +53,13 @@ def genAlternating(layout: list[int], reverse: bool = False): #Terrible implemen
 	cols = [[] for x in layout]
 	scores = [x/2 for x in layout]
 	counter = 0
-	while counter <= sum(flattenList(layout)):
-		print(scores, max(scores))
-		for i in range(len(layout)):
-			if scores[i] == max(scores):
-				cols[i].append(counter)
-				scores[i] -= 1
-				counter += 1
+	i = 0
+	while counter < sum(flattenList(layout)):
+		if scores[i] == max(scores):
+			cols[i].append(counter if not reverse else (sum(layout)-counter-1))
+			scores[i] -= 1
+			counter += 1
+		i = (i+1)%len(layout)
 	return flattenList(cols)
 
 

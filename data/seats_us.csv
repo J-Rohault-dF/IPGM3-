@@ -1,51 +1,51 @@
 div;seats;layout;orientation;cx;cy
-Alabama;7;Regular;;186.497;372.973
+Alabama;7;Regular;;629.549;415.721
 Alaska;1;Regular;;104.802;505.055
-Arizona;9;Regular;;;
-Arkansas;4;Regular;;;
-California;52;Regular;R;79.404602;277.50867
-Colorado;8;Regular;;306.107;282.749
-Connecticut;5;Regular;;;
-Delaware;1;Regular;;;
-Florida;28;Regular;;;
-Georgia;14;Regular;;;
-Hawaii;2;Regular;;279.039;549.526
-Idaho;2;Regular;;185.264;125.798
-Illinois;17;Regular;;;
-Indiana;9;Regular;;;
-Iowa;4;Regular;;;
+Arizona;9;Regular;;189.442;370.847
+Arkansas;4;Regular;;525.844;382.328
+California;52;Regular;R;59.514;342.457
+Colorado;8;Regular;;307.977;285.555
+Connecticut;5;Regular;;824.774;467.152
+Delaware;1;Regular;;956.738;547.650
+Florida;28;Regular;;718.681;515.421
+Georgia;14;Regular;L;689.366;415.137
+Hawaii;2;Regular;;270.406;550.557
+Idaho;2;Regular;;185.670;160.708
+Illinois;17;Regular;R;567.177;261.200
+Indiana;9;Wide;L;622.524;248.368
+Iowa;4;Regular;;503.136;226.608
 Kansas;4;Regular;;425.162;301.063
-Kentucky;6;Regular;;;
-Louisiana;6;Regular;;;
-Maine;2;Regular;;;
-Maryland;8;Regular;;;
-Massachusetts;9;Regular;;;
-Michigan;13;Regular;;;
-Minnesota;8;Regular;;;
-Mississippi;4;Regular;;;
-Missouri;8;Regular;;;
+Kentucky;6;Regular;;654.366;309.160
+Louisiana;6;Regular;;536.634;466.815
+Maine;2;Regular;;863.919;97.766
+Maryland;8;Regular;;911.111;544.798
+Massachusetts;9;Wide;;846.812;421.773
+Michigan;13;Regular;R;626.593;146.961
+Minnesota;8;Regular;;484.589;136.742
+Mississippi;4;Regular;;576.362;424.235
+Missouri;8;Regular;;507.316;315.153
 Montana;2;Regular;;263.761;101.683
 Nebraska;3;Regular;;405.967;234.718
-Nevada;4;Regular;;126.920;262.743
-New Hampshire;2;Regular;;;
-New Jersey;12;Regular;;;
+Nevada;4;Regular;;128.138;237.170
+New Hampshire;2;Regular;R;837.875;142.656
+New Jersey;12;Regular;R;965.919;476.827
 New Mexico;3;Regular;;286.610;381.173
-New York;26;Regular;;;
-North Carolina;14;Regular;;;
+New York;26;Regular;;739.415;144.224
+North Carolina;14;Wide;;759.930;339.891
 North Dakota;1;Regular;;400.554;106.991
-Ohio;15;Regular;;;
+Ohio;15;Regular;R;677.462;234.867
 Oklahoma;5;Regular;;441.435;366.744
-Oregon;6;Regular;;91.457;122.761
-Pennsylvania;17;Regular;;;
-Rhode Island;2;Regular;;;
-South Carolina;7;Regular;;;
+Oregon;6;Regular;;87.398;135.968
+Pennsylvania;17;Regular;;772.391;218.991
+Rhode Island;2;Regular;R;868.215;459.767
+South Carolina;7;Regular;;747.632;389.567
 South Dakota;1;Regular;;398.980;176.132
-Tennessee;9;Regular;;;
-Texas;38;Regular;;410.436;459.743
-Utah;4;Regular;;208.186;259.892
-Vermont;1;Regular;;;
-Virginia;11;Regular;;;
-Washington;10;Regular;;111.298;64.596
-West Virginia;2;Regular;;;
-Wisconsin;8;Regular;;;
-Wyoming;1;Regular;;283.497;193.301
+Tennessee;9;Wide;;621.407;350.185
+Texas;38;Regular;;409.436;458.743
+Utah;4;Regular;;211.304;267.670
+Vermont;1;Regular;;817.693;127.848
+Virginia;11;Regular;;772.844;286.450
+Washington;10;Regular;;110.298;63.596
+West Virginia;2;Regular;R;719.906;280.476
+Wisconsin;8;Regular;;556.992;171.220
+Wyoming;1;Regular;;282.497;192.301
