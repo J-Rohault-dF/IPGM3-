@@ -50,6 +50,7 @@ doExportMap = True
 doExportCsv = True
 
 allRounds = {}
+allTexts = []
 
 for hk, hv in mx.items():
 	tn = int(hk[0])
@@ -78,10 +79,13 @@ for hk, hv in mx.items():
 	allRounds[hk] = r
 
 	#Tweet text
-	if doExportTxt: print('HYPOTHESIS {h}\n'.format(h=hk)+makeTweetText(r.get('National', allDivs=allDivs).toPercentages(), hv['sampleSize'], top=(2 if tn==1 else 1), nbSimulated=15000))
+	if doExportTxt: allTexts.append('HYPOTHESIS {h}\n'.format(h=hk)+makeTweetText(r.get('National', allDivs=allDivs).toPercentages(), hv['sampleSize'], top=(2 if tn==1 else 1), nbSimulated=15000))
 
 	#Export and map
 	if doExportCsv: saveDataTable('exports/{h}.csv'.format(h=hk), r)
 	if doExportMap: exportMap(r, 'data/basemap_collectivites.svg', '{h}.svg'.format(h=hk), allDivs=allDivs, partiesColors=partiesColors)
 	#if doExportMap: exportMap(r, 'data/basemap_depts.svg', '{h}.svg'.format(h=hk), allDivs=allDivs, partiesColors=partiesColors)
 
+if doExportTxt:
+	with open('exports/tweetText.txt','w',encoding='utf8') as txtFile:
+		txtFile.write('\n\n'.join(allTexts))
