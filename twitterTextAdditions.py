@@ -5,10 +5,10 @@ import math
 #Both next functions should be given a national Result in argument
 
 #Generate tweet text
-def makeTweetText(natRes: ResultPerc, sampleSize: int, top: int) -> str:
+def makeTweetText(natRes: ResultPerc, sampleSize: int, top: int, nbSimulated: int) -> str:
 	natRes = natRes.removedAbs()
 	cands: list[str] = [k for k,v in sorted(natRes.results.items(), key=lambda x: x[1], reverse=True) if v+getMarginOfError(sampleSize, v, 1.96) >= 0.05]
-	ranks = rankingChances(Result.fromPercentages(natRes), 5000, 1.96, sampleSize, top)
+	ranks = rankingChances(Result.fromPercentages(natRes), nbSimulated, 1.96, sampleSize, top)
 	
 	allLines = []
 	for c in cands:
