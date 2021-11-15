@@ -16,11 +16,15 @@ partiesColors = {
 	'Jorgensen': Color('#FED105'),
 	'Hawkins': Color('#17aa5c'),
 
-	'Nationalist': Color('#2e3147'),
-	'Conservative': Color('#0365c0'),
-	'Acela': Color('#f6af42'),
-	'Labor': Color('#c82506'),
-	'Green': Color('#00882b'),
+	'Nationalist': Color('#8A2520'), #"Faith and flag conservatives"
+	'Conservative': Color('#BE2D23'), #"Committed conservatives"
+	'Populist': Color('#E26A69'), #"Populist right"
+	'Reform': Color('#EB9D9B'), #"Ambivalent right"
+	'Center': Color('#BBCD78'), #"Stressed sideliners"
+	'Action': Color('#ACC5D3'), #"Outsider left"
+	'Civic': Color('#82A6C0'), #"Democratic mainstays"
+	'Liberal': Color('#436685'), #"Establishment lLiberals"
+	'Progressive': Color('#304A60'), #"Progressive left"
 }
 
 #Get seats data
@@ -48,18 +52,20 @@ rS = loadDataTable('data/us_stats/2019_US_Race.csv') #Race
 #Religion
 #Vaccination status
 
-mx = importMatrices('data/pollDefs/us_parties.polld')
+mx = importMatrices('data/pollDefs/us_parties_pew.polld')
 
 allExtrapolations = []
 for i,j in [(fV, '2020_Parties'), (rS, '2019_Race')]:
-	allExtrapolations.append(extrapolateResults(i, mx['Echelon']['matrix_{0}'.format(j)]))
+	allExtrapolations.append(extrapolateResults(i, mx['Pew21']['matrix_{0}'.format(j)]))
 
 rs = averageResultsSet(*allExtrapolations, allDivs=allDivs)
 
 r = deepcopy(rs)
 for i in ['West', 'Midwest', 'South', 'Northeast', 'National']:
-	r = redressementResults(r, mx['Echelon']['scores_Parties'][i], allDivs=allDivs)
+	r = redressementResultsMultiplicative(r, mx['Pew21']['scores_Parties'][i], allDivs=allDivs)
 
 seatsParties = {x.name: proportionalHighestAverage(x, seatsPerState[x.name], 'D\'Hondt') for x in r.listOfResults if x.name in seatsPerState}
 
-exportSeatsMap(r, seatsParties, seatsData, 'data/basemap_us_states_houseinsets.svg', 'redressed_us_Parties_Race.svg', allDivs=allDivs, partiesColors=partiesColors, scale=3.5)
+exportSeatsMap(r, seatsParties, seatsData, 'data/basemap_us_states_houseinsets.svg', 'redressed_us_Parties_Race_Pew.svg', allDivs=allDivs, partiesColors=partiesColors, scale=3.5)
+
+print({party: sum([x[party] for x in seatsParties.values()]) for party in ['Nationalist', 'Conservative', 'Populist', 'Reform', 'Center', 'Action', 'Civic', 'Liberal', 'Progressive']})
