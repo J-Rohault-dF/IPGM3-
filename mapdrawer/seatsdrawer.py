@@ -55,9 +55,10 @@ def genAlternating(layout: list[int], reverse: bool = False): #Terrible implemen
 	counter = 0
 	i = 0
 	while counter < sum(flattenList(layout)):
-		if scores[i] == max(scores):
-			cols[i].append(counter if not reverse else (sum(layout)-counter-1))
-			scores[i] -= 1
+		j = len(layout)-i-1
+		if scores[j] == max(scores):
+			cols[j].append(counter if not reverse else (sum(layout)-counter-1))
+			scores[j] -= 1
 			counter += 1
 		i = (i+1)%len(layout)
 	return flattenList(cols)
