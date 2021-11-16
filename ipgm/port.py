@@ -1,3 +1,4 @@
+import json
 from ipgm.utils import *
 from ipgm.Result import *
 from ipgm.ResultsSet import *
@@ -146,3 +147,56 @@ def importMatrices(src: str):
 				appendDictInDict(allReturning, hypothesis, 'matrix_{0}'.format(label), vtm)
 
 		return allReturning
+
+
+def importMatricesJson(src: str):
+	with open(src, 'r', encoding='utf8') as defsFile:
+		obj = json.load(defsFile)
+	
+	allReturning = {}
+
+	allReturning['sampleSize'] = obj['sampleSize']
+
+	for h in obj['hypotheses']:
+		
+		label = h['label']
+		candidates = h['candidates']
+
+		for m in h['matrices']:
+
+			initials = [x for x in m['vtm'].keys()]
+			finals = candidates
+			transfersMatrix = [[float(y)/100 for y in x] for x in m['vtm'].values()]
+			externalAbs = m['externalAbs']
+
+			#Handle externalAbs
+			if '@' in candidates and externalAbs:
+				for l in transfersMatrix:
+					scaling = (1 - l[finals.index('@')])
+					l = [v*scaling for k,v in dict(zip(finals,l)).items() if (k != '@')]
+
+			vtm = VTMatrix(initials, finals, transfersMatrix)
+			appendDictInDict(allReturning, label, 'matrix_{0}'.format(label), vtm)
+		
+
+
+		tt = h['totals']
+		externalAbs = tt['externalAbs']
+		scores = {}
+
+		for tk,tv in tt['list'].items():
+
+			d = dict(zip(candidates, [float(x)/100 for x in tv]))
+			
+			#Handle externalAbs (scale back the @)
+			if '@' in candidates and externalAbs:
+				scaling = (1 - d['@'])
+				d = {k2: v2*scaling if (k2 != '@') else d['@'] for k2,v2 in d.items()}
+			
+			scores[tk] = ResultPerc.fromVotelessDict(tk, d)
+			
+		appendDictInDict(allReturning, label, 'scores_{0}'.format(label), scores)
+	
+
+
+	return allReturning
