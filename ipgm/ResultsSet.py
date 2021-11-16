@@ -25,7 +25,7 @@ class ResultsSet:
 			return running
 		else:
 			if quiet: return None
-			else: raise Exception('Collectivite {0} not found'.format(name))
+			else: raise Exception('Subdivision {0} not found'.format(name))
 
 	#Returns list of all components
 	def getAll(self, listNames: list) -> list:

@@ -13,7 +13,7 @@ class Result:
 
 	@classmethod
 	def fromLists(self, name: str, candidates: list, results: list):
-		return Result(name, dict(zip(candidates, [float(x) for x in results])))
+		return Result(name, dict(zip(candidates, [toFloat(x) for x in results])))
 
 	@classmethod
 	def fromDict(self, name: str, results: dict):
