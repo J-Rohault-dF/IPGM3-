@@ -117,3 +117,7 @@ def getRandomAlphanumeric(k: int):
 def toFloat(s: str) -> float:
 	if s == '': return 0
 	else: return float(s)
+
+def toFloatOrStr(s: str) -> float|str:
+	try: return toFloat(s)
+	except: return s

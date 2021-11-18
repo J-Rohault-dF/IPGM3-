@@ -5,6 +5,7 @@ import subprocess
 from ipgm.ResultsSet import *
 from mapdrawer.colors import *
 from mapdrawer.seatsdrawer import *
+from mapdrawer.keydrawer import *
 
 def getMaxK(d):
 	k = ''
@@ -63,17 +64,37 @@ def mapColorerProbs(probs: list[dict[str, float]], allDivs: AllDivs, partiesColo
 		if i.get('id') in allDivs.allDivs:
 			i.set('style', i.get('style').replace('000000', getWinningColorP(probs[i.get('id')], partiesColors)))
 
+def mapRinger(xmlL: etree.Element, xmlD: etree.Element, percs: dict[str, dict[str, float]], divsData: dict[str, dict[str, str|int]], outerRadius: float, innerRadius: float, partiesColors: dict[str, Color]):
+	rings = etree.Element('{http://www.w3.org/2000/svg}g', attrib={'id': 'rings-{gid}'.format(gid=getRandomAlphanumeric(4))})
+
+	for dk, dv in percs.items():
+		dd = divsData[dk]
+
+		parties = list(dv.keys())
+		scores = [dv[x] for x in parties]
+		colors = [partiesColors[x] for x in parties]
+
+		rD, rR = drawPercRing((dd['cx'], dd['cy']), outerRadius, innerRadius, scores, colors)
+		rBm, rB = drawPercRingBehind((dd['cx'], dd['cy']), innerRadius, outerRadius, (1/12))
+		rR.insert(0, rB)
+
+		rings.append(rR)
+		xmlD.extend(rD)
+		xmlD.extend(rBm)
+
+	xmlL.append(rings)
 
 
-def exportMap(res: ResultsSet, mapSrc: str, mapTarget: str, allDivs: AllDivs, partiesColors: dict[str, Color]):
+def exportMap(res: ResultsSet, mapSrc: str, mapTarget: str, allDivs: AllDivs, partiesColors: dict[str, Color], doRings: bool = False, ringsData: dict[str, dict[str, str|int]] = {}, outerRadius: float = 0, innerRadius: float = 0):
 	mapTarget = 'exports/'+mapTarget
 
 	with open(mapSrc, 'r', encoding='utf8') as originalMap:
 		xmlR = etree.parse(originalMap)
 	
-	#Third, color in the final map
-	#For each path:
 	mapColorerPercs(res, allDivs, partiesColors, xmlR)
+
+	if doRings:
+		mapRinger(xmlR.getroot().find('{http://www.w3.org/2000/svg}g'), xmlR.getroot().find('{http://www.w3.org/2000/svg}defs'), {x.name: x.toPercentages().removedAbs().results for x in res.listOfResults}, ringsData, outerRadius, innerRadius, partiesColors)
 	
 	xmlR.write(mapTarget)
 	
@@ -83,7 +104,6 @@ def exportMap(res: ResultsSet, mapSrc: str, mapTarget: str, allDivs: AllDivs, pa
 
 	#print('Opening map...')
 	#os.system(mapTarget.replace('.svg','.png').replace('/','\\'))
-
 
 
 
@@ -93,14 +113,11 @@ def exportMapProbs(probs: list[dict[str, float]], mapSrc: str, mapTarget: str, a
 	with open(mapSrc, 'r', encoding='utf8') as originalMap:
 		xmlR = etree.parse(originalMap)
 	
-	#Third, color in the final map
-	#For each path:
 	mapColorerProbs(probs, allDivs, partiesColors, xmlR)
 	
 	xmlR.write(mapTarget)
 	
 	print('inkscape --export-type=png {0}'.format(mapTarget))
-
 	t = subprocess.run(['inkscape','--export-type=png','{0}'.format(mapTarget)], shell=True)
 
 	#print('Opening map...')
@@ -108,7 +125,7 @@ def exportMapProbs(probs: list[dict[str, float]], mapSrc: str, mapTarget: str, a
 
 
 
-def exportSeatsMap(res: ResultsSet, seatsParties: dict[str, dict[str, int]], seatsData: dict[str, dict[str, any]], mapSrc: str, mapTarget: str, allDivs: AllDivs, partiesColors: dict, scale: float = 1):
+def exportSeatsMap(res: ResultsSet, seatsParties: dict[str, dict[str, int]], divsData: dict[str, dict[str, any]], mapSrc: str, mapTarget: str, allDivs: AllDivs, partiesColors: dict, scale: float = 1):
 	mapTarget = 'exports/'+mapTarget
 
 	with open(mapSrc, 'r', encoding='utf8') as originalMap:
@@ -117,13 +134,13 @@ def exportSeatsMap(res: ResultsSet, seatsParties: dict[str, dict[str, int]], sea
 	#Color in the map
 	mapColorerPercs(res, allDivs, partiesColors, xmlR)
 
-	#Put the seats & color them
+	#Put the seats & color them - TODO: Put this into its own function
 	group = etree.Element('{http://www.w3.org/2000/svg}g', attrib={'id': 'allSeats-{id}'.format(id=getRandomAlphanumeric(4))})
 	for i in xmlR.getroot().find('{http://www.w3.org/2000/svg}g'):
 		#If id is in the deps list, put the seats
 		if i.get('id') in seatsParties.keys():
 			divName = i.get('id')
-			c = drawCircles(seatsData[divName], divName.replace(' ','-'), 2.2777781*scale, 0.569444*scale, 5.52238*scale)
+			c = drawCircles(divsData[divName], divName.replace(' ','-'), 2.2777781*scale, 0.569444*scale, 5.52238*scale)
 			colorsSeats = [(partiesColors[k], v) for k,v in seatsParties[divName].items()]
 			c = colorCircles(c, divName, colorsSeats)
 			group.append(c)
@@ -133,7 +150,6 @@ def exportSeatsMap(res: ResultsSet, seatsParties: dict[str, dict[str, int]], sea
 	xmlR.write(mapTarget)
 	
 	print('inkscape --export-type=png {0}'.format(mapTarget))
-	
 	t = subprocess.run(['inkscape','--export-type=png','{0}'.format(mapTarget)], shell=True)
 	
 	#print('Opening map...')

@@ -3,11 +3,11 @@ from typing import Dict
 from ipgm.utils import *
 
 class ResultPerc:
-	name = ''
-	results = {}
-	totalVotes = None
+	name: str = ''
+	results: dict[str, float] = {}
+	totalVotes: float|None = None
 
-	def __init__(self, name: str, resDict: dict, totalVotes: float):
+	def __init__(self, name: str, resDict: dict[str, float], totalVotes: float|None):
 		self.name = name
 		if totalVotes != None:
 			self.results = {k: v/sum(resDict.values()) for k,v in resDict.items()}
