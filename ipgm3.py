@@ -10,30 +10,43 @@ from mapdrawer.mapper import *
 
 
 partiesColors = {
-'Jean-Luc Mélenchon': Color('#cc2443'),
-'Yannick Jadot': Color('#00c000'),
-'Anne Hidalgo': Color('#ff8080'),
-'Emmanuel Macron': Color('#ffeb00'),
-'Xavier Bertrand': Color('#0066cc'), #LR candidate
-'Valérie Pécresse': Color('#0066cc'), #LR candidate
-'Michel Barnier': Color('#0066cc'), #LR candidate
-'Éric Ciotti': Color('#0066cc'), #LR candidate
-'Philippe Juvin': Color('#0066cc'), #LR candidate
-'Marine Le Pen': Color('#627cad'), #not same as wp
-'Éric Zemmour': Color('#d99536'),
+	'Jean-Luc Mélenchon': Color('#cc2443'),
+	'Yannick Jadot': Color('#00c000'),
+	'Anne Hidalgo': Color('#ff8080'),
+	'Emmanuel Macron': Color('#ffeb00'),
+	'Xavier Bertrand': Color('#0066cc'), #LR candidate
+	'Valérie Pécresse': Color('#0066cc'), #LR candidate
+	'Michel Barnier': Color('#0066cc'), #LR candidate
+	'Éric Ciotti': Color('#0066cc'), #LR candidate
+	'Philippe Juvin': Color('#0066cc'), #LR candidate
+	'Marine Le Pen': Color('#627cad'), #not same as wp
+	'Éric Zemmour': Color('#d99536'),
 
-'François Fillon': Color('#0066cc'),
-'Benoît Hamon': Color('#ff8080'),
-'Nicolas Dupont-Aignan': Color('#8040c0'),
-'Jean Lassalle': Color('#adc1fd'),
-'Philippe Poutou': Color('#bb0000'),
-'François Asselineau': Color('#118088'),
-'Nathalie Arthaud': Color('#8e2f2f'),
-'Jacques Cheminade': Color('#eedd00'), #to replace with orange
+	'François Fillon': Color('#0066cc'),
+	'Benoît Hamon': Color('#ff8080'),
+	'Nicolas Dupont-Aignan': Color('#8040c0'),
+	'Jean Lassalle': Color('#adc1fd'),
+	'Philippe Poutou': Color('#bb0000'),
+	'François Asselineau': Color('#118088'),
+	'Nathalie Arthaud': Color('#8e2f2f'),
+	'Jacques Cheminade': Color('#eedd00'), #to replace with orange
 
-'Approuve': Color('#82bf40'),
-'Désapprouve': Color('#bf409d'),
+	'Arnaud Montebourg': Color('#cc6666'),
+	'Fabien Roussel': Color('#dd0000'),
+	'Jean-Christophe Lagarde': Color('#00ffff'),
+	'Jean-Frédéric Poisson': Color('#0000ff'),
+	'Florian Philippot': Color('#404040'),
+
+	'Approuve': Color('#82bf40'),
+	'Désapprouve': Color('#bf409d'),
 }
+
+
+#Get divs data
+with open('data/rings_fr.csv','r',encoding='utf8') as seatsDataFile:
+	ringsDataTemp = [y.split(';') for y in [x for x in seatsDataFile.read().split('\n')]]
+	ringsData = {x[0]: dict(zip(ringsDataTemp[0][1:], [toFloatOrStr(y) for y in x[1:]])) for x in ringsDataTemp[1:]}
+
 
 
 
@@ -48,6 +61,8 @@ mx = importMatrices('data/pollDefs/Harris_20211108.polld')
 doExportTxt = True
 doExportMap = True
 doExportCsv = True
+
+doAddRings  = True
 
 allRounds = {}
 allTexts = []
@@ -83,7 +98,7 @@ for hk, hv in mx.items():
 
 	#Export and map
 	if doExportCsv: saveDataTable('exports/{h}.csv'.format(h=hk), r)
-	if doExportMap: exportMap(r, 'data/basemap_collectivites.svg', '{h}.svg'.format(h=hk), allDivs=allDivs, partiesColors=partiesColors)
+	if doExportMap: exportMap(r, 'data/basemap_collectivites.svg', '{h}.svg'.format(h=hk), allDivs=allDivs, partiesColors=partiesColors, doRings=doAddRings, ringsData=ringsData, outerRadius=(5*10), innerRadius=(3*10))
 	#if doExportMap: exportMap(r, 'data/basemap_depts.svg', '{h}.svg'.format(h=hk), allDivs=allDivs, partiesColors=partiesColors)
 
 if doExportTxt:
