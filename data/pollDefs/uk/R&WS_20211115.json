@@ -1,0 +1,246 @@
+{
+    "pollFirm": "Redfield & Wilton Strategies",
+    "date": "2021-11-15",
+    "sampleSize": 2000,
+    
+    "hypotheses": [
+        {
+            "label": "1_GE",
+            "candidates": ["Conservative", "Labour", "Liberal Democrats", "SNP", "Green", "Reform", "Plaid Cymru", "Others"],
+            "matrices": [
+                {
+                    "original": "2019GE",
+                    "externalAbs": false,
+                    "vtm": {
+                        "Conservative":      [83, 7, 3, 0, 1, 5, 0, 1],
+                        "Labour":            [2, 89, 2, 1, 5, 1, 1, 0],
+                        "SNP":               [1, 1, 1, 91, 2, 5, 0, 0],
+                        "Liberal Democrats": [3, 23, 66, 0, 5, 2, 0, 2],
+                        "@":                 [18, 47, 15, 4, 5, 7, 1, 3]
+                    }
+                }
+            ],
+            "totals": {
+                "externalAbs": false,
+                "list": {
+                    "Great Britain":                   [36, 37, 10, 4, 5, 4, 1, 2],
+                    "South East England Region":       [43, 31, 14, 0, 7, 4, 0, 2],
+                    "Greater London Region":           [27, 49, 12, 0, 5, 5, 0, 2],
+                    "South West England Region":       [46, 25, 17, 0, 4, 3, 0, 5],
+                    "West Midlands Region":            [39, 42, 11, 0, 5, 3, 0, 1],
+                    "East Midlands Region":            [48, 35, 4, 0, 8, 3, 0, 1],
+                    "East of England Region":          [42, 37, 6, 0, 5, 9, 0, 0],
+                    "North East England Region":       [28, 46, 8, 0, 4, 2, 0, 1],
+                    "North West England Region":       [39, 46, 8, 0, 4, 2, 0, 1],
+                    "Yorkshire and the Humber Region": [31, 47, 9, 0, 7, 4, 0, 2],
+                    "Scotland":                        [24, 17, 10, 41, 4, 5, 0, 1],
+                    "Wales":                           [30, 42, 7, 0, 4, 4, 11, 0]
+                }
+            }
+        },
+        {
+            "label": "2_Johnson_Starmer",
+            "candidates": ["Boris Johnson", "@", "Keir Starmer"],
+            "matrices": [
+                {
+                    "original": "GE",
+                    "externalAbs": false,
+                    "vtm": {
+                        "Conservative":      [71, 21, 9],
+                        "Labour":            [17, 24, 59],
+                        "SNP":               [11, 55, 33],
+                        "Liberal Democrats": [19, 32, 49],
+                        "@":                 [33, 44, 23]
+                    }
+                }
+            ],
+            "totals": {
+                "externalAbs": false,
+                "list": {
+                    "Great Britain":                   [40, 28, 31],
+                    "South East England Region":       [44, 28, 28],
+                    "Greater London Region":           [42, 29, 29],
+                    "South West England Region":       [46, 26, 28],
+                    "West Midlands Region":            [38, 26, 36],
+                    "East Midlands Region":            [47, 23, 30],
+                    "East of England Region":          [45, 28, 27],
+                    "North East England Region":       [41, 26, 33],
+                    "North West England Region":       [40, 31, 29],
+                    "Yorkshire and the Humber Region": [39, 40, 34],
+                    "Scotland":                        [26, 40, 34],
+                    "Wales":                           [32, 26, 43]
+                }
+            }
+        },
+        {
+            "label": "2_Johnson_Burnham",
+            "candidates": ["Boris Johnson", "@", "Andy Burnham"],
+            "matrices": [
+                {
+                    "original": "GE",
+                    "externalAbs": false,
+                    "vtm": {
+                        "Conservative":      [72, 16, 12],
+                        "Labour":            [25, 28, 46],
+                        "SNP":               [10, 46, 43],
+                        "Liberal Democrats": [18, 30, 53],
+                        "@":                 [35, 45, 20]
+                    }
+                }
+            ],
+            "totals": {
+                "externalAbs": false,
+                "list": {
+                    "Great Britain":                   [44, 28, 29],
+                    "South East England Region":       [51, 29, 20],
+                    "Greater London Region":           [46, 27, 27],
+                    "South West England Region":       [46, 23, 31],
+                    "West Midlands Region":            [48, 26, 26],
+                    "East Midlands Region":            [49, 21, 30],
+                    "East of England Region":          [48, 26, 26],
+                    "North East England Region":       [43, 29, 28],
+                    "North West England Region":       [36, 23, 41],
+                    "Yorkshire and the Humber Region": [43, 32, 25],
+                    "Scotland":                        [27, 34, 39],
+                    "Wales":                           [37, 35, 28]
+                }
+            }
+        },
+        {
+            "label": "2_Johnson_Khan",
+            "candidates": ["Boris Johnson", "@", "Sadiq Khan"],
+            "matrices": [
+                {
+                    "original": "GE",
+                    "externalAbs": false,
+                    "vtm": {
+                        "Conservative":      [76, 18, 6],
+                        "Labour":            [25, 36, 39],
+                        "SNP":               [11, 51, 38],
+                        "Liberal Democrats": [21, 45, 34],
+                        "@":                 [39, 51, 10]
+                    }
+                }
+            ],
+            "totals": {
+                "externalAbs": false,
+                "list": {
+                    "Great Britain":                   [46, 33, 20],
+                    "South East England Region":       [51, 31, 18],
+                    "Greater London Region":           [48, 28, 24],
+                    "South West England Region":       [48, 31, 21],
+                    "West Midlands Region":            [50, 31, 19],
+                    "East Midlands Region":            [49, 37, 14],
+                    "East of England Region":          [46, 32, 22],
+                    "North East England Region":       [45, 29, 26],
+                    "North West England Region":       [47, 36, 17],
+                    "Yorkshire and the Humber Region": [50, 30, 20],
+                    "Scotland":                        [31, 41, 28],
+                    "Wales":                           [39, 43, 18]
+                }
+            }
+        },
+        {
+            "label": "2_Johnson_Rayner",
+            "candidates": ["Boris Johnson", "@", "Angela Rayner"],
+            "matrices": [
+                {
+                    "original": "GE",
+                    "externalAbs": false,
+                    "vtm": {
+                        "Conservative":      [78, 16, 6],
+                        "Labour":            [28, 36, 36],
+                        "SNP":               [14, 62, 24],
+                        "Liberal Democrats": [20, 46, 33],
+                        "@":                 [33, 54, 14]
+                    }
+                }
+            ],
+            "totals": {
+                "externalAbs": false,
+                "list": {
+                    "Great Britain":                   [47, 33, 20],
+                    "South East England Region":       [51, 33, 16],
+                    "Greater London Region":           [49, 30, 21],
+                    "South West England Region":       [52, 29, 19],
+                    "West Midlands Region":            [48, 33, 20],
+                    "East Midlands Region":            [50, 30, 21],
+                    "East of England Region":          [52, 29, 19],
+                    "North East England Region":       [45, 31, 23],
+                    "North West England Region":       [44, 34, 22],
+                    "Yorkshire and the Humber Region": [50, 32, 18],
+                    "Scotland":                        [31, 48, 21],
+                    "Wales":                           [38, 41, 21]
+                }
+            }
+        },
+        {
+            "label": "2_Johnson_Sunak",
+            "candidates": ["Boris Johnson", "@", "Rishi Sunak"],
+            "matrices": [
+                {
+                    "original": "GE",
+                    "externalAbs": false,
+                    "vtm": {
+                        "Conservative":      [55, 16, 28],
+                        "Labour":            [21, 40, 40],
+                        "SNP":               [8, 62, 30],
+                        "Liberal Democrats": [17, 30, 53],
+                        "@":                 [31, 45, 24]
+                    }
+                }
+            ],
+            "totals": {
+                "externalAbs": false,
+                "list": {
+                    "Great Britain":                   [35, 32, 33],
+                    "South East England Region":       [38, 29, 33],
+                    "Greater London Region":           [41, 31, 28],
+                    "South West England Region":       [37, 30, 33],
+                    "West Midlands Region":            [39, 30, 31],
+                    "East Midlands Region":            [32, 35, 34],
+                    "East of England Region":          [33, 29, 38],
+                    "North East England Region":       [36, 24, 40],
+                    "North West England Region":       [38, 33, 29],
+                    "Yorkshire and the Humber Region": [34, 30, 35],
+                    "Scotland":                        [19, 46, 35],
+                    "Wales":                           [31, 29, 40]
+                }
+            }
+        },
+        {
+            "label": "2_Starmer_Sunak",
+            "candidates": ["Keir Starmer", "@", "Rishi Sunak"],
+            "matrices": [
+                {
+                    "original": "GE",
+                    "externalAbs": false,
+                    "vtm": {
+                        "Conservative":      [12, 21, 68],
+                        "Labour":            [60, 23, 17],
+                        "SNP":               [34, 45, 21],
+                        "Liberal Democrats": [48, 27, 25],
+                        "@":                 [26, 54, 20]
+                    }
+                }
+            ],
+            "totals": {
+                "externalAbs": false,
+                "list": {
+                    "Great Britain":                   [33, 29, 38],
+                    "South East England Region":       [27, 30, 43],
+                    "Greater London Region":           [33, 36, 31],
+                    "South West England Region":       [32, 28, 40],
+                    "West Midlands Region":            [38, 25, 37],
+                    "East Midlands Region":            [29, 27, 44],
+                    "East of England Region":          [29, 26, 45],
+                    "North East England Region":       [35, 21, 44],
+                    "North West England Region":       [33, 34, 33],
+                    "Yorkshire and the Humber Region": [38, 24, 38],
+                    "Scotland":                        [31, 35, 35],
+                    "Wales":                           [40, 22, 37]
+                }
+            }
+        }
+    ]
+}

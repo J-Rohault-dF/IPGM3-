@@ -1,0 +1,760 @@
+Amber Valley
+Bolsover
+Chesterfield
+Derby North
+Derby South
+Derbyshire Dales
+Erewash
+High Peak
+Mid Derbyshire
+North East Derbyshire
+South Derbyshire
+Bosworth
+Charnwood
+Harborough
+Leicester East
+Leicester South
+Leicester West
+Loughborough
+North West Leicestershire
+Rutland and Melton
+South Leicestershire
+Boston and Skegness
+Gainsborough
+Grantham and Stamford
+Lincoln
+Louth and Horncastle
+Sleaford and North Hykeham
+South Holland and The Deepings
+Corby
+Daventry
+Kettering
+Northampton North
+Northampton South
+South Northamptonshire
+Wellingborough
+Ashfield
+Bassetlaw
+Broxtowe
+Gedling
+Mansfield
+Newark
+Nottingham East
+Nottingham North
+Nottingham South
+Rushcliffe
+Sherwood
+Bedford
+Luton North
+Luton South
+Mid Bedfordshire
+North East Bedfordshire
+South West Bedfordshire
+Cambridge
+Huntingdon
+North East Cambridgeshire
+North West Cambridgeshire
+Peterborough
+South Cambridgeshire
+South East Cambridgeshire
+Basildon and Billericay
+Braintree
+Brentwood and Ongar
+Castle Point
+Chelmsford
+Clacton
+Colchester
+Epping Forest
+Harlow
+Harwich and North Essex
+Maldon
+Rayleigh and Wickford
+Rochford and Southend East
+Saffron Walden
+South Basildon and East Thurrock
+Southend West
+Thurrock
+Witham
+Broxbourne
+Hemel Hempstead
+Hertford and Stortford
+Hertsmere
+Hitchin and Harpenden
+North East Hertfordshire
+South West Hertfordshire
+St Albans
+Stevenage
+Watford
+Welwyn Hatfield
+Broadland
+Great Yarmouth
+Mid Norfolk
+North Norfolk
+North West Norfolk
+Norwich North
+Norwich South
+South Norfolk
+South West Norfolk
+Bury St Edmunds
+Central Suffolk and North Ipswich
+Ipswich
+South Suffolk
+Suffolk Coastal
+Waveney
+West Suffolk
+Barking
+Battersea
+Beckenham
+Bermondsey and Old Southwark
+Bethnal Green and Bow
+Bexleyheath and Crayford
+Brent Central
+Brent North
+Brentford and Isleworth
+Bromley and Chislehurst
+Camberwell and Peckham
+Carshalton and Wallington
+Chelsea and Fulham
+Chingford and Woodford Green
+Chipping Barnet
+Cities of London and Westminster
+Croydon Central
+Croydon North
+Croydon South
+Dagenham and Rainham
+Dulwich and West Norwood
+Ealing Central and Acton
+Ealing North
+Ealing Southall
+East Ham
+Edmonton
+Eltham
+Enfield North
+Enfield Southgate
+Erith and Thamesmead
+Feltham and Heston
+Finchley and Golders Green
+Greenwich and Woolwich
+Hackney North and Stoke Newington
+Hackney South and Shoreditch
+Hammersmith
+Hampstead and Kilburn
+Harrow East
+Harrow West
+Hayes and Harlington
+Hendon
+Holborn and St Pancras
+Hornchurch and Upminster
+Hornsey and Wood Green
+Ilford North
+Ilford South
+Islington North
+Islington South and Finsbury
+Kensington
+Kingston and Surbiton
+Lewisham Deptford
+Lewisham East
+Lewisham West and Penge
+Leyton and Wanstead
+Mitcham and Morden
+Old Bexley and Sidcup
+Orpington
+Poplar and Limehouse
+Putney
+Richmond Park
+Romford
+Ruislip, Northwood and Pinner
+Streatham
+Sutton and Cheam
+Tooting
+Tottenham
+Twickenham
+Uxbridge and South Ruislip
+Vauxhall
+Walthamstow
+West Ham
+Westminster North
+Wimbledon
+Hartlepool
+Middlesbrough
+Middlesbrough South and East Cleveland
+Redcar
+Stockton North
+Stockton South
+Bishop Auckland
+City of Durham
+Darlington
+Easington
+North Durham
+North West Durham
+Sedgefield
+Berwick-upon-Tweed
+Blyth Valley
+Hexham
+Wansbeck
+Blaydon
+Gateshead
+Houghton and Sunderland South
+Jarrow
+Newcastle upon Tyne Central
+Newcastle upon Tyne East
+Newcastle upon Tyne North
+North Tyneside
+South Shields
+Sunderland Central
+Tynemouth
+Washington and Sunderland West
+City of Chester
+Congleton
+Crewe and Nantwich
+Eddisbury
+Ellesmere Port and Neston
+Halton
+Macclesfield
+Tatton
+Warrington North
+Warrington South
+Weaver Vale
+Barrow and Furness
+Carlisle
+Copeland
+Penrith and The Border
+Westmorland and Lonsdale
+Workington
+Altrincham and Sale West
+Ashton-under-Lyne
+Blackley and Broughton
+Bolton North East
+Bolton South East
+Bolton West
+Bury North
+Bury South
+Cheadle
+Denton and Reddish
+Hazel Grove
+Heywood and Middleton
+Leigh
+Makerfield
+Manchester Central
+Manchester Gorton
+Manchester Withington
+Oldham East and Saddleworth
+Oldham West and Royton
+Rochdale
+Salford and Eccles
+Stalybridge and Hyde
+Stockport
+Stretford and Urmston
+Wigan
+Worsley and Eccles South
+Wythenshawe and Sale East
+Blackburn
+Blackpool North and Cleveleys
+Blackpool South
+Burnley
+Chorley
+Fylde
+Hyndburn
+Lancaster and Fleetwood
+Morecambe and Lunesdale
+Pendle
+Preston
+Ribble Valley
+Rossendale and Darwen
+South Ribble
+West Lancashire
+Wyre and Preston North
+Birkenhead
+Bootle
+Garston and Halewood
+Knowsley
+Liverpool Riverside
+Liverpool Walton
+Liverpool Wavertree
+Liverpool West Derby
+Sefton Central
+Southport
+St Helens North
+St Helens South and Whiston
+Wallasey
+Wirral South
+Wirral West
+Bracknell
+Maidenhead
+Newbury
+Reading East
+Reading West
+Slough
+Windsor
+Wokingham
+Aylesbury
+Beaconsfield
+Buckingham
+Chesham and Amersham
+Milton Keynes North
+Milton Keynes South
+Wycombe
+Bexhill and Battle
+Brighton Kemptown
+Brighton Pavilion
+Eastbourne
+Hastings and Rye
+Hove
+Lewes
+Wealden
+Aldershot
+Basingstoke
+East Hampshire
+Eastleigh
+Fareham
+Gosport
+Havant
+Meon Valley
+New Forest East
+New Forest West
+North East Hampshire
+North West Hampshire
+Portsmouth North
+Portsmouth South
+Romsey and Southampton North
+Southampton Itchen
+Southampton Test
+Winchester
+Isle of Wight
+Ashford
+Canterbury
+Chatham and Aylesford
+Dartford
+Dover
+Faversham and Mid Kent
+Folkestone and Hythe
+Gillingham and Rainham
+Gravesham
+Maidstone and The Weald
+North Thanet
+Rochester and Strood
+Sevenoaks
+Sittingbourne and Sheppey
+South Thanet
+Tonbridge and Malling
+Tunbridge Wells
+Banbury
+Henley
+Oxford East
+Oxford West and Abingdon
+Wantage
+Witney
+East Surrey
+Epsom and Ewell
+Esher and Walton
+Guildford
+Mole Valley
+Reigate
+Runnymede and Weybridge
+South West Surrey
+Spelthorne
+Surrey Heath
+Woking
+Arundel and South Downs
+Bognor Regis and Littlehampton
+Chichester
+Crawley
+East Worthing and Shoreham
+Horsham
+Mid Sussex
+Worthing West
+Bath
+Bristol East
+Bristol North West
+Bristol South
+Bristol West
+Filton and Bradley Stoke
+Kingswood
+North East Somerset
+North Somerset
+Thornbury and Yate
+Weston-super-Mare
+Camborne and Redruth
+North Cornwall
+South East Cornwall
+St Austell and Newquay
+St Ives
+Truro and Falmouth
+Central Devon
+East Devon
+Exeter
+Newton Abbot
+North Devon
+Plymouth Moor View
+Plymouth Sutton and Devonport
+South West Devon
+Tiverton and Honiton
+Torbay
+Torridge and West Devon
+Totnes
+Bournemouth East
+Bournemouth West
+Christchurch
+Mid Dorset and North Poole
+North Dorset
+Poole
+South Dorset
+West Dorset
+Cheltenham
+Forest of Dean
+Gloucester
+Stroud
+Tewkesbury
+The Cotswolds
+Bridgwater and West Somerset
+Somerton and Frome
+Taunton Deane
+Wells
+Yeovil
+Chippenham
+Devizes
+North Swindon
+North Wiltshire
+Salisbury
+South Swindon
+South West Wiltshire
+Bromsgrove
+Hereford and South Herefordshire
+Mid Worcestershire
+North Herefordshire
+Redditch
+West Worcestershire
+Worcester
+Wyre Forest
+Ludlow
+North Shropshire
+Shrewsbury and Atcham
+Telford
+The Wrekin
+Burton
+Cannock Chase
+Lichfield
+Newcastle-under-Lyme
+South Staffordshire
+Stafford
+Staffordshire Moorlands
+Stoke-on-Trent Central
+Stoke-on-Trent North
+Stoke-on-Trent South
+Stone
+Tamworth
+Kenilworth and Southam
+North Warwickshire
+Nuneaton
+Rugby
+Stratford-on-Avon
+Warwick and Leamington
+Aldridge-Brownhills
+Birmingham Edgbaston
+Birmingham Erdington
+Birmingham Hall Green
+Birmingham Hodge Hill
+Birmingham Ladywood
+Birmingham Northfield
+Birmingham Perry Barr
+Birmingham Selly Oak
+Birmingham Yardley
+Coventry North East
+Coventry North West
+Coventry South
+Dudley North
+Dudley South
+Halesowen and Rowley Regis
+Meriden
+Solihull
+Stourbridge
+Sutton Coldfield
+Walsall North
+Walsall South
+Warley
+West Bromwich East
+West Bromwich West
+Wolverhampton North East
+Wolverhampton South East
+Wolverhampton South West
+Beverley and Holderness
+Brigg and Goole
+Cleethorpes
+East Yorkshire
+Great Grimsby
+Haltemprice and Howden
+Kingston upon Hull East
+Kingston upon Hull North
+Kingston upon Hull West and Hessle
+Scunthorpe
+Harrogate and Knaresborough
+Richmond (Yorks)
+Scarborough and Whitby
+Selby and Ainsty
+Skipton and Ripon
+Thirsk and Malton
+York Central
+York Outer
+Barnsley Central
+Barnsley East
+Don Valley
+Doncaster Central
+Doncaster North
+Penistone and Stocksbridge
+Rother Valley
+Rotherham
+Sheffield Brightside and Hillsborough
+Sheffield Central
+Sheffield Hallam
+Sheffield Heeley
+Sheffield South East
+Wentworth and Dearne
+Batley and Spen
+Bradford East
+Bradford South
+Bradford West
+Calder Valley
+Colne Valley
+Dewsbury
+Elmet and Rothwell
+Halifax
+Hemsworth
+Huddersfield
+Keighley
+Leeds Central
+Leeds East
+Leeds North East
+Leeds North West
+Leeds West
+Morley and Outwood
+Normanton, Pontefract and Castleford
+Pudsey
+Shipley
+Wakefield
+
+Aberavon
+Aberconwy
+Alyn and Deeside
+Arfon
+Blaenau Gwent
+Brecon and Radnorshire
+Bridgend
+Caerphilly
+Cardiff Central
+Cardiff North
+Cardiff South and Penarth
+Cardiff West
+Carmarthen East and Dinefwr
+Carmarthen West and South Pembrokeshire
+Ceredigion
+Clwyd South
+Clwyd West
+Cynon Valley
+Delyn
+Dwyfor Meirionnydd
+Gower
+Islwyn
+Llanelli
+Merthyr Tydfil and Rhymney
+Monmouth
+Montgomeryshire
+Neath
+Newport East
+Newport West
+Ogmore
+Pontypridd
+Preseli Pembrokeshire
+Rhondda
+Swansea East
+Swansea West
+Torfaen
+Vale of Clwyd
+Vale of Glamorgan
+Wrexham
+Ynys Môn
+
+Aberdeen North
+Aberdeen South
+Airdrie and Shotts
+Angus
+Argyll and Bute
+Ayr, Carrick and Cumnock
+Banff and Buchan
+Berwickshire, Roxburgh and Selkirk
+Caithness, Sutherland and Easter Ross
+Central Ayrshire
+Coatbridge, Chryston and Bellshill
+Cumbernauld, Kilsyth and Kirkintilloch East
+Dumfries and Galloway
+Dumfriesshire, Clydesdale and Tweeddale
+Dundee East
+Dundee West
+Dunfermline and West Fife
+East Dunbartonshire
+East Kilbride, Strathaven and Lesmahagow
+East Lothian
+East Renfrewshire
+Edinburgh East
+Edinburgh North and Leith
+Edinburgh South
+Edinburgh South West
+Edinburgh West
+Falkirk
+Glasgow Central
+Glasgow East
+Glasgow North
+Glasgow North East
+Glasgow North West
+Glasgow South
+Glasgow South West
+Glenrothes
+Gordon
+Inverclyde
+Inverness, Nairn, Badenoch and Strathspey
+Kilmarnock and Loudoun
+Kirkcaldy and Cowdenbeath
+Lanark and Hamilton East
+Linlithgow and East Falkirk
+Livingston
+Midlothian
+Moray
+Motherwell and Wishaw
+Na h-Eileanan an Iar
+North Ayrshire and Arran
+North East Fife
+Ochil and South Perthshire
+Orkney and Shetland
+Paisley and Renfrewshire North
+Paisley and Renfrewshire South
+Perth and North Perthshire
+Ross, Skye and Lochaber
+Rutherglen and Hamilton West
+Stirling
+West Aberdeenshire and Kincardine
+West Dunbartonshire
+
+Aberdeen and Aberdeenshire Counties:Aberdeen North;Aberdeen South;Banff and Buchan;Gordon;West Aberdeenshire and Kincardine
+Angus and Dundee Counties:Angus;Dundee East;Dundee West
+Argyll and Bute County:Argyll and Bute
+Edinburgh County:Edinburgh East;Edinburgh North and Leith;Edinburgh South;Edinburgh South West;Edinburgh West
+Clackmannanshire and Perth and Kinross Counties:Ochil and South Perthshire;Perth and North Perthshire
+Southern Scottish Counties:Berwickshire, Roxburgh and Selkirk;Dumfries and Galloway;Dumfriesshire, Clydesdale and Tweeddale;East Kilbride, Strathaven and Lesmahagow;Lanark and Hamilton East;Rutherglen and Hamilton West
+Ayrshire Counties:Ayr, Carrick and Cumnock;Central Ayrshire;Kilmarnock and Loudoun;North Ayrshire and Arran
+East Dunbartonshire and North Lanarkshire Counties:Airdrie and Shotts;Coatbridge, Chryston and Bellshill;Cumbernauld, Kilsyth and Kirkintilloch East;East Dunbartonshire;Motherwell and Wishaw
+East Lothian County:East Lothian
+East Renfrewshire County:East Renfrewshire
+Falkirk and West Lothian Counties:Falkirk;Linlithgow and East Falkirk;Livingston
+Fife County:Dunfermline and West Fife;Glenrothes;Kirkcaldy and Cowdenbeath;North East Fife
+Glasgow County:Glasgow Central;Glasgow East;Glasgow North;Glasgow North East;Glasgow North West;Glasgow South;Glasgow South West
+Highland County:Caithness, Sutherland and Easter Ross;Inverness, Nairn, Badenoch and Strathspey;Ross, Skye and Lochaber
+Inverclyde County:Inverclyde
+Midlothian County:Midlothian
+Moray County:Moray
+Na h-Eileanan Siar County:Na h-Eileanan an Iar
+Orkney Islands and Shetland Islands Counties:Orkney and Shetland
+Renfrewshire County:Paisley and Renfrewshire North;Paisley and Renfrewshire South
+Stirling County:Stirling
+West Dunbartonshire County:West Dunbartonshire
+
+Clwyd:Aberconwy;Alyn and Deeside;Clwyd South;Clwyd West;Delyn;Vale of Clwyd;Wrexham
+Dyfed:Carmarthen East and Dinefwr;Carmarthen West and South Pembrokeshire;Ceredigion;Llanelli;Preseli Pembrokeshire
+Gwent:Blaenau Gwent;Caerphilly;Islwyn;Monmouth;Newport East;Newport West;Torfaen
+Gwynedd:Arfon;Dwyfor Meirionnydd;Ynys Môn
+Mid Glamorgan:Bridgend;Cynon Valley;Merthyr Tydfil and Rhymney;Ogmore;Pontypridd;Rhondda
+Powys:Brecon and Radnorshire;Montgomeryshire
+South Glamorgan:Cardiff Central;Cardiff North;Cardiff South and Penarth;Cardiff West;Vale of Glamorgan
+West Glamorgan:Aberavon;Gower;Neath;Swansea East;Swansea West
+
+Cleveland County:Hartlepool;Middlesbrough;Middlesbrough South and East Cleveland;Redcar;Stockton North;Stockton South
+County Durham:Bishop Auckland;City of Durham;Darlington;Easington;North Durham;North West Durham;Sedgefield
+Northumberland County:Berwick-upon-Tweed;Blyth Valley;Hexham;Wansbeck
+Tyne and Wear County:Blaydon;Gateshead;Houghton and Sunderland South;Jarrow;Newcastle upon Tyne Central;Newcastle upon Tyne East;Newcastle upon Tyne North;North Tyneside;South Shields;Sunderland Central;Tynemouth;Washington and Sunderland West
+Cheshire County:City of Chester;Congleton;Crewe and Nantwich;Eddisbury;Ellesmere Port and Neston;Halton;Macclesfield;Tatton;Warrington North;Warrington South;Weaver Vale
+Cumbria County:Barrow and Furness;Carlisle;Copeland;Penrith and The Border;Westmorland and Lonsdale;Workington
+Greater Manchester County:Altrincham and Sale West;Ashton-under-Lyne;Blackley and Broughton;Bolton North East;Bolton South East;Bolton West;Bury North;Bury South;Cheadle;Denton and Reddish;Hazel Grove;Heywood and Middleton;Leigh;Makerfield;Manchester Central;Manchester Gorton;Manchester Withington;Oldham East and Saddleworth;Oldham West and Royton;Rochdale;Salford and Eccles;Stalybridge and Hyde;Stockport;Stretford and Urmston;Wigan;Worsley and Eccles South;Wythenshawe and Sale East
+Lancashire County:Blackburn;Blackpool North and Cleveleys;Blackpool South;Burnley;Chorley;Fylde;Hyndburn;Lancaster and Fleetwood;Morecambe and Lunesdale;Pendle;Preston;Ribble Valley;Rossendale and Darwen;South Ribble;West Lancashire;Wyre and Preston North
+Merseyside County:Birkenhead;Bootle;Garston and Halewood;Knowsley;Liverpool Riverside;Liverpool Walton;Liverpool Wavertree;Liverpool West Derby;Sefton Central;Southport;St Helens North;St Helens South and Whiston;Wallasey;Wirral South;Wirral West
+Humberside County:Beverley and Holderness;Brigg and Goole;Cleethorpes;East Yorkshire;Great Grimsby;Haltemprice and Howden;Kingston upon Hull East;Kingston upon Hull North;Kingston upon Hull West and Hessle;Scunthorpe
+North Yorkshire County:Harrogate and Knaresborough;Richmond (Yorks);Scarborough and Whitby;Selby and Ainsty;Skipton and Ripon;Thirsk and Malton;York Central;York Outer
+South Yorkshire County:Barnsley Central;Barnsley East;Don Valley;Doncaster Central;Doncaster North;Penistone and Stocksbridge;Rother Valley;Rotherham;Sheffield Brightside and Hillsborough;Sheffield Central;Sheffield Hallam;Sheffield Heeley;Sheffield South East;Wentworth and Dearne
+West Yorkshire County:Batley and Spen;Bradford East;Bradford South;Bradford West;Calder Valley;Colne Valley;Dewsbury;Elmet and Rothwell;Halifax;Hemsworth;Huddersfield;Keighley;Leeds Central;Leeds East;Leeds North East;Leeds North West;Leeds West;Morley and Outwood;Normanton, Pontefract and Castleford;Pudsey;Shipley;Wakefield
+Hereford and Worcester County:Herefordshire County;Worcestershire County
+Worcestershire County:Bromsgrove;Mid Worcestershire;Redditch;West Worcestershire;Worcester;Wyre Forest
+Herefordshire County:Hereford and South Herefordshire;North Herefordshire
+Shropshire County:Ludlow;North Shropshire;Shrewsbury and Atcham;Telford;The Wrekin
+Staffordshire County:Burton;Cannock Chase;Lichfield;Newcastle-under-Lyme;South Staffordshire;Stafford;Staffordshire Moorlands;Stoke-on-Trent Central;Stoke-on-Trent North;Stoke-on-Trent South;Stone;Tamworth
+Warwickshire County:Kenilworth and Southam;North Warwickshire;Nuneaton;Rugby;Stratford-on-Avon;Warwick and Leamington
+West Midlands County:Aldridge-Brownhills;Birmingham Edgbaston;Birmingham Erdington;Birmingham Hall Green;Birmingham Hodge Hill;Birmingham Ladywood;Birmingham Northfield;Birmingham Perry Barr;Birmingham Selly Oak;Birmingham Yardley;Coventry North East;Coventry North West;Coventry South;Dudley North;Dudley South;Halesowen and Rowley Regis;Meriden;Solihull;Stourbridge;Sutton Coldfield;Walsall North;Walsall South;Warley;West Bromwich East;West Bromwich West;Wolverhampton North East;Wolverhampton South East;Wolverhampton South West
+Derbyshire County:Amber Valley;Bolsover;Chesterfield;Derby North;Derby South;Derbyshire Dales;Erewash;High Peak;Mid Derbyshire;North East Derbyshire;South Derbyshire
+Leicestershire County:Bosworth;Charnwood;Harborough;Leicester East;Leicester South;Leicester West;Loughborough;North West Leicestershire;Rutland and Melton;South Leicestershire
+Lincolnshire County:Boston and Skegness;Gainsborough;Grantham and Stamford;Lincoln;Louth and Horncastle;Sleaford and North Hykeham;South Holland and The Deepings
+Northamptonshire County:Corby;Daventry;Kettering;Northampton North;Northampton South;South Northamptonshire;Wellingborough
+Nottinghamshire County:Ashfield;Bassetlaw;Broxtowe;Gedling;Mansfield;Newark;Nottingham East;Nottingham North;Nottingham South;Rushcliffe;Sherwood
+Avon County:Bath;Filton and Bradley Stoke;Kingswood;North East Somerset;North Somerset;Thornbury and Yate;Weston-super-Mare
+Bristol County:Bristol East;Bristol North West;Bristol South;Bristol West
+Cornwall County:Camborne and Redruth;North Cornwall;South East Cornwall;St Austell and Newquay;St Ives;Truro and Falmouth
+Devon County:Central Devon;East Devon;Exeter;Newton Abbot;North Devon;Plymouth Moor View;Plymouth Sutton and Devonport;South West Devon;Tiverton and Honiton;Torbay;Torridge and West Devon;Totnes
+Dorset County:Bournemouth East;Bournemouth West;Christchurch;Mid Dorset and North Poole;North Dorset;Poole;South Dorset;West Dorset
+Gloucestershire County:Cheltenham;Forest of Dean;Gloucester;Stroud;Tewkesbury;The Cotswolds
+Somerset County:Bridgwater and West Somerset;Somerton and Frome;Taunton Deane;Wells;Yeovil
+Wiltshire County:Chippenham;Devizes;North Swindon;North Wiltshire;Salisbury;South Swindon;South West Wiltshire
+Berkshire County:Bracknell;Maidenhead;Newbury;Reading East;Reading West;Slough;Windsor;Wokingham
+Buckinghamshire County:Aylesbury;Beaconsfield;Buckingham;Chesham and Amersham;Milton Keynes North;Milton Keynes South;Wycombe
+East Sussex County:Bexhill and Battle;Brighton Kemptown;Brighton Pavilion;Eastbourne;Hastings and Rye;Hove;Lewes;Wealden
+Hampshire County:Aldershot;Basingstoke;East Hampshire;Eastleigh;Fareham;Gosport;Havant;Meon Valley;New Forest East;New Forest West;North East Hampshire;North West Hampshire;Portsmouth North;Portsmouth South;Romsey and Southampton North;Southampton Itchen;Southampton Test;Winchester
+Isle of Wight County:Isle of Wight
+Kent County:Ashford;Canterbury;Chatham and Aylesford;Dartford;Dover;Faversham and Mid Kent;Folkestone and Hythe;Gillingham and Rainham;Gravesham;Maidstone and The Weald;North Thanet;Rochester and Strood;Sevenoaks;Sittingbourne and Sheppey;South Thanet;Tonbridge and Malling;Tunbridge Wells
+Oxfordshire County:Banbury;Henley;Oxford East;Oxford West and Abingdon;Wantage;Witney
+Surrey County:East Surrey;Epsom and Ewell;Esher and Walton;Guildford;Mole Valley;Reigate;Runnymede and Weybridge;South West Surrey;Spelthorne;Surrey Heath;Woking
+West Sussex County:Arundel and South Downs;Bognor Regis and Littlehampton;Chichester;Crawley;East Worthing and Shoreham;Horsham;Mid Sussex;Worthing West
+Bedfordshire County:Bedford;Luton North;Luton South;Mid Bedfordshire;North East Bedfordshire;South West Bedfordshire
+Cambridgeshire County:Cambridge;Huntingdon;North East Cambridgeshire;North West Cambridgeshire;Peterborough;South Cambridgeshire;South East Cambridgeshire
+Essex County:Basildon and Billericay;Braintree;Brentwood and Ongar;Castle Point;Chelmsford;Clacton;Colchester;Epping Forest;Harlow;Harwich and North Essex;Maldon;Rayleigh and Wickford;Rochford and Southend East;Saffron Walden;South Basildon and East Thurrock;Southend West;Thurrock;Witham
+Hertfordshire County:Broxbourne;Hemel Hempstead;Hertford and Stortford;Hertsmere;Hitchin and Harpenden;North East Hertfordshire;South West Hertfordshire;St Albans;Stevenage;Watford;Welwyn Hatfield
+Norfolk County:Broadland;Great Yarmouth;Mid Norfolk;North Norfolk;North West Norfolk;Norwich North;Norwich South;South Norfolk;South West Norfolk
+Suffolk County:Bury St Edmunds;Central Suffolk and North Ipswich;Ipswich;South Suffolk;Suffolk Coastal;Waveney;West Suffolk
+
+Borough of Barnet:Chipping Barnet;Finchley and Golders Green;Hendon
+Borough of Brent:Brent Central;Brent North
+Boroughs of Bromley and Lewisham:Beckenham;Bromley and Chislehurst;Lewisham Deptford;Lewisham East;Lewisham West and Penge;Orpington
+Borough of Camden:Hampstead and Kilburn;Holborn and St Pancras
+Boroughs of City of London and Westminster:Cities of London and Westminster;Westminster North
+Borough of Croydon:Croydon Central;Croydon North;Croydon South
+Borough of Ealing:Ealing Central and Acton;Ealing North;Ealing Southall
+Borough of Enfield:Edmonton;Enfield North;Enfield Southgate
+Boroughs of Greenwich and Bexley:Bexleyheath and Crayford;Eltham;Erith and Thamesmead;Greenwich and Woolwich;Old Bexley and Sidcup
+Borough of Hackney:Hackney North and Stoke Newington;Hackney South and Shoreditch
+Boroughs of Harrow and Hillingdon:Harrow East;Harrow West;Hayes and Harlington;Ruislip, Northwood and Pinner;Uxbridge and South Ruislip
+Borough of Haringey:Hornsey and Wood Green;Tottenham
+Boroughs of Havering and Barking and Dagenham:Barking;Dagenham and Rainham;Hornchurch and Upminster;Romford
+Borough of Hounslow:Brentford and Isleworth;Feltham and Heston
+Borough of Islington:Islington North;Islington South and Finsbury
+Boroughs of Kensington and Chelsea and Hammersmith and Fulham:Chelsea and Fulham;Hammersmith;Kensington
+Boroughs of Lambeth and Southwark:Bermondsey and Old Southwark;Camberwell and Peckham;Dulwich and West Norwood;Streatham;Vauxhall
+Borough of Merton:Mitcham and Morden;Wimbledon
+Borough of Newham:East Ham;West Ham
+Boroughs of Redbridge and Waltham Forest:Chingford and Woodford Green;Ilford North;Ilford South;Leyton and Wanstead;Walthamstow
+Boroughs of Richmond upon Thames and Kingston upon Thames:Kingston and Surbiton;Richmond Park;Twickenham
+Borough of Sutton:Carshalton and Wallington;Sutton and Cheam
+Borough of Tower Hamlets:Bethnal Green and Bow;Poplar and Limehouse
+Borough of Wandsworth:Battersea;Putney;Tooting
+
+Greater London County:Boroughs of Bromley and Lewisham;Boroughs of Richmond upon Thames and Kingston upon Thames;Borough of Croydon;Borough of Sutton;Borough of Merton;Borough of Wandsworth;Boroughs of Lambeth and Southwark;Boroughs of Greenwich and Bexley;Borough of Hounslow;Borough of Ealing;Borough of Brent;Boroughs of Harrow and Hillingdon;Boroughs of Kensington and Chelsea and Hammersmith and Fulham;Boroughs of City of London and Westminster;Borough of Camden;Borough of Islington;Borough of Tower Hamlets;Borough of Hackney;Boroughs of Havering and Barking and Dagenham;Borough of Newham;Borough of Haringey;Borough of Barnet;Borough of Enfield
+
+North East England Region:Cleveland County;County Durham;Northumberland County;Tyne and Wear County
+North West England Region:Cheshire County;Cumbria County;Greater Manchester County;Lancashire County;Merseyside County
+Yorkshire and the Humber Region:Humberside County;North Yorkshire County;South Yorkshire County;West Yorkshire County
+West Midlands Region:Hereford and Worcester County;Shropshire County;Staffordshire County;Warwickshire County;West Midlands County
+East Midlands Region:Derbyshire County;Leicestershire County;Lincolnshire County;Northamptonshire County;Nottinghamshire County
+South West England Region:Avon County;Cornwall County;Devon County;Dorset County;Gloucestershire County;Somerset County;Wiltshire County
+South East England Region:Berkshire County;Buckinghamshire County;East Sussex County;Hampshire County;Isle of Wight County;Kent County;Oxfordshire County;Surrey County;West Sussex County
+Greater London Region:Greater London County
+East of England Region:Bedfordshire County;Cambridgeshire County;Essex County;Hertfordshire County;Norfolk County;Suffolk County
+
+Scotland:Aberdeen and Aberdeenshire Counties;Angus and Dundee Counties;Argyll and Bute County;Edinburgh County;Clackmannanshire and Perth and Kinross Counties;Southern Scottish Counties;Ayrshire Counties;East Dunbartonshire and North Lanarkshire Counties;East Lothian County;East Renfrewshire County;Falkirk and West Lothian Counties;Fife County;Glasgow County;Highland County;Inverclyde County;Midlothian County;Moray County;Na h-Eileanan Siar County;Orkney Islands and Shetland Islands Counties;Renfrewshire County;Stirling County;West Dunbartonshire County
+Wales:Clwyd;Dyfed;Gwent;Gwynedd;Mid Glamorgan;Powys;South Glamorgan;West Glamorgan
+Northern Ireland
+
+England:North East England Region;North West England Region;Yorkshire and the Humber Region;West Midlands Region;East Midlands Region;South West England Region;South East England Region;Greater London Region;East of England Region
+Great Britain:England;Wales;Scotland
+National:Great Britain;Northern Ireland
