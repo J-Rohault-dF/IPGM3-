@@ -106,7 +106,7 @@ def averageResultsSet(*args: ResultsSet, allDivs: AllDivs) -> ResultsSet:
 
 
 #Stupid debugging functions
-def showRes(r: Result, doReweight: bool = True):
-	r.toPercentages(doReweight).removedAbs().display()
+def showRes(r: Result):
+	r.toPercentages().removedAbs().display()
 def showRess(rs: ResultsSet, d: str):
 	rs.get(d).toPercentages().display()
