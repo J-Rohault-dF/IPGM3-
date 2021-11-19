@@ -56,18 +56,20 @@ t1 = loadDataTable('data/2017T1.csv')
 t2 = loadDataTable('data/2017T2.csv')
 te = loadDataTable('data/2019TE.csv')
 
-mx = importMatrices('data/pollDefs/Harris_20211108.polld')
+poll = 'fr/BVA_20211115'
+
+mx = importMatricesJson('data/pollDefs/{0}.json'.format(poll))
+if not os.path.exists('exports/{path}'.format(path=poll)):
+	os.makedirs('exports/{path}'.format(path=poll))
 
 doExportTxt = True
 doExportMap = True
 doExportCsv = True
 
-doAddRings  = True
-
 allRounds = {}
 allTexts = []
 
-for hk, hv in mx.items():
+for hk, hv in {k: v for k,v in mx.items() if k != 'sampleSize'}.items():
 	tn = int(hk[0])
 
 	#Extrapolate rs
@@ -97,10 +99,11 @@ for hk, hv in mx.items():
 	if doExportTxt: allTexts.append('HYPOTHESIS {h}\n'.format(h=hk)+makeTweetText(r.get('National', allDivs=allDivs).toPercentages(), hv['sampleSize'], top=(2 if tn==1 else 1), nbSimulated=15000))
 
 	#Export and map
-	if doExportCsv: saveDataTable('exports/{h}.csv'.format(h=hk), r)
-	if doExportMap: exportMap(r, 'data/basemap_collectivites_gparis.svg', '{h}.svg'.format(h=hk), allDivs=allDivs, partiesColors=partiesColors, doRings=doAddRings, ringsData=ringsData, outerRadius=(5*10), innerRadius=(3*10))
-	#if doExportMap: exportMap(r, 'data/basemap_depts.svg', '{h}.svg'.format(h=hk), allDivs=allDivs, partiesColors=partiesColors)
+	if doExportCsv: saveDataTable('exports/{path}/{h}.csv'.format(h=hk, path=poll), r)
+	if doExportMap:
+		exportMap(r, 'data/basemap_collectivites_gparis.svg', '{path}/{h}.svg'.format(h=hk, path=poll), allDivs=allDivs, partiesColors=partiesColors)
+		exportMap(r, 'data/basemap_collectivites_gparis.svg', '{path}/{h}_r.svg'.format(h=hk, path=poll), allDivs=allDivs, partiesColors=partiesColors, doRings=True, ringsData=ringsData, outerRadius=(5*10), innerRadius=(3*10))
 
 if doExportTxt:
-	with open('exports/tweetText.txt','w',encoding='utf8') as txtFile:
+	with open('exports/{path}/tweetText.txt'.format(path=poll),'w',encoding='utf8') as txtFile:
 		txtFile.write('\n\n'.join(allTexts))

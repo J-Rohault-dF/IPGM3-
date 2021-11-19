@@ -69,7 +69,7 @@ def simulMany(ress: ResultsSet, amountOfSims: int, stdev: float, sampleSize: int
 			if w in ls[d]: ls[d][w] += 1
 			else: ls[d][w] = 1
 		
-		if i%(amountOfSims/5) == 0:
+		if i%(amountOfSims/10) == 0:
 			print('Simulated {0} out of {1}...'.format(i, amountOfSims))
 		
 	# Count how many times each candidate is in an array and find how safe the dept is

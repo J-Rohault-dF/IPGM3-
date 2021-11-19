@@ -144,7 +144,7 @@ electoralVotes = {
 	'Mayotte': 3,
 	'Saint-Martin': 1,
 	'Saint-Barthélémy': 1,
-	'Saint-Martin-et-Saint-Barthélémy': 1,
+	'Saint-Martin et Saint-Barthélémy': 1,
 	'Wallis-et-Futuna': 2,
 	'Polynésie-Française': 5,
 	'Nouvelle-Calédonie': 4,
@@ -156,14 +156,14 @@ electoralVotes = {
 allDivs = AllDivs('data/divs_fr.txt')
 
 #Load table
-r = loadDataTable('exports/1_XB.csv')
+r = loadDataTable('exports/fr/BVA_20211115/1_XB_sEZ.csv')
 
 #s = simulOneNat(r, 1.96, 1000, allDivs)
 #showRes(s.get('National', allDivs))
 #exportMap(s, 'basemap_collectivites.svg', 'stupidSim_.svg', allDivs=allDivs, partiesColors=partiesColors)
 
 #Simulate many and export map
-sm = simulMany(r, 10, 4, 2000, allDivs=allDivs)
+sm = simulMany(r, 5000, 4, 2000, allDivs=allDivs)
 exportMapProbs(sm, 'data/basemap_collectivites_gparis.svg', 'manySims.svg', allDivs=allDivs, partiesColors=partiesColors, doRings=True, ringsData=ringsData, outerRadius=(5*10), innerRadius=(3*10))
 
 #Compute potential electoral college (only doing 1ev per dept right now)
@@ -181,4 +181,4 @@ for i in sm.keys():
 		addInDict(EV['tossup'], 'between {0}'.format(andMergeSorted(getTopProbsFromDict(d, 0.8))), electoralVotes[i])
 		#EV['tossup'] += electoralVotes[i]
 
-print(EV)
+print({k: v for k,v in EV.items() if v != [0,0,0]})

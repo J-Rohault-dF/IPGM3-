@@ -155,12 +155,15 @@ def importMatricesJson(src: str):
 	
 	allReturning = {}
 
-	allReturning['sampleSize'] = obj['sampleSize']
+	sampleSize = obj['sampleSize']
 
 	for h in obj['hypotheses']:
 		
 		label = h['label']
 		candidates = h['candidates']
+		final = h['final']
+
+		sampleSizeD = h['sampleSize'] if 'sampleSize' in h else None
 
 		for m in h['matrices']:
 
@@ -168,6 +171,7 @@ def importMatricesJson(src: str):
 			finals = candidates
 			transfersMatrix = [[float(y)/100 for y in x] for x in m['vtm'].values()]
 			externalAbs = m['externalAbs']
+			original = m['original']
 
 			#Handle externalAbs
 			if '@' in candidates and externalAbs:
@@ -176,7 +180,7 @@ def importMatricesJson(src: str):
 					l = [v*scaling for k,v in dict(zip(finals,l)).items() if (k != '@')]
 
 			vtm = VTMatrix(initials, finals, transfersMatrix)
-			appendDictInDict(allReturning, label, 'matrix_{0}'.format(label), vtm)
+			appendDictInDict(allReturning, label, 'matrix_{0}_{1}'.format(original, final), vtm)
 		
 
 
@@ -195,7 +199,9 @@ def importMatricesJson(src: str):
 			
 			scores[tk] = ResultPerc.fromVotelessDict(tk, d)
 			
-		appendDictInDict(allReturning, label, 'scores_{0}'.format(label), scores)
+		appendDictInDict(allReturning, label, 'scores_{0}'.format(final), scores)
+
+		appendDictInDict(allReturning, label, 'sampleSize', (sampleSizeD if sampleSizeD != None else sampleSize))
 	
 
 
