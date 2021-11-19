@@ -35,11 +35,15 @@ def getWinningColorR(res: Result, partiesColors: dict) -> str:
 def getWinningColorP(d: dict[str, float], partiesColors: dict) -> str:
 	if d == None: return '000000'
 
-	k1, m = getProbsFromResDict(d)
+	#k1, m = getProbsFromResDictDiff(d)
+	k1, v1 = getProbsFromResDict(d)
 	
-	if m > 0.9: indexInTable = 11
-	elif m > 0.6: indexInTable = 8
-	elif m > 0.3: indexInTable = 5
+	#if m > 0.9: indexInTable = 11
+	#elif m > 0.6: indexInTable = 8
+	#elif m > 0.3: indexInTable = 5
+	if v1 > 0.95: indexInTable = 11
+	elif v1 > 0.80: indexInTable = 8
+	elif v1 > 0.65: indexInTable = 5
 	else: return '000000'
 
 	if hasPartyColor(k1, partiesColors):
@@ -58,7 +62,7 @@ def mapColorerPercs(res: ResultsSet, allDivs: AllDivs, partiesColors: dict[str, 
 		if i.get('id') in allDivs.allDivs:
 			i.set('style', i.get('style').replace('000000', getWinningColorR(res.get(i.get('id'), allDivs=allDivs, quiet=True), partiesColors)))
 
-def mapColorerProbs(probs: list[dict[str, float]], allDivs: AllDivs, partiesColors: dict[str, Color], xmlR: etree.ElementTree):
+def mapColorerProbs(probs: dict[str, dict[str, float]], allDivs: AllDivs, partiesColors: dict[str, Color], xmlR: etree.ElementTree):
 	for i in xmlR.getroot().find('{http://www.w3.org/2000/svg}g'):
 		#If id is in the deps list, replace the fill
 		if i.get('id') in allDivs.allDivs:
@@ -68,6 +72,8 @@ def mapRinger(xmlL: etree.Element, xmlD: etree.Element, percs: dict[str, dict[st
 	rings = etree.Element('{http://www.w3.org/2000/svg}g', attrib={'id': 'rings-{gid}'.format(gid=getRandomAlphanumeric(4))})
 
 	for dk, dv in percs.items():
+		if dk not in divsData.keys(): continue
+
 		dd = divsData[dk]
 
 		parties = list(dv.keys())
@@ -107,13 +113,16 @@ def exportMap(res: ResultsSet, mapSrc: str, mapTarget: str, allDivs: AllDivs, pa
 
 
 
-def exportMapProbs(probs: list[dict[str, float]], mapSrc: str, mapTarget: str, allDivs: AllDivs, partiesColors: dict):
+def exportMapProbs(probs: dict[str, dict[str, float]], mapSrc: str, mapTarget: str, allDivs: AllDivs, partiesColors: dict, doRings: bool = False, ringsData: dict[str, dict[str, str|int]] = {}, outerRadius: float = 0, innerRadius: float = 0):
 	mapTarget = 'exports/'+mapTarget
 
 	with open(mapSrc, 'r', encoding='utf8') as originalMap:
 		xmlR = etree.parse(originalMap)
 	
 	mapColorerProbs(probs, allDivs, partiesColors, xmlR)
+
+	if doRings:
+		mapRinger(xmlR.getroot().find('{http://www.w3.org/2000/svg}g'), xmlR.getroot().find('{http://www.w3.org/2000/svg}defs'), probs, ringsData, outerRadius, innerRadius, partiesColors)
 	
 	xmlR.write(mapTarget)
 	

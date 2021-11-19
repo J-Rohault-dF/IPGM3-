@@ -88,18 +88,37 @@ def allEquals(l: list) -> bool:
 
 def getProbsFromResDict(d: dict) -> set[str, float]:
 	d = {k: v for k,v in sorted(d.items(), key=lambda item: item[1], reverse=True)}
+	k1 = list(d.keys())[0]
+	v1 = d[k1]
+	return (k1, v1)
+
+def getProbsFromResDictDiff(d: dict) -> set[str, float]:
+	d = {k: v for k,v in sorted(d.items(), key=lambda item: item[1], reverse=True)}
 	k1, k2 = list(d.keys())[0], list(d.keys())[1]
 	m = d[k1] - d[k2]
-	
 	return (k1, m)
+
+def getTopProbsFromDict(d: dict, f: float) -> list[str]:
+	d = {k: v for k,v in sorted(d.items(), key=lambda item: item[1], reverse=True)}
+	top = []
+	summer = 0
+	for k,v in d.items():
+		if summer > f: break
+		top.append(k)
+		summer += v
+	return top
 
 def getRankInDict(d: dict, s: str):
 	ls = [k for k in sorted(d.keys(), key=lambda x: d[x], reverse=True)]
 	return ls.index(s)
 
-def appendInDict(d: dict[str, list], k, v):
+def appendInDict(d: dict[str, list[any]], k: str, v: any):
 	if k in d.keys(): d[k].append(v)
 	else: d[k] = [v]
+
+def addInDict(d: dict[str, int|float], k: str, v: int|float):
+	if k in d.keys(): d[k] += v
+	else: d[k] = v
 
 def appendDictInDict(d: dict[str, dict], dk, k, v):
 	if dk in d.keys(): d[dk][k] = v
@@ -121,3 +140,11 @@ def toFloat(s: str) -> float:
 def toFloatOrStr(s: str) -> float|str:
 	try: return toFloat(s)
 	except: return s
+
+def andMerge(l: list[str], doOxfordComma: bool = True) -> str:
+	if len(l) == 2: return ' and '.join(l)
+	return ', '.join(l[:-1]) + '{0} and '.format(',' if doOxfordComma else '') + l[-1]
+
+def andMergeSorted(l: list[str], doOxfordComma: bool = True) -> str:
+	l = sorted(l)
+	return andMerge(l)

@@ -72,9 +72,8 @@ def drawPercRingBehind(centerPoint: set[float, float], innerRadius: float, outer
 
 #Draw score ring
 def drawPercRing(centerPoint: set[float, float], outerRadius: float, innerRadius: float, percs: list[float], colors: list[Color]) -> set[list[etree.Element], etree.Element]:
-	percs = percentList(percs)
-
-	cx,cy = centerPoint[0], centerPoint[1]
+	percs = list(reversed(percentList(percs)))
+	colors = list(reversed(colors))
 
 	#Convert perc and color to list of sets (start, begin, color)
 	rings = []
