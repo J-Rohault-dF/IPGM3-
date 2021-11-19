@@ -98,7 +98,7 @@ for hk, hv in mx.items():
 
 	#Export and map
 	if doExportCsv: saveDataTable('exports/{h}.csv'.format(h=hk), r)
-	if doExportMap: exportMap(r, 'data/basemap_collectivites.svg', '{h}.svg'.format(h=hk), allDivs=allDivs, partiesColors=partiesColors, doRings=doAddRings, ringsData=ringsData, outerRadius=(5*10), innerRadius=(3*10))
+	if doExportMap: exportMap(r, 'data/basemap_collectivites_gparis.svg', '{h}.svg'.format(h=hk), allDivs=allDivs, partiesColors=partiesColors, doRings=doAddRings, ringsData=ringsData, outerRadius=(5*10), innerRadius=(3*10))
 	#if doExportMap: exportMap(r, 'data/basemap_depts.svg', '{h}.svg'.format(h=hk), allDivs=allDivs, partiesColors=partiesColors)
 
 if doExportTxt:

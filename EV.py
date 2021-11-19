@@ -7,24 +7,36 @@ from simulvote.simul import *
 
 
 partiesColors = {
-'Jean-Luc Mélenchon': Color('#cc2443'),
-'Yannick Jadot': Color('#00c000'),
-'Anne Hidalgo': Color('#ff8080'),
-'Emmanuel Macron': Color('#ffeb00'),
-'Xavier Bertrand': Color('#0066cc'),
-'Valérie Pécresse': Color('#0066cc'),
-'Marine Le Pen': Color('#627cad'), #not same as wp
-'Éric Zemmour': Color('#d99536'),
+	'Jean-Luc Mélenchon': Color('#cc2443'),
+	'Yannick Jadot': Color('#00c000'),
+	'Anne Hidalgo': Color('#ff8080'),
+	'Emmanuel Macron': Color('#ffeb00'),
+	'Xavier Bertrand': Color('#0066cc'),
+	'Valérie Pécresse': Color('#0066cc'),
+	'Marine Le Pen': Color('#627cad'), #not same as wp
+	'Éric Zemmour': Color('#d99536'),
+	
+	'François Fillon': Color('#0066cc'),
+	'Benoît Hamon': Color('#ff8080'),
+	'Nicolas Dupont-Aignan': Color('#8040c0'),
+	'Jean Lassalle': Color('#adc1fd'),
+	'Philippe Poutou': Color('#bb0000'),
+	'François Asselineau': Color('#118088'),
+	'Nathalie Arthaud': Color('#8e2f2f'),
+	'Jacques Cheminade': Color('#eedd00'), #to replace with orange
 
-'François Fillon': Color('#0066cc'),
-'Benoît Hamon': Color('#ff8080'),
-'Nicolas Dupont-Aignan': Color('#8040c0'),
-'Jean Lassalle': Color('#adc1fd'),
-'Philippe Poutou': Color('#bb0000'),
-'François Asselineau': Color('#118088'),
-'Nathalie Arthaud': Color('#8e2f2f'),
-'Jacques Cheminade': Color('#eedd00'),
+	'Arnaud Montebourg': Color('#cc6666'),
+	'Fabien Roussel': Color('#dd0000'),
+	'Jean-Christophe Lagarde': Color('#00ffff'),
+	'Jean-Frédéric Poisson': Color('#0000ff'),
+	'Florian Philippot': Color('#404040'),
 }
+
+
+#Get divs data
+with open('data/rings_fr.csv','r',encoding='utf8') as seatsDataFile:
+	ringsDataTemp = [y.split(';') for y in [x for x in seatsDataFile.read().split('\n')]]
+	ringsData = {x[0]: dict(zip(ringsDataTemp[0][1:], [toFloatOrStr(y) for y in x[1:]])) for x in ringsDataTemp[1:]}
 
 electoralVotes = {
 	'Ain': 8,
@@ -151,20 +163,22 @@ r = loadDataTable('exports/1_XB.csv')
 #exportMap(s, 'basemap_collectivites.svg', 'stupidSim_.svg', allDivs=allDivs, partiesColors=partiesColors)
 
 #Simulate many and export map
-sm = simulMany(r, 1000, 4, 2000, allDivs=allDivs)
-exportMapProbs(sm, 'data/basemap_collectivites.svg', 'manySims.svg', allDivs=allDivs, partiesColors=partiesColors)
+sm = simulMany(r, 10, 4, 2000, allDivs=allDivs)
+exportMapProbs(sm, 'data/basemap_collectivites_gparis.svg', 'manySims.svg', allDivs=allDivs, partiesColors=partiesColors, doRings=True, ringsData=ringsData, outerRadius=(5*10), innerRadius=(3*10))
 
 #Compute potential electoral college (only doing 1ev per dept right now)
 EV = {k: [0, 0, 0] for k in r.get('National', allDivs).getCandidates()}
-EV['tossup'] = 0
+EV['tossup'] = {}
 
 for i in sm.keys():
 	d = sm[i]
 	k1, m = getProbsFromResDict(d)
 	if i not in electoralVotes: continue
-	if m > 0.9: EV[k1][0] += electoralVotes[i]
-	elif m > 0.6: EV[k1][1] += electoralVotes[i]
-	elif m > 0.3: EV[k1][2] += electoralVotes[i]
-	else: EV['tossup'] += electoralVotes[i]
+	if m > 0.95: EV[k1][0] += electoralVotes[i]
+	elif m > 0.80: EV[k1][1] += electoralVotes[i]
+	elif m > 0.65: EV[k1][2] += electoralVotes[i]
+	else:
+		addInDict(EV['tossup'], 'between {0}'.format(andMergeSorted(getTopProbsFromDict(d, 0.8))), electoralVotes[i])
+		#EV['tossup'] += electoralVotes[i]
 
 print(EV)
