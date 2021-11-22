@@ -19,21 +19,36 @@ def drawRectangle(x0: float, y0: float, width: float, height: float, fill: Color
 #Draw bars
 
 #Write text
-def drawText(text: str, x0: float, y0: float, fontSize: float, align: str) -> etree.Element:
+def drawText(text: str, x0: float, y0: float, fontSize: float, font: str, align: str, fill: Color = Color('#000000')) -> etree.Element:
+	taalign = (align if align != 'center' else 'middle')
 	givenId = getRandomAlphanumeric(6)
+
 	t = etree.Element('text', attrib={
-		'style': 'font-size:{fontSize}px;line-height:1;font-family:Ubuntu;stroke-width:0;text-anchor:{align};text-align:{align};'.format(fontZier=fontSize, align=align),
+		#'style': 'font-size:{fontSize}px;line-height:1;font-family:{font};stroke-width:0;text-anchor:{align};text-align:{align};'.format(fontSize=fontSize, font=font, align=align),
+		'style': 'font-size:{fontSize}px;line-height:1;font-family:\'{font}\';-inkscape-font-specification:\'{font}\';text-align:{align};text-anchor:{taalign}'.format(fontSize=fontSize, font=font, align=align, taalign=taalign),
 		'x': str(x0),
 		'y': str(y0),
 		'id': 'text-{id}'.format(id=givenId),
-	}, )
-	t.append(etree.Element('tspan', attrib={
-		'style': 'stroke-width:0;text-anchor:{align};text-align:{align};'.format(align=align),
-		'x': str(x0),
-		'y': str(y0),
-		'id': 'tspan-{id}'.format(id=givenId),
-		'text': text
-	}))
+	})
+
+	tx = text.split('\n')
+	for i in range(len(tx)):
+		txl = tx[i]
+
+		ts = etree.Element('tspan', attrib={
+			'style': 'stroke-width:0;text-anchor:{taalign};text-align:{align};fill:{fill};'.format(align=align, taalign=taalign, fill=fill),
+			'x': str(x0),
+			'y': str(y0+(i*fontSize)),
+			'id': 'tspan-{id}'.format(id=givenId),
+			'{http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd}role': 'line',
+		})
+		ts.text = txl
+		t.append(ts)
+
+	return t
+
+def drawCenteredText(text: str, x0: float, y0: float, fontSize: float, font: str) -> etree.Element:
+	return drawText(text, x0, (y0+(0.72*fontSize/2)-(fontSize*(len(text.split('\n'))-1.5))), fontSize, font, 'center')
 
 #Write percentages legend
 

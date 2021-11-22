@@ -22,4 +22,4 @@ import xml.etree.ElementTree as etree
 #
 #xmlR.write('data/svg_test_2.svg', encoding='unicode')
 
-res = Result('test', {'a': 2836, 'b': 2763, 'c': 1203, 'd': 16})
+#res = Result('test', {'a': 2836, 'b': 2763, 'c': 1203, 'd': 16})

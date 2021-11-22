@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <svg
-   xmlns:dc="http://purl.org/dc/elements/1.1/"
-   xmlns:cc="http://creativecommons.org/ns#"
-   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-   xmlns:svg="http://www.w3.org/2000/svg"
-   xmlns="http://www.w3.org/2000/svg"
-   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    width="210mm"
    height="297mm"
    viewBox="0 0 210 297"
    version="1.1"
    id="svg8"
-   inkscape:version="1.0.1 (3bc2e813f5, 2020-09-07)"
-   sodipodi:docname="svg_test.svg">
+   inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20)"
+   sodipodi:docname="svg_test.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
   <defs
      id="defs2">
     <inkscape:path-effect
@@ -39,6 +39,10 @@
     <mask
        maskUnits="userSpaceOnUse"
        id="mask-powermask-path-effect93">
+      <path
+         id="mask-powermask-path-effect93_box"
+         style="fill:#ffffff;fill-opacity:1"
+         d="m 22.214865,21.991533 h 7 v 10.065583 h -7 z" />
       <circle
          style="fill:#000000;stroke:none;stroke-width:4.99996;stroke-linejoin:round"
          id="circle91"
@@ -73,9 +77,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.9888468"
-     inkscape:cx="241.54699"
-     inkscape:cy="73.106921"
+     inkscape:zoom="0.34961015"
+     inkscape:cx="356.11094"
+     inkscape:cy="358.97127"
      inkscape:document-units="mm"
      inkscape:current-layer="svg8"
      inkscape:document-rotation="0"
@@ -84,7 +88,9 @@
      inkscape:window-height="745"
      inkscape:window-x="-8"
      inkscape:window-y="-8"
-     inkscape:window-maximized="1" />
+     inkscape:window-maximized="1"
+     inkscape:pagecheckerboard="0"
+     showguides="false" />
   <metadata
      id="metadata5">
     <rdf:RDF>
@@ -492,4 +498,33 @@
      d="m 88.211234,12.28561 a 5,5 0 0 1 4.390368,2.614692 5,5 0 0 1 -0.199433,5.106091 l -4.194916,-2.720785 z"
      mask="url(#mask-powermask-path-effectzXtLEh)"
      inkscape:path-effect="#path-effectzXtLEh" />
+  <rect
+     style="fill:#cccccc;stroke-width:0.529168;stop-color:#000000"
+     id="rect1403"
+     width="20"
+     height="20"
+     x="200.00002"
+     y="49.999996" />
+  <rect
+     style="fill:#ff0000;stroke-width:0.529167;stop-color:#000000"
+     id="rect3948"
+     width="5"
+     height="5"
+     x="210"
+     y="66" />
+  <text
+     style="font-size:16px;line-height:1;font-family:'Century Gothic';-inkscape-font-specification:'Century Gothic';text-align:center;text-anchor:middle"
+     x="210.07814"
+     y="57.68359"
+     id="text-9VcQ1P"><tspan
+       style="text-align:center;text-anchor:middle;fill:#000000;stroke-width:0;font-weight:bold"
+       x="210.07814"
+       y="57.68359"
+       id="tspan-9VcQ1P"
+       sodipodi:role="line">Test</tspan><tspan
+       style="text-align:center;text-anchor:middle;fill:#000000;stroke-width:0;font-weight:bold"
+       x="210.07814"
+       y="73.683586"
+       id="tspan70"
+       sodipodi:role="line">16</tspan></text>
 </svg>
