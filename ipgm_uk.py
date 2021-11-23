@@ -52,7 +52,7 @@ for hk, hv in {k: v for k,v in mx.items() if k != 'sampleSize'}.items():
 
 	curScores = hv[('scores_2024{0}'.format('GE' if tn == 1 else 'R2').format(h=hk))]
 	for i in sorted(curScores, key=lambda x: allDivs.getSortingKeys(x)):
-		r = redressementResults(r, curScores[i], allDivs=allDivs)
+		r = redressementResults(r, curScores[i], allDivs=allDivs, weight=(1 if i == 'Great Britain' else 0.5))
 	
 	#Tweet text
 	if doExportTxt: allTexts.append('HYPOTHESIS {h}\n'.format(h=hk)+makeTweetText(r.get('Great Britain', allDivs=allDivs).toPercentages(), hv['sampleSize'], top=1, nbSimulated=15000))

@@ -26,7 +26,7 @@ def extrapolateResult(initialRes: Result, changeMatrix: VTMatrix) -> Result:
 
 
 #Redressement per division
-def redressementResults(initialRes: ResultsSet, targetRes: ResultPerc, allDivs: AllDivs):
+def redressementResults(initialRes: ResultsSet, targetRes: ResultPerc, allDivs: AllDivs, weight: float = 1):
 	fRes = []
 	
 	#Get all components
@@ -36,6 +36,8 @@ def redressementResults(initialRes: ResultsSet, targetRes: ResultPerc, allDivs: 
 	#Compute the difference between the actual and target results
 	actualRes: ResultPerc = initialRes.sumIfs(targetDivisions).toPercentages(newName=targetName)
 	diff: dict[str, float] = targetRes.getSubstracted(actualRes)
+
+	diff = multiplyDict(diff, weight)
 
 	#For every res in ResultsSet that is also contained in Result:
 	for divName in initialRes.getAllDivs():
@@ -56,7 +58,7 @@ def redressementResults(initialRes: ResultsSet, targetRes: ResultPerc, allDivs: 
 
 
 #Multiplying redressement per division
-def redressementResultsMultiplicative(initialRes: ResultsSet, targetRes: ResultPerc, allDivs: AllDivs):
+def redressementResultsMultiplicative(initialRes: ResultsSet, targetRes: ResultPerc, allDivs: AllDivs, weight: float = 1):
 	fRes = []
 	
 	#Get all components
@@ -66,6 +68,8 @@ def redressementResultsMultiplicative(initialRes: ResultsSet, targetRes: ResultP
 	#Compute the multiplicative difference between the actual and target results
 	actualRes: ResultPerc = initialRes.sumIfs(targetDivisions).toPercentages(newName=targetName)
 	diff: dict[str, float] = targetRes.getDivided(actualRes)
+
+	diff = multiplyDict(diff, weight)
 
 	#For every res in ResultsSet that is also contained in Result:
 	for divName in initialRes.getAllDivs():
