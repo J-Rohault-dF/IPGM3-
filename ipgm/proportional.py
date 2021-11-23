@@ -1,10 +1,14 @@
 from ipgm.Result import *
 import math
 
-def proportionalLargestRemainder(res: Result, sn: int, quotaType: str, threshold: float = 0) -> dict[str, int]:
-
+def filterThreshold(res: Result, threshold: float = 0) -> dict[str, float]:
 	r = res.getCleanResults()
-	r = {k: v for k,v in sorted(r.items(), key=lambda x: x[1], reverse=True) if (v/sum(r.values()) > threshold)}
+	return {k: v for k,v in sorted(r.items(), key=lambda x: x[1], reverse=True) if (v/sum(r.values()) > threshold)}
+
+
+
+def proportionalLargestRemainder(r: dict[str, float], sn: int, quotaType: str) -> dict[str, int]:
+
 	vn = sum(r.values())
 
 	if quotaType == 'Hare': quota = vn / sn
@@ -34,10 +38,8 @@ def getDivisor(seats: int, methodType: str) -> float:
 	elif methodType == 'Danish': return (seats+(1/3))
 	elif methodType == 'Adams': return (seats)
 
-def proportionalHighestAverage(res: Result, sn: int, methodType: str, threshold: float = 0) -> dict[str, int]:
+def proportionalHighestAverage(r: dict[str, float], sn: int, methodType: str) -> dict[str, int]:
 
-	r = res.getCleanResults()
-	r = {k: v for k,v in r.items() if (v/sum(r.values()) > threshold)}
 	seats = {x[0]: (0 if methodType not in ['Huntington-Hill', 'Adams'] else 1) for x in sorted(r.items(), key=lambda x: x[1], reverse=True)}
 
 	averages = {k: (v/getDivisor(seats[k], methodType)) for k,v in r.items()}

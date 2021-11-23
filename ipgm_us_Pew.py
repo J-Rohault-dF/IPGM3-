@@ -64,7 +64,7 @@ r = deepcopy(rs)
 for i in ['West', 'Midwest', 'South', 'Northeast', 'National']:
 	r = redressementResultsMultiplicative(r, mx['Pew21']['scores_Parties'][i], allDivs=allDivs)
 
-seatsParties = {x.name: proportionalHighestAverage(x, seatsPerState[x.name], 'D\'Hondt') for x in r.listOfResults if x.name in seatsPerState}
+seatsParties = {x.name: proportionalHighestAverage(filterThreshold(x), seatsPerState[x.name], 'D\'Hondt') for x in r.listOfResults if x.name in seatsPerState}
 
 exportSeatsMap(r, seatsParties, seatsData, 'data/basemap_us_states_houseinsets.svg', 'redressed_us_Parties_Race_Pew.svg', allDivs=allDivs, partiesColors=partiesColors, scale=3.5)
 

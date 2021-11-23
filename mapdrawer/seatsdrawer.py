@@ -1,6 +1,7 @@
 import xml.etree.ElementTree as etree
 from ipgm.utils import *
 from colour import *
+import math
 
 seatsArrangements: dict[int, dict[str, list[int]]] = {
 	0: {'Regular': []},
@@ -26,6 +27,19 @@ seatsArrangements: dict[int, dict[str, list[int]]] = {
 	38: {'Regular': [7, 8, 8, 8, 7]},
 	52: {'Regular': [8, 9, 9, 9, 9, 8]},
 }
+
+def findSeatsArrangement(totalSeats: int, layout: str):
+	if totalSeats in seatsArrangements and layout in seatsArrangements[totalSeats]:
+		return seatsArrangements[totalSeats][layout]
+	else:
+		squareSide = math.ceil(totalSeats**(1/2))
+		arrangement = []
+		while totalSeats > 0:
+			arrangement.append(min(squareSide, totalSeats))
+			totalSeats -= arrangement[-1]
+		return arrangement
+
+
 
 def argsFind(l: list[list], s: str) -> int:
 	for i in range(len(l)):
@@ -71,10 +85,10 @@ def drawCircles(seatsData: dict[str, str|int], givenId: str, circlesSize: float,
 	
 	cx, cy = seatsData['cx'], seatsData['cy']
 	orient = seatsData['orientation']
-	totalSeats = seatsData['seats']
+	totalSeats = int(seatsData['seats'])
 	
 	#Find the seats layout
-	seatsLayout = seatsArrangements[totalSeats][seatsData['layout']]
+	seatsLayout = findSeatsArrangement(totalSeats, seatsData['layout'])
 	fullHeight = (len(seatsLayout)-1)*distanceBetweenCenters
 	counter = 0
 
