@@ -29,42 +29,40 @@ allDivs = AllDivs('data/divs_uk.txt')
 
 t = loadDataTable('data/uk_stats/2019GE.csv')
 
-mx = importMatricesJson('data/pollDefs/uk/R&WS_20211115.json')
-sampleSize = mx.pop('sampleSize')
+poll = 'uk/RaWS_20211121'
+
+mx = importMatricesJson('data/pollDefs/{0}.json'.format(poll))
+if not os.path.exists('exports/{path}'.format(path=poll)):
+	os.makedirs('exports/{path}'.format(path=poll))
 
 doExportTxt = True
 doExportMap = True
 doExportCsv = True
 
-
-
 allTexts = []
 
-for hk, hv in mx.items():
+for hk, hv in {k: v for k,v in mx.items() if k != 'sampleSize'}.items():
 	tn = int(hk[0])
 
 	if tn == 1:
-		r = extrapolateResults(t, hv['matrix_{h}'.format(h=hk)])
+		r = extrapolateResults(t, hv['matrix_2019GE_2024GE'.format(h=hk)])
 		r1 = deepcopy(r)
 	else:
-		r = extrapolateResults(r1, hv['matrix_{h}'.format(h=hk)])
+		r = extrapolateResults(r1, hv['matrix_2019GE_2024R2'.format(h=hk)])
 
-	curScores = hv[('scores_{h}'.format(h=hk))]
+	curScores = hv[('scores_2024{0}'.format('GE' if tn == 1 else 'R2').format(h=hk))]
 	for i in sorted(curScores, key=lambda x: allDivs.getSortingKeys(x)):
 		r = redressementResults(r, curScores[i], allDivs=allDivs)
 	
-	#for i in sorted(curScores, key=lambda x: allDivs.getSortingKeys(x)):
-	#	showRes(r.get(i, allDivs))
-
 	#Tweet text
-	if doExportTxt: allTexts.append('HYPOTHESIS {h}\n'.format(h=hk)+makeTweetText(r.get('Great Britain', allDivs=allDivs).toPercentages(), sampleSize, top=1, nbSimulated=15000))
+	if doExportTxt: allTexts.append('HYPOTHESIS {h}\n'.format(h=hk)+makeTweetText(r.get('Great Britain', allDivs=allDivs).toPercentages(), hv['sampleSize'], top=1, nbSimulated=15000))
 
 	#Export and map
-	if doExportCsv: saveDataTable('exports/{h}.csv'.format(h=hk), r)
-	if doExportMap: exportMap(r, 'data/basemap_gb_counties_merged.svg', '{h}.svg'.format(h=hk), allDivs=allDivs, partiesColors=partiesColors)
-	#if doExportMap: exportMap(r, 'data/basemap_depts.svg', '{h}.svg'.format(h=hk), allDivs=allDivs, partiesColors=partiesColors)
+	if doExportCsv: saveDataTable('exports/{path}/{h}.csv'.format(h=hk, path=poll), r)
+	if doExportMap:
+		exportMap(r, 'data/basemap_gb_counties_merged.svg', '{path}/{h}.svg'.format(h=hk, path=poll), allDivs=allDivs, partiesColors=partiesColors)
 
 if doExportTxt:
-	with open('exports/tweetText.txt','w',encoding='utf8') as txtFile:
+	with open('exports/{path}/tweetText.txt'.format(path=poll),'w',encoding='utf8') as txtFile:
 		txtFile.write('\n\n'.join(allTexts))
 
