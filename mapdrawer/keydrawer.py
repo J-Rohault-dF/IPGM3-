@@ -19,11 +19,11 @@ def drawRectangle(x0: float, y0: float, width: float, height: float, fill: Color
 #Draw bars
 
 #Write text
-def drawText(text: str, x0: float, y0: float, fontSize: float, font: str, align: str, fill: Color = Color('#000000')) -> etree.Element:
+def drawText(text: str, x0: float, y0: float, fontSize: float, font: str, align: str, fillColor: Color = Color('#000000'), strokeColor: Color = Color('#000000'), strokeWidth: float = 0, bold: bool = False) -> etree.Element:
 	taalign = (align if align != 'center' else 'middle')
 	givenId = getRandomAlphanumeric(6)
 
-	t = etree.Element('text', attrib={
+	t = etree.Element('{http://www.w3.org/2000/svg}text', attrib={
 		#'style': 'font-size:{fontSize}px;line-height:1;font-family:{font};stroke-width:0;text-anchor:{align};text-align:{align};'.format(fontSize=fontSize, font=font, align=align),
 		'style': 'font-size:{fontSize}px;line-height:1;font-family:\'{font}\';-inkscape-font-specification:\'{font}\';text-align:{align};text-anchor:{taalign}'.format(fontSize=fontSize, font=font, align=align, taalign=taalign),
 		'x': str(x0),
@@ -35,8 +35,8 @@ def drawText(text: str, x0: float, y0: float, fontSize: float, font: str, align:
 	for i in range(len(tx)):
 		txl = tx[i]
 
-		ts = etree.Element('tspan', attrib={
-			'style': 'stroke-width:0;text-anchor:{taalign};text-align:{align};fill:{fill};'.format(align=align, taalign=taalign, fill=fill),
+		ts = etree.Element('{http://www.w3.org/2000/svg}tspan', attrib={
+			'style': 'stroke-width:0;text-anchor:{taalign};text-align:{align};fill:{fillColor};stroke:{strokeColor};stroke-width:{strokeWidth};{bold}'.format(align=align, taalign=taalign, fillColor=fillColor, strokeColor=strokeColor, strokeWidth=strokeWidth, bold = (';font-weight:bold' if bold else '')),
 			'x': str(x0),
 			'y': str(y0+(i*fontSize)),
 			'id': 'tspan-{id}'.format(id=givenId),
@@ -47,8 +47,8 @@ def drawText(text: str, x0: float, y0: float, fontSize: float, font: str, align:
 
 	return t
 
-def drawCenteredText(text: str, x0: float, y0: float, fontSize: float, font: str) -> etree.Element:
-	return drawText(text, x0, (y0+(0.72*fontSize/2)-(fontSize*(len(text.split('\n'))-1.5))), fontSize, font, 'center')
+def drawCenteredText(text: str, x0: float, y0: float, fontSize: float, font: str, fillColor: Color = Color('#000000'), strokeColor: Color = Color('#000000'), strokeWidth: float = 0, bold: bool = False) -> etree.Element:
+	return drawText(text, x0, (y0+(0.72*fontSize/2)-(fontSize*(len(text.split('\n'))-1.5))), fontSize, font, 'center', fillColor, strokeColor, strokeWidth, bold)
 
 #Write percentages legend
 

@@ -90,6 +90,19 @@ def mapRinger(xmlL: etree.Element, xmlD: etree.Element, percs: dict[str, dict[st
 
 	xmlL.append(rings)
 
+def mapTexter(xmlL: etree.Element, texts: dict[str, str], divsData: dict[str, dict[str, str|int]], fontSize: float, font: str):
+	group = etree.Element('{http://www.w3.org/2000/svg}g', attrib={'id': 'texts-{gid}'.format(gid=getRandomAlphanumeric(4))})
+
+	for dk, dv in texts.items():
+		if dk not in divsData.keys(): continue
+		dd = divsData[dk]
+
+		t = drawCenteredText(dv, dd['cx'], dd['cy'], fontSize, font, fillColor=Color('#ffffff'), strokeColor=Color('#000000'), strokeWidth=0.5, bold=True)
+		group.append(t)
+	
+	xmlL.append(group)
+
+
 
 def exportMap(res: ResultsSet, mapSrc: str, mapTarget: str, allDivs: AllDivs, partiesColors: dict[str, Color], doRings: bool = False, ringsData: dict[str, dict[str, str|int]] = {}, outerRadius: float = 0, innerRadius: float = 0):
 	mapTarget = 'exports/'+mapTarget
@@ -113,7 +126,7 @@ def exportMap(res: ResultsSet, mapSrc: str, mapTarget: str, allDivs: AllDivs, pa
 
 
 
-def exportMapProbs(probs: dict[str, dict[str, float]], mapSrc: str, mapTarget: str, allDivs: AllDivs, partiesColors: dict, doRings: bool = False, ringsData: dict[str, dict[str, str|int]] = {}, outerRadius: float = 0, innerRadius: float = 0):
+def exportMapProbs(probs: dict[str, dict[str, float]], mapSrc: str, mapTarget: str, allDivs: AllDivs, partiesColors: dict, doRings: bool = False, divsData: dict[str, dict[str, str|int]] = {}, outerRadius: float = 0, innerRadius: float = 0, doTexts: bool = False, texts: dict[str, str] = {}, fontSize: float = 8, fontUsed: str = ''):
 	mapTarget = 'exports/'+mapTarget
 
 	with open(mapSrc, 'r', encoding='utf8') as originalMap:
@@ -122,8 +135,11 @@ def exportMapProbs(probs: dict[str, dict[str, float]], mapSrc: str, mapTarget: s
 	mapColorerProbs(probs, allDivs, partiesColors, xmlR)
 
 	if doRings:
-		mapRinger(xmlR.getroot().find('{http://www.w3.org/2000/svg}g'), xmlR.getroot().find('{http://www.w3.org/2000/svg}defs'), probs, ringsData, outerRadius, innerRadius, partiesColors)
+		mapRinger(xmlR.getroot().find('{http://www.w3.org/2000/svg}g'), xmlR.getroot().find('{http://www.w3.org/2000/svg}defs'), probs, divsData, outerRadius, innerRadius, partiesColors)
 	
+	if doTexts:
+		mapTexter(xmlR.getroot().find('{http://www.w3.org/2000/svg}g'), texts, divsData, fontSize, fontUsed)
+
 	xmlR.write(mapTarget)
 	
 	print('inkscape --export-type=png {0}'.format(mapTarget))
