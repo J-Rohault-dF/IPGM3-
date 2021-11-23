@@ -96,7 +96,7 @@ for hk, hv in {k: v for k,v in mx.items() if k != 'sampleSize'}.items():
 	allRounds[hk] = r
 
 	#Tweet text
-	if doExportTxt: allTexts.append('HYPOTHESIS {h}\n'.format(h=hk)+makeTweetText(r.get('National', allDivs=allDivs).toPercentages(), hv['sampleSize'], top=(2 if tn==1 else 1), nbSimulated=15000))
+	if doExportTxt: allTexts.append('HYPOTHESIS {h}\n'.format(h=hk)+makeTweetText(r.get('National', allDivs=allDivs).toPercentages(), hv['sampleSize'], top=(2 if tn==1 else 1), nbSimulated=15000, threshold=0.05))
 
 	#Export and map
 	if doExportCsv: saveDataTable('exports/{path}/{h}.csv'.format(h=hk, path=poll), r)
