@@ -31,9 +31,14 @@ partiesColors = { #Should put the actual colors
 #Get seats data
 with open('data/seats_uk.csv','r',encoding='utf8') as seatsDataFile:
 	seatsDataTemp = [y.split(';') for y in [x for x in seatsDataFile.read().split('\n')]]
-	seatsData = {x[0]: {'seats': int(x[1]), 'layout': x[2], 'orientation': x[3], 'cx': toFloat(x[4]), 'cy': toFloat(x[5])} for x in seatsDataTemp[1:]}
+	seatsDataRegions = {x[0]: {'seats': int(x[1]), 'layout': x[2], 'orientation': x[3], 'cx': toFloat(x[4]), 'cy': toFloat(x[5])} for x in seatsDataTemp[1:]}
+seatsPerRegion = {k: v['seats'] for k,v in seatsDataRegions.items()}
 
-seatsPerRegion = {k: v['seats'] for k,v in seatsData.items()}
+with open('data/seats_uk_counties.csv','r',encoding='utf8') as seatsDataFile:
+	seatsDataTemp = [y.split(';') for y in [x for x in seatsDataFile.read().split('\n')]]
+	seatsDataCounties = {x[0]: {'seats': int(x[1]), 'layout': x[2], 'orientation': x[3], 'cx': toFloat(x[4]), 'cy': toFloat(x[5])} for x in seatsDataTemp[1:]}
+seatsPerCounty = {k: v['seats'] for k,v in seatsDataCounties.items()}
+
 
 
 
@@ -49,10 +54,10 @@ if not os.path.exists('exports/{path}'.format(path=poll)):
 	os.makedirs('exports/{path}'.format(path=poll))
 
 doExportTxt = True
-doExportMap = False
+doExportMap = True
 doExportCsv = True
 
-doExportPropMap = False
+doExportPropMap = True
 
 allRounds = {}
 allSeats = {}
@@ -71,11 +76,12 @@ for hk, hv in {k: v for k,v in mx.items() if k != 'sampleSize'}.items():
 	for i in sorted(curScores, key=lambda x: allDivs.getSortingKeys(x)):
 		r = redressementResults(r, curScores[i], allDivs=allDivs, weight=(1 if i == 'Great Britain' else 0.5))
 	
-	seatsParties = {x: proportionalHighestAverage(filterThreshold(r.get(x, allDivs), 0.05), seatsPerRegion[x], 'D\'Hondt') for x in allDivs.allDivs if x in seatsPerRegion}
+	seatsPartiesRegions = {x: proportionalHighestAverage(filterThreshold(r.get(x, allDivs), 0.05), seatsPerRegion[x], 'D\'Hondt') for x in allDivs.allDivs if x in seatsPerRegion}
+	seatsPartiesCounties = {x: proportionalHighestAverage(filterThreshold(r.get(x, allDivs), 0.05), seatsPerCounty[x], 'D\'Hondt') for x in allDivs.allDivs if x in seatsPerCounty}
 	
 	#Put it in allRounds
 	allRounds[hk] = r
-	allSeats[hk] = seatsParties
+	allSeats[hk] = (seatsPartiesRegions, seatsPartiesCounties)
 	
 	#Tweet text
 	if doExportTxt: allTexts.append('HYPOTHESIS {h}\n'.format(h=hk)+makeTweetText(r.get('Great Britain', allDivs=allDivs).toPercentages(), hv['sampleSize'], top=1, nbSimulated=15000))
@@ -84,8 +90,9 @@ for hk, hv in {k: v for k,v in mx.items() if k != 'sampleSize'}.items():
 	if doExportCsv: saveDataTable('exports/{path}/{h}.csv'.format(h=hk, path=poll), r)
 	if doExportMap:
 		exportMap(r, 'data/basemap_gb_counties_merged.svg', '{path}/{h}.svg'.format(h=hk, path=poll), allDivs=allDivs, partiesColors=partiesColors)
-	if doExportPropMap and tn == 1:
-		exportSeatsMap(r, seatsParties, seatsData, 'data/basemap_gb_regions.svg', '{path}/{h}_prop.svg'.format(h=hk, path=poll), allDivs=allDivs, partiesColors=partiesColors, scale=0.6)
+		if doExportPropMap and tn == 1:
+			exportSeatsMap(r, seatsPartiesRegions, seatsDataRegions, 'data/basemap_gb_regions.svg', '{path}/{h}_prop_r.svg'.format(h=hk, path=poll), allDivs=allDivs, partiesColors=partiesColors, scale=0.6)
+			exportSeatsMap(r, seatsPartiesCounties, seatsDataCounties, 'data/basemap_gb_counties_merged.svg', '{path}/{h}_prop_c.svg'.format(h=hk, path=poll), allDivs=allDivs, partiesColors=partiesColors, scale=0.6)
 
 
 if doExportTxt:
