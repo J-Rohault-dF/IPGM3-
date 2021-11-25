@@ -56,7 +56,7 @@ t1 = loadDataTable('data/2017T1.csv')
 t2 = loadDataTable('data/2017T2.csv')
 te = loadDataTable('data/2019TE.csv')
 
-poll = 'fr/BVA_20211115'
+poll = 'fr/Elabe_20211124'
 
 mx = importMatricesJson('data/pollDefs/{0}.json'.format(poll))
 if not os.path.exists('exports/{path}'.format(path=poll)):
@@ -90,7 +90,7 @@ for hk, hv in {k: v for k,v in mx.items() if k != 'sampleSize'}.items():
 	curScores = hv[('scores_2022T{n}'.format(n=tn))]
 	for i in sorted(curScores, key=lambda x: allDivs.getSortingKeys(x)):
 	#for i in ['National']:
-		r = redressementResults(r, curScores[i], allDivs=allDivs)
+		r = redressementResults(r, curScores[i], allDivs=allDivs, weight = (1 if i == 'National' else 0.75 if i == 'Province' else 0.5))
 	
 	#Put it in allRounds
 	allRounds[hk] = r
@@ -99,7 +99,7 @@ for hk, hv in {k: v for k,v in mx.items() if k != 'sampleSize'}.items():
 	if doExportTxt: allTexts.append('HYPOTHESIS {h}\n'.format(h=hk)+makeTweetText(r.get('National', allDivs=allDivs).toPercentages(), hv['sampleSize'], top=(2 if tn==1 else 1), nbSimulated=15000, threshold=0.05))
 
 	#Export and map
-	if doExportCsv: saveDataTable('exports/{path}/{h}.csv'.format(h=hk, path=poll), r)
+	if doExportCsv: saveDataTable('exports/{path}/{h}.csv'.format(h=hk, path=poll), r, allDivs)
 	if doExportMap:
 		exportMap(r, 'data/basemap_collectivites_gparis.svg', '{path}/{h}.svg'.format(h=hk, path=poll), allDivs=allDivs, partiesColors=partiesColors)
 		exportMap(r, 'data/basemap_collectivites_gparis.svg', '{path}/{h}_r.svg'.format(h=hk, path=poll), allDivs=allDivs, partiesColors=partiesColors, doRings=True, ringsData=ringsData, outerRadius=(5*10), innerRadius=(3*10))

@@ -23,10 +23,11 @@ def loadDataTable(src: str) -> ResultsSet:
 
 
 
-def saveDataTable(src: str, rs: ResultsSet):
+def saveDataTable(src: str, rs: ResultsSet, allDivs: AllDivs):
 	ls = []
 	ls.append(';'.join([''] + [str(x) for x in rs.listOfResults[0].results.keys()]))
-	for r in rs.listOfResults:
+	for d in allDivs.allDivs:
+		r = rs.get(d, allDivs)
 		ls.append(';'.join([r.name] + [str(x) for x in r.results.values()]))
 	with open(src, 'w', encoding='utf8') as exportFile:
 		exportFile.write('\n'.join(ls))
@@ -172,6 +173,9 @@ def importMatricesJson(src: str):
 			transfersMatrix = [[float(y)/100 for y in x] for x in m['vtm'].values()]
 			externalAbs = m['externalAbs']
 			original = m['original']
+			based_on = m['based_on'] if 'based_on' in m else None
+
+			if based_on != None: appendDictInDict(allReturning, label, 'based_on', based_on)
 
 			#Handle externalAbs
 			if '@' in candidates and externalAbs:
