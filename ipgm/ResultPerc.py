@@ -19,8 +19,8 @@ class ResultPerc:
 		return ResultPerc(name, resDict, sum([x for x in resDict.values()]))
 	
 	@classmethod
-	def fromVotelessDict(self, name: str, resDict: dict):
-		return ResultPerc(name, resDict, None)
+	def fromVotelessDict(self, name: str, resDict: dict, votesCount: int|float|None = None):
+		return ResultPerc(name, resDict, votesCount)
 	
 	@classmethod
 	def createEmpty(self):

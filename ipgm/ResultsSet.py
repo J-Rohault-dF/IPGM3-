@@ -49,3 +49,7 @@ class ResultsSet:
 
 	def getSumAll(self, allDivs: AllDivs) -> dict:
 		return self.getSumIf('National', allDivs.firstLevel, allDivs.overLevel)
+
+	def trim(self, ls: list, allDivs: AllDivs) -> None:
+		newList = [self.get(x, allDivs) for x in ls]
+		self.listOfResults = newList

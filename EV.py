@@ -268,7 +268,8 @@ abbr = {
 allDivs = AllDivs('data/divs_fr.txt')
 
 #Load table
-r = loadDataTable('exports/fr/BVA_20211115/1_XB_sEZ.csv')
+r = loadDataTable('exports/fr/Elabe_20211124/1_XB.csv')
+r.trim(allDivs.firstLevel, allDivs)
 
 #s = simulOneNat(r, 1.96, 1000, allDivs)
 #showRes(s.get('National', allDivs))

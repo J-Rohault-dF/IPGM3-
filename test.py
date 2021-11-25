@@ -3,6 +3,7 @@ from mapdrawer.seatsdrawer import *
 from ipgm.Result import *
 from ipgm.ResultsSet import *
 from ipgm.proportional import *
+from simulvote.simul import *
 import xml.etree.ElementTree as etree
 
 #with open('data/svg_test_2.svg', 'r') as svgdoc:
@@ -23,3 +24,6 @@ import xml.etree.ElementTree as etree
 #xmlR.write('data/svg_test_2.svg', encoding='unicode')
 
 #res = Result('test', {'a': 2836, 'b': 2763, 'c': 1203, 'd': 16})
+
+from ipgm.port import *
+t1 = loadDataTable('data/2017T1.csv')

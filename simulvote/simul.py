@@ -18,7 +18,7 @@ def simulOneRes(res: Result, stdev: float, sampleSize: int) -> Result:
 
 def rankingChances(res: Result, amountOfSims: int, stdev: float, sampleSize: int, top: int) -> dict[str, float]:
 	#Do N times:
-	allCands = [x for x in res.getCandidates() if x != '@']
+	allCands = [x for x in res.getCandidates() if (x != '@' and x != '')]
 
 	ls = {c: 0 for c in allCands}
 
@@ -57,17 +57,22 @@ def simulMany(ress: ResultsSet, amountOfSims: int, stdev: float, sampleSize: int
 
 	candidates = [x for x in ress.get('National', allDivs).getCandidates() if x != '@']
 
+	ress = simplifyResSet(ress, threshold=0.15)
+
 	#Do many times:
 	for i in range(amountOfSims):
 
 		# Simulate one election
 		rs = simulOneNat(ress, stdev, sampleSize, allDivs)
 
+		rs = simplifyResSet(rs)
+
 		# Find the winners in each dept and put them in some array
 		for d in allDivs.allDivs:
 			w = rs.get(d, allDivs).getWinner()
-			if w in ls[d]: ls[d][w] += 1
-			else: ls[d][w] = 1
+			addInDict(ls[d], w, 1)
+			#if w in ls[d]: ls[d][w] += 1
+			#else: ls[d][w] = 1
 		
 		if i%(amountOfSims/10) == 0:
 			print('Simulated {0} out of {1}...'.format(i, amountOfSims))
@@ -80,3 +85,21 @@ def simulMany(ress: ResultsSet, amountOfSims: int, stdev: float, sampleSize: int
 
 	# Return the results
 	return lDepts
+
+def simplifyResSet(res: ResultsSet, threshold: float = 0.1) -> ResultsSet:
+	for i in range(len(res.listOfResults)):
+		r = res.listOfResults[i]
+
+		rp = r.toPercentages()
+		maxScore = rp.get(r.getWinner())
+
+		dc = {'@': 0}
+		for k,v in rp.results.items():
+			if v >= (maxScore-threshold):
+				dc[k] = v
+			else:
+				dc['@'] += v
+		
+		res.listOfResults[i] = Result.fromPercentages(ResultPerc.fromVotelessDict(r.name, dc, r.getSumOfVotes(removeAbs=False)))
+
+	return res

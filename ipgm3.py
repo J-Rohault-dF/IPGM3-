@@ -62,9 +62,9 @@ mx = importMatricesJson('data/pollDefs/{0}.json'.format(poll))
 if not os.path.exists('exports/{path}'.format(path=poll)):
 	os.makedirs('exports/{path}'.format(path=poll))
 
-doExportTxt = True
-doExportMap = True
-doExportCsv = True
+doExportTxt = False
+doExportMap = False
+doExportCsv = False
 
 allRounds = {}
 allTexts = []
