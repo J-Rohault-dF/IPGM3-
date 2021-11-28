@@ -1,101 +1,101 @@
 div;seats;layout;orientation;cx;cy
-Bedfordshire County;6;Regular;;;
-Cambridgeshire County;7;Regular;;;
-Essex County;18;Regular;;;
-Hertfordshire County;11;Regular;;;
-Norfolk County;9;Regular;;;
-Suffolk County;7;Regular;;;
-Derbyshire County;11;Regular;R;;
-Leicestershire County;10;Regular;;;
-Lincolnshire County;7;Regular;;;
-Northamptonshire County;7;Regular;;;
-Nottinghamshire County;11;Regular;L;;
-Cleveland County;6;Regular;;;
-County Durham;7;Regular;;;
-Northumberland County;4;Regular;;;
-Tyne and Wear County;12;Regular;;;
-Cheshire County;11;Regular;;;
-Cumbria County;6;Regular;;;
-Greater Manchester County;27;Regular;;;
-Lancashire County;16;Regular;;;
-Merseyside County;15;Regular;;;
-Berkshire County;8;Wide;;;
-Buckinghamshire County;7;Regular;;;
-Hampshire County;18;Regular;;;
-Isle of Wight County;1;Regular;;;
-Kent County;17;Regular;;;
-Oxfordshire County;6;Regular;R;;
-Surrey County;11;Regular;;;
-East Sussex County;8;Regular;;;
-West Sussex County;8;Regular;;;
-Avon County;11;Regular;;;
-Cornwall County;6;Regular;;;
-Devon County;12;Regular;;;
-Dorset County;8;Regular;;;
-Gloucestershire County;6;Regular;;;
-Somerset County;5;Regular;;;
-Wiltshire County;7;Regular;;;
-Herefordshire County;2;Regular;;;
-Worcestershire County;6;Regular;;;
-Shropshire County;5;Regular;;;
-Staffordshire County;12;Regular;;;
-Warwickshire County;6;Regular;R;;
-West Midlands County;28;Regular;;;
-Humberside County;10;Regular;;;
-North Yorkshire County;8;Regular;;;
-South Yorkshire County;14;Regular;;;
-West Yorkshire County;22;Regular;;;
-Borough of Barnet;3;Regular;;;
-Borough of Brent;2;Regular;;;
-Boroughs of Bromley and Lewisham;6;Regular;;;
-Borough of Camden;2;Regular;R;;
-Boroughs of City of London and Westminster;2;Regular;;;
-Borough of Croydon;3;Regular;;;
-Borough of Ealing;3;Regular;;;
-Borough of Enfield;3;Regular;;;
-Boroughs of Greenwich and Bexley;5;Regular;;;
-Borough of Hackney;2;Regular;R;;
-Boroughs of Harrow and Hillingdon;5;Regular;;;
-Borough of Haringey;2;Regular;;;
-Boroughs of Havering and Barking and Dagenham;4;Regular;;;
-Borough of Hounslow;2;Regular;;;
-Borough of Islington;2;Regular;R;;
-Boroughs of Kensington and Chelsea and Hammersmith and Fulham;3;Regular;;;
-Boroughs of Lambeth and Southwark;5;Regular;;;
-Borough of Merton;2;Regular;;;
-Borough of Newham;2;Regular;;;
-Boroughs of Redbridge and Waltham Forest;5;Regular;;;
-Boroughs of Richmond upon Thames and Kingston upon Thames;3;Regular;;;
-Borough of Sutton;2;Regular;;;
-Borough of Tower Hamlets;2;Regular;;;
-Borough of Wandsworth;3;Regular;;;
-Clwyd;7;Regular;;;
-Dyfed;5;Regular;;;
-Gwent;7;Regular;;;
-Gwynedd;3;Regular;;;
-Mid Glamorgan;6;Regular;R;;
-Powys;2;Regular;;;
-South Glamorgan;5;Regular;;;
-West Glamorgan;5;Regular;;;
-Aberdeen and Aberdeenshire Counties;5;Regular;;;
-Angus and Dundee Counties;3;Regular;;;
-Argyll and Bute County;1;Regular;;;
-Edinburgh County;5;Regular;;;
-Clackmannanshire and Perth and Kinross Counties;2;Regular;;;
-Southern Scottish Counties;6;Regular;;;
-Ayrshire Counties;4;Regular;;;
-East Dunbartonshire and North Lanarkshire Counties;5;Regular;;;
-East Lothian County;1;Regular;;;
-East Renfrewshire County;1;Regular;;;
-Falkirk and West Lothian Counties;3;Regular;;;
-Fife County;4;Regular;;;
-Glasgow County;7;Regular;;;
-Highland County;3;Regular;;;
-Inverclyde County;1;Regular;;;
-Midlothian County;1;Regular;;;
-Moray County;1;Regular;;;
-Ma h-Eileanan Siar County;1;Regular;;;
-Orkney Islands and Shetland Islands Counties;1;Regular;;;
-Renfrewshire County;2;Regular;;;
-Stirling County;1;Regular;;;
-West Dunbartonshire County;1;Regular;;;
+Bedfordshire County;6;Regular;;99.552;110.578
+Cambridgeshire County;7;Regular;;106.650;102.685
+Essex County;18;Regular;;119.930;119.859
+Hertfordshire County;11;Regular;;103.679;119.662
+Norfolk County;9;Regular;;122.435;93.177
+Suffolk County;7;Regular;;125.408;107.541
+Derbyshire County;11;Regular;R;78.344;81.602
+Leicestershire County;10;Regular;;89.215;96.050
+Lincolnshire County;7;Regular;;101.915;82.812
+Northamptonshire County;7;Regular;;89.772;106.321
+Nottinghamshire County;11;Regular;L;89.444;83.211
+Cleveland County;6;Regular;;86.803;40.601
+County Durham;7;Regular;;74.177;38.801
+Northumberland County;4;Regular;;72.193;22.347
+Tyne and Wear County;12;Regular;;82.935;29.364
+Cheshire County;11;Regular;;62.763;81.155
+Cumbria County;6;Regular;;57.907;41.757
+Greater Manchester County;27;Regular;;173.450;70.558
+Lancashire County;16;Regular;;62.434;56.913
+Merseyside County;15;Regular;;55.204;70.350
+Berkshire County;8;Wide;;89.014;129.633
+Buckinghamshire County;7;Regular;;91.425;118.836
+Hampshire County;18;Regular;;85.085;140.831
+Isle of Wight County;1;Regular;;84.493;150.839
+Kent County;17;Regular;;121.016;133.497
+Oxfordshire County;6;Regular;R;82.277;119.825
+Surrey County;11;Regular;;101.136;133.762
+East Sussex County;8;Regular;;112.629;143.968
+West Sussex County;8;Regular;;98.725;144.960
+Avon County;11;Regular;;61.693;129.699
+Cornwall County;6;Regular;;19.995;157.111
+Devon County;12;Regular;;39.876;147.979
+Dorset County;8;Regular;;66.460;147.864
+Gloucestershire County;6;Regular;;70.390;118.591
+Somerset County;5;Regular;;55.172;139.062
+Wiltshire County;7;Regular;;73.593;132.573
+Herefordshire County;2;Regular;;58.278;110.757
+Worcestershire County;6;Regular;;69.036;107.202
+Shropshire County;5;Regular;;60.125;96.126
+Staffordshire County;12;Regular;;71.622;93.664
+Warwickshire County;6;Regular;R;79.736;104.746
+West Midlands County;28;Regular;;172.437;93.848
+Humberside County;10;Regular;;98.128;63.423
+North Yorkshire County;8;Regular;;84.003;51.824
+South Yorkshire County;14;Regular;;82.589;69.404
+West Yorkshire County;22;Regular;;176.212;44.789
+Borough of Barnet;3;Regular;;162.755;126.057
+Borough of Brent;2;Regular;;159.175;132.320
+Boroughs of Bromley and Lewisham;6;Regular;;183.798;153.240
+Borough of Camden;2;Regular;R;166.247;132.965
+Boroughs of City of London and Westminster;2;Regular;;168.468;137.864
+Borough of Croydon;3;Regular;;173.887;155.700
+Borough of Ealing;3;Regular;;154.861;137.000
+Borough of Enfield;3;Regular;;171.976;121.809
+Boroughs of Greenwich and Bexley;5;Regular;;186.885;143.011
+Borough of Hackney;2;Regular;R;170.392;132.428
+Boroughs of Harrow and Hillingdon;5;Regular;;146.372;132.920
+Borough of Haringey;2;Regular;;170.392;132.428
+Boroughs of Havering and Barking and Dagenham;4;Regular;;192.322;131.775
+Borough of Hounslow;2;Regular;;151.368;143.236
+Borough of Islington;2;Regular;R;170.392;132.428
+Boroughs of Kensington and Chelsea and Hammersmith and Fulham;3;Regular;;148.468;137.864
+Boroughs of Lambeth and Southwark;5;Regular;;173.075;143.295
+Borough of Merton;2;Regular;;165.043;149.827
+Borough of Newham;2;Regular;;181.742;136.239
+Boroughs of Redbridge and Waltham Forest;5;Regular;;181.178;128.575
+Boroughs of Richmond upon Thames and Kingston upon Thames;3;Regular;;156.961;150.532
+Borough of Sutton;2;Regular;;165.814;154.975
+Borough of Tower Hamlets;2;Regular;;175.285;137.002
+Borough of Wandsworth;3;Regular;;164.570;144.943
+Clwyd;7;Regular;;48.891;81.980
+Dyfed;5;Regular;;31.535;114.024
+Gwent;7;Regular;;56.259;119.637
+Gwynedd;3;Regular;;36.357;86.884
+Mid Glamorgan;6;Regular;R;46.348;122.320
+Powys;2;Regular;;47.735;105.675
+South Glamorgan;5;Regular;;48.082;130.218
+West Glamorgan;5;Regular;;33.750;124.053
+Aberdeen and Aberdeenshire Counties;5;Regular;;147.709;44.947
+Angus and Dundee Counties;3;Regular;;143.658;52.113
+Argyll and Bute County;1;Regular;;126.546;58.795
+Edinburgh County;5;Regular;;122.715;14.194
+Clackmannanshire and Perth and Kinross Counties;2;Regular;;136.949;53.109
+Southern Scottish Counties;6;Regular;;141.593;68.596
+Ayrshire Counties;4;Regular;;130.476;67.695
+East Dunbartonshire and North Lanarkshire Counties;5;Regular;;174.178;21.299
+East Lothian County;1;Regular;;130.476;16.838
+East Renfrewshire County;1;Regular;;107.586;23.239
+Falkirk and West Lothian Counties;3;Regular;;115.432;17.501
+Fife County;4;Regular;;141.919;58.960
+Glasgow County;7;Regular;;163.744;23.668
+Highland County;3;Regular;;130.245;41.457
+Inverclyde County;1;Regular;;99.035;15.613
+Midlothian County;1;Regular;;125.275;19.959
+Moray County;1;Regular;;141.341;40.301
+Ma h-Eileanan Siar County;1;Regular;;115.585;36.178
+Orkney Islands and Shetland Islands Counties;1;Regular;;145.965;18.225
+Renfrewshire County;2;Regular;;103.572;18.987
+Stirling County;1;Regular;;132.903;57.755
+West Dunbartonshire County;1;Regular;;103.449;14.217

@@ -27,6 +27,8 @@ def saveDataTable(src: str, rs: ResultsSet, allDivs: AllDivs):
 	ls = []
 	ls.append(';'.join([''] + [str(x) for x in rs.listOfResults[0].results.keys()]))
 	for d in allDivs.allDivs:
+		if not rs.contains(d): continue
+
 		r = rs.get(d, allDivs)
 		ls.append(';'.join([r.name] + [str(x) for x in r.results.values()]))
 	with open(src, 'w', encoding='utf8') as exportFile:
