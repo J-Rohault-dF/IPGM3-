@@ -89,13 +89,18 @@ for hk, hv in {k: v for k,v in mx.items() if k != 'sampleSize'}.items():
 	#Export and map
 	if doExportCsv: saveDataTable('exports/{path}/{h}.csv'.format(h=hk, path=poll), r, allDivs=allDivs)
 	if doExportMap:
-		exportMap(r, 'data/basemap_gb_counties_merged.svg', '{path}/{h}.svg'.format(h=hk, path=poll), allDivs=allDivs, partiesColors=partiesColors)
+		exportMap(r, 'data/basemap_gb_counties_simplified.svg', '{path}/{h}.svg'.format(h=hk, path=poll), allDivs=allDivs, partiesColors=partiesColors, mapScaling=2)
 		if doExportPropMap and tn == 1:
-			exportSeatsMap(r, seatsPartiesRegions, seatsDataRegions, 'data/basemap_gb_regions.svg', '{path}/{h}_prop_r.svg'.format(h=hk, path=poll), allDivs=allDivs, partiesColors=partiesColors, scale=0.6)
-			exportSeatsMap(r, seatsPartiesCounties, seatsDataCounties, 'data/basemap_gb_counties_merged.svg', '{path}/{h}_prop_c.svg'.format(h=hk, path=poll), allDivs=allDivs, partiesColors=partiesColors, scale=0.6)
+			exportSeatsMap(r, seatsPartiesRegions, seatsDataRegions, 'data/basemap_gb_regions.svg', '{path}/{h}_prop_r.svg'.format(h=hk, path=poll), allDivs=allDivs, partiesColors=partiesColors, scale=0.6, mapScaling=3)
+			exportSeatsMap(r, seatsPartiesCounties, seatsDataCounties, 'data/basemap_gb_counties_merged.svg', '{path}/{h}_prop_c.svg'.format(h=hk, path=poll), allDivs=allDivs, partiesColors=partiesColors, scale=0.6, mapScaling=3)
 
 
 if doExportTxt:
 	with open('exports/{path}/tweetText.txt'.format(path=poll),'w',encoding='utf8') as txtFile:
 		txtFile.write('\n\n'.join(allTexts))
 
+print('Regional proportional:')
+print({k: sum([x[k] if k in x else 0 for x in allSeats['1_GE'][0].values()]) for k in ['Conservative', 'Labour', 'Liberal Democrats', 'Green', 'SNP', 'Reform', 'Plaid Cymru', 'Others']})
+
+print('County proportional:')
+print({k: sum([x[k] if k in x else 0 for x in allSeats['1_GE'][1].values()]) for k in ['Conservative', 'Labour', 'Liberal Democrats', 'Green', 'SNP', 'Reform', 'Plaid Cymru', 'Others']})

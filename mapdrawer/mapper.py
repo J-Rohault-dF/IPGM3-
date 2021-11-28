@@ -104,7 +104,7 @@ def mapTexter(xmlL: etree.Element, texts: dict[str, str], divsData: dict[str, di
 
 
 
-def exportMap(res: ResultsSet, mapSrc: str, mapTarget: str, allDivs: AllDivs, partiesColors: dict[str, Color], doRings: bool = False, ringsData: dict[str, dict[str, str|int]] = {}, outerRadius: float = 0, innerRadius: float = 0):
+def exportMap(res: ResultsSet, mapSrc: str, mapTarget: str, allDivs: AllDivs, partiesColors: dict[str, Color], doRings: bool = False, ringsData: dict[str, dict[str, str|int]] = {}, outerRadius: float = 0, innerRadius: float = 0, mapScaling: float = 1):
 	mapTarget = 'exports/'+mapTarget
 
 	with open(mapSrc, 'r', encoding='utf8') as originalMap:
@@ -117,16 +117,18 @@ def exportMap(res: ResultsSet, mapSrc: str, mapTarget: str, allDivs: AllDivs, pa
 	
 	xmlR.write(mapTarget)
 	
-	print('inkscape --export-type=png {0}'.format(mapTarget))
+	mapWidth = int(float(subprocess.run(['inkscape', '--query-width', mapTarget], check=True, stdout=subprocess.PIPE).stdout))
+	command = ['inkscape', '--export-type=png', '--export-width={0}'.format(mapWidth*mapScaling), '--export-background-opacity=0', mapTarget]
+	print(' '.join(command))
 
-	t = subprocess.run(['inkscape','--export-type=png','{0}'.format(mapTarget)], shell=True)
+	t = subprocess.run(command, shell=True)
 
 	#print('Opening map...')
 	#os.system(mapTarget.replace('.svg','.png').replace('/','\\'))
 
 
 
-def exportMapProbs(probs: dict[str, dict[str, float]], mapSrc: str, mapTarget: str, allDivs: AllDivs, partiesColors: dict, doRings: bool = False, divsData: dict[str, dict[str, str|int]] = {}, outerRadius: float = 0, innerRadius: float = 0, doTexts: bool = False, texts: dict[str, str] = {}, fontSize: float = 8, fontUsed: str = ''):
+def exportMapProbs(probs: dict[str, dict[str, float]], mapSrc: str, mapTarget: str, allDivs: AllDivs, partiesColors: dict, doRings: bool = False, divsData: dict[str, dict[str, str|int]] = {}, outerRadius: float = 0, innerRadius: float = 0, doTexts: bool = False, texts: dict[str, str] = {}, fontSize: float = 8, fontUsed: str = '', mapScaling: float = 1):
 	mapTarget = 'exports/'+mapTarget
 
 	with open(mapSrc, 'r', encoding='utf8') as originalMap:
@@ -142,15 +144,18 @@ def exportMapProbs(probs: dict[str, dict[str, float]], mapSrc: str, mapTarget: s
 
 	xmlR.write(mapTarget)
 	
-	print('inkscape --export-type=png {0}'.format(mapTarget))
-	t = subprocess.run(['inkscape','--export-type=png','{0}'.format(mapTarget)], shell=True)
+	mapWidth = int(float(subprocess.run(['inkscape', '--query-width', mapTarget], check=True, stdout=subprocess.PIPE).stdout))
+	command = ['inkscape', '--export-type=png', '--export-width={0}'.format(mapWidth*mapScaling), '--export-background-opacity=0', mapTarget]
+	print(' '.join(command))
+
+	t = subprocess.run(command, shell=True)
 
 	#print('Opening map...')
 	#os.system(mapTarget.replace('.svg','.png').replace('/','\\'))
 
 
 
-def exportSeatsMap(res: ResultsSet, seatsParties: dict[str, dict[str, int]], divsData: dict[str, dict[str, any]], mapSrc: str, mapTarget: str, allDivs: AllDivs, partiesColors: dict, scale: float = 1):
+def exportSeatsMap(res: ResultsSet, seatsParties: dict[str, dict[str, int]], divsData: dict[str, dict[str, any]], mapSrc: str, mapTarget: str, allDivs: AllDivs, partiesColors: dict, scale: float = 1, mapScaling: float = 1):
 	mapTarget = 'exports/'+mapTarget
 
 	with open(mapSrc, 'r', encoding='utf8') as originalMap:
@@ -174,8 +179,11 @@ def exportSeatsMap(res: ResultsSet, seatsParties: dict[str, dict[str, int]], div
 	
 	xmlR.write(mapTarget)
 	
-	print('inkscape --export-type=png {0}'.format(mapTarget))
-	t = subprocess.run(['inkscape','--export-type=png','{0}'.format(mapTarget)], shell=True)
-	
+	mapWidth = int(float(subprocess.run(['inkscape', '--query-width', mapTarget], check=True, stdout=subprocess.PIPE).stdout))
+	command = ['inkscape', '--export-type=png', '--export-width={0}'.format(mapWidth*mapScaling), '--export-background-opacity=0', mapTarget]
+	print(' '.join(command))
+
+	t = subprocess.run(command, shell=True)
+
 	#print('Opening map...')
 	#os.system(mapTarget.replace('.svg','.png').replace('/','\\'))
