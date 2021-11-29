@@ -3,7 +3,7 @@ from mapdrawer.seatsdrawer import *
 from ipgm.Result import *
 from ipgm.ResultsSet import *
 from ipgm.proportional import *
-from collectivites import *
+from divsHandler import *
 from simulvote.simul import *
 import xml.etree.ElementTree as etree
 

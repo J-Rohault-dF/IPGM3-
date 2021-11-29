@@ -4,7 +4,7 @@ from ipgm.utils import *
 from ipgm.port import *
 from ipgm.mainFuncs import *
 from twitterTextAdditions import *
-from collectivites import *
+from divsHandler import *
 from mapdrawer.mapper import *
 
 

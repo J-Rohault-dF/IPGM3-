@@ -5,7 +5,7 @@ from ipgm.port import *
 from ipgm.mainFuncs import *
 from ipgm.proportional import *
 from twitterTextAdditions import *
-from collectivites import *
+from divsHandler import *
 from mapdrawer.mapper import *
 
 partiesColors = {
