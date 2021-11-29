@@ -35,8 +35,8 @@ drawColor = {
 	'Scottish Greens': Color('#00B140'),
 	'SNP': Color('#FDF38E'),
 	'Plaid Cymru': Color('#005B54'),
-	'Brexit': Color('#43929d'),
-	'Reform': Color('#43929d'),
+	'Brexit': Color('#5a8187'),
+	'Reform': Color('#5a8187'),
 	'Others': Color('#000000'),
 
 	'Boris Johnson': Color('#0087DC'),
@@ -67,7 +67,7 @@ allDivs = AllDivs('data/divs_uk.txt')
 
 t = loadDataTable('data/uk_stats/2019GE.csv', allDivs)
 
-poll = 'uk/RaWS_20211121'
+poll = 'uk/RaWS_20211129'
 
 mx = importMatricesJson('data/pollDefs/{0}.json'.format(poll))
 if not os.path.exists('exports/{path}'.format(path=poll)):
