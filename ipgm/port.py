@@ -3,7 +3,7 @@ from ipgm.utils import *
 from ipgm.Result import *
 from ipgm.ResultsSet import *
 from ipgm.VTM import *
-from collectivites import *
+from divsHandler import *
 
 #Fonction pour charger un tableau de données en classe [FORMAT: CSV with SEMICOLONS]
 def loadDataTable(src: str) -> ResultsSet:

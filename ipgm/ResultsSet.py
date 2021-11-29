@@ -1,4 +1,4 @@
-from collectivites import *
+from divsHandler import *
 from ipgm.Result import *
 
 #Set of multiple results

@@ -5,7 +5,7 @@ from ipgm.mainFuncs import *
 from ipgm.proportional import *
 from twitterTextAdditions import *
 
-from collectivites import *
+from divsHandler import *
 from mapdrawer.mapper import *
 
 allDivs = AllDivs('data/divs_us.txt')

@@ -1,6 +1,6 @@
 from ipgm.port import *
 from ipgm.mainFuncs import *
-from collectivites import *
+from divsHandler import *
 from mapdrawer.mapper import *
 from simulvote.simul import *
 
