@@ -8,15 +8,35 @@ from twitterTextAdditions import *
 from collectivites import *
 from mapdrawer.mapper import *
 
-partiesColors = { #Should put the actual colors
+partiesColors = {
 	'Conservative': Color('#0087DC'),
 	'Labour': Color('#E4003B'),
 	'Liberal Democrats': Color('#FAA61A'),
 	'Green': Color('#6AB023'),
+	'Scottish Greens': Color('#00B140'),
 	'SNP': Color('#FDF38E'),
 	'Plaid Cymru': Color('#005B54'),
 	'Brexit': Color('#12B6CF'),
 	'Reform': Color('#12B6CF'),
+	'Others': Color('#000000'),
+
+	'Boris Johnson': Color('#0087DC'),
+	'Rishi Sunak': Color('#4e42f5'),
+	'Keir Starmer': Color('#E4003B'),
+	'Andy Burnham': Color('#E4003B'),
+	'Sadiq Khan': Color('#E4003B'),
+	'Angela Rayner': Color('#E4003B'),
+}
+drawColor = {
+	'Conservative': Color('#0087DC'),
+	'Labour': Color('#E4003B'),
+	'Liberal Democrats': Color('#FAA61A'),
+	'Green': Color('#6AB023'),
+	'Scottish Greens': Color('#00B140'),
+	'SNP': Color('#FDF38E'),
+	'Plaid Cymru': Color('#005B54'),
+	'Brexit': Color('#43929d'),
+	'Reform': Color('#43929d'),
 	'Others': Color('#000000'),
 
 	'Boris Johnson': Color('#0087DC'),
@@ -76,9 +96,11 @@ for hk, hv in {k: v for k,v in mx.items() if k != 'sampleSize'}.items():
 	for i in sorted(curScores, key=lambda x: allDivs.getSortingKeys(x)):
 		r = redressementResults(r, curScores[i], allDivs=allDivs, weight=(1 if i == 'Great Britain' else 0.5))
 	
+	if tn == 1: r.replaceCand('Scotland', 'Green', 'Scottish Greens', allDivs)
+	
 	seatsPartiesRegions = {x: proportionalHighestAverage(filterThreshold(r.get(x, allDivs), 0.05), seatsPerRegion[x], 'D\'Hondt') for x in allDivs.allDivs if x in seatsPerRegion}
 	seatsPartiesCounties = {x: proportionalHighestAverage(filterThreshold(r.get(x, allDivs), 0.05), seatsPerCounty[x], 'D\'Hondt') for x in allDivs.allDivs if x in seatsPerCounty}
-	
+
 	#Put it in allRounds
 	allRounds[hk] = r
 	allSeats[hk] = (seatsPartiesRegions, seatsPartiesCounties)
@@ -91,8 +113,8 @@ for hk, hv in {k: v for k,v in mx.items() if k != 'sampleSize'}.items():
 	if doExportMap:
 		exportMap(r, 'data/basemap_gb_counties_simplified.svg', '{path}/{h}.svg'.format(h=hk, path=poll), allDivs=allDivs, partiesColors=partiesColors, mapScaling=2)
 		if doExportPropMap and tn == 1:
-			exportSeatsMap(r, seatsPartiesRegions, seatsDataRegions, 'data/basemap_gb_regions.svg', '{path}/{h}_prop_r.svg'.format(h=hk, path=poll), allDivs=allDivs, partiesColors=partiesColors, scale=0.6, mapScaling=3)
-			exportSeatsMap(r, seatsPartiesCounties, seatsDataCounties, 'data/basemap_gb_counties_merged.svg', '{path}/{h}_prop_c.svg'.format(h=hk, path=poll), allDivs=allDivs, partiesColors=partiesColors, scale=0.6, mapScaling=3)
+			exportSeatsMap(r, seatsPartiesRegions, seatsDataRegions, 'data/basemap_gb_regions.svg', '{path}/{h}_prop_r.svg'.format(h=hk, path=poll), allDivs=allDivs, partiesColors=drawColor, scale=0.6, mapScaling=3)
+			exportSeatsMap(r, seatsPartiesCounties, seatsDataCounties, 'data/basemap_gb_counties_merged.svg', '{path}/{h}_prop_c.svg'.format(h=hk, path=poll), allDivs=allDivs, partiesColors=drawColor, scale=0.6, mapScaling=3)
 
 
 if doExportTxt:

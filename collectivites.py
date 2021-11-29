@@ -23,3 +23,11 @@ class AllDivs:
 
 	def getSortingKeys(self, s: str):
 		return self.allDivs.index(s)
+	
+	def under(self, div):
+		return self.overLevel[div]
+	
+	def unders(self, div):
+		if div in self.firstLevel: return div
+		else:
+			return flattenList([self.unders(x) for x in self.under(div)])

@@ -1,4 +1,5 @@
 from __future__ import annotations
+from copy import deepcopy
 from ipgm.ResultPerc import *
 from ipgm.utils import *
 
@@ -66,6 +67,10 @@ class Result:
 	
 	def getCleanResults(self) -> dict[str, int|float]:
 		return {k: v for k,v in self.results.items() if ('@' not in k and k != '')}
+
+	def replaceCand(self, cand, replacing):
+		self.results[replacing] = self.results.pop(cand)
+		return self
 
 
 

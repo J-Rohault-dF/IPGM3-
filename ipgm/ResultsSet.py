@@ -26,6 +26,12 @@ class ResultsSet:
 		else:
 			if quiet: return None
 			else: raise Exception('Subdivision {0} not found'.format(name))
+	
+	def set(self, res: Result):
+		if res.name not in [x.name for x in self.listOfResults]:
+			self.listOfResults.append(res)
+		else:
+			self.listOfResults[[x.name for x in self.listOfResults].index(res.name)] = res
 
 	#Returns list of all components
 	def getAll(self, listNames: list) -> list:
@@ -53,3 +59,7 @@ class ResultsSet:
 	def trim(self, ls: list, allDivs: AllDivs) -> None:
 		newList = [self.get(x, allDivs) for x in ls]
 		self.listOfResults = newList
+
+	def replaceCand(self, div: str, cand: str, replacing: str, allDivs: AllDivs):
+		for i in allDivs.unders(div):
+			self.set(self.get(i, allDivs).replaceCand(cand, replacing))
