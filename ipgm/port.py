@@ -6,7 +6,7 @@ from ipgm.VTM import *
 from divsHandler import *
 
 #Fonction pour charger un tableau de données en classe [FORMAT: CSV with SEMICOLONS]
-def loadDataTable(src: str) -> ResultsSet:
+def loadDataTable(src: str, allDivs: AllDivs) -> ResultsSet:
 	#Open the datatable and dump it into a python tab
 	with open(src,'r',encoding='utf8') as dataTable:
 		txt = dataTable.read()
@@ -19,7 +19,7 @@ def loadDataTable(src: str) -> ResultsSet:
 		listResults.append(Result.fromLists(l[0], tab[0][1:], l[1:]))
 	
 	#Put the tab of results into NationalResults
-	return ResultsSet(listResults)
+	return ResultsSet(allDivs, listResults)
 
 
 

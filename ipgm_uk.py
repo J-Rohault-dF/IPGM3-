@@ -65,7 +65,7 @@ seatsPerCounty = {k: v['seats'] for k,v in seatsDataCounties.items()}
 
 allDivs = AllDivs('data/divs_uk.txt')
 
-t = loadDataTable('data/uk_stats/2019GE.csv')
+t = loadDataTable('data/uk_stats/2019GE.csv', allDivs)
 
 poll = 'uk/RaWS_20211121'
 
@@ -94,19 +94,19 @@ for hk, hv in {k: v for k,v in mx.items() if k != 'sampleSize'}.items():
 
 	curScores = hv[('scores_2024{0}'.format('GE' if tn == 1 else 'R2').format(h=hk))]
 	for i in sorted(curScores, key=lambda x: allDivs.getSortingKeys(x)):
-		r = redressementResults(r, curScores[i], allDivs=allDivs, weight=(1 if i == 'Great Britain' else 0.5))
+		r = redressementResults(r, curScores[i], weight=(1 if i == 'Great Britain' else 0.5))
 	
-	if tn == 1: r.replaceCand('Scotland', 'Green', 'Scottish Greens', allDivs)
+	if tn == 1: r.replaceCand('Scotland', 'Green', 'Scottish Greens')
 	
-	seatsPartiesRegions = {x: proportionalHighestAverage(filterThreshold(r.get(x, allDivs), 0.05), seatsPerRegion[x], 'D\'Hondt') for x in allDivs.allDivs if x in seatsPerRegion}
-	seatsPartiesCounties = {x: proportionalHighestAverage(filterThreshold(r.get(x, allDivs), 0.05), seatsPerCounty[x], 'D\'Hondt') for x in allDivs.allDivs if x in seatsPerCounty}
+	seatsPartiesRegions = {x: proportionalHighestAverage(filterThreshold(r.get(x), 0.05), seatsPerRegion[x], 'D\'Hondt') for x in allDivs.allDivs if x in seatsPerRegion}
+	seatsPartiesCounties = {x: proportionalHighestAverage(filterThreshold(r.get(x), 0.05), seatsPerCounty[x], 'D\'Hondt') for x in allDivs.allDivs if x in seatsPerCounty}
 
 	#Put it in allRounds
 	allRounds[hk] = r
 	allSeats[hk] = (seatsPartiesRegions, seatsPartiesCounties)
 	
 	#Tweet text
-	if doExportTxt: allTexts.append('HYPOTHESIS {h}\n'.format(h=hk)+makeTweetText(r.get('Great Britain', allDivs=allDivs).toPercentages(), hv['sampleSize'], top=1, nbSimulated=15000))
+	if doExportTxt: allTexts.append('HYPOTHESIS {h}\n'.format(h=hk)+makeTweetText(r.get('Great Britain').toPercentages(), hv['sampleSize'], top=1, nbSimulated=15000))
 
 	#Export and map
 	if doExportCsv: saveDataTable('exports/{path}/{h}.csv'.format(h=hk, path=poll), r, allDivs=allDivs)

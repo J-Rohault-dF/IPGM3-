@@ -60,7 +60,7 @@ def mapColorerPercs(res: ResultsSet, allDivs: AllDivs, partiesColors: dict[str, 
 	for i in xmlR.getroot().find('{http://www.w3.org/2000/svg}g'):
 		#If id is in the deps list, replace the fill
 		if i.get('id') in allDivs.allDivs:
-			i.set('style', i.get('style').replace('000000', getWinningColorR(res.get(i.get('id'), allDivs=allDivs, quiet=True), partiesColors)))
+			i.set('style', i.get('style').replace('000000', getWinningColorR(res.get(i.get('id'), quiet=True), partiesColors)))
 
 def mapColorerProbs(probs: dict[str, dict[str, float]], allDivs: AllDivs, partiesColors: dict[str, Color], xmlR: etree.ElementTree):
 	for i in xmlR.getroot().find('{http://www.w3.org/2000/svg}g'):

@@ -4,23 +4,25 @@ from ipgm.Result import *
 #Set of multiple results
 class ResultsSet:
 	listOfResults: list[Result] = []
+	allDivs: AllDivs
 
-	def __init__(self, listOfResults: list=[]):
+	def __init__(self, allDivs: AllDivs, listOfResults: list=[]):
 		self.listOfResults = listOfResults
+		self.allDivs = allDivs
 	
 	def contains(self, name: str) -> bool:
 		return name in [x.name for x in self.listOfResults]
 
 	#Returns component given its name
-	def get(self, name: str, allDivs: AllDivs, quiet: bool = False) -> Result:
+	def get(self, name: str, quiet: bool = False) -> Result:
 
 		if name in [x.name for x in self.listOfResults]:
 			return [x for x in self.listOfResults if x.name == name][0] #Dumb stupid code but I guess it maybe works
 		
-		elif name in list(allDivs.overLevel.keys()):
-			cols = allDivs.overLevel[name]
+		elif name in list(self.allDivs.overLevel.keys()):
+			cols = self.allDivs.overLevel[name]
 			running = Result.fromDict(name, {})
-			for r in [self.get(x, allDivs=allDivs) for x in cols]:
+			for r in [self.get(x) for x in cols]:
 				running = running.add(r)
 			return running
 		else:
@@ -50,16 +52,16 @@ class ResultsSet:
 
 		return running
 	
-	def getSumIf(self, condition: str, allDivs: list, unpackingDivs: dict) -> dict:
-		return self.sumIfs(unpackDivisions(condition, allDivs, unpackingDivs))
+	def getSumIf(self, condition: str, unpackingDivs: dict) -> dict:
+		return self.sumIfs(unpackDivisions(condition, unpackingDivs))
 
-	def getSumAll(self, allDivs: AllDivs) -> dict:
-		return self.getSumIf('National', allDivs.firstLevel, allDivs.overLevel)
+	def getSumAll(self) -> dict:
+		return self.getSumIf('National', self.allDivs.firstLevel, self.allDivs.overLevel)
 
-	def trim(self, ls: list, allDivs: AllDivs) -> None:
-		newList = [self.get(x, allDivs) for x in ls]
+	def trim(self, ls: list) -> None:
+		newList = [self.get(x) for x in ls]
 		self.listOfResults = newList
 
-	def replaceCand(self, div: str, cand: str, replacing: str, allDivs: AllDivs):
-		for i in allDivs.unders(div):
-			self.set(self.get(i, allDivs).replaceCand(cand, replacing))
+	def replaceCand(self, div: str, cand: str, replacing: str):
+		for i in self.allDivs.unders(div):
+			self.set(self.get(i).replaceCand(cand, replacing))

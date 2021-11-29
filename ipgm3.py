@@ -52,9 +52,9 @@ with open('data/rings_fr.csv','r',encoding='utf8') as seatsDataFile:
 
 allDivs = AllDivs('data/divs_fr.txt')
 
-t1 = loadDataTable('data/2017T1.csv')
-t2 = loadDataTable('data/2017T2.csv')
-te = loadDataTable('data/2019TE.csv')
+t1 = loadDataTable('data/2017T1.csv', allDivs)
+t2 = loadDataTable('data/2017T2.csv', allDivs)
+te = loadDataTable('data/2019TE.csv', allDivs)
 
 poll = 'fr/Elabe_20211124'
 

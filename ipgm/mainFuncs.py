@@ -13,7 +13,7 @@ def extrapolateResults(initialRes: ResultsSet, changeMatrix: VTMatrix) -> Result
 	for res in initialRes.listOfResults:
 		finalRes.append(extrapolateResult(res, changeMatrix))
 
-	return ResultsSet(finalRes)
+	return ResultsSet(initialRes.allDivs, finalRes)
 
 
 
@@ -26,12 +26,12 @@ def extrapolateResult(initialRes: Result, changeMatrix: VTMatrix) -> Result:
 
 
 #Redressement per division
-def redressementResults(initialRes: ResultsSet, targetRes: ResultPerc, allDivs: AllDivs, weight: float = 1):
+def redressementResults(initialRes: ResultsSet, targetRes: ResultPerc, weight: float = 1):
 	fRes = []
 	
 	#Get all components
 	targetName = targetRes.name
-	targetDivisions: list[str] = unpackDivisions(targetName, allDivs.firstLevel, allDivs.overLevel)
+	targetDivisions: list[str] = unpackDivisions(targetName, initialRes.allDivs.firstLevel, initialRes.allDivs.overLevel)
 	
 	#Compute the difference between the actual and target results
 	actualRes: ResultPerc = initialRes.sumIfs(targetDivisions).toPercentages(newName=targetName)
@@ -41,7 +41,7 @@ def redressementResults(initialRes: ResultsSet, targetRes: ResultPerc, allDivs: 
 
 	#For every res in ResultsSet that is also contained in Result:
 	for divName in initialRes.getAllDivs():
-		res: Result = initialRes.get(divName, allDivs=allDivs)
+		res: Result = initialRes.get(divName)
 		
 		if divName in targetDivisions:
 
@@ -53,7 +53,7 @@ def redressementResults(initialRes: ResultsSet, targetRes: ResultPerc, allDivs: 
 		else:
 			fRes.append(res)
 	
-	return ResultsSet(fRes)
+	return ResultsSet(initialRes.allDivs, fRes)
 
 
 
