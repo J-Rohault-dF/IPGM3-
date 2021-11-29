@@ -87,19 +87,19 @@ def allEquals(l: list) -> bool:
 	return True
 
 def getProbsFromResDict(d: dict) -> set[str, float]:
-	d = {k: v for k,v in sorted(d.items(), key=lambda item: item[1], reverse=True)}
+	d = sortedDict(d, reverse=True)
 	k1 = list(d.keys())[0]
 	v1 = d[k1]
 	return (k1, v1)
 
 def getProbsFromResDictDiff(d: dict) -> set[str, float]:
-	d = {k: v for k,v in sorted(d.items(), key=lambda item: item[1], reverse=True)}
+	d = sortedDict(d, reverse=True)
 	k1, k2 = list(d.keys())[0], list(d.keys())[1]
 	m = d[k1] - d[k2]
 	return (k1, m)
 
 def getTopProbsFromDict(d: dict, f: float) -> list[str]:
-	d = {k: v for k,v in sorted(d.items(), key=lambda item: item[1], reverse=True)}
+	d = sortedDict(d, reverse=True)
 	top = []
 	summer = 0
 	for k,v in d.items():
@@ -148,3 +148,10 @@ def andMerge(l: list[str], doOxfordComma: bool = True) -> str:
 def andMergeSorted(l: list[str], doOxfordComma: bool = True) -> str:
 	l = sorted(l)
 	return andMerge(l)
+
+def cleanDict(d: dict) -> dict:
+	return {k: v for k,v in d.items() if v != 0}
+
+def sortedDict(d: dict, reverse: bool = False) -> dict:
+    d = d = {k: v for k,v in sorted(d.items(), key=lambda item: item[1], reverse=reverse)}
+    return d

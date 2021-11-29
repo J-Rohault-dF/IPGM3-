@@ -122,7 +122,7 @@ if doExportTxt:
 		txtFile.write('\n\n'.join(allTexts))
 
 print('Regional proportional:')
-print({k: sum([x[k] if k in x else 0 for x in allSeats['1_GE'][0].values()]) for k in ['Conservative', 'Labour', 'Liberal Democrats', 'Green', 'SNP', 'Reform', 'Plaid Cymru', 'Others']})
+print(sortedDict(cleanDict({k: sum([x[k] if k in x else 0 for x in allSeats['1_GE'][0].values()]) for k in partiesColors.keys()}), reverse=True))
 
 print('County proportional:')
-print({k: sum([x[k] if k in x else 0 for x in allSeats['1_GE'][1].values()]) for k in ['Conservative', 'Labour', 'Liberal Democrats', 'Green', 'SNP', 'Reform', 'Plaid Cymru', 'Others']})
+print(sortedDict(cleanDict({k: sum([x[k] if k in x else 0 for x in allSeats['1_GE'][1].values()]) for k in partiesColors.keys()}), reverse=True))
