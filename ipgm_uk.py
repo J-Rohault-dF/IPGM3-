@@ -109,9 +109,9 @@ for hk, hv in {k: v for k,v in mx.items() if k != 'sampleSize'}.items():
 	if doExportTxt: allTexts.append('HYPOTHESIS {h}\n'.format(h=hk)+makeTweetText(r.get('Great Britain').toPercentages(), hv['sampleSize'], top=1, nbSimulated=15000))
 
 	#Export and map
-	if doExportCsv: saveDataTable('exports/{path}/{h}.csv'.format(h=hk, path=poll), r, allDivs=allDivs)
+	if doExportCsv: saveDataTable('exports/{path}/{h}.csv'.format(h=hk, path=poll), r)
 	if doExportMap:
-		exportMap(r, 'data/basemap_gb_counties_simplified.svg', '{path}/{h}.svg'.format(h=hk, path=poll), allDivs=allDivs, partiesColors=partiesColors, mapScaling=2)
+		exportMap(r, 'data/basemap_gb_counties_simplified.svg', '{path}/{h}.svg'.format(h=hk, path=poll), partiesColors=partiesColors, mapScaling=2)
 		if doExportPropMap and tn == 1:
 			exportSeatsMap(r, seatsPartiesRegions, seatsDataRegions, 'data/basemap_gb_regions.svg', '{path}/{h}_prop_r.svg'.format(h=hk, path=poll), allDivs=allDivs, partiesColors=drawColor, scale=0.6, mapScaling=3)
 			exportSeatsMap(r, seatsPartiesCounties, seatsDataCounties, 'data/basemap_gb_counties_merged.svg', '{path}/{h}_prop_c.svg'.format(h=hk, path=poll), allDivs=allDivs, partiesColors=drawColor, scale=0.6, mapScaling=3)

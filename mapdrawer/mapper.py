@@ -56,10 +56,10 @@ def getWinningColorP(d: dict[str, float], partiesColors: dict) -> str:
 
 
 
-def mapColorerPercs(res: ResultsSet, allDivs: AllDivs, partiesColors: dict[str, Color], xmlR: etree.ElementTree):
+def mapColorerPercs(res: ResultsSet, partiesColors: dict[str, Color], xmlR: etree.ElementTree):
 	for i in xmlR.getroot().find('{http://www.w3.org/2000/svg}g'):
 		#If id is in the deps list, replace the fill
-		if i.get('id') in allDivs.allDivs:
+		if i.get('id') in res.allDivs.allDivs:
 			i.set('style', i.get('style').replace('000000', getWinningColorR(res.get(i.get('id'), quiet=True), partiesColors)))
 
 def mapColorerProbs(probs: dict[str, dict[str, float]], allDivs: AllDivs, partiesColors: dict[str, Color], xmlR: etree.ElementTree):
@@ -102,37 +102,39 @@ def mapTexter(xmlL: etree.Element, texts: dict[str, str], divsData: dict[str, di
 	
 	xmlL.append(group)
 
-
-
-def exportMap(res: ResultsSet, mapSrc: str, mapTarget: str, allDivs: AllDivs, partiesColors: dict[str, Color], doRings: bool = False, ringsData: dict[str, dict[str, str|int]] = {}, outerRadius: float = 0, innerRadius: float = 0, mapScaling: float = 1):
-	mapTarget = 'exports/'+mapTarget
-
+def loadMap(mapSrc: str) -> etree.ElementTree:
 	with open(mapSrc, 'r', encoding='utf8') as originalMap:
-		xmlR = etree.parse(originalMap)
-	
-	mapColorerPercs(res, allDivs, partiesColors, xmlR)
+		return etree.parse(originalMap)
 
-	if doRings:
-		mapRinger(xmlR.getroot().find('{http://www.w3.org/2000/svg}g'), xmlR.getroot().find('{http://www.w3.org/2000/svg}defs'), {x.name: x.toPercentages().removedAbs().results for x in res.listOfResults}, ringsData, outerRadius, innerRadius, partiesColors)
-	
-	xmlR.write(mapTarget)
-	
-	mapWidth = int(float(subprocess.run(['inkscape', '--query-width', mapTarget], check=True, stdout=subprocess.PIPE).stdout))
-	command = ['inkscape', '--export-type=png', '--export-width={0}'.format(mapWidth*mapScaling), '--export-background-opacity=0', mapTarget]
-	print(' '.join(command))
+def convertMap(mapTarget, mapScaling):
+    mapWidth = int(float(subprocess.run(['inkscape', '--query-width', mapTarget], check=True, stdout=subprocess.PIPE).stdout))
+    command = ['inkscape', '--export-type=png', '--export-width={0}'.format(mapWidth*mapScaling), '--export-background-opacity=0', mapTarget]
+    print(' '.join(command))
 
-	t = subprocess.run(command, shell=True)
+    t = subprocess.run(command, shell=True)
 
 	#print('Opening map...')
 	#os.system(mapTarget.replace('.svg','.png').replace('/','\\'))
 
 
 
+def exportMap(res: ResultsSet, mapSrc: str, mapTarget: str, partiesColors: dict[str, Color], doRings: bool = False, ringsData: dict[str, dict[str, str|int]] = {}, outerRadius: float = 0, innerRadius: float = 0, mapScaling: float = 1):
+	mapTarget = 'exports/'+mapTarget
+	xmlR = loadMap(mapSrc)
+	
+	mapColorerPercs(res, partiesColors, xmlR)
+
+	if doRings:
+		mapRinger(xmlR.getroot().find('{http://www.w3.org/2000/svg}g'), xmlR.getroot().find('{http://www.w3.org/2000/svg}defs'), {x.name: x.toPercentages().removedAbs().results for x in res.listOfResults}, ringsData, outerRadius, innerRadius, partiesColors)
+	
+	xmlR.write(mapTarget)
+	convertMap(mapTarget, mapScaling)
+
+
+
 def exportMapProbs(probs: dict[str, dict[str, float]], mapSrc: str, mapTarget: str, allDivs: AllDivs, partiesColors: dict, doRings: bool = False, divsData: dict[str, dict[str, str|int]] = {}, outerRadius: float = 0, innerRadius: float = 0, doTexts: bool = False, texts: dict[str, str] = {}, fontSize: float = 8, fontUsed: str = '', mapScaling: float = 1):
 	mapTarget = 'exports/'+mapTarget
-
-	with open(mapSrc, 'r', encoding='utf8') as originalMap:
-		xmlR = etree.parse(originalMap)
+	xmlR = loadMap(mapSrc)
 	
 	mapColorerProbs(probs, allDivs, partiesColors, xmlR)
 
@@ -143,23 +145,13 @@ def exportMapProbs(probs: dict[str, dict[str, float]], mapSrc: str, mapTarget: s
 		mapTexter(xmlR.getroot().find('{http://www.w3.org/2000/svg}g'), texts, divsData, fontSize, fontUsed)
 
 	xmlR.write(mapTarget)
-	
-	mapWidth = int(float(subprocess.run(['inkscape', '--query-width', mapTarget], check=True, stdout=subprocess.PIPE).stdout))
-	command = ['inkscape', '--export-type=png', '--export-width={0}'.format(mapWidth*mapScaling), '--export-background-opacity=0', mapTarget]
-	print(' '.join(command))
-
-	t = subprocess.run(command, shell=True)
-
-	#print('Opening map...')
-	#os.system(mapTarget.replace('.svg','.png').replace('/','\\'))
+	convertMap(mapTarget, mapScaling)
 
 
 
 def exportSeatsMap(res: ResultsSet, seatsParties: dict[str, dict[str, int]], divsData: dict[str, dict[str, any]], mapSrc: str, mapTarget: str, allDivs: AllDivs, partiesColors: dict, scale: float = 1, mapScaling: float = 1):
 	mapTarget = 'exports/'+mapTarget
-
-	with open(mapSrc, 'r', encoding='utf8') as originalMap:
-		xmlR = etree.parse(originalMap)
+	xmlR = loadMap(mapSrc)
 	
 	#Color in the map
 	mapColorerPercs(res, allDivs, partiesColors, xmlR)
@@ -178,12 +170,4 @@ def exportSeatsMap(res: ResultsSet, seatsParties: dict[str, dict[str, int]], div
 	xmlR.getroot().find('{http://www.w3.org/2000/svg}g').append(group)
 	
 	xmlR.write(mapTarget)
-	
-	mapWidth = int(float(subprocess.run(['inkscape', '--query-width', mapTarget], check=True, stdout=subprocess.PIPE).stdout))
-	command = ['inkscape', '--export-type=png', '--export-width={0}'.format(mapWidth*mapScaling), '--export-background-opacity=0', mapTarget]
-	print(' '.join(command))
-
-	t = subprocess.run(command, shell=True)
-
-	#print('Opening map...')
-	#os.system(mapTarget.replace('.svg','.png').replace('/','\\'))
+	convertMap(mapTarget, mapScaling)
