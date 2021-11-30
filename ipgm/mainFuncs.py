@@ -58,12 +58,12 @@ def redressementResults(initialRes: ResultsSet, targetRes: ResultPerc, weight: f
 
 
 #Multiplying redressement per division
-def redressementResultsMultiplicative(initialRes: ResultsSet, targetRes: ResultPerc, allDivs: AllDivs, weight: float = 1):
+def redressementResultsMultiplicative(initialRes: ResultsSet, targetRes: ResultPerc, weight: float = 1):
 	fRes = []
 	
 	#Get all components
 	targetName = targetRes.name
-	targetDivisions: list[str] = unpackDivisions(targetName, allDivs.firstLevel, allDivs.overLevel)
+	targetDivisions: list[str] = unpackDivisions(targetName, initialRes.allDivs.firstLevel, initialRes.allDivs.overLevel)
 	
 	#Compute the multiplicative difference between the actual and target results
 	actualRes: ResultPerc = initialRes.sumIfs(targetDivisions).toPercentages(newName=targetName)
@@ -73,7 +73,7 @@ def redressementResultsMultiplicative(initialRes: ResultsSet, targetRes: ResultP
 
 	#For every res in ResultsSet that is also contained in Result:
 	for divName in initialRes.getAllDivs():
-		res: Result = initialRes.get(divName, allDivs=allDivs)
+		res: Result = initialRes.get(divName)
 		
 		if divName in targetDivisions:
 
@@ -86,12 +86,12 @@ def redressementResultsMultiplicative(initialRes: ResultsSet, targetRes: ResultP
 			fRes.append(res)
 	
 	#Redresse the results linearly and return
-	return redressementResults(ResultsSet(fRes), targetRes, allDivs=allDivs)
+	return redressementResults(ResultsSet(fRes), targetRes)
 
 
 
 #Average multiple ResultsSets (for example average multiple redressements)
-def averageResultsSet(*args: ResultsSet, allDivs: AllDivs) -> ResultsSet:
+def averageResultsSet(*args: ResultsSet) -> ResultsSet:
 	fRes = []
 
 	curDivs = []
@@ -100,12 +100,12 @@ def averageResultsSet(*args: ResultsSet, allDivs: AllDivs) -> ResultsSet:
 
 	#For each value of their results:
 	for v in curDivs:
-		results = [rs.get(v, allDivs) if rs.contains(v) else Result.createEmpty() for rs in args]
+		results = [rs.get(v, args[0].allDivs) if rs.contains(v) else Result.createEmpty() for rs in args]
 		
 		#Average them and add it to the fRes
 		fRes.append(averageResults(*results))
 	
-	return ResultsSet(fRes)
+	return ResultsSet(args[0].allDivs, fRes)
 
 
 

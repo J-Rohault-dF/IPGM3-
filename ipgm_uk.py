@@ -37,9 +37,9 @@ if not os.path.exists('exports/{path}'.format(path=poll)):
 
 candidaciesData: Candidacies = importCandidacies(srcParties='data/parties_uk.csv', srcCandidates='data/candidates_uk.csv')
 
-doExportTxt = True
-doExportMap = True
-doExportCsv = True
+doExportTxt = False
+doExportMap = False
+doExportCsv = False
 
 doExportPropMap = True
 
@@ -70,7 +70,7 @@ for hk, hv in {k: v for k,v in mx.items() if k != 'sampleSize'}.items():
 	allSeats[hk] = (seatsPartiesRegions, seatsPartiesCounties)
 	
 	#Tweet text
-	if doExportTxt: allTexts.append('HYPOTHESIS {h}\n'.format(h=hk)+makeTweetText(r.get('Great Britain').toPercentages(), hv['sampleSize'], top=1, nbSimulated=15000))
+	if doExportTxt: allTexts.append('HYPOTHESIS {h}\n'.format(h=hk)+makeTweetText(r.get('Great Britain').toPercentages(), hv['sampleSize'], top=1, candidaciesData=candidaciesData, nbSimulated=15000))
 
 	#Export and map
 	if doExportCsv: saveDataTable('exports/{path}/{h}.csv'.format(h=hk, path=poll), r)

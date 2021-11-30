@@ -1,3 +1,4 @@
+import os
 from copy import *
 
 from ipgm.utils import *
@@ -62,9 +63,11 @@ mx = importMatricesJson('data/pollDefs/{0}.json'.format(poll))
 if not os.path.exists('exports/{path}'.format(path=poll)):
 	os.makedirs('exports/{path}'.format(path=poll))
 
-doExportTxt = False
-doExportMap = False
-doExportCsv = False
+candidaciesData: Candidacies = importCandidacies(srcParties='data/parties_fr.csv', srcCandidates='data/candidates_fr.csv')
+
+doExportTxt = True
+doExportMap = True
+doExportCsv = True
 
 allRounds = {}
 allTexts = []
@@ -83,26 +86,26 @@ for hk, hv in {k: v for k,v in mx.items() if k != 'sampleSize'}.items():
 		if 'matrix_2017T2_2022T2' in hv: rl.append(extrapolateResults(t2, hv['matrix_2017T2_2022T2']))
 		if 'matrix_2019TE_2022T2' in hv: rl.append(extrapolateResults(te, hv['matrix_2019TE_2022T2']))
 		if 'matrix_2022T1_2022T2' in hv: rl.append(extrapolateResults(allRounds[hv['based_on']], hv['matrix_2022T1_2022T2']))
-	rs = averageResultsSet(*rl, allDivs=allDivs)
+	rs = averageResultsSet(*rl)
 
 	#Redresse R1
 	r = deepcopy(rs)
 	curScores = hv[('scores_2022T{n}'.format(n=tn))]
 	for i in sorted(curScores, key=lambda x: allDivs.getSortingKeys(x)):
 	#for i in ['National']:
-		r = redressementResults(r, curScores[i], allDivs=allDivs, weight = (1 if i == 'National' else 0.75 if i == 'Province' else 0.5))
+		r: ResultsSet = redressementResults(r, curScores[i], weight = (1 if i == 'National' else 0.75 if i == 'Province' else 0.5))
 	
 	#Put it in allRounds
 	allRounds[hk] = r
 
 	#Tweet text
-	if doExportTxt: allTexts.append('HYPOTHESIS {h}\n'.format(h=hk)+makeTweetText(r.get('National', allDivs=allDivs).toPercentages(), hv['sampleSize'], top=(2 if tn==1 else 1), nbSimulated=15000, threshold=0.05))
+	if doExportTxt: allTexts.append('HYPOTHESIS {h}\n'.format(h=hk)+makeTweetText(r.get('National').toPercentages(), hv['sampleSize'], top=(2 if tn==1 else 1), nbSimulated=15000, candidaciesData=candidaciesData, threshold=0.05))
 
 	#Export and map
-	if doExportCsv: saveDataTable('exports/{path}/{h}.csv'.format(h=hk, path=poll), r, allDivs)
+	if doExportCsv: saveDataTable('exports/{path}/{h}.csv'.format(h=hk, path=poll), r)
 	if doExportMap:
-		exportMap(r, 'data/basemap_collectivites_gparis.svg', '{path}/{h}.svg'.format(h=hk, path=poll), allDivs=allDivs, partiesColors=partiesColors)
-		exportMap(r, 'data/basemap_collectivites_gparis.svg', '{path}/{h}_r.svg'.format(h=hk, path=poll), allDivs=allDivs, partiesColors=partiesColors, doRings=True, ringsData=ringsData, outerRadius=(5*10), innerRadius=(3*10))
+		exportMap(r, 'data/basemap_collectivites_gparis.svg', '{path}/{h}.svg'.format(h=hk, path=poll), candidaciesData=candidaciesData)
+		exportMap(r, 'data/basemap_collectivites_gparis.svg', '{path}/{h}_r.svg'.format(h=hk, path=poll), candidaciesData=candidaciesData, doRings=True, ringsData=ringsData, outerRadius=(5*10), innerRadius=(3*10))
 
 if doExportTxt:
 	with open('exports/{path}/tweetText.txt'.format(path=poll),'w',encoding='utf8') as txtFile:
