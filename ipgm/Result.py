@@ -2,6 +2,7 @@ from __future__ import annotations
 from copy import deepcopy
 from ipgm.ResultPerc import *
 from ipgm.utils import *
+from ipgm.Candidacies import *
 
 #Single line of results
 class Result:
@@ -71,6 +72,17 @@ class Result:
 	def replaceCand(self, cand, replacing):
 		self.results[replacing] = self.results.pop(cand)
 		return self
+	
+	def checkEqualParty(self, candidaciesData: Candidacies) -> bool:
+
+		toCheck = [x for x in self.results.keys() if x in candidaciesData.getAllCandidates()]
+		if len(toCheck) == 0: return False
+
+		firstParty = candidaciesData.getPartyFromCandName(toCheck[0]).getFullName()
+
+		for c in toCheck[1:]:
+			if candidaciesData.getPartyFromCandName(c).getFullName() != firstParty: return False
+		return True
 
 
 

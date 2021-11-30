@@ -1,52 +1,14 @@
+import os
 from copy import *
 
 from ipgm.utils import *
 from ipgm.port import *
 from ipgm.mainFuncs import *
 from ipgm.proportional import *
+from ipgm.Candidacies import *
 from twitterTextAdditions import *
 from divsHandler import *
 from mapdrawer.mapper import *
-
-partiesColors = {
-	'Conservative': Color('#0087DC'),
-	'Labour': Color('#E4003B'),
-	'Liberal Democrats': Color('#FAA61A'),
-	'Green': Color('#6AB023'),
-	'Scottish Greens': Color('#00B140'),
-	'SNP': Color('#FDF38E'),
-	'Plaid Cymru': Color('#005B54'),
-	'Brexit': Color('#12B6CF'),
-	'Reform': Color('#12B6CF'),
-	'Others': Color('#000000'),
-
-	'Boris Johnson': Color('#0087DC'),
-	'Rishi Sunak': Color('#4e42f5'),
-	'Keir Starmer': Color('#E4003B'),
-	'Andy Burnham': Color('#E4003B'),
-	'Sadiq Khan': Color('#E4003B'),
-	'Angela Rayner': Color('#E4003B'),
-}
-drawColor = {
-	'Conservative': Color('#0087DC'),
-	'Labour': Color('#E4003B'),
-	'Liberal Democrats': Color('#FAA61A'),
-	'Green': Color('#6AB023'),
-	'Scottish Greens': Color('#00B140'),
-	'SNP': Color('#FDF38E'),
-	'Plaid Cymru': Color('#005B54'),
-	'Brexit': Color('#5a8187'),
-	'Reform': Color('#5a8187'),
-	'Others': Color('#000000'),
-
-	'Boris Johnson': Color('#0087DC'),
-	'Rishi Sunak': Color('#4e42f5'),
-	'Keir Starmer': Color('#E4003B'),
-	'Andy Burnham': Color('#E4003B'),
-	'Sadiq Khan': Color('#E4003B'),
-	'Angela Rayner': Color('#E4003B'),
-}
-
 
 #Get seats data
 with open('data/seats_uk.csv','r',encoding='utf8') as seatsDataFile:
@@ -72,6 +34,8 @@ poll = 'uk/RaWS_20211129'
 mx = importMatricesJson('data/pollDefs/{0}.json'.format(poll))
 if not os.path.exists('exports/{path}'.format(path=poll)):
 	os.makedirs('exports/{path}'.format(path=poll))
+
+candidaciesData: Candidacies = importCandidacies(srcParties='data/parties_uk.csv', srcCandidates='data/candidates_uk.csv')
 
 doExportTxt = True
 doExportMap = True
@@ -111,10 +75,10 @@ for hk, hv in {k: v for k,v in mx.items() if k != 'sampleSize'}.items():
 	#Export and map
 	if doExportCsv: saveDataTable('exports/{path}/{h}.csv'.format(h=hk, path=poll), r)
 	if doExportMap:
-		exportMap(r, 'data/basemap_gb_counties_simplified.svg', '{path}/{h}.svg'.format(h=hk, path=poll), partiesColors=partiesColors, mapScaling=2)
+		exportMap(r, 'data/basemap_gb_counties_simplified.svg', '{path}/{h}.svg'.format(h=hk, path=poll), candidaciesData=candidaciesData, mapScaling=2, sameParty=r.get('Great Britain').checkEqualParty(candidaciesData))
 		if doExportPropMap and tn == 1:
-			exportSeatsMap(r, seatsPartiesRegions, seatsDataRegions, 'data/basemap_gb_regions.svg', '{path}/{h}_prop_r.svg'.format(h=hk, path=poll), allDivs=allDivs, partiesColors=drawColor, scale=0.6, mapScaling=3)
-			exportSeatsMap(r, seatsPartiesCounties, seatsDataCounties, 'data/basemap_gb_counties_merged.svg', '{path}/{h}_prop_c.svg'.format(h=hk, path=poll), allDivs=allDivs, partiesColors=drawColor, scale=0.6, mapScaling=3)
+			exportSeatsMap(r, seatsPartiesRegions, seatsDataRegions, 'data/basemap_gb_regions.svg', '{path}/{h}_prop_r.svg'.format(h=hk, path=poll), allDivs=allDivs, candidaciesData=candidaciesData, seatsScale=0.6, mapScaling=3, sameParty=r.get('Great Britain').checkEqualParty(candidaciesData))
+			exportSeatsMap(r, seatsPartiesCounties, seatsDataCounties, 'data/basemap_gb_counties_merged.svg', '{path}/{h}_prop_c.svg'.format(h=hk, path=poll), allDivs=allDivs, candidaciesData=candidaciesData, seatsScale=0.6, mapScaling=3, sameParty=r.get('Great Britain').checkEqualParty(candidaciesData))
 
 
 if doExportTxt:
@@ -122,7 +86,7 @@ if doExportTxt:
 		txtFile.write('\n\n'.join(allTexts))
 
 print('Regional proportional:')
-print(sortedDict(cleanDict({k: sum([x[k] if k in x else 0 for x in allSeats['1_GE'][0].values()]) for k in partiesColors.keys()}), reverse=True))
+print(sortedDict(cleanDict({k: sum([x[k] if k in x else 0 for x in allSeats['1_GE'][0].values()]) for k in candidaciesData.getAllCands()}), reverse=True))
 
 print('County proportional:')
-print(sortedDict(cleanDict({k: sum([x[k] if k in x else 0 for x in allSeats['1_GE'][1].values()]) for k in partiesColors.keys()}), reverse=True))
+print(sortedDict(cleanDict({k: sum([x[k] if k in x else 0 for x in allSeats['1_GE'][1].values()]) for k in candidaciesData.getAllCands()}), reverse=True))
