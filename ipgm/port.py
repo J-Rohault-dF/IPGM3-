@@ -171,7 +171,7 @@ def importMatricesJson(src: str):
 		for m in h['matrices']:
 
 			initials = [x for x in m['vtm'].keys()]
-			finals = candidates
+			finals = candidates if 'candidates' not in m else m['candidates'] #Pick hypothesis candidates except if matrix candidates override it
 			transfersMatrix = [[float(y)/100 for y in x] for x in m['vtm'].values()]
 			externalAbs = m['externalAbs']
 			original = m['original']
@@ -180,7 +180,7 @@ def importMatricesJson(src: str):
 			if based_on != None: appendDictInDict(allReturning, label, 'based_on', based_on)
 
 			#Handle externalAbs
-			if '@' in candidates and externalAbs:
+			if ('@' in finals) and externalAbs:
 				for l in transfersMatrix:
 					scaling = (1 - l[finals.index('@')])
 					l = [v*scaling for k,v in dict(zip(finals,l)).items() if (k != '@')]

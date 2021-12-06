@@ -268,8 +268,8 @@ abbr = {
 allDivs = AllDivs('data/divs_fr.txt')
 
 #Load table
-r = loadDataTable('exports/fr/Elabe_20211124/1_XB.csv')
-r.trim(allDivs.firstLevel, allDivs)
+r = loadDataTable('exports/fr/Harris_20211206/1_VP.csv', allDivs)
+r.trim(allDivs.firstLevel)
 
 #s = simulOneNat(r, 1.96, 1000, allDivs)
 #showRes(s.get('National', allDivs))
@@ -279,7 +279,7 @@ r.trim(allDivs.firstLevel, allDivs)
 sm = simulMany(r, 5000, 4, 2000, allDivs=allDivs)
 
 #Compute potential electoral college
-EV = {k: [0, 0, 0] for k in r.get('National', allDivs).getCandidates()}
+EV = {k: [0, 0, 0] for k in r.get('National').getCandidates()}
 EV['tossup'] = {}
 
 for i in sm.keys():

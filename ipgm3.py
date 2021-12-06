@@ -8,41 +8,6 @@ from twitterTextAdditions import *
 from divsHandler import *
 from mapdrawer.mapper import *
 
-
-
-partiesColors = {
-	'Jean-Luc Mélenchon': Color('#cc2443'),
-	'Yannick Jadot': Color('#00c000'),
-	'Anne Hidalgo': Color('#ff8080'),
-	'Emmanuel Macron': Color('#ffeb00'),
-	'Xavier Bertrand': Color('#0066cc'), #LR candidate
-	'Valérie Pécresse': Color('#0066cc'), #LR candidate
-	'Michel Barnier': Color('#0066cc'), #LR candidate
-	'Éric Ciotti': Color('#0066cc'), #LR candidate
-	'Philippe Juvin': Color('#0066cc'), #LR candidate
-	'Marine Le Pen': Color('#627cad'), #not same as wp
-	'Éric Zemmour': Color('#d99536'),
-
-	'François Fillon': Color('#0066cc'),
-	'Benoît Hamon': Color('#ff8080'),
-	'Nicolas Dupont-Aignan': Color('#8040c0'),
-	'Jean Lassalle': Color('#adc1fd'),
-	'Philippe Poutou': Color('#bb0000'),
-	'François Asselineau': Color('#118088'),
-	'Nathalie Arthaud': Color('#8e2f2f'),
-	'Jacques Cheminade': Color('#eedd00'), #to replace with orange
-
-	'Arnaud Montebourg': Color('#cc6666'),
-	'Fabien Roussel': Color('#dd0000'),
-	'Jean-Christophe Lagarde': Color('#00ffff'),
-	'Jean-Frédéric Poisson': Color('#0000ff'),
-	'Florian Philippot': Color('#404040'),
-
-	'Approuve': Color('#82bf40'),
-	'Désapprouve': Color('#bf409d'),
-}
-
-
 #Get divs data
 with open('data/rings_fr.csv','r',encoding='utf8') as seatsDataFile:
 	ringsDataTemp = [y.split(';') for y in [x for x in seatsDataFile.read().split('\n')]]
@@ -57,7 +22,7 @@ t1 = loadDataTable('data/2017T1.csv', allDivs)
 t2 = loadDataTable('data/2017T2.csv', allDivs)
 te = loadDataTable('data/2019TE.csv', allDivs)
 
-poll = 'fr/Elabe_20211124'
+poll = 'fr/Harris_20211206'
 
 mx = importMatricesJson('data/pollDefs/{0}.json'.format(poll))
 if not os.path.exists('exports/{path}'.format(path=poll)):
