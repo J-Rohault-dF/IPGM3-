@@ -1,5 +1,5 @@
 {
-    "pollFirm": "Harris-Interactive",
+    "pollFirm": "Ifop",
     "date": "",
     "sampleSize": 0,
     
@@ -7,12 +7,11 @@
         {
             "label": "1_VP",
             "final": "2022T1",
-            "candidates": ["Nathalie Arthaud", "Philippe Poutou", "Fabien Roussel", "Jean-Luc Mélenchon", "Arnaud Montebourg", "Anne Hidalgo", "Yannick Jadot", "Emmanuel Macron", "Valérie Pécresse", "Nicolas Dupont-Aignan", "Florian Philippot", "Marine Le Pen", "Éric Zemmour", "François Asselineau", "Jean Lassalle", "@"],
+            "candidates": ["Nathalie Arthaud", "Philippe Poutou", "Fabien Roussel", "Jean-Luc Mélenchon", "Anne Hidalgo", "Arnaud Montebourg", "Yannick Jadot", "Emmanuel Macron", "Valérie Pécresse", "Nicolas Dupont-Aignan", "Marine Le Pen", "Éric Zemmour", "Jean Lassalle"],
             "matrices": [
                 {
                     "original": "2017T1",
                     "externalAbs": true,
-                    "candidates": ["Jean-Luc Mélenchon", "Arnaud Montebourg", "Anne Hidalgo", "Yannick Jadot", "Emmanuel Macron", "Valérie Pécresse", "Nicolas Dupont-Aignan", "Marine Le Pen", "Éric Zemmour"],
                     "vtm": {
                         "Jean-Luc Mélenchon": [],
                         "Benoît Hamon":       [],
@@ -25,68 +24,43 @@
             "totals": {
                 "externalAbs": true,
                 "list": {
-                    "National": []
+                    "National": [],
+                    "Île-de-France": [],
+                    "Province": []
                 }
             }
         },
         {
             "label": "2_EM_MLP",
             "final": "2022T2",
-            "candidates": ["Emmanuel Macron", "Marine Le Pen", "@"],
+            "candidates": ["Emmanuel Macron", "Marine Le Pen"],
             "matrices": [
                 {
-                    "original": "2022T1",
+                    "original": "2017T1",
                     "based_on": "1_VP",
                     "externalAbs": true,
                     "vtm": {
                         "Jean-Luc Mélenchon": [],
-                        "Anne Hidalgo":       [],
-                        "Yannick Jadot":      [],
+                        "Benoît Hamon":       [],
                         "Emmanuel Macron":    [],
-                        "Valérie Pécresse":   [],
-                        "Marine Le Pen":      [],
-                        "Éric Zemmour":       []
+                        "François Fillon":    [],
+                        "Marine Le Pen":      []
                     }
                 }
             ],
             "totals": {
                 "externalAbs": true,
                 "list": {
-                    "National": []
-                }
-            }
-        },
-        {
-            "label": "2_EM_EZ",
-            "final": "2022T2",
-            "candidates": ["Emmanuel Macron", "Éric Zemmour", "@"],
-            "matrices": [
-                {
-                    "original": "2022T1",
-                    "based_on": "1_VP",
-                    "externalAbs": true,
-                    "vtm": {
-                        "Jean-Luc Mélenchon": [],
-                        "Anne Hidalgo":       [],
-                        "Yannick Jadot":      [],
-                        "Emmanuel Macron":    [],
-                        "Valérie Pécresse":   [],
-                        "Marine Le Pen":      [],
-                        "Éric Zemmour":       []
-                    }
-                }
-            ],
-            "totals": {
-                "externalAbs": true,
-                "list": {
-                    "National": []
+                    "National": [],
+                    "Île-de-France": [],
+                    "Province": []
                 }
             }
         },
         {
             "label": "2_EM_VP",
             "final": "2022T2",
-            "candidates": ["Emmanuel Macron", "Valérie Pécresse", "@"],
+            "candidates": ["Emmanuel Macron", "Valérie Pécresse"],
             "matrices": [
                 {
                     "original": "2022T1",
@@ -94,19 +68,46 @@
                     "externalAbs": true,
                     "vtm": {
                         "Jean-Luc Mélenchon": [],
-                        "Anne Hidalgo":       [],
-                        "Yannick Jadot":      [],
+                        "Benoît Hamon":       [],
                         "Emmanuel Macron":    [],
-                        "Valérie Pécresse":   [],
-                        "Marine Le Pen":      [],
-                        "Éric Zemmour":       []
+                        "François Fillon":    [],
+                        "Marine Le Pen":      []
                     }
                 }
             ],
             "totals": {
                 "externalAbs": true,
                 "list": {
-                    "National": []
+                    "National": [],
+                    "Île-de-France": [],
+                    "Province": []
+                }
+            }
+        },
+        {
+            "label": "2_EM_EZ",
+            "final": "2022T2",
+            "candidates": ["Emmanuel Macron", "Éric Zemmour"],
+            "matrices": [
+                {
+                    "original": "2022T1",
+                    "based_on": "1_VP",
+                    "externalAbs": true,
+                    "vtm": {
+                        "Jean-Luc Mélenchon": [],
+                        "Benoît Hamon":       [],
+                        "Emmanuel Macron":    [],
+                        "François Fillon":    [],
+                        "Marine Le Pen":      []
+                    }
+                }
+            ],
+            "totals": {
+                "externalAbs": true,
+                "list": {
+                    "National": [],
+                    "Île-de-France": [],
+                    "Province": []
                 }
             }
         }

@@ -1,0 +1,115 @@
+{
+    "pollFirm": "Ifop",
+    "date": "2021-12-06",
+    "sampleSize": 1341,
+    
+    "hypotheses": [
+        {
+            "label": "1_VP",
+            "final": "2022T1",
+            "candidates": ["Nathalie Arthaud", "Philippe Poutou", "Fabien Roussel", "Jean-Luc Mélenchon", "Anne Hidalgo", "Arnaud Montebourg", "Yannick Jadot", "Emmanuel Macron", "Valérie Pécresse", "Nicolas Dupont-Aignan", "Marine Le Pen", "Éric Zemmour", "Jean Lassalle"],
+            "matrices": [
+                {
+                    "original": "2017T1",
+                    "externalAbs": true,
+                    "vtm": {
+                        "Jean-Luc Mélenchon": [1, 1, 8, 47, 11, 6, 14, 2, 3, 2, 2, 3, 0],
+                        "Benoît Hamon":       [0, 1, 6, 8, 28, 7, 17, 11, 11, 1, 2, 8, 0],
+                        "Emmanuel Macron":    [0, 0, 0, 1, 5, 0, 6, 74, 8, 0, 2, 4, 0],
+                        "François Fillon":    [0, 0, 0, 0, 1, 1, 0, 17, 54, 1, 4, 22, 0],
+                        "Marine Le Pen":      [0, 0, 1, 1, 0, 0, 0, 4, 6, 2, 63, 23, 0]
+                    }
+                }
+            ],
+            "totals": {
+                "externalAbs": true,
+                "list": {
+                    "National": [0.5, 0.5, 2.5, 9, 5, 1.5, 6, 25, 17, 2.5, 17, 13, 0.5],
+                    "Île-de-France": [2, 0, 4, 10, 7, 1, 6, 23, 19, 4, 8, 16, 0],
+                    "Province": [0, 0, 2, 9, 5, 2, 6, 25, 19, 2, 19, 12, 1]
+                }
+            }
+        },
+        {
+            "label": "2_EM_MLP",
+            "final": "2022T2",
+            "candidates": ["Emmanuel Macron", "Marine Le Pen"],
+            "matrices": [
+                {
+                    "original": "2017T1",
+                    "based_on": "1_VP",
+                    "externalAbs": true,
+                    "vtm": {
+                        "Jean-Luc Mélenchon": [62, 38],
+                        "Benoît Hamon":       [69, 31],
+                        "Emmanuel Macron":    [94, 6],
+                        "François Fillon":    [58, 42],
+                        "Marine Le Pen":      [8, 92]
+                    }
+                }
+            ],
+            "totals": {
+                "externalAbs": true,
+                "list": {
+                    "National": [56, 44],
+                    "Île-de-France": [67, 33],
+                    "Province": [54, 46]
+                }
+            }
+        },
+        {
+            "label": "2_EM_VP",
+            "final": "2022T2",
+            "candidates": ["Emmanuel Macron", "Valérie Pécresse"],
+            "matrices": [
+                {
+                    "original": "2022T1",
+                    "based_on": "1_VP",
+                    "externalAbs": true,
+                    "vtm": {
+                        "Jean-Luc Mélenchon": [52, 48],
+                        "Benoît Hamon":       [53, 47],
+                        "Emmanuel Macron":    [88, 12],
+                        "François Fillon":    [21, 79],
+                        "Marine Le Pen":      [31, 69]
+                    }
+                }
+            ],
+            "totals": {
+                "externalAbs": true,
+                "list": {
+                    "National": [52, 48],
+                    "Île-de-France": [53, 47],
+                    "Province": [52, 48]
+                }
+            }
+        },
+        {
+            "label": "2_EM_EZ",
+            "final": "2022T2",
+            "candidates": ["Emmanuel Macron", "Éric Zemmour"],
+            "matrices": [
+                {
+                    "original": "2022T1",
+                    "based_on": "1_VP",
+                    "externalAbs": true,
+                    "vtm": {
+                        "Jean-Luc Mélenchon": [73, 27],
+                        "Benoît Hamon":       [77, 23],
+                        "Emmanuel Macron":    [95, 5],
+                        "François Fillon":    [49, 51],
+                        "Marine Le Pen":      [20, 80]
+                    }
+                }
+            ],
+            "totals": {
+                "externalAbs": true,
+                "list": {
+                    "National": [63, 37],
+                    "Île-de-France": [73, 27],
+                    "Province": [61, 39]
+                }
+            }
+        }
+    ]
+}

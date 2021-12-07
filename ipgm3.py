@@ -18,11 +18,11 @@ with open('data/rings_fr.csv','r',encoding='utf8') as seatsDataFile:
 
 allDivs = AllDivs('data/divs_fr.txt')
 
-t1 = loadDataTable('data/2017T1.csv', allDivs)
-t2 = loadDataTable('data/2017T2.csv', allDivs)
-te = loadDataTable('data/2019TE.csv', allDivs)
+t1 = loadDataTable('data/stats_fr/2017T1.csv', allDivs)
+t2 = loadDataTable('data/stats_fr/2017T2.csv', allDivs)
+te = loadDataTable('data/stats_fr/2019TE.csv', allDivs)
 
-poll = 'fr/Harris_20211206'
+poll = 'fr/Ifop_20211206'
 
 mx = importMatricesJson('data/pollDefs/{0}.json'.format(poll))
 if not os.path.exists('exports/{path}'.format(path=poll)):
@@ -57,7 +57,6 @@ for hk, hv in {k: v for k,v in mx.items() if k != 'sampleSize'}.items():
 	r = deepcopy(rs)
 	curScores = hv[('scores_2022T{n}'.format(n=tn))]
 	for i in sorted(curScores, key=lambda x: allDivs.getSortingKeys(x)):
-	#for i in ['National']:
 		r: ResultsSet = redressementResults(r, curScores[i], weight = (1 if i == 'National' else 0.75 if i == 'Province' else 0.5))
 	
 	#Put it in allRounds

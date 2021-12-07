@@ -267,8 +267,10 @@ abbr = {
 
 allDivs = AllDivs('data/divs_fr.txt')
 
+candidaciesData: Candidacies = importCandidacies(srcParties='data/parties_fr.csv', srcCandidates='data/candidates_fr.csv')
+
 #Load table
-r = loadDataTable('exports/fr/Harris_20211206/1_VP.csv', allDivs)
+r = loadDataTable('exports/fr/Ifop_20211206/1_VP.csv', allDivs)
 r.trim(allDivs.firstLevel)
 
 #s = simulOneNat(r, 1.96, 1000, allDivs)
@@ -295,4 +297,4 @@ for i in sm.keys():
 
 print({k: v for k,v in EV.items() if v != [0,0,0]})
 
-exportMapProbs(sm, 'data/basemap_collectivites_gparis.svg', 'manySims.svg', allDivs=allDivs, partiesColors=partiesColors, doRings=True, divsData=ringsData, outerRadius=(5*10), innerRadius=(3*10), doTexts=True, texts={k: '{0}\n{1}'.format(abbr[k], electoralVotes[k]) for k in ringsData.keys()}, fontSize=24, fontUsed='Century Gothic')
+exportMapProbs(sm, 'data/basemap_collectivites_gparis.svg', 'manySims.svg', allDivs=allDivs, candidaciesData=candidaciesData, doRings=True, divsData=ringsData, outerRadius=(5*10), innerRadius=(3*10), doTexts=True, texts={k: '{0}\n{1}'.format(abbr[k], electoralVotes[k]) for k in ringsData.keys()}, fontSize=24, fontUsed='Century Gothic')
