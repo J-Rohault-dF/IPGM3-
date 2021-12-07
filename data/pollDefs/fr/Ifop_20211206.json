@@ -63,7 +63,7 @@
             "candidates": ["Emmanuel Macron", "Valérie Pécresse"],
             "matrices": [
                 {
-                    "original": "2022T1",
+                    "original": "2017T1",
                     "based_on": "1_VP",
                     "externalAbs": true,
                     "vtm": {
@@ -90,7 +90,7 @@
             "candidates": ["Emmanuel Macron", "Éric Zemmour"],
             "matrices": [
                 {
-                    "original": "2022T1",
+                    "original": "2017T1",
                     "based_on": "1_VP",
                     "externalAbs": true,
                     "vtm": {
