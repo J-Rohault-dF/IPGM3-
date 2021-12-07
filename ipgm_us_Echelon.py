@@ -34,10 +34,10 @@ seatsPerState = {k: v['seats'] for k,v in seatsData.items()}
 
 #Party affiliation
 #Biden Approval (?)
-fV = loadDataTable('data/us_stats/2020_US_Vote.csv') #2020 vote
+fV = loadDataTable('data/stats_us/2020_US_Vote.csv') #2020 vote
 #Swing state (?)
 #2020 Vote Method
-rS = loadDataTable('data/us_stats/2019_US_Race.csv') #Race
+rS = loadDataTable('data/stats_us/2019_US_Race.csv') #Race
 #Age
 #Education
 #Income

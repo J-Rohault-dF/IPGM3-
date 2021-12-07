@@ -27,7 +27,7 @@ seatsPerCounty = {k: v['seats'] for k,v in seatsDataCounties.items()}
 
 allDivs = AllDivs('data/divs_uk.txt')
 
-t = loadDataTable('data/uk_stats/2019GE.csv', allDivs)
+t = loadDataTable('data/stats_uk/2019GE.csv', allDivs)
 
 poll = 'uk/RaWS_20211206'
 
