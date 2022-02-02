@@ -1,0 +1,174 @@
+{
+    "pollFirm": "Elabe",
+    "date": "2021-12-20",
+    "sampleSize": 1351,
+    
+    "hypotheses": [
+        {
+            "label": "1_VP",
+            "final": "2022T1",
+            "candidates": ["Philippe Poutou", "Nathalie Arthaud", "Fabien Roussel", "Jean-Luc Mélenchon", "Anne Hidalgo", "Arnaud Montebourg", "Yannick Jadot", "Emmanuel Macron", "Valérie Pécresse", "Jean Lassalle", "François Asselineau", "Nicolas Dupont-Aignan", "Florian Philippot", "Marine Le Pen", "Éric Zemmour", "Hélène Thouy", "@"],
+            "matrices": [
+                {
+                    "original": "2017T1",
+                    "externalAbs": true,
+                    "vtm": {
+                        "Jean-Luc Mélenchon": [2, 1, 7, 50, 4, 2, 10, 3 ,3, 2, 0, 1, 0, 7, 6, 2, 3],
+                        "Benoît Hamon":       [3, 1, 2, 5, 21, 7, 26, 16, 10, 0, 0, 2, 0, 3, 4, 0, 11],
+                        "Emmanuel Macron":    [0, 0, 0, 2, 3, 3, 5, 72, 9, 1, 0, 0, 0, 2, 3, 0, 6],
+                        "François Fillon":    [0, 0, 0, 2, 1, 0, 0, 23, 50, 0, 0, 1, 0, 5, 18, 0, 0],
+                        "Marine Le Pen":      [0, 0, 0, 2, 0, 0, 0, 3, 6, 0, 0, 2, 0, 62, 25, 0, 2],
+                        "@":                  [3, 0, 0, 6, 2, 0, 9, 35, 15, 6, 0, 0, 0, 5, 17, 2, 72]
+                    }
+                }
+            ],
+            "totals": {
+                "externalAbs": true,
+                "list": {
+                    "National": [1, 1, 1, 11, 3, 2, 5, 26, 17, 1, 0, 2, 1, 16, 13, 0, 12],
+                    "Région Parisienne": [1, 1, 4, 12, 3, 1, 4, 25, 27, 0, 0, 2, 1, 9, 10, 0, 8],
+                    "Province":   [1, 1, 1, 10, 3, 2, 5, 26, 15, 2, 0, 2, 0, 18, 14, 0, 13],
+                    "Nord-Est":   [2, 1, 1, 7, 5, 2, 4, 28, 19, 1, 0, 1, 0, 19, 8, 1, 13],
+                    "Nord-Ouest": [1, 0, 2, 11, 3, 1, 9, 28, 12, 1, 1, 2, 0, 17, 12, 0, 11],
+                    "Sud-Ouest":  [0, 0, 0, 12, 4, 3, 7, 27, 5, 4, 0, 2, 0, 18, 17, 1, 16],
+                    "Sud-Est":    [1, 1, 1, 12, 2, 2, 2, 22, 17, 1, 0, 2, 1, 18, 18, 0, 13]
+                }
+            }
+        },
+        {
+            "label": "2_EM_VP",
+            "final": "2022T2",
+            "candidates": ["Emmanuel Macron", "Valérie Pécresse", "@"],
+            "matrices": [
+                {
+                    "original": "2017T1",
+                    "externalAbs": true,
+                    "vtm": {
+                        "Jean-Luc Mélenchon": [54, 46, 56],
+                        "Benoît Hamon":       [60, 40, 36],
+                        "Emmanuel Macron":    [80, 20, 6],
+                        "François Fillon":    [25, 75, 9],
+                        "Marine Le Pen":      [32, 68, 47],
+                        "@":                  [54, 46, 59]
+                    }
+                },
+                {
+                    "original": "2022T1",
+                    "based_on": "1_VP",
+                    "externalAbs": false,
+                    "vtm": {
+                        "Jean-Luc Mélenchon": [21, 20, 59],
+                        "Yannick Jadot":      [47, 15, 38],
+                        "Emmanuel Macron":    [96, 4, 0],
+                        "Valérie Pécresse":   [2, 98, 0],
+                        "Marine Le Pen":      [14, 36, 50],
+                        "Éric Zemmour":       [14, 45, 41],
+                        "@":                  [15, 14, 71]
+                    }
+                }
+            ],
+            "totals": {
+                "externalAbs": true,
+                "list": {
+                    "National": [51, 49, 32],
+                    "Région Parisienne": [43, 57, 29],
+                    "Province":   [53, 47, 33],
+                    "Nord-Est":   [54, 46, 29],
+                    "Nord-Ouest": [58, 42, 36],
+                    "Sud-Ouest":  [54, 46, 29],
+                    "Sud-Est":    [46, 54, 35]
+                }
+            }
+        },
+        {
+            "label": "2_EM_MLP",
+            "final": "2022T2",
+            "candidates": ["Emmanuel Macron", "Marine Le Pen", "@"],
+            "matrices": [
+                {
+                    "original": "2017T1",
+                    "externalAbs": true,
+                    "vtm": {
+                        "Jean-Luc Mélenchon": [50, 50, 48],
+                        "Benoît Hamon":       [87, 13, 42],
+                        "Emmanuel Macron":    [95, 5, 10],
+                        "François Fillon":    [66, 34, 23],
+                        "Marine Le Pen":      [5, 95, 8],
+                        "@":                  [79, 21, 63]
+                    }
+                },
+                {
+                    "original": "2022T1",
+                    "based_on": "1_VP",
+                    "externalAbs": false,
+                    "vtm": {
+                        "Jean-Luc Mélenchon": [27, 20, 53],
+                        "Yannick Jadot":      [57, 2, 41],
+                        "Emmanuel Macron":    [98, 0, 2],
+                        "Valérie Pécresse":   [46, 25, 29],
+                        "Marine Le Pen":      [3, 97, 1],
+                        "Éric Zemmour":       [11, 69, 20],
+                        "@":                  [23, 8, 69]
+                    }
+                }
+            ],
+            "totals": {
+                "externalAbs": true,
+                "list": {
+                    "National": [57, 43, 27],
+                    "Région Parisienne": [65, 35, 32],
+                    "Province":   [56, 44, 25],
+                    "Nord-Est":   [60, 40, 23],
+                    "Nord-Ouest": [52, 48, 28],
+                    "Sud-Ouest":  [57, 43, 23],
+                    "Sud-Est":    [55, 45, 28]
+                }
+            }
+        },
+        {
+            "label": "2_EM_EZ",
+            "final": "2022T2",
+            "candidates": ["Emmanuel Macron", "Éric Zemmour", "@"],
+            "matrices": [
+                {
+                    "original": "2017T1",
+                    "externalAbs": true,
+                    "vtm": {
+                        "Jean-Luc Mélenchon": [72, 28, 53],
+                        "Benoît Hamon":       [84, 16, 40],
+                        "Emmanuel Macron":    [97, 3, 10],
+                        "François Fillon":    [60, 40, 21],
+                        "Marine Le Pen":      [20, 80, 29],
+                        "@":                  [84, 16, 62]
+                    }
+                },
+                {
+                    "original": "2022T1",
+                    "based_on": "1_VP",
+                    "externalAbs": false,
+                    "vtm": {
+                        "Jean-Luc Mélenchon": [35, 9, 56],
+                        "Yannick Jadot":      [60, 2, 38],
+                        "Emmanuel Macron":    [99, 0, 1],
+                        "Valérie Pécresse":   [45, 24, 31],
+                        "Marine Le Pen":      [17, 46, 37],
+                        "Éric Zemmour":       [3, 91, 6],
+                        "@":                  [28, 2, 70]
+                    }
+                }
+            ],
+            "totals": {
+                "externalAbs": true,
+                "list": {
+                    "National": [67, 33, 32],
+                    "Région Parisienne": [71, 29, 32],
+                    "Province":   [66, 34, 31],
+                    "Nord-Est":   [70, 30, 29],
+                    "Nord-Ouest": [70, 30, 38],
+                    "Sud-Ouest":  [64, 36, 27],
+                    "Sud-Est":    [59, 41, 30]
+                }
+            }
+        }
+    ]
+}

@@ -7,7 +7,7 @@
         {
             "label": "1_VP",
             "final": "2022T1",
-            "candidates": ["Philippe Poutou", "Nathalie Arthaud", "Fabien Roussel", "Jean-Luc Mélenchon", "Anne Hidalgo", "Arnaud Montebourg", "Yannick Jadot", "Emmanuel Macron", "Valérie Pécresse", "Jean Lassalle", "François Asselineau", "Nicolas Dupont-Aignan", "Florian Philippot", "Marine Le Pen", "Éric Zemmour" ,"@"],
+            "candidates": ["Philippe Poutou", "Nathalie Arthaud", "Fabien Roussel", "Jean-Luc Mélenchon", "Anne Hidalgo", "Arnaud Montebourg", "Yannick Jadot", "Emmanuel Macron", "Valérie Pécresse", "Jean Lassalle", "François Asselineau", "Nicolas Dupont-Aignan", "Florian Philippot", "Marine Le Pen", "Éric Zemmour", "Hélène Thouy", "@"],
             "matrices": [
                 {
                     "original": "2017T1",
@@ -39,6 +39,96 @@
             "label": "2_EM_VP",
             "final": "2022T2",
             "candidates": ["Emmanuel Macron", "Valérie Pécresse", "@"],
+            "matrices": [
+                {
+                    "original": "2017T1",
+                    "externalAbs": true,
+                    "vtm": {
+                        "Jean-Luc Mélenchon": [],
+                        "Benoît Hamon":       [],
+                        "Emmanuel Macron":    [],
+                        "François Fillon":    [],
+                        "Marine Le Pen":      [],
+                        "@":                  []
+                    }
+                },
+                {
+                    "original": "2022T1",
+                    "based_on": "1_VP",
+                    "externalAbs": false,
+                    "vtm": {
+                        "Jean-Luc Mélenchon": [],
+                        "Yannick Jadot":      [],
+                        "Emmanuel Macron":    [],
+                        "Valérie Pécresse":   [],
+                        "Marine Le Pen":      [],
+                        "Éric Zemmour":       [],
+                        "@":                  []
+                    }
+                }
+            ],
+            "totals": {
+                "externalAbs": true,
+                "list": {
+                    "National": [],
+                    "Région Parisienne": [],
+                    "Province":   [],
+                    "Nord-Est":   [],
+                    "Nord-Ouest": [],
+                    "Sud-Ouest":  [],
+                    "Sud-Est":    []
+                }
+            }
+        },
+        {
+            "label": "2_EM_VP",
+            "final": "2022T2",
+            "candidates": ["Emmanuel Macron", "Marine Le Pen", "@"],
+            "matrices": [
+                {
+                    "original": "2017T1",
+                    "externalAbs": true,
+                    "vtm": {
+                        "Jean-Luc Mélenchon": [],
+                        "Benoît Hamon":       [],
+                        "Emmanuel Macron":    [],
+                        "François Fillon":    [],
+                        "Marine Le Pen":      [],
+                        "@":                  []
+                    }
+                },
+                {
+                    "original": "2022T1",
+                    "based_on": "1_VP",
+                    "externalAbs": false,
+                    "vtm": {
+                        "Jean-Luc Mélenchon": [],
+                        "Yannick Jadot":      [],
+                        "Emmanuel Macron":    [],
+                        "Valérie Pécresse":   [],
+                        "Marine Le Pen":      [],
+                        "Éric Zemmour":       [],
+                        "@":                  []
+                    }
+                }
+            ],
+            "totals": {
+                "externalAbs": true,
+                "list": {
+                    "National": [],
+                    "Région Parisienne": [],
+                    "Province":   [],
+                    "Nord-Est":   [],
+                    "Nord-Ouest": [],
+                    "Sud-Ouest":  [],
+                    "Sud-Est":    []
+                }
+            }
+        },
+        {
+            "label": "2_EM_VP",
+            "final": "2022T2",
+            "candidates": ["Emmanuel Macron", "Éric Zemmour", "@"],
             "matrices": [
                 {
                     "original": "2017T1",

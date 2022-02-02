@@ -29,7 +29,7 @@ allDivs = AllDivs('data/divs_uk.txt')
 
 t = loadDataTable('data/stats_uk/2019GE.csv', allDivs)
 
-poll = 'uk/RaWS_20211206'
+poll = 'uk/RaWS_20220117'
 
 mx = importMatricesJson('data/pollDefs/{0}.json'.format(poll))
 if not os.path.exists('exports/{path}'.format(path=poll)):

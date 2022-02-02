@@ -1,0 +1,152 @@
+{
+    "pollFirm": "Redfield & Wilton Strategies",
+    "date": "2022-01-17",
+    "sampleSize": 2000,
+    
+    "hypotheses": [
+        {
+            "label": "1_GE",
+            "final": "2024GE",
+            "candidates": ["Conservative", "Labour", "Liberal Democrats", "SNP", "Green", "Reform", "Plaid Cymru", "Others", "@"],
+            "matrices": [
+                {
+                    "original": "2019GE",
+                    "externalAbs": false,
+                    "vtm": {
+                        "Conservative":      [58, 10, 4, 0, 3, 5, 0, 1, 20],
+                        "Labour":            [1, 84, 2, 0, 6, 0, 0, 1, 6],
+                        "SNP":               [2, 8, 3, 80, 5, 0, 0, 2, 0],
+                        "Liberal Democrats": [2, 29, 47, 0, 3, 1, 0, 1, 17],
+                        "@":                 [12, 31, 3, 2, 5, 4, 1, 4, 37],
+                        "Plaid Cymru":       [0, 0, 0, 0, 0, 0, 100, 0, 0],
+                        "Green":             [0, 0, 0, 0, 100, 0, 0, 0, 0],
+                        "Brexit":            [0, 0, 0, 0, 0, 100, 0, 0, 0]
+                    }
+                }
+            ],
+            "totals": {
+                "externalAbs": false,
+                "candidates": ["Conservative", "Labour", "Liberal Democrats", "SNP", "Green", "Reform", "Plaid Cymru"],
+                "list": {
+                    "Great Britain":                   [25, 36, 8, 3, 6, 3, 1, 2, 16],
+                    "South East England Region":       [35, 29, 7, 0, 8, 3, 0],
+                    "Greater London Region":           [15, 43,14, 0, 6, 7, 0],
+                    "South West England Region":       [30, 28,12, 0, 6, 2, 0],
+                    "West Midlands Region":            [26, 39, 8, 0, 1, 0, 0],
+                    "East Midlands Region":            [34, 33, 6, 0, 7, 3, 0],
+                    "East of England Region":          [32, 33, 6, 0, 6, 6, 0],
+                    "North East England Region":       [21, 51, 5, 0, 0, 8, 0],
+                    "North West England Region":       [22, 46, 6, 0, 6, 1, 0],
+                    "Yorkshire and the Humber Region": [19, 41, 8, 0, 6, 2, 0],
+                    "Scotland":                        [18, 29, 6,32, 7, 0, 0],
+                    "Wales":                           [30, 36, 5, 0, 2, 5,10]
+                }
+            }
+        },
+        {
+            "label": "2_Johnson_Starmer",
+            "final": "2024R2",
+            "candidates": ["Boris Johnson", "Keir Starmer"],
+            "matrices": [
+                {
+                    "original": "2019GE",
+                    "externalAbs": false,
+                    "vtm": {
+                        "Conservative":      [56, 17],
+                        "Labour":            [9, 71],
+                        "SNP":               [9, 57],
+                        "Liberal Democrats": [13, 67],
+                        "@":                 [18, 33]
+                    }
+                }
+            ],
+            "totals": {
+                "externalAbs": false,
+                "list": {
+                    "Great Britain":                   [29, 42],
+                    "South East England Region":       [32, 37],
+                    "Greater London Region":           [27, 44],
+                    "South West England Region":       [33, 39],
+                    "West Midlands Region":            [29, 42],
+                    "East Midlands Region":            [34, 38],
+                    "East of England Region":          [32, 31],
+                    "North East England Region":       [28, 51],
+                    "North West England Region":       [29, 43],
+                    "Yorkshire and the Humber Region": [25, 47],
+                    "Scotland":                        [20, 52],
+                    "Wales":                           [33, 42]
+                }
+            }
+        },
+        {
+            "label": "2_Johnson_Sunak",
+            "final": "2024R2",
+            "candidates": ["Boris Johnson", "Rishi Sunak"],
+            "matrices": [
+                {
+                    "original": "2019GE",
+                    "externalAbs": false,
+                    "vtm": {
+                        "Conservative":      [41, 40],
+                        "Labour":            [9, 47],
+                        "SNP":               [6, 49],
+                        "Liberal Democrats": [13, 56],
+                        "@":                 [21, 27]
+                    }
+                }
+            ],
+            "totals": {
+                "externalAbs": false,
+                "list": {
+                    "Great Britain":                   [24, 42],
+                    "South East England Region":       [29, 45],
+                    "Greater London Region":           [19, 42],
+                    "South West England Region":       [24, 45],
+                    "West Midlands Region":            [29, 38],
+                    "East Midlands Region":            [33, 37],
+                    "East of England Region":          [27, 37],
+                    "North East England Region":       [25, 42],
+                    "North West England Region":       [20, 41],
+                    "Yorkshire and the Humber Region": [21, 47],
+                    "Scotland":                        [13, 45],
+                    "Wales":                           [28, 39]
+                }
+            }
+        },
+        {
+            "label": "2_Starmer_Sunak",
+            "final": "2024R2",
+            "candidates": ["Keir Starmer", "Rishi Sunak"],
+            "matrices": [
+                {
+                    "original": "2019GE",
+                    "externalAbs": false,
+                    "vtm": {
+                        "Conservative":      [12, 69],
+                        "Labour":            [66, 16],
+                        "SNP":               [52, 19],
+                        "Liberal Democrats": [58, 20],
+                        "@":                 [29, 23]
+                    }
+                }
+            ],
+            "totals": {
+                "externalAbs": false,
+                "list": {
+                    "Great Britain":                   [37, 38],
+                    "South East England Region":       [33, 42],
+                    "Greater London Region":           [39, 31],
+                    "South West England Region":       [33, 45],
+                    "West Midlands Region":            [34, 33],
+                    "East Midlands Region":            [36, 43],
+                    "East of England Region":          [33, 46],
+                    "North East England Region":       [45, 33],
+                    "North West England Region":       [40, 37],
+                    "Yorkshire and the Humber Region": [41, 40],
+                    "Scotland":                        [43, 33],
+                    "Wales":                           [39, 41]
+                }
+            }
+        }
+    ]
+}

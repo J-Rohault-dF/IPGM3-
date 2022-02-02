@@ -22,7 +22,7 @@ t1 = loadDataTable('data/stats_fr/2017T1.csv', allDivs)
 t2 = loadDataTable('data/stats_fr/2017T2.csv', allDivs)
 te = loadDataTable('data/stats_fr/2019TE.csv', allDivs)
 
-poll = 'fr/Elabe_20211207'
+poll = 'fr/Elabe_20211220'
 
 mx = importMatricesJson('data/pollDefs/{0}.json'.format(poll))
 if not os.path.exists('exports/{path}'.format(path=poll)):

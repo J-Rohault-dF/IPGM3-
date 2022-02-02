@@ -38,7 +38,7 @@
         {
             "label": "2_EM_VP",
             "final": "2022T2",
-            "candidates": ["Emmanuel Macron", "Valérie Pécresse", "@"],
+            "candidates": ["Valérie Pécresse", "Emmanuel Macron", "@"],
             "matrices": [
                 {
                     "original": "2017T1",
@@ -57,13 +57,13 @@
                     "based_on": "1_VP",
                     "externalAbs": false,
                     "vtm": {
-                        "Jean-Luc Mélenchon": [25, 28, 47],
-                        "Yannick Jadot":      [44, 20, 36],
-                        "Emmanuel Macron":    [96, 3, 1],
-                        "Valérie Pécresse":   [3, 96, 1],
-                        "Marine Le Pen":      [16, 31, 53],
-                        "Éric Zemmour":       [11, 45, 44],
-                        "@":                  [17, 13, 70]
+                        "Jean-Luc Mélenchon": [28, 25, 47],
+                        "Yannick Jadot":      [20, 44, 36],
+                        "Emmanuel Macron":    [3, 96, 1],
+                        "Valérie Pécresse":   [96, 3, 1],
+                        "Marine Le Pen":      [31, 16, 53],
+                        "Éric Zemmour":       [45, 11, 44],
+                        "@":                  [13, 17, 70]
                     }
                 }
             ],
