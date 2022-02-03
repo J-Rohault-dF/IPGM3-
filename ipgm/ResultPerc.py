@@ -9,7 +9,7 @@ class ResultPerc:
 
 	def __init__(self, name: str, resDict: dict[str, float], totalVotes: float|None):
 		self.name = name
-		if totalVotes != None:
+		if totalVotes != None and totalVotes != 0:
 			self.results = {k: v/sum(resDict.values()) for k,v in resDict.items()}
 		else: self.results = resDict
 		self.totalVotes = totalVotes

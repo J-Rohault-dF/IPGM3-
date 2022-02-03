@@ -83,6 +83,15 @@ class Result:
 		for c in toCheck[1:]:
 			if candidaciesData.getPartyFromCandName(c).getFullName() != firstParty: return False
 		return True
+	
+	def sortByVotes(self, doRandom: bool = False):
+		import random
+		ks = list(self.results.keys())
+		if doRandom:
+			random.shuffle(ks)
+			self.results = {k: self.results[k] for k in ks}
+		self.results = {k: v for k,v in sorted(self.results.items(), key=lambda x: x[1], reverse=True)}
+
 
 
 

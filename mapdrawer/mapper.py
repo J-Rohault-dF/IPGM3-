@@ -17,15 +17,27 @@ def getMaxK(d):
 	return k
 
 def getWinningColor(d: dict, candidaciesData: Candidacies, sameParty: bool) -> str:
-	k = getMaxK(d)
-	if k == '': k = getMaxK({k: v for i,v in d.items() if k != ''})
-	kp = d[k]
-	indexInTable = math.floor(kp*20)-2
+
+	if d == {}: return 'ffffff'
+
+	km = ''
+	vm = 0
+	for k,v in d.items():
+		if v > vm:
+			vm = v
+			km = k
+		elif v == vm: km = ''
+	indexInTable = math.floor(vm*20)-2
+
+	#k = getMaxK(d)
+	#if k == '': k = getMaxK({k: v for i,v in d.items() if k != ''})
+	#kp = d[k]
+	#indexInTable = math.floor(kp*20)-2
 
 	if candidaciesData.contains(k):
-		return getShade(candidaciesData.getShadeColor(k, inParty=sameParty), indexInTable).hex_l[1:]
+		return getShade(candidaciesData.getShadeColor(km, inParty=sameParty), indexInTable).hex_l[1:]
 	else:
-		print('missing color for {0} ({1})'.format(k, kp))
+		print('missing color for {0}'.format(km))
 		return '000000'
 
 def getWinningColorR(res: Result, candidaciesData: Candidacies, sameParty: bool) -> str:

@@ -93,7 +93,7 @@ def drawCircles(seatsData: dict[str, str|int], givenId: str, circlesSize: float,
 	counter = 0
 
 	seatsNumbers = []
-	if orient == '': seatsNumbers = [x for x in range(0, totalSeats)]
+	if orient == '' or orient == 0: seatsNumbers = [x for x in range(0, totalSeats)]
 	elif orient == 'M': seatsNumbers = [totalSeats-x for x in range(0, totalSeats)] #Mirror
 	elif orient == 'R':
 		circles.set('transform', 'rotate(90,{cx},{cy})'.format(cx=cx, cy=cy))

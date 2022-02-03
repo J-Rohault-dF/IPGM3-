@@ -127,7 +127,7 @@ def appendDictInDict(d: dict[str, dict], dk, k, v):
 def unpackPairSets(s: set) -> list:
 	l = []
 	for k,v in s:
-		l += [k]*v
+		l += [k]*int(v)
 	return l
 
 def getRandomAlphanumeric(k: int):
@@ -147,7 +147,7 @@ def andMerge(l: list[str], doOxfordComma: bool = True) -> str:
 
 def andMergeSorted(l: list[str], doOxfordComma: bool = True) -> str:
 	l = sorted(l)
-	return andMerge(l)
+	return andMerge(l, doOxfordComma=doOxfordComma)
 
 def cleanDict(d: dict) -> dict:
 	return {k: v for k,v in d.items() if v != 0}

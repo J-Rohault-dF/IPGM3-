@@ -12,6 +12,12 @@ class ResultsSet:
 	
 	def contains(self, name: str) -> bool:
 		return name in [x.name for x in self.listOfResults]
+	
+	def exportDict(self):
+		d = {}
+		for x in self.listOfResults:
+			d[x.name] = x.results
+		return d
 
 	#Returns component given its name
 	def get(self, name: str, quiet: bool = False) -> Result:
