@@ -1,9 +1,10 @@
 fullName;shortName;abbr;circleColor;shadeColor;emoji
-Lutte Ouvrière;Lutte Ouvrière;LO;#c779a0;#c779a0;🟪
+Lutte Ouvrière;Lutte Ouvrière;LO;#c46283;#c46283;🟪
 Nouveau Parti Anticapitaliste;Nouveau Parti Anticapitaliste;NPA;#8e2f2f;#8e2f2f;🟪
 Parti Communiste Français;Parti Communiste Français;PCF;#dd0000;#dd0000;🟪
 La France Insoumise;La France Insoumise;LFI;#cc2443;#cc2443;🟪
-Solidarité & Progrès;Solidarité & Progrès;S&P;#eedd00;#eedd00;⬜
+Solidarité & Progrès;Solidarité & Progrès;S&P;#eedd00;#eedd00;🟥
+Parti Animaliste;Parti Animaliste;PA;#8D2E88;#8D2E88;⬜
 Europe Écologie Les Verts;Europe Écologie Les Verts;EÉLV;#00c000;#00c000;🟩
 Parti Socialiste;Parti Socialiste;PS;#ff8080;#ff8080;🟥
 La République En Marche;La République En Marche;LREM;#ffeb00;#ffeb00;🟨
@@ -12,8 +13,7 @@ Résistons !;Résistons !;R!;#adc1fd;#adc1fd;🟦
 Les Républicains;Les Républicains;LR;#0066cc;#0066cc;🟦
 VIA, la voie du peuple;VIA;VIA;#0000ff;#0000ff;🟦
 Debout La France;Debout La France;DLF;#8040c0;#8040c0;🟫
-Rassemblement National;Rassemblement National;RN;#627cad;#627cad;🟫
-Les Patriotes;Les Patriotes;LP;#404040;#404040;🟫
 Union Populaire Républicaine;Union Populaire Républicaine;UPR;#118088;#118088;🟫
-Reconquête;Reconquête;REC;#d99536;#d99536;🟫
-;;;#ffffff;#ffffff;⬜
+Rassemblement National;Rassemblement National;RN;#475e88;#475e88;🟫
+Les Patriotes;Les Patriotes;LP;#404040;#404040;🟫
+Reconquête;Reconquête;REC;#5B3C11;#5B3C11;🟫

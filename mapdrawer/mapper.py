@@ -27,6 +27,9 @@ def getWinningColor(d: dict, candidaciesData: Candidacies, sameParty: bool) -> s
 			vm = v
 			km = k
 		elif v == vm: km = ''
+
+	if vm == 0: return 'ffffff'
+	
 	indexInTable = math.floor(vm*20)-2
 
 	#k = getMaxK(d)
@@ -35,7 +38,7 @@ def getWinningColor(d: dict, candidaciesData: Candidacies, sameParty: bool) -> s
 	#indexInTable = math.floor(kp*20)-2
 
 	if candidaciesData.contains(k):
-		return getShade(candidaciesData.getShadeColor(km, inParty=sameParty), indexInTable).hex_l[1:]
+		return getShade(candidaciesData.getShadeColor(km, inParty=sameParty) if (km != '') else Color('#ffffff'), indexInTable).hex_l[1:]
 	else:
 		print('missing color for {0}'.format(km))
 		return '000000'
