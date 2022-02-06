@@ -11,7 +11,7 @@ Jean-Christophe;Lagarde;UDI;;;
 Jean;Lassalle;R!;;;
 Xavier;Bertrand;LR;;#ff4400;
 Valérie;Pécresse;LR;;#96ff00;
-Michel;Barnier;LR;;#35aeca;
+Michel;Barnier;LR;#C0C0C0;#35aeca;
 Éric;Ciotti;LR;;#c18b3e;
 Philippe;Juvin;LR;;;
 Jean-Frédéric;Poisson;VIA;;;
@@ -26,3 +26,8 @@ François;Fillon;LR;;;
 Anasse;Kazib;;#c7a979;;🟪
 Georges;Kuzmanovic;;#af99a7;;
 Hélène;Thouy;PA;;;
+Arnaud;Chiche;;#C0C0C0;;
+Clara;Egger;;#C0C0C0;;
+Gaspard;Koenig;;#C0C0C0;;
+Nicolas;Miguet;;#C0C0C0;;
+Christiane;Taubira;;#C0C0C0;;

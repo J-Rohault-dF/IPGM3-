@@ -98,7 +98,7 @@ Val-d'Oise
 Guadeloupe
 Martinique
 Guyane
-Réunion
+La Réunion
 Saint-Pierre-et-Miquelon
 Mayotte
 Saint-Martin
@@ -107,6 +107,8 @@ Wallis-et-Futuna
 Polynésie-Française
 Nouvelle-Calédonie
 Français vivant hors de France
+
+Parlement européen
 
 Saint-Martin et Saint-Barthélémy:Saint-Martin;Saint-Barthélémy
 Circonscription départementale du Rhône:Rhône;Métropole de Lyon
@@ -144,7 +146,7 @@ Nouvelle-Aquitaine:Aquitaine;Poitou-Charentes;Limousin
 Occitanie:Midi-Pyrénées;Languedoc-Roussillon
 Pays-de-la-Loire:Pays de la Loire
 
-DROM:Guadeloupe;Martinique;Guyane;Réunion;Mayotte
+DROM:Guadeloupe;Martinique;Guyane;La Réunion;Mayotte
 COM:Saint-Martin et Saint-Barthélémy;Wallis-et-Futuna;Polynésie-Française;Nouvelle-Calédonie;Saint-Pierre-et-Miquelon
 Outre-Mers:DROM;COM
 
@@ -156,4 +158,4 @@ Nord-Ouest:Bretagne;Pays de la Loire;Centre;Normandie;Poitou-Charentes
 
 Province:Nord-Est;Sud-Est;Sud-Ouest;Nord-Ouest
 Métropole:Province;Île-de-France
-National:Métropole;Outre-Mers;Français vivant hors de France
+National:Métropole;Outre-Mers;Français vivant hors de France;Parlement européen
