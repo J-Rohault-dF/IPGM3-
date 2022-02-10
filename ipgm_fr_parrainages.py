@@ -69,4 +69,4 @@ if doExportTxt:
 #Export and map
 if doExportCsv: saveDataTable('exports/{path}/{h}.csv'.format(h=hk, path=poll), r)
 #exportMap(r, 'data/basemap_collectivites_gparis.svg', '{path}/{h}.svg'.format(h=hk, path=poll), candidaciesData=candidaciesData, mapScaling=2, sameParty=r.get('Great Britain').checkEqualParty(candidaciesData))
-exportSeatsMap(r, r.exportDict(), seatsData, 'data/basemap_collectivites_parrainages.svg', '{path}/{h}_parrainages.svg'.format(h=hk, path=poll), allDivs=allDivs, candidaciesData=candidaciesData, seatsScale=2, mapScaling=3, sameParty=False)
+exportSeatsMap(r, r.exportDict(), seatsData, 'data/basemap_collectivites_parrainages.svg', '{path}/{h}_parrainages.svg'.format(h=hk, path=poll), allDivs=allDivs, candidaciesData=candidaciesData, seatsScale=1.75, mapScaling=3, sameParty=False)

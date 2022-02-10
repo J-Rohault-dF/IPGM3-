@@ -26,7 +26,7 @@ Creuse;1;Regular;;991.937;993.649
 Dordogne;1;Regular;;833.045;1173.378
 Doubs;1;Regular;;1549.600;791.550
 Drôme;1;Regular;;1398.468;1238.423
-Eure;1;Regular;;861.749;444.998
+Eure;1;Regular;;836.982;444.998
 Eure-et-Loir;1;Regular;;910.360;569.480
 Finistère;1;Regular;;212.561;596.895
 Gard;1;Regular;;1275.225;1377.072
@@ -41,7 +41,7 @@ Isère;1;Regular;;1446.396;1136.577
 Jura;1;Regular;;1463.086;877.680
 Landes;1;Regular;;635.045;1383.063
 Loir-et-Cher;1;Regular;;917.477;715.495
-Loire;1;Regular;R;1250.788;1056.436
+Loire;1;Regular;R;1228.904;1056.436
 Haute-Loire;1;Regular;;1218.739;1178.514
 Loire-Atlantique;1;Regular;;510.946;773.694
 Loiret;1;Regular;;1034.517;657.949
@@ -53,13 +53,13 @@ Manche;1;Regular;;568.063;441.530
 Marne;1;Regular;;1280.360;460.450
 Haute-Marne;1;Regular;;1400.608;622.207
 Mayenne;1;Regular;;647.883;623.063
-Meurthe-et-Moselle;1;Regular;;1517.877;520.112
+Meurthe-et-Moselle;1;Regular;;1517.877;522.745
 Meuse;1;Regular;;1413.874;469.437
 Morbihan;1;Regular;;388.288;677.838
-Moselle;1;Regular;;1568.738;452.886
+Moselle;1;Regular;;1568.738;425.365
 Nièvre;1;Regular;;1184.077;804.505
 Nord;1;Regular;;1171.094;219.761
-Oise;1;Regular;;1039.200;375.171
+Oise;1;Regular;;1082.985;369.421
 Orne;1;Regular;;744.786;523.066
 Pas-de-Calais;1;Regular;;1019.607;184.671
 Puy-de-Dôme;1;Regular;;1124.757;1055.559
@@ -68,16 +68,16 @@ Hautes-Pyrénées;1;Regular;;756.577;1543.964
 Pyrénées-Orientales;1;Regular;;1075.811;1632.973
 Bas-Rhin;1;Regular;;1692.455;519.932
 Haut-Rhin;1;Regular;;1659.505;662.860
-Circonscription départementale du Rhône;1;Regular;;1314.918;1030.342
+Circonscription départementale du Rhône;1;Regular;;1325.238;1030.342
 Haute-Saône;1;Regular;;1512.644;701.698
 Saône-et-Loire;1;Regular;;1311.032;882.095
 Sarthe;1;Regular;;763.423;645.315
 Savoie;1;Regular;;1568.784;1114.324
 Haute-Savoie;1;Regular;;1543.964;989.369
-Paris;1;Regular;;1650.935;176.108
+Paris;1;Regular;;1662.434;176.108
 Seine-Maritime;1;Regular;;862.703;336.351
 Seine-et-Marne;1;Regular;;1113.625;520.419
-Yvelines;1;Regular;;965.975;488.837
+Yvelines;1;Regular;;934.910;488.837
 Deux-Sèvres;1;Regular;;689.820;908.063
 Somme;1;Regular;;1028.143;286.186
 Tarn;1;Regular;;1009.910;1407.883
@@ -89,12 +89,12 @@ Vienne;1;Regular;;793.378;904.640
 Haute-Vienne;1;Regular;;889.234;1024.459
 Vosges;1;Regular;;1562.893;620.068
 Yonne;1;Regular;;1187.500;670.135
-Territoire de Belfort;1;Regular;;1612.816;711.590
+Territoire de Belfort;1;Regular;;1612.816;716.590
 Essonne;1;Regular;;1020.118;541.372
-Hauts-de-Seine;1;Regular;R;1565.854;189.196
-Seine-Saint-Denis;1;Regular;;1736.160;116.431
-Val-de-Marne;1;Regular;;1732.589;242.715
-Val-d'Oise;1;Regular;;1028.549;434.823
+Hauts-de-Seine;1;Regular;R;1572.046;189.196
+Seine-Saint-Denis;1;Regular;;1750.755;116.431
+Val-de-Marne;1;Regular;;1755.587;242.715
+Val-d'Oise;1;Regular;;1027.222;447.649
 Guadeloupe;1;Regular;;125.088;1254.724
 Martinique;1;Regular;;125.088;1429.724
 Guyane;1;Regular;;125.088;1604.724
