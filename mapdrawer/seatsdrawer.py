@@ -28,11 +28,11 @@ seatsArrangements: dict[int, dict[str, list[int]]] = {
 	52: {'Regular': [8, 9, 9, 9, 9, 8]},
 }
 
-def findSeatsArrangement(totalSeats: int, layout: str):
+def findSeatsArrangement(totalSeats: int, layout: str, ratio: float = None):
 	if totalSeats in seatsArrangements and layout in seatsArrangements[totalSeats]:
 		return seatsArrangements[totalSeats][layout]
 	else:
-		squareSide = math.ceil(totalSeats**(1/2))
+		squareSide = math.ceil(totalSeats**(1/2) * (ratio if ratio != None else 1))
 		arrangement = []
 		while totalSeats > 0:
 			arrangement.append(min(squareSide, totalSeats))
@@ -85,10 +85,12 @@ def drawCircles(seatsData: dict[str, str|int], givenId: str, circlesSize: float,
 	
 	cx, cy = seatsData['cx'], seatsData['cy']
 	orient = seatsData['orientation']
+	ratio = float(seatsData['ratio'])
+	if ratio == 0: ratio = None
 	totalSeats = int(seatsData['seats'])
 	
 	#Find the seats layout
-	seatsLayout = findSeatsArrangement(totalSeats, seatsData['layout'])
+	seatsLayout = findSeatsArrangement(totalSeats, seatsData['layout'], ratio)
 	fullHeight = (len(seatsLayout)-1)*distanceBetweenCenters
 	counter = 0
 
