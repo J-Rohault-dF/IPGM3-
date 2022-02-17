@@ -1,3 +1,4 @@
+from __future__ import annotations
 import random
 
 def sumProductDict(a: dict, b: dict) -> float:
@@ -86,13 +87,13 @@ def allEquals(l: list) -> bool:
 		if i != p: return False
 	return True
 
-def getProbsFromResDict(d: dict) -> set[str, float]:
+def getProbsFromResDict(d: dict) -> tuple[str, float]:
 	d = sortedDict(d, reverse=True)
 	k1 = list(d.keys())[0]
 	v1 = d[k1]
 	return (k1, v1)
 
-def getProbsFromResDictDiff(d: dict) -> set[str, float]:
+def getProbsFromResDictDiff(d: dict) -> tuple[str, float]:
 	d = sortedDict(d, reverse=True)
 	k1, k2 = list(d.keys())[0], list(d.keys())[1]
 	m = d[k1] - d[k2]

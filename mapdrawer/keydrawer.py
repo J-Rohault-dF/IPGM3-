@@ -1,3 +1,4 @@
+from __future__ import annotations
 from math import pi
 from mapdrawer.colors import *
 from ipgm.utils import *

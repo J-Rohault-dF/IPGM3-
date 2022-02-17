@@ -1,3 +1,4 @@
+from __future__ import annotations
 import xml.etree.ElementTree as etree
 from ipgm.utils import *
 from colour import *

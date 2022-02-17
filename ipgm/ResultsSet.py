@@ -1,3 +1,4 @@
+from __future__ import annotations
 from divsHandler import *
 from ipgm.Result import *
 

@@ -1,3 +1,4 @@
+from __future__ import annotations
 import math
 import xml.etree.ElementTree as etree
 import subprocess
@@ -124,11 +125,15 @@ def loadMap(mapSrc: str) -> etree.ElementTree:
 		return etree.parse(originalMap)
 
 def convertMap(mapTarget, mapScaling):
-    mapWidth = int(float(subprocess.run(['inkscape', '--query-width', mapTarget], check=True, stdout=subprocess.PIPE).stdout))
-    command = ['inkscape', '--export-type=png', '--export-width={0}'.format(mapWidth*mapScaling), '--export-background-opacity=0', mapTarget]
-    print(' '.join(command))
 
-    t = subprocess.run(command, shell=True)
+	#Lines running inkscape commented out until I can get it to work on Linux
+	pass
+
+    #mapWidth = int(float(subprocess.run(['inkscape', '--query-width', mapTarget], check=True, stdout=subprocess.PIPE).stdout))
+    #command = ['inkscape', '--export-type=png', '--export-width={0}'.format(mapWidth*mapScaling), '--export-background-opacity=0', mapTarget]
+    #print(' '.join(command))
+
+    #t = subprocess.run(command, shell=True)
 
 	#print('Opening map...')
 	#os.system(mapTarget.replace('.svg','.png').replace('/','\\'))

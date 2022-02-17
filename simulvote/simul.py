@@ -1,3 +1,4 @@
+from __future__ import annotations
 from ipgm.Result import *
 from ipgm.ResultsSet import *
 import random
