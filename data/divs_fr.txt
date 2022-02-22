@@ -102,7 +102,7 @@ La Réunion
 Saint-Pierre-et-Miquelon
 Mayotte
 Saint-Martin
-Saint-Barthélémy
+Saint-Barthélemy
 Wallis-et-Futuna
 Polynésie-Française
 Nouvelle-Calédonie
@@ -110,7 +110,7 @@ Français vivant hors de France
 
 Parlement européen
 
-Saint-Martin et Saint-Barthélémy:Saint-Martin;Saint-Barthélémy
+Saint-Martin et Saint-Barthélemy:Saint-Martin;Saint-Barthélemy
 Circonscription départementale du Rhône:Rhône;Métropole de Lyon
 
 Alsace:Haut-Rhin;Bas-Rhin
@@ -147,7 +147,7 @@ Occitanie:Midi-Pyrénées;Languedoc-Roussillon
 Pays-de-la-Loire:Pays de la Loire
 
 DROM:Guadeloupe;Martinique;Guyane;La Réunion;Mayotte
-COM:Saint-Martin et Saint-Barthélémy;Wallis-et-Futuna;Polynésie-Française;Nouvelle-Calédonie;Saint-Pierre-et-Miquelon
+COM:Saint-Martin et Saint-Barthélemy;Wallis-et-Futuna;Polynésie-Française;Nouvelle-Calédonie;Saint-Pierre-et-Miquelon
 Outre-Mers:DROM;COM
 
 Région Parisienne:Île-de-France

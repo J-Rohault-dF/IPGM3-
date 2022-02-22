@@ -7,7 +7,7 @@ Hautes-Alpes;1;Regular;;;1541.396;1235.000
 Alpes-Maritimes;1;Regular;;;1644.099;1389.054
 Ardèche;1;Regular;;;1296.622;1247.838
 Ardennes;1;Regular;;;1324.865;346.622
-Ariège;1;Regular;;;927.748;1571.351
+Ariège;1;Regular;;;927.748;1581.351
 Aube;1;Regular;;;1282.815;587.973
 Aude;1;Regular;;;1059.550;1542.703
 Aveyron;1;Regular;;;1081.802;1324.865
@@ -21,7 +21,7 @@ Corrèze;1;Regular;;;973.108;1129.730
 Corse-du-Sud;1;Regular;;;1870.901;1766.487
 Haute-Corse;1;Regular;;;1900.000;1650.090
 Côte-d'Or;1;Regular;;;1340.270;748.018
-Côtes-d'Armor;1;Regular;;;402.144;578.288
+Côtes-d'Armor;1;Regular;;;392.144;578.288
 Creuse;1;Regular;;;991.937;993.649
 Dordogne;1;Regular;;;833.045;1173.378
 Doubs;1;Regular;;;1579.600;821.550
@@ -31,7 +31,7 @@ Eure-et-Loir;1;Regular;;;910.360;599.480
 Finistère;1;Regular;;;212.561;596.895
 Gard;1;Regular;;;1275.225;1377.072
 Haute-Garonne;1;Regular;;;908.919;1464.369
-Gers;1;Regular;;;795.090;1425.000
+Gers;1;Regular;;;775.090;1425.000
 Gironde;1;Regular;;;659.009;1221.306
 Hérault;1;Regular;;;1162.252;1451.532
 Ille-et-Vilaine;1;Regular;;;529.775;617.072
@@ -67,7 +67,7 @@ Pyrénées-Atlantiques;1;Regular;;;633.333;1507.162
 Hautes-Pyrénées;1;Regular;;;756.577;1543.964
 Pyrénées-Orientales;1;Regular;;;1075.811;1642.973
 Bas-Rhin;1;Regular;;;1722.455;519.932
-Haut-Rhin;1;Regular;;;1669.505;662.860
+Haut-Rhin;1;Regular;;0.8;1674.505;667.860
 Circonscription départementale du Rhône;1;Regular;;0.67;1325.238;1030.342
 Haute-Saône;1;Regular;;;1512.644;701.698
 Saône-et-Loire;1;Regular;;;1311.032;882.095
@@ -83,13 +83,13 @@ Somme;1;Regular;;;1028.143;286.186
 Tarn;1;Regular;;;1019.910;1407.883
 Tarn-et-Garonne;1;Regular;;;896.937;1360.811
 Var;1;Regular;;;1535.405;1469.504
-Vaucluse;1;Regular;;;1405.045;1362.522
+Vaucluse;1;Regular;;;1400.045;1332.522
 Vendée;1;Regular;;;565.721;898.649
 Vienne;1;Regular;;;793.378;904.640
 Haute-Vienne;1;Regular;;;889.234;1024.459
 Vosges;1;Regular;;1.5;1542.893;615.068
 Yonne;1;Regular;;;1187.500;670.135
-Territoire de Belfort;1;Regular;;;1612.816;726.590
+Territoire de Belfort;1;Regular;;0.75;1612.816;711.590
 Essonne;1;Regular;;;1045.118;541.372
 Hauts-de-Seine;1;Regular;;0.5;1572.046;189.196
 Seine-Saint-Denis;1;Regular;;;1750.755;116.431
@@ -102,8 +102,8 @@ La Réunion;1;Regular;;;125.088;1779.724
 Saint-Pierre-et-Miquelon;1;Regular;;;300.088;1779.724
 Mayotte;1;Regular;;;300.088;1254.724
 Saint-Martin;1;Regular;;;263.088;1042.724
-Saint-Barthélémy;1;Regular;;;337.088;1116.724
-Saint-Martin et Saint-Barthélémy;1;Regular;;;263.088;1116.724
+Saint-Barthélemy;1;Regular;;;337.088;1116.724
+Saint-Martin et Saint-Barthélemy;1;Regular;;;263.088;1116.724
 Wallis-et-Futuna;1;Regular;;;300.088;1604.724
 Polynésie-Française;1;Regular;;;300.088;1429.724
 Nouvelle-Calédonie;1;Regular;;;125.088;1079.724
