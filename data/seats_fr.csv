@@ -14,18 +14,18 @@ Aveyron;1;Regular;;;1081.802;1324.865
 Bouches-du-Rhône;1;Regular;;;1384.775;1467.793
 Calvados;1;Regular;;1.25;690.946;433.063
 Cantal;1;Regular;;;1071.532;1171.667
-Charente;1;Regular;;;754.009;1066.396
+Charente;1;Regular;;;757.009;1063.396
 Charente-Maritime;1;Regular;;;623.919;1033.018
 Cher;1;Regular;;;1054.414;806.216
 Corrèze;1;Regular;;;973.108;1129.730
 Corse-du-Sud;1;Regular;;;1870.901;1766.487
 Haute-Corse;1;Regular;;;1900.000;1650.090
 Côte-d'Or;1;Regular;;;1340.270;748.018
-Côtes-d'Armor;1;Regular;;;392.144;528.288
+Côtes-d'Armor;1;Regular;;;392.144;553.288
 Creuse;1;Regular;;;991.937;993.649
 Dordogne;1;Regular;;;833.045;1173.378
-Doubs;1;Regular;;;1579.600;821.550
-Drôme;1;Regular;;;1398.468;1238.423
+Doubs;1;Regular;;;1579.600;826.550
+Drôme;1;Regular;;;1398.468;1243.423
 Eure;1;Regular;;;836.982;454.998
 Eure-et-Loir;1;Regular;;;910.360;599.480
 Finistère;1;Regular;;;212.561;596.895
@@ -33,11 +33,11 @@ Gard;1;Regular;;;1275.225;1377.072
 Haute-Garonne;1;Regular;;;908.919;1464.369
 Gers;1;Regular;;;775.090;1425.000
 Gironde;1;Regular;;;659.009;1221.306
-Hérault;1;Regular;;;1162.252;1451.532
+Hérault;1;Regular;;;1165.252;1451.532
 Ille-et-Vilaine;1;Regular;;;529.775;617.072
 Indre;1;Regular;;;936.306;867.838
 Indre-et-Loire;1;Regular;;;827.613;775.405
-Isère;1;Regular;;;1446.396;1136.577
+Isère;1;Regular;;;1446.396;1133.577
 Jura;1;Regular;;;1453.086;877.680
 Landes;1;Regular;;;635.045;1383.063
 Loir-et-Cher;1;Regular;;;917.477;715.495
@@ -56,7 +56,7 @@ Mayenne;1;Regular;;;647.883;623.063
 Meurthe-et-Moselle;1;Regular;;1.25;1567.877;522.745
 Meuse;1;Regular;;;1413.874;469.437
 Morbihan;1;Regular;;;378.288;677.838
-Moselle;1;Regular;;1.25;1568.738;420.365
+Moselle;1;Regular;;1.25;1568.738;415.365
 Nièvre;1;Regular;;;1184.077;804.505
 Nord;1;Regular;;;1171.094;209.761
 Oise;1;Regular;;1.75;1032.985;369.421
@@ -67,9 +67,9 @@ Pyrénées-Atlantiques;1;Regular;;;633.333;1507.162
 Hautes-Pyrénées;1;Regular;;;756.577;1543.964
 Pyrénées-Orientales;1;Regular;;;1075.811;1642.973
 Bas-Rhin;1;Regular;;;1722.455;519.932
-Haut-Rhin;1;Regular;;0.8;1674.505;667.860
-Circonscription départementale du Rhône;1;Regular;;0.67;1325.238;1030.342
-Haute-Saône;1;Regular;;;1512.644;701.698
+Haut-Rhin;1;Regular;;0.8;1676.505;667.860
+Circonscription départementale du Rhône;1;Regular;;0.67;1325.238;1035.342
+Haute-Saône;1;Regular;;;1518.644;709.698
 Saône-et-Loire;1;Regular;;;1311.032;882.095
 Sarthe;1;Regular;;;763.423;645.315
 Savoie;1;Regular;;;1568.784;1114.324
@@ -83,7 +83,7 @@ Somme;1;Regular;;;1028.143;286.186
 Tarn;1;Regular;;;1019.910;1407.883
 Tarn-et-Garonne;1;Regular;;;896.937;1360.811
 Var;1;Regular;;;1535.405;1469.504
-Vaucluse;1;Regular;;;1400.045;1377.522
+Vaucluse;1;Regular;;;1400.045;1374.522
 Vendée;1;Regular;;;565.721;898.649
 Vienne;1;Regular;;;793.378;904.640
 Haute-Vienne;1;Regular;;;889.234;1024.459
