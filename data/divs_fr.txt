@@ -158,4 +158,4 @@ Nord-Ouest:Bretagne;Pays de la Loire;Centre;Normandie;Poitou-Charentes
 
 Province:Nord-Est;Sud-Est;Sud-Ouest;Nord-Ouest
 Métropole:Province;Île-de-France
-National:Métropole;Outre-Mers;Français vivant hors de France;Parlement européen
+National:Métropole;Outre-Mers;Français vivant hors de France
