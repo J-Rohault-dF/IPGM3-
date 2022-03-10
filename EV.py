@@ -278,7 +278,7 @@ r.trim(allDivs.firstLevel)
 #exportMap(s, 'basemap_collectivites.svg', 'stupidSim_.svg', allDivs=allDivs, partiesColors=partiesColors)
 
 #Simulate many and export map
-sm = simulMany(r, 5000, 4, 2000, allDivs=allDivs)
+sm = simulMany(r, 5000, 4, 2000)
 
 #Compute potential electoral college
 EV = {k: [0, 0, 0] for k in r.get('National').getCandidates()}

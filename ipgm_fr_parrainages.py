@@ -9,7 +9,7 @@ from divsHandler import *
 from mapdrawer.mapper import *
 
 #Get divs data
-with open('data/seats_fr.csv','r',encoding='utf8') as seatsDataFile:
+with open('data/seats_fr_parrainages.csv','r',encoding='utf8') as seatsDataFile:
 	seatsDataTemp = [y.split(';') for y in [x for x in seatsDataFile.read().split('\n')]]
 	seatsData = {x[0]: dict(zip(seatsDataTemp[0][1:], [toFloatOrStr(y) for y in x[1:]])) for x in seatsDataTemp[1:]}
 

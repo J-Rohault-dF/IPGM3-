@@ -52,3 +52,38 @@ def proportionalHighestAverage(r: dict[str, float], sn: int, methodType: str) ->
 		averages[highest] = (r[highest]/getDivisor(seats[highest], methodType))
 	
 	return seats
+
+
+
+def twoRoundProportional(d1: dict[str, float], d2: dict[str, float], sn: int) -> dict[str, int]:
+	
+	halfSeats = math.floor(sn/2)
+
+	#Run both rounds
+	if halfSeats > 0:
+		t1 = proportionalLargestRemainder(d1, halfSeats, 'Hare')
+		t2 = proportionalLargestRemainder(d2, halfSeats, 'Hare')
+	else:
+		t1,t2 = {k: 0 for k in d1.keys()}, {k: 0 for k in d2.keys()}
+
+	seats = {k: (v+(t2[k] if k in t2 else 0)) for k,v in t1.items()} #Add the seats from r1 and r2
+
+	#If one seat remains
+	if (sn%2 == 1):
+		remainders = {k: v for k,v in d1.items()} #Take the r1 values
+		for k,v in d2.items():
+			remainders[k] += v #Add the r2 values
+		remainders = {k: (v/sum(remainders.values())) for k,v in remainders.items()} #Divide to get percentages - not sure it's needed
+
+		#Calculate the running score
+		remainders = {k: v/(t1[k]+(t2[k] if k in t2 else 0)+1) for k,v in remainders.items()}
+
+		kM,vM = '',0
+		for k,v in remainders.items():
+			if v > vM:
+				vM = v
+				kM = k
+
+		seats[kM] += 1 #Add the excess seat
+	
+	return seats

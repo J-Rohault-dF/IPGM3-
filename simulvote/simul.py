@@ -36,7 +36,7 @@ def rankingChances(res: Result, amountOfSims: int, stdev: float, sampleSize: int
 
 
 
-def simulOneNat(ress: ResultsSet, stdev: float, sampleSize: int, allDivs: AllDivs) -> ResultsSet:
+def simulOneNat(ress: ResultsSet, stdev: float, sampleSize: int) -> ResultsSet:
 	#Generate national swing
 	nat = simulOneRes(ress.get('National'), stdev, sampleSize)
 
@@ -52,9 +52,9 @@ def simulOneNat(ress: ResultsSet, stdev: float, sampleSize: int, allDivs: AllDiv
 
 
 
-def simulMany(ress: ResultsSet, amountOfSims: int, stdev: float, sampleSize: int, allDivs: AllDivs) -> dict:
+def simulMany(ress: ResultsSet, amountOfSims: int, stdev: float, sampleSize: int) -> dict:
 	
-	ls = dict(zip( allDivs.allDivs, [ {} for _ in range(len(allDivs.allDivs))]))
+	ls = dict(zip( ress.allDivs.allDivs, [ {} for _ in range(len(ress.allDivs.allDivs))]))
 
 	candidates = [x for x in ress.get('National').getCandidates() if x != '@']
 
@@ -64,12 +64,12 @@ def simulMany(ress: ResultsSet, amountOfSims: int, stdev: float, sampleSize: int
 	for i in range(amountOfSims):
 
 		# Simulate one election
-		rs = simulOneNat(ress, stdev, sampleSize, allDivs)
+		rs = simulOneNat(ress, stdev, sampleSize)
 
 		rs = simplifyResSet(rs)
 
 		# Find the winners in each dept and put them in some array
-		for d in allDivs.allDivs:
+		for d in ress.allDivs.allDivs:
 			w = rs.get(d).getWinner()
 			addInDict(ls[d], w, 1)
 			#if w in ls[d]: ls[d][w] += 1
