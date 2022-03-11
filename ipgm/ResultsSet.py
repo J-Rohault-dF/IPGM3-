@@ -4,37 +4,28 @@ from ipgm.Result import *
 
 #Set of multiple results
 class ResultsSet:
-	listOfResults: list[Result] = []
+	headResult: Result
 	allDivs: AllDivs
 
-	def __init__(self, allDivs: AllDivs, listOfResults: list=[]):
-		self.listOfResults = listOfResults
-		self.allDivs = allDivs
+	#def __init__(self, allDivs: AllDivs, listOfResults: list=[]):
+	#	self.listOfResults = listOfResults
+	#	self.allDivs = allDivs
 	
+	def __init__(self, allDivs: AllDivs, headResult: Result = Result()):
+		self.headResult = headResult
+		self.allDivs = allDivs
+
 	def contains(self, name: str) -> bool:
-		return name in [x.name for x in self.listOfResults]
+		return self.headResult.contains(name)
 	
 	def exportDict(self):
-		d = {}
-		for x in self.listOfResults:
-			d[x.name] = x.results
-		return d
+		return self.headResult.exportDict()
 
 	#Returns component given its name
 	def get(self, name: str, quiet: bool = False) -> Result:
-
-		if name in [x.name for x in self.listOfResults]:
-			return [x for x in self.listOfResults if x.name == name][0] #Dumb stupid code but I guess it maybe works
-		
-		elif name in list(self.allDivs.overLevel.keys()):
-			cols = self.allDivs.overLevel[name]
-			running = Result.fromDict(name, {})
-			for r in [self.get(x) for x in cols]:
-				running = running.add(r)
-			return running
-		else:
-			if quiet: return None
-			else: raise Exception('Subdivision {0} not found'.format(name))
+		res = self.headResult.get(name)
+		if res == None and not quiet: raise Exception('Subdivision {0} not found'.format(name))
+		else: return res
 	
 	def set(self, res: Result):
 		if res.name not in [x.name for x in self.listOfResults]:
@@ -67,7 +58,7 @@ class ResultsSet:
 
 	def trim(self, ls: list) -> None:
 		newList = [self.get(x) for x in ls]
-		self.listOfResults = newList
+		self.headResult.subset = newList
 
 	def replaceCand(self, div: str, cand: str, replacing: str):
 		for i in self.allDivs.unders(div):

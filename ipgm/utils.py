@@ -156,3 +156,8 @@ def cleanDict(d: dict) -> dict:
 def sortedDict(d: dict, reverse: bool = False) -> dict:
     d = d = {k: v for k,v in sorted(d.items(), key=lambda item: item[1], reverse=reverse)}
     return d
+
+def appendDict(d1: dict, d2: dict):
+	for k,v in d2.items():
+		d1[k] = v
+	return d1
