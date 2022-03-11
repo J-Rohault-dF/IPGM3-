@@ -39,39 +39,6 @@ def saveDataTable(src: str, dv: Div):
 
 
 
-#Fonction pour exporter une classe NationalResults en tableau de pourcentages, retire automatiquement les '@'
-def exportPercentages(src: str, natRes: ResultsSet, collectivites: list):
-	candidates = list(natRes.get(collectivites[0]).results.keys())
-	with open(src,'w',encoding='utf8') as exportFile:
-
-		allLines = [';'.join([''] + [x for x in candidates if x != '@'])]
-		
-		for c in collectivites:
-			#Check if the list of candidates is still the same
-			if candidates != list(natRes.get(c).results.keys()):
-				raise Exception('List of candidates has changed at {0}, from {1} to {2}'.format(c, candidates, list(natRes.get(c).results.keys())))
-			else: candidates = list(natRes.get(c).results.keys())
-			#Get the array of scores and add the line
-			scores = percentList([v for k,v in natRes.get(c).results.items() if k != '@'])
-			allLines.append(';'.join([str(x) for x in ([c] + scores)]))
-		
-		exportFile.write('\n'.join(allLines))
-
-#Même qu'au-dessus, mais avec la liste de candidats pré-fournie
-def exportPercentagesC(src: str, natRes: ResultsSet, collectivites: list, candidates: list):
-	with open(src,'w',encoding='utf8') as exportFile:
-
-		allLines = [';'.join([''] + candidates)]
-		
-		for c in collectivites:
-			#Get the array of scores and add the line
-			scores = percentList([v for k,v in natRes.get(c).results.items() if k in candidates])
-			allLines.append(';'.join([str(x) for x in ([c] + scores)]))
-		
-		exportFile.write('\n'.join(allLines))
-
-
-
 def importMatrices(src: str):
 	with open(src,'r',encoding='utf8') as dataFile:
 		allText = str(dataFile.read())
