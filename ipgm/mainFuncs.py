@@ -1,19 +1,20 @@
+from __future__ import annotations
 from ipgm.Result import *
-from ipgm.ResultsSet import *
 from ipgm.ResultPerc import *
+from ipgm.Div import *
 from ipgm.VTM import *
 
 
 
 #Extrapolate ResultsSet based on a VTMatrix
-def extrapolateResults(initialRes: ResultsSet, changeMatrix: VTMatrix) -> ResultsSet:
-	finalRes = []
+def extrapolateResults(div: Div, changeMatrix: VTMatrix) -> Div:
 
-	#for every line in the results:
-	for res in initialRes.listOfResults:
-		finalRes.append(extrapolateResult(res, changeMatrix))
-
-	return ResultsSet(initialRes.allDivs, finalRes)
+	if div.subset == []:
+		div.result = extrapolateResult(div.result, changeMatrix)
+	else:
+		for sd in div.subset:
+			sd = extrapolateResults(sd, changeMatrix)
+		div.recalculate()
 
 
 
@@ -21,96 +22,89 @@ def extrapolateResults(initialRes: ResultsSet, changeMatrix: VTMatrix) -> Result
 def extrapolateResult(initialRes: Result, changeMatrix: VTMatrix) -> Result:
 	allSumProducts = {cf: sumProductDict(initialRes.results, changeMatrix.getColDict(cf)) for cf in changeMatrix.final}
 	allSumProducts = multiplyDict(allSumProducts, (initialRes.getSumOfVotes()/sumDict(allSumProducts)))
-	return Result.fromLists(initialRes.name, list(allSumProducts.keys()), list(allSumProducts.values()))
+	return Result.fromLists(list(allSumProducts.keys()), list(allSumProducts.values()))
 
 
 
 #Redressement per division
-def redressementResults(initialRes: ResultsSet, targetRes: ResultPerc, weight: float = 1):
-	fRes = []
-	
-	#Get all components
-	targetName = targetRes.name
-	targetDivisions: list[str] = unpackDivisions(targetName, initialRes.allDivs.firstLevel, initialRes.allDivs.overLevel)
+def redressementResults(div: Div, targetRes: ResultPerc, weight: float = 1) -> Div:
+
+	#Propagate down to the target res
+	if div.name != targetRes.name:
+		return redressementResults(div.get(targetRes.name), targetRes, weight=weight)
 	
 	#Compute the difference between the actual and target results
-	actualRes: ResultPerc = initialRes.sumIfs(targetDivisions).toPercentages(newName=targetName)
+	actualRes: ResultPerc = div.result.toPercentages()
 	diff: dict[str, float] = targetRes.getSubstracted(actualRes)
 
 	diff = multiplyDict(diff, weight)
 
-	#For every res in ResultsSet that is also contained in Result:
-	for divName in initialRes.getAllDivs():
-		res: Result = initialRes.get(divName)
+	if div.subset == []:
+		#Compute the percentages then convert it back to results format
+		percs: ResultPerc = div.result.toPercentages().getAddedDict(diff)
+		percs.zipZeroes()
+		div.result = Result.fromPercentages(percs)
+	else:
+		#For every subdivision:
+		for subdiv in div.subset:
+			redressementResults(subdiv, subdiv.result.toPercentages().getAddedDict(diff), weight)
 		
-		if divName in targetDivisions:
-
-			#Compute the percentages then convert it back to results format
-			percs: ResultPerc = res.toPercentages().getAddedDict(diff)
-			percs.zipZeroes()
-			fRes.append(Result.fromPercentages(percs))
-		
-		else:
-			fRes.append(res)
+		div.recalculate()
 	
-	return ResultsSet(initialRes.allDivs, fRes)
+	return div
 
 
 
 #Multiplying redressement per division
-def redressementResultsMultiplicative(initialRes: ResultsSet, targetRes: ResultPerc, weight: float = 1):
-	fRes = []
+def redressementResultsMultiplicative(div: Div, targetRes: ResultPerc, weight: float = 1):
+
+	#Propagate down to the target res
+	if div.name != targetRes.name:
+		return redressementResults(div.get(targetRes.name), targetRes, weight=weight)
 	
-	#Get all components
-	targetName = targetRes.name
-	targetDivisions: list[str] = unpackDivisions(targetName, initialRes.allDivs.firstLevel, initialRes.allDivs.overLevel)
-	
-	#Compute the multiplicative difference between the actual and target results
-	actualRes: ResultPerc = initialRes.sumIfs(targetDivisions).toPercentages(newName=targetName)
+	#Compute the difference between the actual and target results
+	actualRes: ResultPerc = div.result.toPercentages()
 	diff: dict[str, float] = targetRes.getDivided(actualRes)
 
 	diff = multiplyDict(diff, weight)
 
-	#For every res in ResultsSet that is also contained in Result:
-	for divName in initialRes.getAllDivs():
-		res: Result = initialRes.get(divName)
+	if div.subset == []:
+		#Compute the percentages then convert it back to results format
+		percs: ResultPerc = div.result.toPercentages().getMultipliedDict(diff)
+		percs.zipZeroes()
+		div.result = Result.fromPercentages(percs)
+	else:
+		#For every subdivision:
+		for subdiv in div.subset:
+			redressementResults(subdiv, subdiv.result.toPercentages().getMultipliedDict(diff), weight)
 		
-		if divName in targetDivisions:
-
-			#Compute the percentages then convert it back to results format
-			percs: ResultPerc = res.toPercentages().getMultipliedDict(diff, True)
-			percs.zipZeroes()
-			fRes.append(Result.fromPercentages(percs))
-		
-		else:
-			fRes.append(res)
+		div.recalculate()
 	
-	#Redresse the results linearly and return
-	return redressementResults(ResultsSet(fRes), targetRes)
+	return redressementResults(div, targetRes, weight=weight)
 
 
 
-#Average multiple ResultsSets (for example average multiple redressements)
-def averageResultsSet(*args: ResultsSet) -> ResultsSet:
-	fRes = []
 
-	curDivs = []
-	for i in args:
-		curDivs = unionLists(curDivs, i.getAllDivs())
 
-	#For each value of their results:
-	for v in curDivs:
-		results = [rs.get(v, args[0].allDivs) if rs.contains(v) else Result.createEmpty() for rs in args]
-		
-		#Average them and add it to the fRes
-		fRes.append(averageResults(*results))
+def averageResultsSet(*args: Div, superset: list[Div] = []) -> Div:
+	if len(args) == 1: return args[0]
 	
-	return ResultsSet(args[0].allDivs, fRes)
+	if not allValuesEqual([x.name for x in args]): raise Exception('Attemps averaging different levels: {0}'.format([x.name for x in args]))
+
+	#If at the bottom, then average
+	if args[0].subset == []:
+		return Div(superset, [], args[0].name, averageResults([x.result for x in args]))
+
+	#Else, then send down then recalculate
+	else:
+		div = Div(superset, [], args[0].name, None)
+		div.subset = [averageResultsSet([arg.get(x) for arg in args], div) for x in args[0].subset]
+		return div
 
 
 
 #Stupid debugging functions
 def showRes(r: Result):
 	r.toPercentages().removedAbs().display()
-def showRess(rs: ResultsSet, d: str):
-	rs.get(d).toPercentages().display()
+def showRess(d: Div, s: str):
+	d.get(s).toPercentages().display()
