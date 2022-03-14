@@ -161,3 +161,14 @@ def appendDict(d1: dict, d2: dict):
 	for k,v in d2.items():
 		d1[k] = v
 	return d1
+
+def allValuesEqual(l: list):
+	ec = l.pop()
+	for e in l:
+		if e != ec: return False
+	return True
+
+def findLambda(l: list, a, f: function):
+	for i in l:
+		if f(i) == a:
+			return i

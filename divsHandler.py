@@ -34,11 +34,18 @@ class AllDivs:
 			return flattenList([self.unders(x) for x in self.under(div)])
 	
 	def getPath(self, div: str) -> list[str]:
-		path = [div]
+		path = []
+		print('getting path for {0}'.format(div))
 
-		for k,v in self.overLevel:
-			if v == div:
+		for k,v in self.overLevel.items():
+			if div in v:
+				print('found {0} around {1}'.format(k, v))
 				path = self.getPath(k)
-				path.append(k)
+				path.append(div)
+				break
+		else:
+			print('added {0}'.format(div))
+			path = [div]
 
+		print('returns {0}'.format(path))
 		return path
