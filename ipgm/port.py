@@ -17,14 +17,15 @@ def loadDataTable(src: str, allDivs: AllDivs) -> Div:
 	if tab[-1] == '': tab = tab[:-1]
 	listDivs: list[Div] = []
 	for l in tab[1:]:
-		print('loading row: {0}'.format(l[0]))
 		listDivs.append(Div([], [], l[0], Result.fromLists(tab[0][1:], l[1:])))
 	
 	#Run through the divs to add the dependencies
 	for k,v in allDivs.overLevel.items():
 		
 		over = findLambda(listDivs, k, lambda x: x.name)
-		if over == None: over = Div([], [], k, Result())
+		if over == None:
+			over = Div([], [], k, Result())
+			listDivs.append(over)
 
 		for vv in v:
 			under = findLambda(listDivs, vv, lambda x: x.name)
@@ -33,9 +34,12 @@ def loadDataTable(src: str, allDivs: AllDivs) -> Div:
 				listDivs.append(under)
 			over.insert(under)
 	
+	while over.superset != []:
+		over = over.superset[0]
+	
+	over.recalculateAll()
 	#Put the tab of results into NationalResults
-	headDiv = Div([], [], 'National', Result())
-	return headDiv
+	return over
 
 
 
