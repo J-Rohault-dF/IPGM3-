@@ -3,11 +3,13 @@ from ipgm.Result import *
 from ipgm.ResultPerc import *
 from ipgm.Div import *
 from ipgm.VTM import *
+from copy import *
 
 
 
 #Extrapolate ResultsSet based on a VTMatrix
-def extrapolateResults(div: Div, changeMatrix: VTMatrix) -> Div:
+def extrapolateResults(odiv: Div, changeMatrix: VTMatrix) -> Div:
+	div = deepcopy(odiv)
 
 	if div.subset == []:
 		div.result = extrapolateResult(div.result, changeMatrix)
@@ -15,6 +17,8 @@ def extrapolateResults(div: Div, changeMatrix: VTMatrix) -> Div:
 		for sd in div.subset:
 			sd = extrapolateResults(sd, changeMatrix)
 		div.recalculate()
+	
+	return div
 
 
 
