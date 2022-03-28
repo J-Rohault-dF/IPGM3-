@@ -33,9 +33,14 @@ def extrapolateResult(initialRes: Result, changeMatrix: VTMatrix) -> Result:
 #Redressement per division
 def redressementResults(div: Div, targetRes: ResultPerc, weight: float = 1) -> Div:
 
+	print('')
+	print('- Div: {0}'.format(div))
+	print('- TR: {0}'.format(targetRes))
 	#Propagate down to the target res
 	if div.name != targetRes.name:
-		return redressementResults(div.get(targetRes.name), targetRes, weight=weight)
+		print('- Difference between {0} and {1}, sending to {2}'.format(div.name, targetRes.name, div.get(targetRes.name)))
+		redressementResults(div.get(targetRes.name), targetRes, weight=weight)
+		return div
 	
 	#Compute the difference between the actual and target results
 	actualRes: ResultPerc = div.result.toPercentages()
@@ -51,7 +56,8 @@ def redressementResults(div: Div, targetRes: ResultPerc, weight: float = 1) -> D
 	else:
 		#For every subdivision:
 		for subdiv in div.subset:
-			redressementResults(subdiv, subdiv.result.toPercentages().getAddedDict(diff), weight)
+			print('- Sub-propagating to {0}'.format(subdiv))
+			redressementResults(subdiv, subdiv.result.toPercentages(subdiv.name).getAddedDict(diff), weight)
 		
 		div.recalculate()
 	
