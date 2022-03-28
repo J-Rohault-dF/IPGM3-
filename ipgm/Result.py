@@ -52,7 +52,7 @@ class Result:
 	
 	@classmethod
 	def fromPercentages(self, percs: ResultPerc):
-		return Result(percs.name, {k: v*percs.totalVotes for k,v in percs.results.items()})
+		return Result({k: v*percs.totalVotes for k,v in percs.results.items()})
 	
 	def hasCandidate(self, cand: str) -> bool:
 		return cand in self.getCandidates()

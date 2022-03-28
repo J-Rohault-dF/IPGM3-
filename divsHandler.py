@@ -10,7 +10,19 @@ class AllDivs:
 		with open(src, 'r', encoding='utf8') as divs:
 			allFirstLines = [line.strip() for line in divs if (line.strip() != '' and ':' not in line and line.strip() not in ignore)]
 			divs.seek(0)
-			allOverLines = {line.split(':')[0].strip(): [x.strip() for x in line.split(':')[1].split(';')] for line in divs if ':' in line}
+
+			allOverLines = {}
+			for line in divs:
+				if ':' in line:
+					divTitle = line.split(':')[0].strip()
+
+					if divTitle not in allOverLines: #Add all subdivs
+						allOverLines[divTitle] = []
+					allOverLines[divTitle] += [x.strip() for x in line.split(':')[1].split(';')]
+
+					print(divTitle, allOverLines[divTitle])
+				
+			print(allOverLines)
 		
 		for i in ignore: #Handles ignored divs
 			for j in allOverLines[i]:
