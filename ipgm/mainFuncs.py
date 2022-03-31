@@ -3,13 +3,13 @@ from ipgm.Result import *
 from ipgm.ResultPerc import *
 from ipgm.Div import *
 from ipgm.VTM import *
-from copy import *
+import copy
 
 
 
 #Extrapolate ResultsSet based on a VTMatrix
 def extrapolateResults(odiv: Div, changeMatrix: VTMatrix) -> Div:
-	div = deepcopy(odiv)
+	div = copy.deepcopy(odiv)
 
 	ls = div.recursiveSubres()
 	for sd in ls:
@@ -90,20 +90,19 @@ def redressementResultsMultiplicative(div: Div, targetRes: ResultPerc, weight: f
 
 
 
-def averageResultsSet(*args: Div, superset: list[Div] = []) -> Div:
-	if len(args) == 1: return args[0]
+def averageDivs(divs: list[Div], superset: list[Div] = []) -> Div:
+	print('Averaging:', divs)
+	if len(divs) == 1: return divs[0]
 	
-	if not allValuesEqual([x.name for x in args]): raise Exception('Attemps averaging different levels: {0}'.format([x.name for x in args]))
+	if not allValuesEqual([x.name for x in divs]): raise Exception('Attemps averaging different levels: {0}'.format([x.name for x in divs]))
 
-	#If at the bottom, then average
-	if args[0].subset == []:
-		return Div(superset, [], args[0].name, averageResults([x.result for x in args]))
-
-	#Else, then send down then recalculate
-	else:
-		div = Div(superset, [], args[0].name, None)
-		div.subset = [averageResultsSet([arg.get(x) for arg in args], div) for x in args[0].subset]
-		return div
+	#Get the list and average
+	divA = copy.deepcopy(divs[0])
+	for dn in [x.name for x in divA.recursiveSubres()]:
+		divA.get(dn).result = averageResults([x.result for x in divs])
+	
+	divA.recalculateAll()
+	return divA
 
 
 
@@ -111,4 +110,4 @@ def averageResultsSet(*args: Div, superset: list[Div] = []) -> Div:
 def showRes(r: Result):
 	r.toPercentages().removedAbs().display()
 def showRess(d: Div, s: str):
-	d.get(s).toPercentages().display()
+	d.get(s).result.toPercentages().display()
