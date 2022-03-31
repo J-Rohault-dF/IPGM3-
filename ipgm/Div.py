@@ -55,18 +55,24 @@ class Div:
 			for d in self.subset:
 				d.recalculateAll()
 	
-	def recursiveSubres(self) -> list[Div]: #Calculates recursively the list of all base subres
+	def allBaseSubDivs(self) -> list[Div]: #Calculates recursively the list of all base subdivs
 		if self.subset == []:
 			return [self]
 		ls = []
 		for d in self.subset:
-			ls = mergeSetLists(ls, d.recursiveSubres())
+			ls = mergeSetLists(ls, d.allBaseSubDivs())
 		return ls
 	
+	def allSubDivs(self) -> list[Div]: #Calculates recursively the list of all subdivs (not only base)
+		ls = [self]
+		for d in self.subset:
+			ls = mergeSetLists(ls, d.allSubDivs())
+		return ls
+
 	def recalculate(self) -> None: #Calculate recursive sum of all subdivs under
 		if self.subset == []:
 			return None
-		ls = [d.result for d in self.recursiveSubres()]
+		ls = [d.result for d in self.allBaseSubDivs()]
 		#Sum all res
 		rz = ls.pop()
 		for rr in ls:
@@ -86,7 +92,7 @@ def averageDivs(divs: list[Div], superset: list[Div] = []) -> Div:
 
 	#Get the list and average
 	divA = copy.deepcopy(divs[0])
-	for dn in [x.name for x in divA.recursiveSubres()]:
+	for dn in [x.name for x in divA.allBaseSubDivs()]:
 		divA.get(dn).result = averageResults([x.result for x in divs])
 	
 	divA.recalculateAll()
