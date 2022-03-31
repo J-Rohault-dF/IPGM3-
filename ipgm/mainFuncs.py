@@ -11,12 +11,11 @@ from copy import *
 def extrapolateResults(odiv: Div, changeMatrix: VTMatrix) -> Div:
 	div = deepcopy(odiv)
 
-	if div.subset == []:
-		div.result = extrapolateResult(div.result, changeMatrix)
-	else:
-		for sd in div.subset:
-			sd = extrapolateResults(sd, changeMatrix)
-		div.recalculate()
+	ls = div.recursiveSubres()
+	for sd in ls:
+		sd.result = extrapolateResult(sd.result, changeMatrix)
+	
+	div.recalculateAll()
 	
 	return div
 
@@ -33,15 +32,11 @@ def extrapolateResult(initialRes: Result, changeMatrix: VTMatrix) -> Result:
 #Redressement per division
 def redressementResults(div: Div, targetRes: ResultPerc, weight: float = 1) -> Div:
 
-	print('')
-	print('- Div: {0}'.format(div))
-	print('- TR: {0}'.format(targetRes))
 	#Propagate down to the target res
 	if div.name != targetRes.name:
-		print('- Difference between {0} and {1}, sending to {2}'.format(div.name, targetRes.name, div.get(targetRes.name)))
 		redressementResults(div.get(targetRes.name), targetRes, weight=weight)
 		return div
-	
+
 	#Compute the difference between the actual and target results
 	actualRes: ResultPerc = div.result.toPercentages()
 	diff: dict[str, float] = targetRes.getSubstracted(actualRes)
@@ -56,7 +51,6 @@ def redressementResults(div: Div, targetRes: ResultPerc, weight: float = 1) -> D
 	else:
 		#For every subdivision:
 		for subdiv in div.subset:
-			print('- Sub-propagating to {0}'.format(subdiv))
 			redressementResults(subdiv, subdiv.result.toPercentages(subdiv.name).getAddedDict(diff), weight)
 		
 		div.recalculate()
