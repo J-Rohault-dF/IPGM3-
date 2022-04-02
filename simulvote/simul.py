@@ -57,10 +57,11 @@ def simulOneNat(odiv: Div, stdev: float, sampleSize: int) -> Div:
 
 
 
-def simulMany(div: Div, amountOfSims: int, stdev: float, sampleSize: int) -> dict:
+def simulMany(div: Div, amountOfSims: int, stdev: float, sampleSize: int, listSim: list[str] = None) -> dict:
 	timeStart = time.time()
 	
-	ls = {k: {} for k in [x.name for x in div.allBaseSubDivs()]}
+	if listSim == None: listSim = [x.name for x in div.allBaseSubDivs()]
+	ls = {k: {} for k in listSim}
 
 	candidates = [x for x in div.result.getCandidates() if x != '@']
 
@@ -76,7 +77,7 @@ def simulMany(div: Div, amountOfSims: int, stdev: float, sampleSize: int) -> dic
 		#dt = simplifyDivTree(dt)
 
 		# Find the winners in each dept and put them in some array
-		for d in [x.name for x in div.allBaseSubDivs()]:
+		for d in listSim:
 			w = dt.get(d).result.getWinner()
 			addInDict(ls[d], w, 1)
 			#if w in ls[d]: ls[d][w] += 1
