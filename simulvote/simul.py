@@ -1,19 +1,21 @@
 from __future__ import annotations
 from ipgm.Result import *
-from ipgm.ResultsSet import *
+from ipgm.Div import *
 import random
 import math
 import copy
+import time
 
 from ipgm.mainFuncs import redressementResults
 
 def simulOneRes(res: Result, stdev: float, sampleSize: int) -> Result:
-	rp = res.toPercentages()
-	rr = copy.deepcopy(rp)
-	for i in rp.getCandidates():
-		p = rr.results[i]
-		rr.results[i] = random.gauss(rr.results[i], stdev*math.sqrt(p*(1-p) / sampleSize))
-	return Result.fromPercentages(rr.removedAbs())
+	totalVotes = res.getSumOfVotes()
+	rr = {}
+	for k,v in res.results.items():
+		if k == '@': continue
+		p = v/totalVotes
+		rr[k] = random.gauss(p, stdev*math.sqrt(p*(1-p) / sampleSize))
+	return Result({k: v*totalVotes for k,v in rr.items()})
 
 
 
@@ -36,47 +38,52 @@ def rankingChances(res: Result, amountOfSims: int, stdev: float, sampleSize: int
 
 
 
-def simulOneNat(ress: ResultsSet, stdev: float, sampleSize: int) -> ResultsSet:
+def simulOneNat(odiv: Div, stdev: float, sampleSize: int) -> Div:
+	div = copy.deepcopy(odiv)
+
 	#Generate national swing
-	nat = simulOneRes(ress.get('National'), stdev, sampleSize)
+	nat = simulOneRes(div.result, stdev, sampleSize)
 
 	#Generate swing for all depts
-	for r in ress.listOfResults:
-		r = simulOneRes(r, stdev, sampleSize)
+	for sd in div.allBaseSubDivs():
+		sd.result = simulOneRes(sd.result, stdev, sampleSize)
 
 	#Redresse all depts according to the national swinged result
-	ress = redressementResults(ress, nat.toPercentages())
+	div.recalculateAll()
+	div = redressementResults(div, nat.toPercentages(div.name))
 
 	#return new rs
-	return ress
+	return div
 
 
 
-def simulMany(ress: ResultsSet, amountOfSims: int, stdev: float, sampleSize: int) -> dict:
+def simulMany(div: Div, amountOfSims: int, stdev: float, sampleSize: int) -> dict:
+	timeStart = time.time()
 	
-	ls = dict(zip( ress.allDivs.allDivs, [ {} for _ in range(len(ress.allDivs.allDivs))]))
+	ls = {k: {} for k in [x.name for x in div.allBaseSubDivs()]}
 
-	candidates = [x for x in ress.get('National').getCandidates() if x != '@']
+	candidates = [x for x in div.result.getCandidates() if x != '@']
 
-	ress = simplifyResSet(ress, threshold=0.15)
+	div = simplifyDivTree(div, threshold=0.125)
+
+	print('Initialized… {0}'.format(time.time()-timeStart))
 
 	#Do many times:
 	for i in range(amountOfSims):
 
 		# Simulate one election
-		rs = simulOneNat(ress, stdev, sampleSize)
-
-		rs = simplifyResSet(rs)
+		dt = simulOneNat(div, stdev, sampleSize)
+		#dt = simplifyDivTree(dt)
 
 		# Find the winners in each dept and put them in some array
-		for d in ress.allDivs.allDivs:
-			w = rs.get(d).getWinner()
+		for d in [x.name for x in div.allBaseSubDivs()]:
+			w = dt.get(d).result.getWinner()
 			addInDict(ls[d], w, 1)
 			#if w in ls[d]: ls[d][w] += 1
 			#else: ls[d][w] = 1
 		
 		if i%(amountOfSims/10) == 0:
-			print('Simulated {0} out of {1}...'.format(i, amountOfSims))
+			print('Simulated {0} out of {1}… {2}s'.format(i, amountOfSims, round(time.time()-timeStart, 1)))
 		
 	# Count how many times each candidate is in an array and find how safe the dept is
 	lDepts = {}
@@ -87,20 +94,21 @@ def simulMany(ress: ResultsSet, amountOfSims: int, stdev: float, sampleSize: int
 	# Return the results
 	return lDepts
 
-def simplifyResSet(res: ResultsSet, threshold: float = 0.1) -> ResultsSet:
-	for i in range(len(res.listOfResults)):
-		r = res.listOfResults[i]
+def simplifyDivTree(div: Div, threshold: float = 0.1) -> Div: #Removes all candidates below the threshold, changes the object and returns it
+	for d in div.allBaseSubDivs():
 
+		r = d.result
 		rp = r.toPercentages()
 		maxScore = rp.get(r.getWinner())
 
-		dc = {'@': 0}
+		dc = {'@': 0} #TODO: Instead of passing through resultsperc, calculate the threshold in votes then check directly
 		for k,v in rp.results.items():
 			if v >= (maxScore-threshold):
 				dc[k] = v
 			else:
 				dc['@'] += v
 		
-		res.listOfResults[i] = Result.fromPercentages(ResultPerc.fromVotelessDict(r.name, dc, r.getSumOfVotes(removeAbs=False)))
+		d.result = Result.fromPercentages(ResultPerc.fromVotelessDict(d.name, dc, r.getSumOfVotes(removeAbs=False)))
 
-	return res
+	div.recalculateAll()
+	return div
