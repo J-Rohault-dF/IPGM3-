@@ -54,11 +54,11 @@ allExtrapolations = []
 for i,j in [(fV, '2020_Parties'), (rS, '2019_Race')]:
 	allExtrapolations.append(extrapolateResults(i, mx['Echelon']['matrix_{0}'.format(j)]))
 
-rs = averageResultsSet(*allExtrapolations, allDivs=allDivs)
+rs = averageDivs(allExtrapolations)
 
 r = deepcopy(rs)
 for i in ['West', 'Midwest', 'South', 'Northeast', 'National']:
-	r = redressementResultsMultiplicative(r, mx['Echelon']['scores_Parties'][i], allDivs=allDivs)
+	r = redressementResultsMultiplicative(r, mx['Echelon']['scores_Parties'][i])
 
 seatsParties = {x.name: proportionalHighestAverage(filterThreshold(x), seatsPerState[x.name], 'D\'Hondt') for x in r.listOfResults if x.name in seatsPerState}
 

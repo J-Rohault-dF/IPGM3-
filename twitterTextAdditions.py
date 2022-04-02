@@ -1,4 +1,3 @@
-from ipgm.ResultsSet import *
 from simulvote.simul import *
 import math
 
