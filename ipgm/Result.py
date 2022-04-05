@@ -8,23 +8,30 @@ from ipgm.Candidacies import *
 class Result:
 	results = {}
 
-	def __init__(self, results: dict = {}):
+	def __init__(self, results: dict):
 		self.results = results
 
 	@classmethod
-	def fromLists(self, candidates: list, results: list):
-		return Result(dict(zip(candidates, [toFloat(x) for x in results])))
+	def fromLists(self, name: str, candidates: list, results: list):
+		return Result(name, dict(zip(candidates, [toFloat(x) for x in results])))
 
 	@classmethod
-	def fromDict(self, results: dict):
-		return Result(results)
+	def fromDict(self, name: str, results: dict):
+		return Result(name, results)
 	
 	@classmethod
 	def createEmpty(self):
 		return Result('', {})
 
+	def exportDict(self):
+		d = {}
+		d[self.name] = self.results
+		for x in self.subset:
+			d = appendDict(d, x.exportDict)
+		return d
+	
 	def __repr__(self):
-		return '<Results {0}>'.format(self.results)
+		return '<{0}: {1}>'.format(self.name, self.results)
 	
 	def getSumOfVotes(self, removeAbs: bool = True) -> float: #SHOULD REMOVE PARAMETER removeAbs
 		if removeAbs:
@@ -41,14 +48,14 @@ class Result:
 		for c in allCands:
 			newRes[c] = ( self.results[c] if c in self.getCandidates() else 0 ) + ( other.results[c] if c in other.getCandidates() else 0 )
 
-		return Result.fromDict(newRes)
+		return Result.fromDict(self.name, newRes)
 
 	def add(self, other):
 		self = self.getAdded(other)
 		return self
 	
 	def toPercentages(self, newName: str = '') -> ResultPerc:
-		return ResultPerc.fromVotesDict(newName, self.results)
+		return ResultPerc.fromVotesDict((self.name if newName == '' else newName), self.results)
 	
 	@classmethod
 	def fromPercentages(self, percs: ResultPerc):

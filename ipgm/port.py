@@ -1,5 +1,4 @@
 import json
-from pickletools import unicodestringnl
 from ipgm.utils import *
 from ipgm.Result import *
 from ipgm.Div import *
@@ -13,28 +12,13 @@ def loadDataTable(src: str, allDivs: AllDivs) -> Div:
 		txt = dataTable.read()
 		tab = [y.split(';') for y in [x for x in txt.split('\n')]]
 	
-	#Parse it and create the list of results
+	#Parse it and create the tab of results
 	if tab[-1] == '': tab = tab[:-1]
-	listDivs: list[Div] = []
+	headDiv = Div(superset=None, subset=[], name='National')
 	for l in tab[1:]:
-		print('loading row: {0}'.format(l[0]))
-		listDivs.append(Div([], [], l[0], Result.fromLists(tab[0][1:], l[1:])))
-	
-	#Run through the divs to add the dependencies
-	for k,v in allDivs.overLevel.items():
-		
-		over = findLambda(listDivs, k, lambda x: x.name)
-		if over == None: over = Div([], [], k, Result())
-
-		for vv in v:
-			under = findLambda(listDivs, vv, lambda x: x.name)
-			if under == None:
-				under = Div([], [], vv, Result())
-				listDivs.append(under)
-			over.insert(under)
+		headDiv.insert(allDivs.getPath(l[0]), Result.fromLists(l[0], tab[0][1:], l[1:]))
 	
 	#Put the tab of results into NationalResults
-	headDiv = Div([], [], 'National', Result())
 	return headDiv
 
 
