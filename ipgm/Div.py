@@ -17,7 +17,7 @@ class Div:
 		self.result = result
 	
 	def __repr__(self):
-		return '<{0}: {1}, contains {2}, part of {3}>'.format(self.name, self.result.results, [x.name for x in self.subset], [x.name for x in self.superset])
+		return '<{0}: {1}, contains {2}>'.format(self.name, self.result.results, [x.name for x in self.subset])
 	
 	def getTree(self):
 		return {x.name: x.getTree() for x in self.subset}
@@ -39,6 +39,31 @@ class Div:
 				if ig != None: return ig
 			return None
 		#TODO: Check the auto-update (right now, a result isn't updated based on the results below)
+
+	"""def insert(self, path: list[str], res: Result):
+		print('')
+		print('{0}.insert({1}, /), {2}'.format(self.name, path, self.getTree()))
+
+		if len(path) == 1:
+			print('len(path == 1)')
+			self.subset.append(Div(self, [], path[0], res))
+			#print(self)
+		elif len(path) == 0:
+			return None
+		else:
+			print('else:')
+			print('searching in {0}'.format([x.name for x in self.subset]))
+			for sd in self.subset:
+				print('trying to find… {0}'.format(sd.name))
+				if sd.name == path[0]:
+					print('found it')
+					sd.insert(path[1:], res)
+					break
+			else:
+				print('didn\'t find it')
+				nsd = Div(self, [], path[0], Result())
+				self.subset.append(nsd)
+				nsd.insert(path[1:], res)"""
 	
 	def exportDict(self):
 		d = {}
@@ -47,36 +72,13 @@ class Div:
 			d = appendDict(d, x.exportDict)
 		return d
 	
-	#def recalculate(self):
-	#	r = self.subset[0].result
-	#	for i in self.subset[1:]:
-	#		r.add(i.result)
-	#	self.result = r
-
-	def recalculateAll(self): #Recursive subCalcAll() call in all subdivs
-		if self.subset != []:
-			self.subCalcAll()
-			for d in self.subset:
-				d.recalculateAll()
+	def recalculate(self):
+		r = self.subset[0].result
+		for i in self.subset[1:]:
+			r.add(i.result)
+		self.result = r
 	
-	def recursiveSubres(self) -> list[Div]: #Calculates recursively the list of all base subres
-		if self.subset == []:
-			return [self]
-		ls = []
-		for d in self.subset:
-			ls = mergeSetLists(ls, d.recursiveSubres())
-		return ls
-	
-	def subCalcAll(self) -> None: #Calculate sum of all subdivs
-		if self.subset == []:
-			return None
-		ls = [d.result for d in self.recursiveSubres()]
-		#Sum all res
-		rz = ls.pop(0)
-		for rr in ls:
-			rz.add(rr)
-		self.result = rz
-
 	def insert(self, sub: Div):
+		print('inserting {0} in {1}'.format(sub.name, self.name))
 		self.subset.append(sub)
 		sub.superset.append(self)
