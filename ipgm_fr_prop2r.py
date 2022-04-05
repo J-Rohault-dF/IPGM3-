@@ -56,14 +56,12 @@ for i in sorted(curScores, key=lambda x: allDivs.getSortingKeys(x)):
 
 
 
-
-
 for i in range(1):
 
 	#Take the first round
 
 	#Randomize it
-	r1s = simulOneNat(rData, 1.96, 3000)
+	r1s = copy.deepcopy(rData)#r1s = simulOneNat(rData, 1.96, 3000)
 
 	#Depending on the top-2
 
@@ -86,12 +84,13 @@ for i in range(1):
 	rs = averageDivs(rl)
 	
 	r2s = deepcopy(rs)
-	curScores = hv[('scores_2022T2')]
+	curScores = hv['scores_2022T2']
 	for i in sorted(curScores, key=lambda x: allDivs.getSortingKeys(x)):
 		r2s = redressementResults(r2s, curScores[i], weight = (1 if i == 'National' else 0.75 if i == 'Province' else 0.5))
 	
+	print(r2s)
 	#Compute the runoff
-	r2s = simulOneNat(r2s, 1.96, 3000)
+	#r2s = simulOneNat(r2s, 1.96, 3000)
 
 	#Do the proportional apportionment
 	seatsTotal = {x: twoRoundProportional(r1s.get(x).result.results, r2s.get(x).result.results, seatsPerDept[x]) for x in allDivs.allDivs if x in seatsPerDept}
@@ -99,7 +98,7 @@ for i in range(1):
 	#Tweet text
 	#if doExportTxt: allTexts.append('HYPOTHESIS {h}\n'.format(h=hk)+makeTweetText(r2s.get('National').result.toPercentages(), hv['sampleSize'], top=(2 if tn==1 else 1), nbSimulated=15000, candidaciesData=candidaciesData, threshold=0.05))
 
-	print({k: sum([xv[k] for xk,xv in seatsTotal.items()]) for k,v in r1s.result.results.items()})
+	print({k: sum([xv[k] for xk,xv in seatsTotal.items()]) for k,v in r1s.result.results.items() if k != '@'})
 
 	#Export and map
 	if doExportCsv: saveDataTable('exports/{path}/{h}.csv'.format(h=hk, path=poll), r2s)
