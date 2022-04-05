@@ -43,7 +43,7 @@ class Result:
 
 		return Result.fromDict(newRes)
 
-	def add(self, other: Result) -> Result:
+	def add(self, other):
 		self = self.getAdded(other)
 		return self
 	
