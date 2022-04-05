@@ -91,6 +91,7 @@ class Result:
 
 
 
+
 def averageResults(ress: list[Result]) -> Result:
 	
 	allCands = []

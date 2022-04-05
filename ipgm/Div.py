@@ -76,19 +76,3 @@ class Div:
 	def insert(self, sub: Div):
 		self.subset.append(sub)
 		sub.superset.append(self)
-
-
-
-def averageDivs(divs: list[Div], superset: list[Div] = []) -> Div:
-	print('Averaging:', divs)
-	if len(divs) == 1: return divs[0]
-	
-	if not allValuesEqual([x.name for x in divs]): raise Exception('Attemps averaging different levels: {0}'.format([x.name for x in divs]))
-
-	#Get the list and average
-	divA = copy.deepcopy(divs[0])
-	for dn in [x.name for x in divA.recursiveSubres()]:
-		divA.get(dn).result = averageResults([x.result for x in divs])
-	
-	divA.recalculateAll()
-	return divA
