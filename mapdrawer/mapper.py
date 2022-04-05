@@ -80,10 +80,10 @@ def mapColorerPercs(div: Div, candidaciesData: Candidacies, xmlR: etree.ElementT
 		if i.get('id') in [x.name for x in div.allSubDivs()]:
 			i.set('style', i.get('style').replace('000000', getWinningColorR(div.get(i.get('id')).result, candidaciesData, sameParty)))
 
-def mapColorerProbs(probs: dict[str, dict[str, float]], candidaciesData: Candidacies, xmlR: etree.ElementTree, sameParty: bool = False):
+def mapColorerProbs(probs: dict[str, dict[str, float]], allDivs: AllDivs, candidaciesData: Candidacies, xmlR: etree.ElementTree, sameParty: bool = False):
 	for i in xmlR.getroot().find('{http://www.w3.org/2000/svg}g'):
 		#If id is in the deps list, replace the fill
-		if i.get('id') in probs.keys():
+		if i.get('id') in allDivs.allDivs:
 			i.set('style', i.get('style').replace('000000', getWinningColorP(probs[i.get('id')], candidaciesData, sameParty)))
 
 def mapRinger(xmlL: etree.Element, xmlD: etree.Element, percs: dict[str, dict[str, float]], divsData: dict[str, dict[str, str|int]], outerRadius: float, innerRadius: float, candidaciesData: Candidacies, sameParty: bool = False):
@@ -158,7 +158,7 @@ def exportMapProbs(probs: dict[str, dict[str, float]], mapSrc: str, mapTarget: s
 	mapTarget = 'exports/'+mapTarget
 	xmlR = loadMap(mapSrc)
 	
-	mapColorerProbs(probs, candidaciesData, xmlR, sameParty)
+	mapColorerProbs(probs, allDivs, candidaciesData, xmlR, sameParty)
 
 	if doRings:
 		mapRinger(xmlR.getroot().find('{http://www.w3.org/2000/svg}g'), xmlR.getroot().find('{http://www.w3.org/2000/svg}defs'), probs, divsData, outerRadius, innerRadius, candidaciesData, sameParty)

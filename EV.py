@@ -139,11 +139,11 @@ electoralVotes = {
 	'Guadeloupe': 7,
 	'Martinique': 6,
 	'Guyane': 4,
-	'La Réunion': 11,
+	'Réunion': 11,
 	'Saint-Pierre-et-Miquelon': 3,
 	'Mayotte': 3,
 	'Saint-Martin': 1,
-	'Saint-Barthélemy': 1,
+	'Saint-Barthélémy': 1,
 	'Saint-Martin et Saint-Barthélémy': 1,
 	'Wallis-et-Futuna': 2,
 	'Polynésie-Française': 5,
@@ -251,11 +251,11 @@ abbr = {
 	'Guadeloupe': 'GU',
 	'Martinique': 'MT',
 	'Guyane': 'GY',
-	'La Réunion': 'RE',
+	'Réunion': 'RE',
 	'Saint-Pierre-et-Miquelon': 'PM',
 	'Mayotte': 'YT',
 	'Saint-Martin': 'ST',
-	'Saint-Barthélemy': 'SB',
+	'Saint-Barthélémy': 'SB',
 	'Saint-Martin et Saint-Barthélémy': 'MB',
 	'Wallis-et-Futuna': 'WF',
 	'Polynésie-Française': 'PL',
@@ -270,17 +270,18 @@ allDivs = AllDivs('data/divs_fr.txt')
 candidaciesData: Candidacies = importCandidacies(srcParties='data/parties_fr.csv', srcCandidates='data/candidates_fr.csv')
 
 #Load table
-r = loadDataTable('exports/fr/Elabe_20220330/1_CC.csv', allDivs)
+r = loadDataTable('exports/fr/Elabe_20211207/1_VP.csv', allDivs)
+r.trim(allDivs.firstLevel)
 
 #s = simulOneNat(r, 1.96, 1000, allDivs)
 #showRes(s.get('National', allDivs))
 #exportMap(s, 'basemap_collectivites.svg', 'stupidSim_.svg', allDivs=allDivs, partiesColors=partiesColors)
 
 #Simulate many and export map
-sm = simulMany(r, 50, 4, 2000)
+sm = simulMany(r, 5000, 4, 2000)
 
 #Compute potential electoral college
-EV = {k: [0, 0, 0] for k in r.result.getCandidates()}
+EV = {k: [0, 0, 0] for k in r.get('National').getCandidates()}
 EV['tossup'] = {}
 
 for i in sm.keys():
