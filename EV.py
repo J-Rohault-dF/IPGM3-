@@ -144,7 +144,7 @@ electoralVotes = {
 	'Mayotte': 3,
 	'Saint-Martin': 1,
 	'Saint-Barthélemy': 1,
-	'Saint-Martin et Saint-Barthélemy': 1,
+	'Saint-Martin et Saint-Barthélémy': 1,
 	'Wallis-et-Futuna': 2,
 	'Polynésie-Française': 5,
 	'Nouvelle-Calédonie': 4,
@@ -256,7 +256,7 @@ abbr = {
 	'Mayotte': 'YT',
 	'Saint-Martin': 'ST',
 	'Saint-Barthélemy': 'SB',
-	'Saint-Martin et Saint-Barthélemy': 'MB',
+	'Saint-Martin et Saint-Barthélémy': 'MB',
 	'Wallis-et-Futuna': 'WF',
 	'Polynésie-Française': 'PL',
 	'Nouvelle-Calédonie': 'NC',
@@ -277,7 +277,7 @@ r = loadDataTable('exports/fr/Elabe_20220330/1_CC.csv', allDivs)
 #exportMap(s, 'basemap_collectivites.svg', 'stupidSim_.svg', allDivs=allDivs, partiesColors=partiesColors)
 
 #Simulate many and export map
-sm = simulMany(r, 5000, 4, 2000, listSim = [x for x in electoralVotes.keys()])
+sm = simulMany(r, 50, 4, 2000)
 
 #Compute potential electoral college
 EV = {k: [0, 0, 0] for k in r.result.getCandidates()}
