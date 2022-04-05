@@ -1,6 +1,7 @@
 from mapdrawer.keydrawer import *
 from mapdrawer.seatsdrawer import *
 from ipgm.Result import *
+from ipgm.ResultsSet import *
 from ipgm.proportional import *
 from divsHandler import *
 from simulvote.simul import *

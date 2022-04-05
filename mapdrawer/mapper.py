@@ -1,9 +1,9 @@
 from __future__ import annotations
 import math
 import xml.etree.ElementTree as etree
+from ipgm.ResultsSet import *
 from ipgm.Candidacies import *
 from ipgm.Div import *
-from divsHandler import *
 from mapdrawer.colors import *
 from mapdrawer.seatsdrawer import *
 from mapdrawer.keydrawer import *
