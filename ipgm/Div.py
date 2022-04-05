@@ -80,6 +80,7 @@ class Div:
 
 
 def averageDivs(divs: list[Div], superset: list[Div] = []) -> Div:
+	print('Averaging:', divs)
 	if len(divs) == 1: return divs[0]
 	
 	if not allValuesEqual([x.name for x in divs]): raise Exception('Attemps averaging different levels: {0}'.format([x.name for x in divs]))
