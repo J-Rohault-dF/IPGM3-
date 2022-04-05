@@ -68,9 +68,9 @@ class Div:
 			return None
 		ls = [d.result for d in self.recursiveSubres()]
 		#Sum all res
-		rz = ls.pop()
+		rz = ls.pop(0)
 		for rr in ls:
-			rz = rz.getAdded(rr)
+			rz.add(rr)
 		self.result = rz
 
 	def insert(self, sub: Div):

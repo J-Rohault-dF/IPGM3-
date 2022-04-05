@@ -19,6 +19,10 @@ class AllDivs:
 					if divTitle not in allOverLines: #Add all subdivs
 						allOverLines[divTitle] = []
 					allOverLines[divTitle] += [x.strip() for x in line.split(':')[1].split(';')]
+
+					print(divTitle, allOverLines[divTitle])
+				
+			print(allOverLines)
 		
 		for i in ignore: #Handles ignored divs
 			for j in allOverLines[i]:

@@ -1,8 +1,8 @@
 from __future__ import annotations
+from copy import deepcopy
 from ipgm.ResultPerc import *
 from ipgm.utils import *
 from ipgm.Candidacies import *
-import copy
 
 #Single line of results
 class Result:
@@ -36,14 +36,15 @@ class Result:
 		return list(self.results.keys())
 
 	def getAdded(self, other: Result):
-		newRes = copy.deepcopy(self)
-		return newRes.add(other)
+		allCands = unionLists(self.getCandidates(), other.getCandidates())
+		newRes = {}
+		for c in allCands:
+			newRes[c] = ( self.results[c] if c in self.getCandidates() else 0 ) + ( other.results[c] if c in other.getCandidates() else 0 )
+
+		return Result.fromDict(newRes)
 
 	def add(self, other: Result) -> Result:
-		for k,v in other.results.items():
-			if k not in self.results.keys():
-				self.results[k] = 0
-			self.results[k] += v
+		self = self.getAdded(other)
 		return self
 	
 	def toPercentages(self, newName: str = '') -> ResultPerc:
