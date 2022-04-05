@@ -57,7 +57,7 @@ for hk, hv in {k: v for k,v in mx.items() if k != 'sampleSize'}.items():
 		if 'matrix_2017T2_2022T2' in hv: rl.append(extrapolateResults(t2, hv['matrix_2017T2_2022T2']))
 		if 'matrix_2019TE_2022T2' in hv: rl.append(extrapolateResults(te, hv['matrix_2019TE_2022T2']))
 		if 'matrix_2022T1_2022T2' in hv: rl.append(extrapolateResults(allRounds[hv['based_on']], hv['matrix_2022T1_2022T2']))
-	rs = averageDivs(rl)
+	rs = averageResultsSet(*rl)
 
 	print('test3')
 	
@@ -73,7 +73,7 @@ for hk, hv in {k: v for k,v in mx.items() if k != 'sampleSize'}.items():
 	allRounds[hk] = r
 
 	#Tweet text
-	if doExportTxt: allTexts.append('HYPOTHESIS {h}\n'.format(h=hk)+makeTweetText(r.result.toPercentages(), hv['sampleSize'], top=(2 if tn==1 else 1), nbSimulated=15000, candidaciesData=candidaciesData, threshold=0.05))
+	if doExportTxt: allTexts.append('HYPOTHESIS {h}\n'.format(h=hk)+makeTweetText(r.get('National').toPercentages(), hv['sampleSize'], top=(2 if tn==1 else 1), nbSimulated=15000, candidaciesData=candidaciesData, threshold=0.05))
 
 	print('test5')
 	

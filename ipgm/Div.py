@@ -17,7 +17,7 @@ class Div:
 		self.result = result
 	
 	def __repr__(self):
-		return '<{0}: {1}, contains {2}, part of {3}>'.format(self.name, (self.result.results if self.result != None else 'None'), [x.name for x in self.subset], [x.name for x in self.superset])
+		return '<{0}: {1}, contains {2}, part of {3}>'.format(self.name, self.result.results, [x.name for x in self.subset], [x.name for x in self.superset])
 	
 	def getTree(self):
 		return {x.name: x.getTree() for x in self.subset}
@@ -30,7 +30,7 @@ class Div:
 			return False
 	
 	#Returns component given its name
-	def get(self, name: str) -> Div:
+	def get(self, name: str) -> Result:
 
 		if self.name == name:
 			return self
