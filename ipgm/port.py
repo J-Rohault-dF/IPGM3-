@@ -1,12 +1,12 @@
 import json
 from ipgm.utils import *
 from ipgm.Result import *
-from ipgm.Div import *
+from ipgm.ResultsSet import *
 from ipgm.VTM import *
 from divsHandler import *
 
 #Fonction pour charger un tableau de données en classe [FORMAT: CSV with SEMICOLONS]
-def loadDataTable(src: str, allDivs: AllDivs) -> Div:
+def loadDataTable(src: str, allDivs: AllDivs) -> ResultsSet:
 	#Open the datatable and dump it into a python tab
 	with open(src,'r',encoding='utf8') as dataTable:
 		txt = dataTable.read()
@@ -14,26 +14,23 @@ def loadDataTable(src: str, allDivs: AllDivs) -> Div:
 	
 	#Parse it and create the tab of results
 	if tab[-1] == '': tab = tab[:-1]
-	headDiv = Div(superset=None, subset=[], name='National')
+	listResults = []
 	for l in tab[1:]:
-		headDiv.insert(allDivs.getPath(l[0]), Result.fromLists(l[0], tab[0][1:], l[1:]))
+		listResults.append(Result.fromLists(l[0], tab[0][1:], l[1:]))
 	
 	#Put the tab of results into NationalResults
-	return headDiv
+	return ResultsSet(allDivs, listResults)
 
 
 
-def saveDataTable(src: str, dv: Div):
+def saveDataTable(src: str, rs: ResultsSet):
 	ls = []
-	next = []
-	ls.append(';'.join([''] + [str(x) for x in dv.results.keys()]))
+	ls.append(';'.join([''] + [str(x) for x in rs.listOfResults[0].results.keys()]))
+	for d in rs.allDivs.allDivs:
+		if not rs.contains(d): continue
 
-	next.append(dv)
-	while next != []: #For each div, add its results in ls and add its subdivs in next
-		dv = next.pop(0)
-		next += dv.subset
-		ls.append(';'.join([dv.name] + [str(x) for x in dv.result.results.values()]))
-
+		r = rs.get(d)
+		ls.append(';'.join([r.name] + [str(x) for x in r.results.values()]))
 	with open(src, 'w', encoding='utf8') as exportFile:
 		exportFile.write('\n'.join(ls))
 

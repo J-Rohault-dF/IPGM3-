@@ -1,4 +1,3 @@
-from __future__ import annotations
 from ipgm.utils import *
 
 class AllDivs:
@@ -32,13 +31,3 @@ class AllDivs:
 		if div in self.firstLevel: return div
 		else:
 			return flattenList([self.unders(x) for x in self.under(div)])
-	
-	def getPath(self, div: str) -> list[str]:
-		path = [div]
-
-		for k,v in self.overLevel:
-			if v == div:
-				path = self.getPath(k)
-				path.append(k)
-
-		return path
