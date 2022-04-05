@@ -32,13 +32,11 @@ class Div:
 	#Returns component given its name
 	def get(self, name: str) -> Result:
 
-		if self.name == name:
-			return self
+		if self.name == name: return self
 		else:
 			for i in self.subset:
 				ig = i.get(name)
-				if ig != None:
-					return ig
+				if ig != None: return ig
 			return None
 		#TODO: Check the auto-update (right now, a result isn't updated based on the results below)
 	
