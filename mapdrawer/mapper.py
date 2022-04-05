@@ -8,7 +8,7 @@ from mapdrawer.colors import *
 from mapdrawer.seatsdrawer import *
 from mapdrawer.keydrawer import *
 
-def getMaxK(d: dict):
+def getMaxK(d):
 	k = ''
 	v = float('-inf')
 	for i in d.keys():
@@ -59,7 +59,7 @@ def getWinningColorP(d: dict[str, float], candidaciesData: Candidacies, samePart
 	#if m > 0.9: indexInTable = 11
 	#elif m > 0.6: indexInTable = 8
 	#elif m > 0.3: indexInTable = 5
-	if v1 > 0.95: indexInTable = 11 #Maybe change to 2/3, 7/8, and 39/40?
+	if v1 > 0.95: indexInTable = 11
 	elif v1 > 0.80: indexInTable = 8
 	elif v1 > 0.65: indexInTable = 5
 	else: return '000000'
@@ -77,7 +77,7 @@ def getWinningColorP(d: dict[str, float], candidaciesData: Candidacies, samePart
 def mapColorerPercs(div: Div, candidaciesData: Candidacies, xmlR: etree.ElementTree, sameParty: bool = False):
 	for i in xmlR.getroot().find('{http://www.w3.org/2000/svg}g'):
 		#If id is in the deps list, replace the fill
-		if i.get('id') in [x.name for x in div.allSubDivs()]:
+		if i.get('id') in [x.name for x in div.recursiveSubres()]:
 			i.set('style', i.get('style').replace('000000', getWinningColorR(div.get(i.get('id')).result, candidaciesData, sameParty)))
 
 def mapColorerProbs(probs: dict[str, dict[str, float]], allDivs: AllDivs, candidaciesData: Candidacies, xmlR: etree.ElementTree, sameParty: bool = False):
@@ -147,7 +147,7 @@ def exportMap(div: Div, mapSrc: str, mapTarget: str, candidaciesData: Candidacie
 	mapColorerPercs(div, candidaciesData, xmlR, sameParty)
 
 	if doRings:
-		mapRinger(xmlR.getroot().find('{http://www.w3.org/2000/svg}g'), xmlR.getroot().find('{http://www.w3.org/2000/svg}defs'), {x.name: x.result.toPercentages().removedAbs().results for x in div.allSubDivs()}, ringsData, outerRadius, innerRadius, candidaciesData, sameParty)
+		mapRinger(xmlR.getroot().find('{http://www.w3.org/2000/svg}g'), xmlR.getroot().find('{http://www.w3.org/2000/svg}defs'), {x.name: x.result.toPercentages().removedAbs().results for x in div.recursiveSubres()}, ringsData, outerRadius, innerRadius, candidaciesData, sameParty)
 	
 	xmlR.write(mapTarget)
 	convertMap(mapTarget, mapScaling)

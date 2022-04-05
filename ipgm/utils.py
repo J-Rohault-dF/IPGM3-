@@ -174,7 +174,7 @@ def findLambda(l: list, a, f: function):
 			return i
 
 def mergeSetLists(l1: list, l2: list) -> list:
-	return l1 + [x for x in l2 if x not in l1]
+	return [x for x in l1] + [x for x in l2 if x not in l1]
 
 def fold(l: list, f: function):
 	if l == []: return None

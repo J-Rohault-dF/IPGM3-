@@ -11,7 +11,7 @@ import copy
 def extrapolateResults(odiv: Div, changeMatrix: VTMatrix) -> Div:
 	div = copy.deepcopy(odiv)
 
-	ls = div.allBaseSubDivs()
+	ls = div.recursiveSubres()
 	for sd in ls:
 		sd.result = extrapolateResult(sd.result, changeMatrix)
 	
