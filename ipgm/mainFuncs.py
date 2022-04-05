@@ -16,6 +16,7 @@ def extrapolateResults(odiv: Div, changeMatrix: VTMatrix) -> Div:
 		sd.result = extrapolateResult(sd.result, changeMatrix)
 	
 	div.recalculateAll()
+	
 	return div
 
 
@@ -36,21 +37,24 @@ def redressementResults(div: Div, targetRes: ResultPerc, weight: float = 1) -> D
 		redressementResults(div.get(targetRes.name), targetRes, weight=weight)
 		return div
 
-	div.recalculateAll()
-	nationalVotes = div.result.getSumOfVotes()
-	diffV = Result.fromPercentages(targetRes, nationalVotes).getSubstractedDict(div.result)
+	#Compute the difference between the actual and target results
+	actualRes: ResultPerc = div.result.toPercentages()
+	diff: dict[str, float] = targetRes.getSubstracted(actualRes)
 
-	diffV = multiplyDict(diffV, weight)
+	diff = multiplyDict(diff, weight)
 
 	if div.subset == []:
-		div.result = div.result.getAdded(diffVL) #TODO: (Result).zipZeroes
+		#Compute the percentages then convert it back to results format
+		percs: ResultPerc = div.result.toPercentages().getAddedDict(diff)
+		percs.zipZeroes()
+		div.result = Result.fromPercentages(percs)
 	else:
 		#For every subdivision:
-		for subdiv in div.allBaseSubDivs():
-			diffVL = multiplyDict(diffV, (subdiv.result.getSumOfVotes()/nationalVotes))
-			subdiv.result = subdiv.result.addDict(diffVL)
+		for subdiv in div.subset:
+			redressementResults(subdiv, subdiv.result.toPercentages(subdiv.name).getAddedDict(diff), weight)
+		
+		div.recalculate()
 	
-	div.recalculateAll()
 	return div
 
 
@@ -77,8 +81,9 @@ def redressementResultsMultiplicative(div: Div, targetRes: ResultPerc, weight: f
 		#For every subdivision:
 		for subdiv in div.subset:
 			redressementResults(subdiv, subdiv.result.toPercentages().getMultipliedDict(diff), weight)
+		
+		div.recalculate()
 	
-	div.recalculateAll()
 	return redressementResults(div, targetRes, weight=weight)
 
 
@@ -86,7 +91,7 @@ def redressementResultsMultiplicative(div: Div, targetRes: ResultPerc, weight: f
 
 
 #Stupid debugging functions
-def showRes(d: Div):
-	d.result.toPercentages(d.name).removedAbs().display()
+def showRes(r: Result):
+	r.toPercentages().removedAbs().display()
 def showRess(d: Div, s: str):
 	d.get(s).result.toPercentages().display()

@@ -67,11 +67,10 @@ def getArgs(args: list, k: str) -> list:
 	return [x[1:] for x in args if x[0] == k]
 
 #Returns list with no doubles
-def getSetList(*ll: list) -> list:
+def getSetList(l: list) -> list:
 	lf = []
-	for l in ll:
-		for e in l:
-			if e not in lf: lf.append(e)
+	for e in l:
+		if e not in lf: lf.append(e)
 	return lf
 
 def formatPerc(n: float) -> str:
