@@ -2,7 +2,6 @@ from __future__ import annotations
 from divsHandler import *
 from ipgm.Result import *
 
-'''
 #Set of multiple results
 class ResultsSet:
 	headResult: Result
@@ -64,4 +63,3 @@ class ResultsSet:
 	def replaceCand(self, div: str, cand: str, replacing: str):
 		for i in self.allDivs.unders(div):
 			self.set(self.get(i).replaceCand(cand, replacing))
-'''
