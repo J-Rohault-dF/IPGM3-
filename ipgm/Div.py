@@ -47,9 +47,15 @@ class Div:
 			d = appendDict(d, x.exportDict)
 		return d
 	
-	def recalculateAll(self): #Recursive recalculate() call in all subdivs
+	#def recalculate(self):
+	#	r = self.subset[0].result
+	#	for i in self.subset[1:]:
+	#		r.add(i.result)
+	#	self.result = r
+
+	def recalculateAll(self): #Recursive subCalcAll() call in all subdivs
 		if self.subset != []:
-			self.recalculate()
+			self.subCalcAll()
 			for d in self.subset:
 				d.recalculateAll()
 	
@@ -61,7 +67,7 @@ class Div:
 			ls = mergeSetLists(ls, d.recursiveSubres())
 		return ls
 	
-	def recalculate(self) -> None: #Calculate recursive sum of all subdivs under
+	def subCalcAll(self) -> None: #Calculate sum of all subdivs
 		if self.subset == []:
 			return None
 		ls = [d.result for d in self.recursiveSubres()]
