@@ -95,7 +95,7 @@ def mapRinger(xmlL: etree.Element, xmlD: etree.Element, percs: dict[str, dict[st
 		dd = divsData[dk]
 
 		parties = list(dv.keys())
-		scores = [dv[x] for x in parties]
+		scores = [(dv[x] if dv[x] > 0 else 0) for x in parties]
 		colors = [candidaciesData.getCircleColor(x) for x in parties]
 
 		rD, rR = drawPercRing((dd['cx'], dd['cy']), outerRadius, innerRadius, scores, colors)
