@@ -8,7 +8,6 @@ from ipgm.Candidacies import *
 class Result:
 	name = ''
 	results = {}
-	subset: list[Result] = []
 
 	def __init__(self, name: str, results: dict):
 		self.name = name
@@ -25,31 +24,6 @@ class Result:
 	@classmethod
 	def createEmpty(self):
 		return Result('', {})
-
-	def contains(self, name: str) -> bool:
-		if self.name == name: return True
-		else:
-			for i in self.subset:
-				if i.contains(name): return True
-			return False
-	
-	def exportDict(self):
-		d = {}
-		d[self.name] = self.results
-		for x in self.subset:
-			d = appendDict(d, x.exportDict)
-		return d
-	
-	#Returns component given its name
-	def get(self, name: str) -> Result:
-
-		if self.name == name: return self
-		else:
-			for i in self.subset:
-				ig = i.get(name)
-				if ig != None: return ig
-			return None
-		#TODO: Check the auto-update (right now, a result isn't updated based on the results below)
 
 	def __repr__(self):
 		return '<{0}: {1}>'.format(self.name, self.results)
