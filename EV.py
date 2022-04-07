@@ -270,7 +270,7 @@ allDivs = AllDivs('data/divs_fr.txt')
 candidaciesData: Candidacies = importCandidacies(srcParties='data/parties_fr.csv', srcCandidates='data/candidates_fr.csv')
 
 #Load table
-r = loadDataTable('exports/fr/Elabe_20220330/1_CC.csv', allDivs)
+r = loadDataTable('exports/fr/Elabe_20220405/1_CC.csv', allDivs)
 
 #s = simulOneNat(r, 1.96, 1000, allDivs)
 #showRes(s.get('National', allDivs))
