@@ -3,7 +3,6 @@
    style="display:inline"
    inkscape:export-ydpi="96"
    inkscape:export-xdpi="96"
-   inkscape:export-filename="G:\Elections\Maps_Commons\France\2022_Estimations\bitmap2.png"
    inkscape:output_extension="org.inkscape.output.svg.inkscape"
    sodipodi:docname="basemap_collectivites.svg"
    version="1.0"
@@ -19,72 +18,6 @@
    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
    xmlns:cc="http://creativecommons.org/ns#"
    xmlns:dc="http://purl.org/dc/elements/1.1/">
-  <defs
-     id="defs4" />
-  <sodipodi:namedview
-     inkscape:guide-bbox="true"
-     inkscape:document-rotation="0"
-     inkscape:window-maximized="1"
-     inkscape:snap-global="true"
-     borderlayer="false"
-     inkscape:window-y="0"
-     inkscape:window-x="0"
-     inkscape:window-height="737"
-     inkscape:window-width="1366"
-     showgrid="false"
-     inkscape:current-layer="layer1"
-     inkscape:document-units="px"
-     inkscape:cy="948.2883"
-     inkscape:cx="1001.3514"
-     inkscape:zoom="0.29210526"
-     inkscape:pageshadow="2"
-     inkscape:pageopacity="0.0"
-     borderopacity="1.0"
-     bordercolor="#666666"
-     pagecolor="#ffffff"
-     id="base"
-     showguides="true"
-     inkscape:pagecheckerboard="0" />
-  <metadata
-     id="metadata7">
-    <rdf:RDF>
-      <cc:Work
-         rdf:about="">
-        <dc:format>image/svg+xml</dc:format>
-        <dc:type
-           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:date>07/2008</dc:date>
-        <dc:creator>
-          <cc:Agent>
-            <dc:title>Eric Gaba (user Sting) for Wikipedia</dc:title>
-          </cc:Agent>
-        </dc:creator>
-        <dc:source>See description page</dc:source>
-        <dc:description>Equi-rectangular projection, WGS84 datum
-Approximate scale: 1:3,000,000
-Standard meridian: 2° 06'E
-Standard parallel: 46° 15'N
-Geographic limits of the map: 51°30'N - 41°N / 5°48'W - 10°E</dc:description>
-        <cc:license
-           rdf:resource="http://creativecommons.org/licenses/by-sa/4.0/" />
-      </cc:Work>
-      <cc:License
-         rdf:about="http://creativecommons.org/licenses/by-sa/4.0/">
-        <cc:permits
-           rdf:resource="http://creativecommons.org/ns#Reproduction" />
-        <cc:permits
-           rdf:resource="http://creativecommons.org/ns#Distribution" />
-        <cc:requires
-           rdf:resource="http://creativecommons.org/ns#Notice" />
-        <cc:requires
-           rdf:resource="http://creativecommons.org/ns#Attribution" />
-        <cc:permits
-           rdf:resource="http://creativecommons.org/ns#DerivativeWorks" />
-        <cc:requires
-           rdf:resource="http://creativecommons.org/ns#ShareAlike" />
-      </cc:License>
-    </rdf:RDF>
-  </metadata>
   <g
      inkscape:label="New Deps"
      id="layer1"
