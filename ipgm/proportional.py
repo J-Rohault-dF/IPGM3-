@@ -9,7 +9,9 @@ def filterThreshold(res: Result, threshold: float = 0) -> dict[str, float]:
 
 
 def proportionalLargestRemainder(r: dict[str, float], sn: int, quotaType: str) -> dict[str, int]:
-	if '@' in r: del r['@']
+	if hasNonExpressed(r):
+		for i in allNonExpressed(r):
+			del r[i]
 
 	vn = sum(r.values())
 

@@ -98,7 +98,7 @@ for i in range(1):
 	#Tweet text
 	#if doExportTxt: allTexts.append('HYPOTHESIS {h}\n'.format(h=hk)+makeTweetText(r2s.get('National').result.toPercentages(), hv['sampleSize'], top=(2 if tn==1 else 1), nbSimulated=15000, candidaciesData=candidaciesData, threshold=0.05))
 
-	print({k: sum([xv[k] for xk,xv in seatsTotal.items()]) for k,v in r1s.result.results.items() if k != '@'})
+	print({k: sum([xv[k] for xk,xv in seatsTotal.items()]) for k,v in r1s.result.results.items() if isExpressed(k)})
 
 	#Export and map
 	if doExportCsv: saveDataTable('exports/{path}/{h}.csv'.format(h=hk, path=poll), r2s)

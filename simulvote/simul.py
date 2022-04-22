@@ -12,7 +12,7 @@ def simulOneRes(res: Result, stdev: float, sampleSize: int) -> Result:
 	totalVotes = res.getSumOfVotes()
 	rr = {}
 	for k,v in res.results.items():
-		if k == '@': continue
+		if not isExpressed(k): continue
 		p = v/totalVotes
 		rr[k] = random.gauss(p, stdev*math.sqrt(p*(1-p) / sampleSize))
 	return Result({k: v*totalVotes for k,v in rr.items()})
@@ -21,7 +21,7 @@ def simulOneRes(res: Result, stdev: float, sampleSize: int) -> Result:
 
 def rankingChances(res: Result, amountOfSims: int, stdev: float, sampleSize: int, top: int) -> dict[str, float]:
 	#Do N times:
-	allCands = [x for x in res.getCandidates() if (x != '@' and x != '')]
+	allCands = [x for x in res.getCandidates() if isExpressed(x)]
 
 	ls = {c: 0 for c in allCands}
 
@@ -63,7 +63,7 @@ def simulMany(div: Div, amountOfSims: int, stdev: float, sampleSize: int, listSi
 	if listSim == None: listSim = [x.name for x in div.allBaseSubDivs()]
 	ls = {k: {} for k in listSim}
 
-	candidates = [x for x in div.result.getCandidates() if x != '@']
+	candidates = [x for x in div.result.getCandidates() if isExpressed(x)]
 
 	div = simplifyDivTree(div, threshold=0.125)
 

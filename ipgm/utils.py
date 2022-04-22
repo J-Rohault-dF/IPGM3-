@@ -184,3 +184,19 @@ def fold(l: list, f: function):
 	for e in l[1:]:
 		er = f(er, e)
 	return er
+
+def isExpressed(c: str) -> bool:
+	if len(c) == 0: return False;
+	if c[0] == '@': return False;
+	return True;
+
+def hasNonExpressed(l: list) -> bool:
+	for k in l:
+		if not isExpressed(k): return True
+	return False
+
+def nonExpressed(d: dict[str, int|float]) -> int|float:
+	return sum([v for k,v in d.items() if not isExpressed(k)])
+
+def allNonExpressed(l: list) -> list[str]:
+	return [x for x in l if not isExpressed(x)]
