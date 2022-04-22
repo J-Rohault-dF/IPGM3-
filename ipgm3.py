@@ -15,9 +15,10 @@ with open('data/rings_fr.csv','r',encoding='utf8') as seatsDataFile:
 
 allDivs = AllDivs('data/divs_fr.txt')
 
-t1 = loadDataTable('data/stats_fr/2017T1.csv', allDivs)
-t2 = loadDataTable('data/stats_fr/2017T2.csv', allDivs)
-te = loadDataTable('data/stats_fr/2019TE.csv', allDivs)
+t1_2017 = loadDataTable('data/stats_fr/2017T1.csv', allDivs)
+t2_2017 = loadDataTable('data/stats_fr/2017T2.csv', allDivs)
+te_2019 = loadDataTable('data/stats_fr/2019TE.csv', allDivs)
+t1_2022 = loadDataTable('data/stats_fr/2022T1.csv', allDivs)
 
 poll = 'fr/Elabe_20220405'
 
@@ -44,13 +45,13 @@ for hk, hv in {k: v for k,v in mx.items() if k != 'sampleSize'}.items():
 	#Extrapolate rs
 	rl = []
 	if tn == 1:
-		if 'matrix_2017T1_2022T1' in hv: rl.append(extrapolateResults(t1, hv['matrix_2017T1_2022T1']))
-		if 'matrix_2017T2_2022T1' in hv: rl.append(extrapolateResults(t2, hv['matrix_2017T2_2022T1']))
-		if 'matrix_2019TE_2022T1' in hv: rl.append(extrapolateResults(te, hv['matrix_2019TE_2022T1']))
+		if 'matrix_2017T1_2022T1' in hv: rl.append(extrapolateResults(t1_2017, hv['matrix_2017T1_2022T1']))
+		if 'matrix_2017T2_2022T1' in hv: rl.append(extrapolateResults(t2_2017, hv['matrix_2017T2_2022T1']))
+		if 'matrix_2019TE_2022T1' in hv: rl.append(extrapolateResults(te_2019, hv['matrix_2019TE_2022T1']))
 	elif tn == 2:
-		if 'matrix_2017T1_2022T2' in hv: rl.append(extrapolateResults(t1, hv['matrix_2017T1_2022T2']))
-		if 'matrix_2017T2_2022T2' in hv: rl.append(extrapolateResults(t2, hv['matrix_2017T2_2022T2']))
-		if 'matrix_2019TE_2022T2' in hv: rl.append(extrapolateResults(te, hv['matrix_2019TE_2022T2']))
+		if 'matrix_2017T1_2022T2' in hv: rl.append(extrapolateResults(t1_2017, hv['matrix_2017T1_2022T2']))
+		if 'matrix_2017T2_2022T2' in hv: rl.append(extrapolateResults(t2_2017, hv['matrix_2017T2_2022T2']))
+		if 'matrix_2019TE_2022T2' in hv: rl.append(extrapolateResults(te_2019, hv['matrix_2019TE_2022T2']))
 		if 'matrix_2022T1_2022T2' in hv: rl.append(extrapolateResults(allRounds[hv['based_on']], hv['matrix_2022T1_2022T2']))
 	rs = averageDivs(rl)
 

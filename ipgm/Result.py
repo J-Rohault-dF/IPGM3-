@@ -28,7 +28,7 @@ class Result:
 	
 	def getSumOfVotes(self, removeAbs: bool = True) -> float: #SHOULD REMOVE PARAMETER removeAbs
 		if removeAbs:
-			return sum([v for k,v in self.results.items() if k != '@'])
+			return sum([v for k,v in self.results.items() if isExpressed(k)])
 		else:
 			return sumDict(self.results)
 	
@@ -66,12 +66,12 @@ class Result:
 	def getWinner(self) -> str:
 		s = ('', 0)
 		for k,v in self.results.items():
-			if v > s[1] and k != '@':
+			if v > s[1] and isExpressed(k):
 				s = (k, v)
 		return s[0]
 	
 	def getCleanResults(self) -> dict[str, int|float]:
-		return {k: v for k,v in self.results.items() if ('@' not in k and k != '')}
+		return {k: v for k,v in self.results.items() if isExpressed(k)}
 
 	def replaceCand(self, cand, replacing):
 		self.results[replacing] = self.results.pop(cand)
@@ -99,6 +99,14 @@ class Result:
 	def getSubstractedDict(self, other: Result) -> dict[str, int]:
 		candidates = getSetList(self.getCandidates(), other.getCandidates())
 		return {k: (self.results[k] if k in self.results else 0)-(other.results[k] if k in other.results else 0) for k in candidates}
+
+	def removeCandidate(self, cand: str):
+		self.results = {k: v for k,v in self.results.items() if (k != cand)}
+		return self.results
+	
+	def selectCandidates(self, cands: list[str]):
+		self.results = {k: v for k,v in self.results.items() if (k in cands)}
+		return self.results
 
 
 

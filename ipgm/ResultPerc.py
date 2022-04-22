@@ -99,7 +99,7 @@ class ResultPerc:
 		print('{0}: {1} total votes - '.format(self.name, self.totalVotes) + ', '.join(['{0}: {1}'.format(x, formatPerc(self.results[x])) for x in sorted(self.results, key=self.results.__getitem__, reverse=True)]))
 	
 	def removedAbs(self):
-		if self.hasCandidate('@'): return self.removedCand('@')
+		if hasNonExpressed(self.results): return ResultPerc(self.name, {k:v for k,v in self.results.items() if isExpressed(k)}, self.totalVotes*(1-nonExpressed(self.results)))
 		else: return self
 	
 	def removedCand(self, cand: str):
