@@ -52,7 +52,7 @@ for hk, hv in {k: v for k,v in mx.items() if k != 'sampleSize'}.items():
 		if 'matrix_2017T1_2022T2' in hv: rl.append(extrapolateResults(t1_2017, hv['matrix_2017T1_2022T2']))
 		if 'matrix_2017T2_2022T2' in hv: rl.append(extrapolateResults(t2_2017, hv['matrix_2017T2_2022T2']))
 		if 'matrix_2019TE_2022T2' in hv: rl.append(extrapolateResults(te_2019, hv['matrix_2019TE_2022T2']))
-		if 'matrix_2022T1_2022T2' in hv: rl.append(extrapolateResults(allRounds[hv['based_on']], hv['matrix_2022T1_2022T2']))
+		#if 'matrix_2022T1_2022T2' in hv: rl.append(extrapolateResults(allRounds[hv['based_on']], hv['matrix_2022T1_2022T2']))
 	rs = averageDivs(rl)
 
 	#Redresse R1

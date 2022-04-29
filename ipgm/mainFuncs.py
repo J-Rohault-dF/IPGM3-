@@ -23,6 +23,9 @@ def extrapolateResults(odiv: Div, changeMatrix: VTMatrix) -> Div:
 #Extrapolate single Result based on a VTMatrix
 def extrapolateResult(initialRes: Result, changeMatrix: VTMatrix) -> Result:
 	allSumProducts = {cf: sumProductDict(initialRes.results, changeMatrix.getColDict(cf)) for cf in changeMatrix.final}
+	
+	if sumDict(allSumProducts) == 0: return initialRes
+	
 	allSumProducts = multiplyDict(allSumProducts, (initialRes.getSumOfVotes()/sumDict(allSumProducts)))
 	return Result.fromLists(list(allSumProducts.keys()), list(allSumProducts.values()))
 
