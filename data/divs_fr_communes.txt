@@ -453,12 +453,12 @@ Polynésie française:Subdivision des Îles Marquises;Subdivision des Îles Tuam
 Province Nord de Nouvelle-Calédonie:Belep;Canala;Hienghène;Houaïlou;Kaala-Gomen;Koné;Koumac;Ouégoa;Poindimié;Ponérihouen;Pouébo;Pouembout;Poum;Poya;Touho;Voh;Kouaoua
 Province Sud de Nouvelle-Calédonie:Bouloupari;Bourail;Dumbéa;Farino;Île-des-Pins;La Foa;Moindou;Mont-Dore (988);Nouméa;Païta;Sarraméa;Thio;Yaté;
 Province des Îles Loyauté de Nouvelle-Calédonie:Lifou;Maré;Ouvéa
-Clipperton:Clipperton
+Clipperton
 
 Nouvelle-Calédonie:Province Nord de Nouvelle-Calédonie;Province Sud de Nouvelle-Calédonie;Province des Îles Loyauté de Nouvelle-Calédonie
 
 Circonscription départementale du Rhône:Département du Rhône;Métropole de Lyon
-Collectivité européenne d'Alsace:Ancienne région d'Alsace
+Collectivité européenne d'Alsace:Département du Bas-Rhin;Département du Haut-Rhin
 Collectivité territoriale unique de Corse:Région de Corse
 
 Région de la Guadeloupe:Département de la Guadeloupe
@@ -476,7 +476,7 @@ Région des Pays de la Loire:Département de la Loire-Atlantique;Département de
 Région de Bretagne:Département des Côtes-d'Armor;Département du Finistère;Département d'Ille-et-Vilaine;Département du Morbihan
 Région de la Nouvelle-Aquitaine:Département de la Charente;Département de la Charente-Maritime;Département de la Corrèze;Département de la Creuse;Département de la Dordogne;Département de la Gironde;Département des Landes;Département du Lot-et-Garonne;Département des Pyrénées-Atlantiques;Département des Deux-Sèvres;Département de la Vienne;Département de la Haute-Vienne
 Région d'Occitanie:Département d'Ariège;Département d'Aude;Département d'Aveyron;Département du Gard;Département de la Haute-Garonne;Département du Gers;Département d'Hérault;Département du Lot;Département de la Lozère;Département des Hautes-Pyrénées;Département des Pyrénées-Orientales;Département du Tarn;Département du Tarn-et-Garonne
-Région d'Auvergne-Rhône-Alpes:Département d'Ain;Département d'Allier;Département d'Ardèche;Département du Cantal;Département de la Drôme;Département d'Isère;Département de la Loire;Département de la Haute-Loire;Département du Puy-de-Dôme;Département du Rhône;Département de la Savoie;Département de la Haute-Savoie
+Région d'Auvergne-Rhône-Alpes:Département d'Ain;Département d'Allier;Département d'Ardèche;Département du Cantal;Département de la Drôme;Département d'Isère;Département de la Loire;Département de la Haute-Loire;Département du Puy-de-Dôme;Circonscription départementale du Rhône;Département de la Savoie;Département de la Haute-Savoie
 Région de Provence-Alpes-Côte d'Azur:Département des Alpes-de-Haute-Provence;Département des Hautes-Alpes;Département des Alpes-Maritimes;Département des Bouches-du-Rhône;Département du Var;Département du Vaucluse
 Région de Corse:Département de la Corse-du-Sud;Département de la Haute-Corse
 
