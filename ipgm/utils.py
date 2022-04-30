@@ -164,9 +164,8 @@ def appendDict(d1: dict, d2: dict):
 	return d1
 
 def allValuesEqual(l: list):
-	ec = l.pop()
-	for e in l:
-		if e != ec: return False
+	for e in l[1:]:
+		if e != l[0]: return False
 	return True
 
 def findLambda(l: list, a, f: function):
@@ -200,3 +199,8 @@ def nonExpressed(d: dict[str, int|float]) -> int|float:
 
 def allNonExpressed(l: list) -> list[str]:
 	return [x for x in l if not isExpressed(x)]
+
+def isCandidate(c: str) -> bool:
+	if len(c) == 0: return False;
+	if c[0] == '@' or c[0] == '#': return False;
+	return True;

@@ -1,0 +1,69 @@
+{
+    "pollFirm": "Harris-Interactive",
+    "dateStarted": "2022-04-24",
+    "dateFinished": "2022-04-25",
+    "sampleSize": 2048,
+    
+    "hypotheses": [
+        {
+            "label": "Scattered",
+            "final": "2022LL",
+            "candidates": ["Union d'extrême-gauche", "Parti communiste français", "La France insoumise", "Parti socialiste", "Europe Écologie Les Verts", "Ensemble citoyens (LREM-MoDem-Horizons)", "Union de la droite et du centre (LR-UDI)", "Debout la France", "Rassemblement national", "Reconquête", "#div"],
+            "matrices": [
+                {
+                    "original": "2022T1",
+                    "externalAbs": true,
+                    "candidates": ["Parti communiste français", "La France insoumise", "Parti socialiste", "Europe Écologie Les Verts", "Ensemble citoyens (LREM-MoDem-Horizons)", "Union de la droite et du centre (LR-UDI)", "Rassemblement national", "Reconquête"],
+                    "vtm": {
+                        "Fabien Roussel":        [40,25, 8, 5,12, 3, 6, 0],
+                        "Jean-Luc Mélenchon":    [ 5,70, 7, 9, 4, 2, 2, 0],
+                        "Anne Hidalgo":          [ 0, 8,67,10, 8, 0, 7, 0],
+                        "Yannick Jadot":         [ 0,20, 5,73, 2, 0, 0, 0],
+                        "Emmanuel Macron":       [ 2, 4, 5, 5,73, 7, 2, 0],
+                        "Valérie Pécresse":      [ 0, 5, 2, 3, 6,69, 7, 8],
+                        "Nicolas Dupont-Aignan": [15, 8, 2,10, 9,11,29, 0],
+                        "Marine Le Pen":         [ 1, 2, 1, 2, 2, 3,84, 3],
+                        "Éric Zemmour":          [ 0, 2, 1, 0, 2, 4,13,77],
+                        "Jean Lassalle":         [ 3,19, 9,21,13,11,19, 4]
+                    }
+                }
+            ],
+            "totals": {
+                "externalAbs": true,
+                "list": {
+                    "National": [1, 3, 19, 5, 8, 24, 8, 1, 23, 7, 1]
+                }
+            }
+        },
+        {
+            "label": "Unions",
+            "final": "2022LL",
+            "candidates": ["Union d'extrême-gauche", "Union populaire (LFI-EÉLV-PS-PCF)", "Union du centre et de la droite (LREM-MoDem-Horizons-LR-UDI)", "Union nationaliste (RN-REC-DLF)", "#div"],
+            "matrices": [
+                {
+                    "original": "2022T1",
+                    "externalAbs": true,
+                    "candidates": ["Union d'extrême-gauche", "Union populaire (LFI-EÉLV-PS-PCF)", "Union du centre et de la droite (LREM-MoDem-Horizons-LR-UDI)", "Union nationaliste (RN-REC-DLF)"],
+                    "vtm": {
+                        "Fabien Roussel":        [1, 78, 15, 6],
+                        "Jean-Luc Mélenchon":    [4, 86, 8, 2],
+                        "Anne Hidalgo":          [2, 83, 8, 7],
+                        "Yannick Jadot":         [3, 86, 5, 6],
+                        "Emmanuel Macron":       [2, 12, 82, 4],
+                        "Valérie Pécresse":      [0, 9, 63, 28],
+                        "Nicolas Dupont-Aignan": [0, 29, 12, 59],
+                        "Marine Le Pen":         [2, 8, 4, 86],
+                        "Éric Zemmour":          [3, 3, 8, 86],
+                        "Jean Lassalle":         [2, 40, 41, 10]
+                    }
+                }
+            ],
+            "totals": {
+                "externalAbs": true,
+                "list": {
+                    "National": [2, 33, 33, 31, 1]
+                }
+            }
+        }
+    ]
+}

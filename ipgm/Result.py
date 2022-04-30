@@ -66,7 +66,7 @@ class Result:
 	def getWinner(self) -> str:
 		s = ('', 0)
 		for k,v in self.results.items():
-			if v > s[1] and isExpressed(k):
+			if v > s[1] and isCandidate(k):
 				s = (k, v)
 		return s[0]
 	

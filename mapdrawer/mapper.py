@@ -24,7 +24,7 @@ def getWinningColor(d: dict, candidaciesData: Candidacies, sameParty: bool) -> s
 	km = ''
 	vm = 0
 	for k,v in d.items():
-		if v > vm:
+		if isCandidate(k) and v > vm:
 			vm = v
 			km = k
 		elif v == vm: km = ''

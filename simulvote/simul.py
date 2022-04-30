@@ -21,7 +21,7 @@ def simulOneRes(res: Result, stdev: float, sampleSize: int) -> Result:
 
 def rankingChances(res: Result, amountOfSims: int, stdev: float, sampleSize: int, top: int) -> dict[str, float]:
 	#Do N times:
-	allCands = [x for x in res.getCandidates() if isExpressed(x)]
+	allCands = [x for x in res.getCandidates() if isCandidate(x)]
 
 	ls = {c: 0 for c in allCands}
 
