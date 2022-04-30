@@ -89,6 +89,30 @@ class Div:
 			sd.clear()
 		return self
 
+	def renameCandidate(self, cand, renamedTo):
+		for d in self.allBaseSubDivs():
+			d.result.renameCandidate(cand, renamedTo)
+		self.recalculateAll()
+		return self
+	
+	def removeCandidate(self, cand):
+		for d in self.allBaseSubDivs():
+			d.result.removeCandidate(cand)
+		self.recalculateAll()
+		return self
+	
+	def selectCandidates(self, cands: list[str]):
+		for d in self.allBaseSubDivs():
+			d.result.selectCandidates(cands)
+		self.recalculateAll()
+		return self
+
+	def mergeCandidates(self, cand, mergedInto):
+		for d in self.allBaseSubDivs():
+			d.result.mergeCandidates(cand, mergedInto)
+		self.recalculateAll()
+		return self
+
 
 
 def averageDivs(divs: list[Div], superset: list[Div] = []) -> Div:

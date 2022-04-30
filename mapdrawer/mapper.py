@@ -44,7 +44,7 @@ def getWinningColor(d: dict, candidaciesData: Candidacies, sameParty: bool) -> s
 		return getShade(Color('#ffffff'), indexInTable).hex_l[1:]
 	else:
 		print('missing color for {0}'.format(km))
-		return '000000'
+		return getShade(Color('#000000'), indexInTable).hex_l[1:]
 
 def getWinningColorR(res: Result, candidaciesData: Candidacies, sameParty: bool) -> str:
 	if res == None: return '000000'

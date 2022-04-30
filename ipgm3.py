@@ -19,6 +19,7 @@ t1_2017 = loadDataTable('data/stats_fr/2017T1.csv', allDivs)
 t2_2017 = loadDataTable('data/stats_fr/2017T2.csv', allDivs)
 te_2019 = loadDataTable('data/stats_fr/2019TE.csv', allDivs)
 t1_2022 = loadDataTable('data/stats_fr/2022T1.csv', allDivs)
+t2_2022 = loadDataTable('data/stats_fr/2022T2.csv', allDivs)
 
 poll = 'fr/Elabe_20220405'
 

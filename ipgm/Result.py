@@ -73,10 +73,24 @@ class Result:
 	def getCleanResults(self) -> dict[str, int|float]:
 		return {k: v for k,v in self.results.items() if isExpressed(k)}
 
-	def replaceCand(self, cand, replacing):
-		self.results[replacing] = self.results.pop(cand)
+	def renameCandidate(self, cand, renamedTo):
+		self.results[renamedTo] = self.results.pop(cand)
 		return self
 	
+	def removeCandidate(self, cand: str):
+		del self.results[cand]
+		return self.results
+	
+	def selectCandidates(self, cands: list[str]):
+		self.results = {k: v for k,v in self.results.items() if (k in cands)}
+		return self.results
+
+	def mergeCandidates(self, cand: str, mergedInto: str):
+		candVotes = self.results[cand]
+		self.removeCandidate(cand)
+		self.results[mergedInto] += candVotes
+		return self
+
 	def checkEqualParty(self, candidaciesData: Candidacies) -> bool:
 
 		toCheck = [x for x in self.results.keys() if x in candidaciesData.getAllCandidates()]
@@ -99,14 +113,6 @@ class Result:
 	def getSubstractedDict(self, other: Result) -> dict[str, int]:
 		candidates = getSetList(self.getCandidates(), other.getCandidates())
 		return {k: (self.results[k] if k in self.results else 0)-(other.results[k] if k in other.results else 0) for k in candidates}
-
-	def removeCandidate(self, cand: str):
-		self.results = {k: v for k,v in self.results.items() if (k != cand)}
-		return self.results
-	
-	def selectCandidates(self, cands: list[str]):
-		self.results = {k: v for k,v in self.results.items() if (k in cands)}
-		return self.results
 
 
 
