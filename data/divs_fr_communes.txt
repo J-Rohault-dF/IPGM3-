@@ -483,7 +483,7 @@ Région de Corse:Département de la Corse-du-Sud;Département de la Haute-Corse
 Métropole:Région d'Île-de-France;Région du Centre-Val de Loire;Région de Bourgogne-Franche-Comté;Région de Normandie;Région des Hauts-de-France;Région du Grand Est;Région des Pays de la Loire;Région de Bretagne;Région de la Nouvelle-Aquitaine;Région d'Occitanie;Région d'Auvergne-Rhône-Alpes;Région de Provence-Alpes-Côte-d'Azur;Région de Corse
 Départements et régions d'outre-mer:Région de la Guadeloupe;Région de la Martinique;Région de la Guyane;Région de La Réunion;Région de Mayotte
 
-Collectivités d'outre-mer:Collectivité d'outre-mer de Saint-Pierre-et-Miquelon;Collectivité d'outre-mer de Saint-Barthélemy;Collectivité d'outre-mer de Saint-Martin;Terres australes et antarctiques françaises;Wallis-et-Futuna;Polynésie-Française;Nouvelle-Calédonie;Clipperton
+Collectivités d'outre-mer:Collectivité d'outre-mer de Saint-Pierre-et-Miquelon;Collectivité d'outre-mer de Saint-Barthélemy;Collectivité d'outre-mer de Saint-Martin;Terres australes et antarctiques françaises;Wallis-et-Futuna;Polynésie-française;Nouvelle-Calédonie;Clipperton
 
 National:Métropole;Départements et régions d'outre-mer;Collectivités d'outre-mer
 

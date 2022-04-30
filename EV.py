@@ -146,7 +146,7 @@ electoralVotes = {
 	'Saint-Barthélemy': 1,
 	'Saint-Martin et Saint-Barthélemy': 1,
 	'Wallis-et-Futuna': 2,
-	'Polynésie-Française': 5,
+	'Polynésie-française': 5,
 	'Nouvelle-Calédonie': 4,
 	'Français vivant hors de France': 23,
 }
@@ -258,7 +258,7 @@ abbr = {
 	'Saint-Barthélemy': 'SB',
 	'Saint-Martin et Saint-Barthélemy': 'MB',
 	'Wallis-et-Futuna': 'WF',
-	'Polynésie-Française': 'PL',
+	'Polynésie-française': 'PL',
 	'Nouvelle-Calédonie': 'NC',
 	'Français vivant hors de France': 'EX',
 }

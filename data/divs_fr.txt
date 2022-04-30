@@ -104,7 +104,7 @@ Mayotte
 Saint-Martin
 Saint-Barthélemy
 Wallis-et-Futuna
-Polynésie-Française
+Polynésie-française
 Nouvelle-Calédonie
 Français vivant hors de France
 
@@ -147,7 +147,7 @@ Occitanie:Midi-Pyrénées;Languedoc-Roussillon
 Pays-de-la-Loire:Pays de la Loire
 
 DROM:Guadeloupe;Martinique;Guyane;La Réunion;Mayotte
-COM:Saint-Martin et Saint-Barthélemy;Wallis-et-Futuna;Polynésie-Française;Nouvelle-Calédonie;Saint-Pierre-et-Miquelon
+COM:Saint-Martin et Saint-Barthélemy;Wallis-et-Futuna;Polynésie-française;Nouvelle-Calédonie;Saint-Pierre-et-Miquelon
 Outre-Mers:DROM;COM
 
 Région Parisienne:Île-de-France
