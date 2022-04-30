@@ -67,7 +67,7 @@ Hautes-Pyrénées
 Pyrénées-Orientales
 Bas-Rhin
 Haut-Rhin
-Rhône
+Collectivité départementale du Rhône
 Métropole de Lyon
 Haute-Saône
 Saône-et-Loire
@@ -111,7 +111,7 @@ Français vivant hors de France
 Parlement européen
 
 Saint-Martin et Saint-Barthélemy:Saint-Martin;Saint-Barthélemy
-Circonscription départementale du Rhône:Rhône;Métropole de Lyon
+Circonscription départementale du Rhône:Collectivité départementale du Rhône;Métropole de Lyon
 
 Alsace:Haut-Rhin;Bas-Rhin
 Aquitaine:Dordogne;Lot-et-Garonne;Gironde;Landes;Pyrénées-Atlantiques
