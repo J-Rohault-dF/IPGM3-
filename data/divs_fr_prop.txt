@@ -3,7 +3,7 @@ Circonscription départementale du Rhône:Collectivité départementale du Rhôn
 
 Finistère et Morbihan:Finistère;Morbihan
 Côtes-d'Armor et Ille-et-Vilaine:Côtes-d'Armor;Ille-et-Vilaine
-Manche et Calvados:Manche;Calvados
+Calvados et Manche:Manche;Calvados
 Eure et Orne:Eure;Orne
 Somme et Oise:Somme;Oise
 Ardennes, Marne, et Meuse:Ardennes;Marne;Meuse
@@ -23,16 +23,16 @@ Landes et Pyrénées-Atlantiques:Landes;Pyrénées-Atlantiques
 Lot et Tarn-et-Garonne:Lot;Tarn-et-Garonne
 Gers et Hautes-Pyrénées:Gers;Hautes-Pyrénées;
 Haute-Garonne et Ariège:Haute-Garonne;Ariège
-Tarn et Aveyron:Tarn;Aveyron
+Aveyron et Tarn:Aveyron;Tarn
 Gard et Lozère:Lozère;Gard
 Aude et Pyrénées-Orientales:Aude;Pyrénées-Orientales
 Provence-Alpes:Hautes-Alpes;Alpes-de-Haute-Provence
-Vaucluse et Bouches-du-Rhône:Vaucluse;Bouches-du-Rhône
-Alpes-Maritimes et Var;Alpes-Maritimes;Var
-Eure-et-Loir et Loiret:Eure-et-Loir;Loiret
+Bouches-du-Rhône et Vaucluse:Bouches-du-Rhône;Vaucluse
+Var et Alpes-Maritimes:Alpes-Maritimes;Var
+Loiret et Eure-et-Loir:Eure-et-Loir;Loiret
 Loir-et-Cher et Indre-et-Loire:Loir-et-Cher;Indre-et-Loire
 Cher et Indre:Indre;Cher
-Mayenne, Sarthe et Maine-et-Loire:Mayenne;Sarthe;Maine-et-Loire
+Mayenne, Sarthe, et Maine-et-Loire:Mayenne;Sarthe;Maine-et-Loire
 Loire-Atlantique et Vendée:Loire-Atlantique;Vendée
 
 Alsace:Haut-Rhin;Bas-Rhin
@@ -56,11 +56,11 @@ Poitou-Charentes:Deux-Sèvres et Vienne;Charentes
 Aquitaine:Dordogne et Lot-et-Garonne;Gironde;Landes et Pyrénées-Atlantiques
 Midi-Pyrénées:Lot et Tarn-et-Garonne;Gers et Hautes-Pyrénées;Haute-Garonne et Ariège;Aveyron et Tarn
 Languedoc-Roussillon:Gard et Lozère;Hérault;Aude et Pyrénées-Orientales
-Provence-Alpes-Côte-d'Azur:Provence-Alpes;Vaucluse et Bouches-du-Rhône;Alpes-Maritimes et Var
-Centre:Eure-et-Loir et Loiret;Loir-et-Cher et Indre-et-Loire;Cher et Indre
-Pays-de-la-Loire:Mayenne, Sarthe et Maine-et-Loire;Loire-Atlantique et Vendée
+Provence-Alpes-Côte-d'Azur:Provence-Alpes;Bouches-du-Rhône et Vaucluse;Var et Alpes-Maritimes
+Centre:Loiret et Eure-et-Loir;Loir-et-Cher et Indre-et-Loire;Cher et Indre
+Pays-de-la-Loire:Mayenne, Sarthe, et Maine-et-Loire;Loire-Atlantique et Vendée
 
-Normandie:Manche et Calvados;Eure et Orne;Seine-Maritime
+Normandie:Calvados et Manche;Eure et Orne;Seine-Maritime
 Grand-Est:Alsace;Ardennes, Marne, et Meuse;Aube et Haute-Marne;Moselle, Meurthe, et Vosges
 
 Auvergne-Rhône-Alpes:Auvergne;Rhône-Alpes
