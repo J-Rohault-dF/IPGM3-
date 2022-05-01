@@ -1,0 +1,89 @@
+Saint-Martin et Saint-Barthélemy:Saint-Martin;Saint-Barthélemy
+Circonscription départementale du Rhône:Collectivité départementale du Rhône;Métropole de Lyon
+
+Finistère et Morbihan:Finistère;Morbihan
+Côtes-d'Armor et Ille-et-Vilaine:Côtes-d'Armor;Ille-et-Vilaine
+Manche et Calvados:Manche;Calvados
+Eure et Orne:Eure;Orne
+Somme et Oise:Somme;Oise
+Ardennes, Marne, et Meuse:Ardennes;Marne;Meuse
+Aube et Haute-Marne:Aube;Haute-Marne
+Moselle, Meurthe, et Vosges:Moselle;Meurthe-et-Moselle;Vosges
+Yonne et Côte-d'Or:Yonne;Côte-d'Or
+Nièvre et Saône-et-Loire:Nièvre;Saône-et-Loire
+Allier et Puy-de-Dôme:Allier;Puy-de-Dôme
+Cantal et Haute-Loire:Cantal;Haute-Loire
+Ain et Isère:Ain;Isère
+Savoie et Haute-Savoie:Savoie;Haute-Savoie
+Ardèche et Drôme:Drôme;Ardèche
+Deux-Sèvres et Vienne:Deux-Sèvres;Vienne
+Charentes:Charente-Maritime;Charente
+Dordogne et Lot-et-Garonne:Dordogne;Lot-et-Garonne
+Landes et Pyrénées-Atlantiques:Landes;Pyrénées-Atlantiques
+Lot et Tarn-et-Garonne:Lot;Tarn-et-Garonne
+Gers et Hautes-Pyrénées:Gers;Hautes-Pyrénées;
+Haute-Garonne et Ariège:Haute-Garonne;Ariège
+Tarn et Aveyron:Tarn;Aveyron
+Gard et Lozère:Lozère;Gard
+Aude et Pyrénées-Orientales:Aude;Pyrénées-Orientales
+Provence-Alpes:Hautes-Alpes;Alpes-de-Haute-Provence
+Vaucluse et Bouches-du-Rhône:Vaucluse;Bouches-du-Rhône
+Alpes-Maritimes et Var;Alpes-Maritimes;Var
+Eure-et-Loir et Loiret:Eure-et-Loir;Loiret
+Loir-et-Cher et Indre-et-Loire:Loir-et-Cher;Indre-et-Loire
+Cher et Indre:Indre;Cher
+Mayenne, Sarthe et Maine-et-Loire:Mayenne;Sarthe;Maine-et-Loire
+Loire-Atlantique et Vendée:Loire-Atlantique;Vendée
+
+Alsace:Haut-Rhin;Bas-Rhin
+Corse:Haute-Corse;Corse-du-Sud
+Franche-Comté:Haute-Saône;Doubs;Jura;Territoire de Belfort
+Île-de-France:Val-d'Oise;Seine-et-Marne;Yvelines;Essonne;Seine-Saint-Denis;Val-de-Marne;Hauts-de-Seine;Paris
+Limousin:Haute-Vienne;Creuse;Corrèze
+Nord-Pas-de-Calais:Nord;Pas-de-Calais
+	
+Basse-Normandie:Manche;Calvados;Orne
+Haute-Normandie:Seine-Maritime;Eure
+Champagne-Ardenne:Ardennes;Marne;Aube;Haute-Marne
+Lorraine:Moselle;Meurthe-et-Moselle;Vosges;Meuse
+
+Bretagne:Finistère et Morbihan;Côtes-d'Armor et Ille-et-Vilaine
+Picardie:Somme et Oise;Aisne
+Bourgogne:Yonne et Côte-d'Or;Nièvre et Saône-et-Loire
+Auvergne:Allier et Puy-de-Dôme;Cantal et Haute-Loire
+Rhône-Alpes:Loire;Circonscription départementale du Rhône;Ain et Isère;Savoie et Haute-Savoie;Ardèche et Drôme
+Poitou-Charentes:Deux-Sèvres et Vienne;Charentes
+Aquitaine:Dordogne et Lot-et-Garonne;Gironde;Landes et Pyrénées-Atlantiques
+Midi-Pyrénées:Lot et Tarn-et-Garonne;Gers et Hautes-Pyrénées;Haute-Garonne et Ariège;Aveyron et Tarn
+Languedoc-Roussillon:Gard et Lozère;Hérault;Aude et Pyrénées-Orientales
+Provence-Alpes-Côte-d'Azur:Provence-Alpes;Vaucluse et Bouches-du-Rhône;Alpes-Maritimes et Var
+Centre:Eure-et-Loir et Loiret;Loir-et-Cher et Indre-et-Loire;Cher et Indre
+Pays-de-la-Loire:Mayenne, Sarthe et Maine-et-Loire;Loire-Atlantique et Vendée
+
+Normandie:Manche et Calvados;Eure et Orne;Seine-Maritime
+Grand-Est:Alsace;Ardennes, Marne, et Meuse;Aube et Haute-Marne;Moselle, Meurthe, et Vosges
+
+Auvergne-Rhône-Alpes:Auvergne;Rhône-Alpes
+Bourgogne-Franche-Comté:Bourgogne;Franche-Comté
+Centre-Val-de-Loire:Centre
+Grand-Est:Alsace;Champagne-Ardenne;Lorraine
+Hauts-de-France:Nord-Pas-de-Calais;Picardie
+Normandie:Haute-Normandie;Basse-Normandie
+Nouvelle-Aquitaine:Aquitaine;Poitou-Charentes;Limousin
+Occitanie:Midi-Pyrénées;Languedoc-Roussillon
+Pays-de-la-Loire:Pays de la Loire
+
+DROM:Guadeloupe;Martinique;Guyane;La Réunion;Mayotte
+COM:Saint-Martin et Saint-Barthélemy;Wallis-et-Futuna;Polynésie-française;Nouvelle-Calédonie;Saint-Pierre-et-Miquelon
+Outre-Mers:DROM;COM
+
+Région Parisienne:Île-de-France
+Nord-Est:Hauts-de-France;Grand-Est;Bourgogne-Franche-Comté
+Sud-Est:Auvergne-Rhône-Alpes;Provence-Alpes-Côte-d'Azur;Languedoc-Roussillon;Corse
+Sud-Ouest:Midi-Pyrénées;Aquitaine;Limousin
+Nord-Ouest:Bretagne;Pays de la Loire;Centre-Val-de-Loire;Normandie;Poitou-Charentes
+
+Province:Nord-Est;Sud-Est;Sud-Ouest;Nord-Ouest
+Métropole:Province;Région Parisienne
+Métropole:Île-de-France;Hauts-de-France;Grand-Est;Bourgogne-Franche-Comté;Auvergne-Rhône-Alpes;Provence-Alpes-Côte-d'Azur;Occitanie;Corse;Nouvelle-Aquitaine;Bretagne;Pays-de-la-Loire;Centre-Val-de-Loire;Normandie
+National:Métropole;Outre-Mers;Français vivant hors de France

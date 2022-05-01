@@ -1,0 +1,35 @@
+div;seats;layout;orientation;ratio;cx;cy
+Alsace;15;Regular;;;1722.455;546.932
+Aquitaine;28;Regular;;;659.009;1221.306
+Auvergne;12;Regular;;;1121.288;992.509
+Bourgogne;15;Regular;;;1340.270;748.018
+Bretagne;27;Regular;;;386.144;557.288
+Centre-Val-de-Loire;23;Regular;;;1054.414;806.216
+Champagne-Ardenne;13;Regular;;;1282.815;587.973
+Corse;4;Regular;;;1870.901;1706.487
+Franche-Comté;12;Regular;;;1559.600;796.550
+Languedoc-Roussillon;23;Regular;;;1059.550;1542.703
+Île-de-France;97;Regular;;;1652.434;176.108
+Limousin;6;Regular;;;973.108;1129.730
+Lorraine;21;Regular;;;1517.877;522.745
+Midi-Pyrénées;26;Regular;;;927.748;1581.351
+Nord-Pas-de-Calais;33;Regular;;;1171.094;209.761
+Basse-Normandie;13;Regular;;;696.946;437.063
+Haute-Normandie;15;Regular;;;862.703;336.351
+Pays-de-la-Loire;30;Regular;;;510.946;763.694
+Picardie;17;Regular;;;1187.572;344.566
+Poitou-Charentes;15;Regular;;;757.009;1063.396
+Provence-Alpes-Côte-d'Azur;42;Regular;;;1525.135;1300.252
+Rhône-Alpes;52;Regular;;;1446.396;1133.577
+Guadeloupe;4;Regular;;;125.088;1254.724
+Martinique;4;Regular;;;125.088;1429.724
+Guyane;2;Regular;;;125.088;1604.724
+La Réunion;7;Regular;;;125.088;1779.724
+Saint-Pierre-et-Miquelon;1;Regular;;;300.088;1779.724
+Mayotte;2;Regular;;;300.088;1254.724
+Saint-Martin;0;Regular;;;263.088;1042.724
+Saint-Martin et Saint-Barthélemy;1;Regular;;;300.088;1079.724
+Wallis-et-Futuna;1;Regular;;;300.088;1604.724
+Polynésie-française;3;Regular;;;300.088;1429.724
+Nouvelle-Calédonie;2;Regular;;;125.088;1079.724
+Français vivant hors de France;11;Regular;;;125.088;904.724
