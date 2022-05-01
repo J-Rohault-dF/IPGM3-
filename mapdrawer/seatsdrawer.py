@@ -29,11 +29,15 @@ seatsArrangements: dict[int, dict[str, list[int]]] = {
 	52: {'Regular': [8, 9, 9, 9, 9, 8]},
 }
 
-def findSeatsArrangement(totalSeats: int, layout: str, ratio: float = None):
+def findSeatsArrangement(totalSeats: int, layout: str, ratio: float = 1):
+
+	if ratio == None: ratio = 1
+	if ratio < 0: ratio = 1/(-ratio)
+
 	if totalSeats in seatsArrangements and layout in seatsArrangements[totalSeats]:
 		return seatsArrangements[totalSeats][layout]
 	else:
-		squareSide = math.ceil(totalSeats**(1/2) * (ratio if ratio != None else 1))
+		squareSide = math.ceil(totalSeats**(1/2) * ratio)
 		arrangement = []
 		while totalSeats > 0:
 			arrangement.append(min(squareSide, totalSeats))
