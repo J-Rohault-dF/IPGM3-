@@ -53,8 +53,8 @@ if doExportTxt: allTexts.append('HYPOTHESIS {h}\n'.format(h=hk)+makeTweetText(r.
 #Export and map
 #if doExportCsv: saveDataTable('exports/{path}/{h}.csv'.format(h=hk, path=poll), r)
 #if doExportMap:
-#	exportMap(r, 'data/basemap_collectivites_gparis.svg', '{path}/{h}.svg'.format(h=hk, path=poll), candidaciesData=candidaciesData)
-#	exportMap(r, 'data/basemap_collectivites_gparis.svg', '{path}/{h}_r.svg'.format(h=hk, path=poll), candidaciesData=candidaciesData, doRings=True, ringsData=seatsData, outerRadius=(5*10), innerRadius=(3*10))
+#	exportMap(r, 'data/basemap_fr_collectivites_gparis.svg', '{path}/{h}.svg'.format(h=hk, path=poll), candidaciesData=candidaciesData)
+#	exportMap(r, 'data/basemap_fr_collectivites_gparis.svg', '{path}/{h}_r.svg'.format(h=hk, path=poll), candidaciesData=candidaciesData, doRings=True, ringsData=seatsData, outerRadius=(5*10), innerRadius=(3*10))
 
 for k,v in seatsData.items():
 	if r.contains(k):
@@ -68,5 +68,5 @@ if doExportTxt:
 
 #Export and map
 if doExportCsv: saveDataTable('exports/{path}/{h}.csv'.format(h=hk, path=poll), r)
-#exportMap(r, 'data/basemap_collectivites_gparis.svg', '{path}/{h}.svg'.format(h=hk, path=poll), candidaciesData=candidaciesData, mapScaling=2, sameParty=r.get('Great Britain').checkEqualParty(candidaciesData))
-exportSeatsMap(r, r.exportDict(), seatsData, 'data/basemap_collectivites_parrainages.svg', '{path}/{h}_parrainages.svg'.format(h=hk, path=poll), allDivs=allDivs, candidaciesData=candidaciesData, seatsScale=1.45, mapScaling=3, sameParty=False)
+#exportMap(r, 'data/basemap_fr_collectivites_gparis.svg', '{path}/{h}.svg'.format(h=hk, path=poll), candidaciesData=candidaciesData, mapScaling=2, sameParty=r.get('Great Britain').checkEqualParty(candidaciesData))
+exportSeatsMap(r, r.exportDict(), seatsData, 'data/basemap_fr_collectivites_parrainages.svg', '{path}/{h}_parrainages.svg'.format(h=hk, path=poll), allDivs=allDivs, candidaciesData=candidaciesData, seatsScale=1.45, mapScaling=3, sameParty=False)

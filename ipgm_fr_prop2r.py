@@ -103,8 +103,8 @@ for i in range(1):
 	#Export and map
 	if doExportCsv: saveDataTable('exports/{path}/{h}.csv'.format(h=hk, path=poll), r2s)
 	if doExportMap:
-		exportMap(r2s, 'data/basemap_collectivites_gparis.svg', '{path}/2r_{h}.svg'.format(h=hk, path=poll), candidaciesData=candidaciesData)
-		exportSeatsMap(r2s, seatsTotal, seatsData, 'data/basemap_collectivites_gparis.svg', '{path}/2r_{h}_seats.svg'.format(h=hk, path=poll), allDivs=allDivs, candidaciesData=candidaciesData, seatsScale=5, mapScaling=3, sameParty=False)
+		exportMap(r2s, 'data/basemap_fr_collectivites_gparis.svg', '{path}/2r_{h}.svg'.format(h=hk, path=poll), candidaciesData=candidaciesData)
+		exportSeatsMap(r2s, seatsTotal, seatsData, 'data/basemap_fr_collectivites_gparis.svg', '{path}/2r_{h}_seats.svg'.format(h=hk, path=poll), allDivs=allDivs, candidaciesData=candidaciesData, seatsScale=5, mapScaling=3, sameParty=False)
 
 if doExportTxt:
 	with open('exports/{path}/tweetText.txt'.format(path=poll),'w',encoding='utf8') as txtFile:

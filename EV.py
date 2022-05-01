@@ -274,7 +274,7 @@ r = loadDataTable('exports/fr/Elabe_20220405/1_CC.csv', allDivs)
 
 #s = simulOneNat(r, 1.96, 1000, allDivs)
 #showRes(s.get('National', allDivs))
-#exportMap(s, 'basemap_collectivites.svg', 'stupidSim_.svg', allDivs=allDivs, partiesColors=partiesColors)
+#exportMap(s, 'basemap_fr_collectivites.svg', 'stupidSim_.svg', allDivs=allDivs, partiesColors=partiesColors)
 
 #Simulate many and export map
 sm = simulMany(r, 5000, 4, 2000, listSim = [x for x in electoralVotes.keys()])
@@ -296,4 +296,4 @@ for i in sm.keys():
 
 print({k: v for k,v in EV.items() if v != [0,0,0]})
 
-exportMapProbs(sm, 'data/basemap_collectivites_gparis.svg', 'manySims.svg', allDivs=allDivs, candidaciesData=candidaciesData, doRings=True, divsData=ringsData, outerRadius=(5*10), innerRadius=(3*10), doTexts=True, texts={k: '{0}\n{1}'.format(abbr[k], electoralVotes[k]) for k in ringsData.keys()}, fontSize=24, fontUsed='Century Gothic')
+exportMapProbs(sm, 'data/basemap_fr_collectivites_gparis.svg', 'manySims.svg', allDivs=allDivs, candidaciesData=candidaciesData, doRings=True, divsData=ringsData, outerRadius=(5*10), innerRadius=(3*10), doTexts=True, texts={k: '{0}\n{1}'.format(abbr[k], electoralVotes[k]) for k in ringsData.keys()}, fontSize=24, fontUsed='Century Gothic')

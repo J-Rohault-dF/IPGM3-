@@ -106,9 +106,9 @@ for hk, hv in {k: v for k,v in mx.items() if k != 'sampleSize'}.items():
 	#Export and map
 	if doExportCsv: saveDataTable('exports/{path}/{h}.csv'.format(h=hk, path=poll), r)
 	if doExportMap:
-		exportMap(r, 'data/basemap_collectivites_gparis.svg', '{path}/{h}.svg'.format(h=hk, path=poll), candidaciesData=candidaciesData)
-		exportMap(r, 'data/basemap_collectivites_gparis.svg', '{path}/{h}_r.svg'.format(h=hk, path=poll), candidaciesData=candidaciesData, doRings=True, ringsData=ringsData, outerRadius=(5*10), innerRadius=(3*10))
-		exportSeatsMap(r, seatsPartiesDepts, seatsDataDepts, 'data/basemap_collectivites_gparis.svg', '{path}/{h}_s_d.svg'.format(h=hk, path=poll), allDivs=allDivs, candidaciesData=candidaciesData, seatsScale=5, mapScaling=3)
+		exportMap(r, 'data/basemap_fr_collectivites_gparis.svg', '{path}/{h}.svg'.format(h=hk, path=poll), candidaciesData=candidaciesData)
+		exportMap(r, 'data/basemap_fr_collectivites_gparis.svg', '{path}/{h}_r.svg'.format(h=hk, path=poll), candidaciesData=candidaciesData, doRings=True, ringsData=ringsData, outerRadius=(5*10), innerRadius=(3*10))
+		exportSeatsMap(r, seatsPartiesDepts, seatsDataDepts, 'data/basemap_fr_collectivites_gparis.svg', '{path}/{h}_s_d.svg'.format(h=hk, path=poll), allDivs=allDivs, candidaciesData=candidaciesData, seatsScale=5, mapScaling=3)
 		exportSeatsMap(r, seatsPartiesConst, seatsDataConst, 'data/basemap_fr_circonscriptions_canard.svg', '{path}/{h}_s_c.svg'.format(h=hk, path=poll), allDivs=allDivs, candidaciesData=candidaciesData, seatsScale=5, mapScaling=3)
 		exportSeatsMap(r, seatsPartiesOldRegions, seatsDataOldRegions, 'data/basemap_fr_oldRegions.svg', '{path}/{h}_s_or.svg'.format(h=hk, path=poll), allDivs=allDivs, candidaciesData=candidaciesData, seatsScale=5, mapScaling=3)
 		exportSeatsMap(r, seatsPartiesRegions, seatsDataRegions, 'data/basemap_fr_regions.svg', '{path}/{h}_s_r.svg'.format(h=hk, path=poll), allDivs=allDivs, candidaciesData=candidaciesData, seatsScale=5, mapScaling=3)
