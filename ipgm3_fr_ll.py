@@ -89,16 +89,16 @@ for hk, hv in {k: v for k,v in mx.items() if k != 'sampleSize'}.items():
 
 	#Compute the seats count
 	seatsPartiesDepts = {x: proportionalHighestAverage(filterThreshold(r.get(x).result), seatsPerDept[x], 'D\'Hondt') for x in seatsPerDept.keys()}
-	print(hk, 'seatsPartiesDepts', {k: sum([xv[k] for xk,xv in seatsPartiesDepts.items()]) for k,v in r.result.results.items() if isExpressed(k)})
+	print(hk, 'seatsPartiesDepts', {k: sum([xv[k] for xk,xv in seatsPartiesDepts.items()]) for k,v in r.result.results.items() if isCandidate(k)})
 
 	seatsPartiesConst = {x: proportionalHighestAverage(filterThreshold(r.get(x).result), seatsPerConst[x], 'D\'Hondt') for x in seatsPerConst.keys()}
-	print(hk, 'seatsPartiesConst', {k: sum([xv[k] for xk,xv in seatsPartiesConst.items()]) for k,v in r.result.results.items() if isExpressed(k)})
+	print(hk, 'seatsPartiesConst', {k: sum([xv[k] for xk,xv in seatsPartiesConst.items()]) for k,v in r.result.results.items() if isCandidate(k)})
 
 	seatsPartiesOldRegions = {x: proportionalHighestAverage(filterThreshold(r.get(x).result), seatsPerOldRegion[x], 'D\'Hondt') for x in seatsPerOldRegion.keys()}
-	print(hk, 'seatsPartiesOldRegions', {k: sum([xv[k] for xk,xv in seatsPartiesOldRegions.items()]) for k,v in r.result.results.items() if isExpressed(k)})
+	print(hk, 'seatsPartiesOldRegions', {k: sum([xv[k] for xk,xv in seatsPartiesOldRegions.items()]) for k,v in r.result.results.items() if isCandidate(k)})
 
 	seatsPartiesRegions = {x: proportionalHighestAverage(filterThreshold(r.get(x).result), seatsPerRegion[x], 'D\'Hondt') for x in seatsPerRegion.keys()}
-	print(hk, 'seatsPartiesRegions', {k: sum([xv[k] for xk,xv in seatsPartiesRegions.items()]) for k,v in r.result.results.items() if isExpressed(k)})
+	print(hk, 'seatsPartiesRegions', {k: sum([xv[k] for xk,xv in seatsPartiesRegions.items()]) for k,v in r.result.results.items() if isCandidate(k)})
 
 	#Tweet text
 	if doExportTxt: allTexts.append('HYPOTHESIS {h}\n'.format(h=hk)+makeTweetText(r.result.toPercentages(), hv['sampleSize'], top=1, nbSimulated=15000, candidaciesData=candidaciesData, threshold=0.05))
@@ -108,7 +108,7 @@ for hk, hv in {k: v for k,v in mx.items() if k != 'sampleSize'}.items():
 	if doExportMap:
 		exportMap(r, 'data/basemap_fr_collectivites_gparis.svg', '{path}/{h}.svg'.format(h=hk, path=poll), candidaciesData=candidaciesData)
 		exportMap(r, 'data/basemap_fr_collectivites_gparis.svg', '{path}/{h}_r.svg'.format(h=hk, path=poll), candidaciesData=candidaciesData, doRings=True, ringsData=ringsData, outerRadius=(5*10), innerRadius=(3*10))
-		exportSeatsMap(r, seatsPartiesDepts, seatsDataDepts, 'data/basemap_fr_collectivites_gparis.svg', '{path}/{h}_s_d.svg'.format(h=hk, path=poll), allDivs=allDivs, candidaciesData=candidaciesData, seatsScale=5, mapScaling=3)
+		exportSeatsMap(r, seatsPartiesDepts, seatsDataDepts, 'data/basemap_fr_circonscriptions_depts.svg', '{path}/{h}_s_d.svg'.format(h=hk, path=poll), allDivs=allDivs, candidaciesData=candidaciesData, seatsScale=5, mapScaling=3)
 		exportSeatsMap(r, seatsPartiesConst, seatsDataConst, 'data/basemap_fr_circonscriptions_canard.svg', '{path}/{h}_s_c.svg'.format(h=hk, path=poll), allDivs=allDivs, candidaciesData=candidaciesData, seatsScale=5, mapScaling=3)
 		exportSeatsMap(r, seatsPartiesOldRegions, seatsDataOldRegions, 'data/basemap_fr_oldRegions.svg', '{path}/{h}_s_or.svg'.format(h=hk, path=poll), allDivs=allDivs, candidaciesData=candidaciesData, seatsScale=5, mapScaling=3)
 		exportSeatsMap(r, seatsPartiesRegions, seatsDataRegions, 'data/basemap_fr_regions.svg', '{path}/{h}_s_r.svg'.format(h=hk, path=poll), allDivs=allDivs, candidaciesData=candidaciesData, seatsScale=5, mapScaling=3)

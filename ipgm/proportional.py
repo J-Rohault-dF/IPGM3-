@@ -21,11 +21,11 @@ def proportionalLargestRemainder(r: dict[str, float], sn: int, quotaType: str) -
 	elif quotaType == 'Imperiali': quota = vn / (sn + 2)
 
 	#First pass
-	seats = {k: math.floor(v/quota) for k,v in r.items()}
+	seats = {k: math.floor(v/quota) for k,v in r.items() if isCandidate(k)}
 
 	#Second pass
 	remaining = sn - sum(seats.values())
-	remainders = ((k, (v-quota*seats[k])) for k,v in r.items())
+	remainders = ((k, (v-quota*seats[k])) for k,v in r.items() if isCandidate(k))
 	remainders = sorted(remainders, key=lambda x: x[1], reverse=True)
 	for k in remainders[:remaining]:
 		seats[k[0]] += 1
@@ -44,9 +44,9 @@ def getDivisor(seats: int, methodType: str) -> float:
 
 def proportionalHighestAverage(r: dict[str, float], sn: int, methodType: str) -> dict[str, int]:
 
-	seats = {x[0]: (0 if methodType not in ['Huntington-Hill', 'Adams'] else 1) for x in sorted(r.items(), key=lambda x: x[1], reverse=True)}
+	seats = {x[0]: (0 if methodType not in ['Huntington-Hill', 'Adams'] else 1) for x in sorted(r.items(), key=lambda x: x[1], reverse=True) if isCandidate(x[0])}
 
-	averages = {k: (v/getDivisor(seats[k], methodType)) for k,v in r.items()}
+	averages = {k: (v/getDivisor(seats[k], methodType)) for k,v in r.items() if isCandidate(k)}
 
 	while sum(seats.values()) < sn:
 

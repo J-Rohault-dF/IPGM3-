@@ -1,5 +1,6 @@
 from __future__ import annotations
 import math
+from tkinter import dnd
 import xml.etree.ElementTree as etree
 from ipgm.Candidacies import *
 from ipgm.Div import *
@@ -180,14 +181,12 @@ def exportSeatsMap(div: Div, seatsParties: dict[str, dict[str, int]], divsData: 
 
 	#Put the seats & color them - TODO: Put this into its own function
 	group = etree.Element('{http://www.w3.org/2000/svg}g', attrib={'id': 'allSeats-{id}'.format(id=getRandomAlphanumeric(4))})
-	for i in xmlR.getroot().find('{http://www.w3.org/2000/svg}g'):
+	for dn in seatsParties.keys():
 		#If id is in the deps list, put the seats
-		if i.get('id') in seatsParties.keys():
-			divName = i.get('id')
-			c = drawCircles(divsData[divName], divName.replace(' ','-'), 2.2777781*seatsScale, 0.569444*seatsScale, 5.52238*seatsScale)
-			colorsSeats = [(candidaciesData.getCircleColor(k), v) for k,v in seatsParties[divName].items()]
-			c = colorCircles(c, divName, colorsSeats)
-			group.append(c)
+		c = drawCircles(divsData[dn], dn.replace(' ','-'), 2.2777781*seatsScale, 0.569444*seatsScale, 5.52238*seatsScale)
+		colorsSeats = [(candidaciesData.getCircleColor(k), v) for k,v in seatsParties[dn].items()]
+		c = colorCircles(c, dn, colorsSeats)
+		group.append(c)
 
 	xmlR.getroot().find('{http://www.w3.org/2000/svg}g').append(group)
 	
