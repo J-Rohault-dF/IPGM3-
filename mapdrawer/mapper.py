@@ -18,7 +18,7 @@ def getMaxK(d: dict):
 			k = i
 	return k
 
-def getWinningColor(d: dict, candidaciesData: Candidacies, sameParty: bool) -> str:
+def getWinningColor(d: dict, candidaciesData: Candidacies, multiplier: float, sameParty: bool) -> str:
 
 	if d == {}: return 'ffffff'
 
@@ -32,7 +32,7 @@ def getWinningColor(d: dict, candidaciesData: Candidacies, sameParty: bool) -> s
 
 	if vm == 0: return 'ffffff'
 	
-	indexInTable = math.floor(vm*20)-2
+	indexInTable = math.floor(vm*20*multiplier)-2
 
 	#k = getMaxK(d)
 	#if k == '': k = getMaxK({k: v for i,v in d.items() if k != ''})
@@ -47,9 +47,9 @@ def getWinningColor(d: dict, candidaciesData: Candidacies, sameParty: bool) -> s
 		print('missing color for {0}'.format(km))
 		return getShade(Color('#000000'), indexInTable).hex_l[1:]
 
-def getWinningColorR(res: Result, candidaciesData: Candidacies, sameParty: bool) -> str:
+def getWinningColorR(res: Result, candidaciesData: Candidacies, multiplier: float, sameParty: bool) -> str:
 	if res == None: return '000000'
-	else: return getWinningColor(res.toPercentages().removedAbs().results, candidaciesData, sameParty)
+	else: return getWinningColor(res.toPercentages().removedAbs().results, candidaciesData, multiplier, sameParty)
 
 def getWinningColorP(d: dict[str, float], candidaciesData: Candidacies, sameParty: bool) -> str:
 	if d == None: return '000000'
@@ -75,11 +75,11 @@ def getWinningColorP(d: dict[str, float], candidaciesData: Candidacies, samePart
 
 
 
-def mapColorerPercs(div: Div, candidaciesData: Candidacies, xmlR: etree.ElementTree, sameParty: bool = False):
+def mapColorerPercs(div: Div, candidaciesData: Candidacies, xmlR: etree.ElementTree, multiplier: float = 1, sameParty: bool = False):
 	for i in xmlR.getroot().find('{http://www.w3.org/2000/svg}g'):
 		#If id is in the deps list, replace the fill
 		if i.get('id') in [x.name for x in div.allSubDivs()]:
-			i.set('style', i.get('style').replace('000000', getWinningColorR(div.get(i.get('id')).result, candidaciesData, sameParty)))
+			i.set('style', i.get('style').replace('000000', getWinningColorR(div.get(i.get('id')).result, candidaciesData, multiplier, sameParty)))
 
 def mapColorerProbs(probs: dict[str, dict[str, float]], candidaciesData: Candidacies, xmlR: etree.ElementTree, sameParty: bool = False):
 	for i in xmlR.getroot().find('{http://www.w3.org/2000/svg}g'):
@@ -141,11 +141,11 @@ def convertMap(mapTarget, mapScaling):
 
 
 
-def exportMap(div: Div, mapSrc: str, mapTarget: str, candidaciesData: Candidacies, doRings: bool = False, ringsData: dict[str, dict[str, str|int]] = {}, outerRadius: float = 0, innerRadius: float = 0, mapScaling: float = 1, sameParty: bool = False):
+def exportMap(div: Div, mapSrc: str, mapTarget: str, candidaciesData: Candidacies, doRings: bool = False, ringsData: dict[str, dict[str, str|int]] = {}, outerRadius: float = 0, innerRadius: float = 0, mapScaling: float = 1, multiplier: float = 1, sameParty: bool = False):
 	mapTarget = 'exports/'+mapTarget
 	xmlR = loadMap(mapSrc)
 	
-	mapColorerPercs(div, candidaciesData, xmlR, sameParty)
+	mapColorerPercs(div, candidaciesData, xmlR, multiplier, sameParty)
 
 	if doRings:
 		mapRinger(xmlR.getroot().find('{http://www.w3.org/2000/svg}g'), xmlR.getroot().find('{http://www.w3.org/2000/svg}defs'), {x.name: x.result.toPercentages().removedAbs().results for x in div.allSubDivs()}, ringsData, outerRadius, innerRadius, candidaciesData, sameParty)
@@ -172,12 +172,12 @@ def exportMapProbs(probs: dict[str, dict[str, float]], mapSrc: str, mapTarget: s
 
 
 
-def exportSeatsMap(div: Div, seatsParties: dict[str, dict[str, int]], divsData: dict[str, dict[str, any]], mapSrc: str, mapTarget: str, allDivs: AllDivs, candidaciesData: Candidacies, seatsScale: float = 1, mapScaling: float = 1, sameParty: bool = False):
+def exportSeatsMap(div: Div, seatsParties: dict[str, dict[str, int]], divsData: dict[str, dict[str, any]], mapSrc: str, mapTarget: str, allDivs: AllDivs, candidaciesData: Candidacies, seatsScale: float = 1, mapScaling: float = 1, multiplier: float = 1, sameParty: bool = False):
 	mapTarget = 'exports/'+mapTarget
 	xmlR = loadMap(mapSrc)
 	
 	#Color in the map
-	mapColorerPercs(div, candidaciesData, xmlR, sameParty)
+	mapColorerPercs(div, candidaciesData, xmlR, multiplier, sameParty)
 
 	#Put the seats & color them - TODO: Put this into its own function
 	group = etree.Element('{http://www.w3.org/2000/svg}g', attrib={'id': 'allSeats-{id}'.format(id=getRandomAlphanumeric(4))})

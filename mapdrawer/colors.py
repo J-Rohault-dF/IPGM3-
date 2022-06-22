@@ -26,7 +26,7 @@ def getShade(color: Color, thisShade: int):
 		color.luminance = 1
 	elif thisShade == numShades+1:
 		color.luminance = 0.015625
-	elif thisShade == numShades+2:
+	elif thisShade >= numShades+2:
 		color.luminance = 0
 	return color
 
