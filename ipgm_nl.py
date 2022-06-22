@@ -16,6 +16,7 @@ from mapdrawer.mapper import *
 allDivs = AllDivs('data/divs_nl.txt')
 
 tk_2021 = loadDataTable('data/stats_nl/2021TK.csv', allDivs)
+ep_2019 = loadDataTable('data/stats_nl/2019EP.csv', allDivs)
 
 #poll = 'fr/Elabe_20220405'
 
@@ -26,19 +27,21 @@ tk_2021 = loadDataTable('data/stats_nl/2021TK.csv', allDivs)
 candidaciesData: Candidacies = importCandidacies(srcParties='data/parties_nl.csv')#, srcCandidates='data/candidates_fr.csv')
 parties = [x.abbr for x in candidaciesData.listOfParties]
 
-
 exportMap(tk_2021, 'data/basemap_nl_provinces.svg', 'nl_p.svg', candidaciesData=candidaciesData)
 exportMap(tk_2021, 'data/basemap_nl_gemeinden.svg', 'nl_g.svg', candidaciesData=candidaciesData)
 #exportMap(tk_2021, 'data/basemap_nl_provinces.svg', 'nl_r.svg', candidaciesData=candidaciesData, doRings=True, ringsData=ringsData, outerRadius=(5*10), innerRadius=(3*10))
 
+exportMap(ep_2019, 'data/basemap_nl_provinces.svg', 'nl_ep_p.svg', candidaciesData=candidaciesData)
+exportMap(ep_2019, 'data/basemap_nl_gemeinden.svg', 'nl_ep_g.svg', candidaciesData=candidaciesData)
+
 #Get maps for the individual parties
-t = deepcopy(tk_2021)
-for i in [x for x in parties]: t.renameCandidate(i, '#'+i)
-for i in [x for x in parties]:
-	t.renameCandidate('#'+i, i)
-	print(i)
-	exportMap(t, 'data/basemap_nl_gemeinden.svg', 'nl/nl_g_'+i+'.svg', candidaciesData=candidaciesData, multiplier=(0.5/(tk_2021.result.results[i]/tk_2021.result.getSumOfVotes())))
-	t.renameCandidate(i, '#'+i)
+#t = deepcopy(tk_2021)
+#for i in [x for x in parties]: t.renameCandidate(i, '#'+i)
+#for i in [x for x in parties]:
+#	t.renameCandidate('#'+i, i)
+#	print(i)
+#	exportMap(t, 'data/basemap_nl_gemeinden.svg', 'nl/nl_g_'+i+'.svg', candidaciesData=candidaciesData, multiplier=(0.5/(tk_2021.result.results[i]/tk_2021.result.getSumOfVotes())))
+#	t.renameCandidate(i, '#'+i)
 
 #doExportTxt = True
 #doExportMap = True
