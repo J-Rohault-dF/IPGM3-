@@ -13,7 +13,7 @@ class Result:
 
 	@classmethod
 	def fromLists(self, candidates: list, results: list):
-		return Result(dict(zip(candidates, [toFloat(x) for x in results])))
+		return Result({k: toFloat(v) for k,v in zip(candidates, results) if v != ''})
 
 	@classmethod
 	def fromDict(self, results: dict):
@@ -74,10 +74,14 @@ class Result:
 		return {k: v for k,v in self.results.items() if isExpressed(k)}
 
 	def renameCandidate(self, cand, renamedTo):
+		if cand not in self.results.keys(): return self
+
 		self.results[renamedTo] = self.results.pop(cand)
 		return self
 	
 	def removeCandidate(self, cand: str):
+		if cand not in self.results.keys(): return self
+		
 		del self.results[cand]
 		return self.results
 	
@@ -86,9 +90,13 @@ class Result:
 		return self.results
 
 	def mergeCandidates(self, cand: str, mergedInto: str):
+		if cand not in self.results.keys(): return self
+
 		candVotes = self.results[cand]
 		self.removeCandidate(cand)
-		self.results[mergedInto] += candVotes
+
+		if mergedInto in self.results: self.results[mergedInto] += candVotes
+		else: self.results[mergedInto] = candVotes
 		return self
 
 	def checkEqualParty(self, candidaciesData: Candidacies) -> bool:
