@@ -31,13 +31,14 @@ exportMap(tk_2021, 'data/basemap_nl_provinces.svg', 'nl_p.svg', candidaciesData=
 exportMap(tk_2021, 'data/basemap_nl_gemeinden.svg', 'nl_g.svg', candidaciesData=candidaciesData)
 #exportMap(tk_2021, 'data/basemap_nl_provinces.svg', 'nl_r.svg', candidaciesData=candidaciesData, doRings=True, ringsData=ringsData, outerRadius=(5*10), innerRadius=(3*10))
 
+#Get maps for the individual parties
 t = deepcopy(tk_2021)
-for i in [x for x in parties if x != 'VVD']: t.renameCandidate(i, '#'+i)
-exportMap(t, 'data/basemap_nl_gemeinden.svg', 'nl_g_VVD.svg', candidaciesData=candidaciesData)
-
-t.renameCandidate('VVD', '#VVD')
-t.renameCandidate('#D66', 'D66')
-exportMap(t, 'data/basemap_nl_gemeinden.svg', 'nl_g_D66.svg', candidaciesData=candidaciesData)
+for i in [x for x in parties]: t.renameCandidate(i, '#'+i)
+for i in [x for x in parties]:
+	t.renameCandidate('#'+i, i)
+	print(i)
+	exportMap(t, 'data/basemap_nl_gemeinden.svg', 'nl/nl_g_'+i+'.svg', candidaciesData=candidaciesData, multiplier=(0.5/(tk_2021.result.results[i]/tk_2021.result.getSumOfVotes())))
+	t.renameCandidate(i, '#'+i)
 
 #doExportTxt = True
 #doExportMap = True
