@@ -35,8 +35,8 @@ parties = [x.abbr for x in candidaciesData.listOfParties]
 #exportMap(ep_2019, 'data/basemap_nl_provinces.svg', 'nl/nl_ep_p.svg', candidaciesData=candidaciesData)
 #exportMap(ep_2019, 'data/basemap_nl_gemeinden_2021.svg', 'nl/nl_ep_g.svg', candidaciesData=candidaciesData)
 
-exportMap(ps_2019, 'data/basemap_nl_provinces.svg', 'nl/nl_ps_p.svg', candidaciesData=candidaciesData)
-exportMap(ps_2019, 'data/basemap_nl_gemeinden_2021.svg', 'nl/nl_ps_g.svg', candidaciesData=candidaciesData)
+#exportMap(ps_2019, 'data/basemap_nl_provinces.svg', 'nl/nl_ps_p.svg', candidaciesData=candidaciesData)
+#exportMap(ps_2019, 'data/basemap_nl_gemeinden_2021.svg', 'nl/nl_ps_g.svg', candidaciesData=candidaciesData)
 
 #Get maps for the individual parties
 #t = deepcopy(tk_2021)

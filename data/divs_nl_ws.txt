@@ -1,0 +1,160 @@
+Aa en Hunze: Aa en Hunze (Hunze en Aa's);Aa en Hunze (Drents Overijsselse Delta)
+Aalsmeer: Aalsmeer (Amstel, Gooi en Vecht);Aalsmeer (Rijnland)
+Alphen aan den Rijn: Alphen aan den Rijn (De Stichtse Rijnlanden);Alphen aan den Rijn (Rijnland)
+Alphen-Chaam: Alphen-Chaam (Brabantse Delta);Alphen-Chaam (De Dommel)
+Amstelveen: Amstelveen (Amstel, Gooi en Vecht);Amstelveen (Rijnland)
+Amsterdam: Amsterdam (Rijnland);Amsterdam (Hollands Noorderkwartier);Amsterdam (Amstel, Gooi en Vecht)
+Appingedam: Appingedam (Noorderzijlvest);Appingedam (Hunze en Aa's)
+Arnhem: Arnhem (Vallei en Veluwe);Arnhem (Rijn en IJssel);Arnhem (Rivierenland)
+Assen: Assen (Hunze en Aa's);Assen (Noorderzijlvest);Assen (Drents Overijsselse Delta)
+Baarle-Nassau: Baarle-Nassau (De Dommel);Baarle-Nassau (Brabantse Delta)
+Bergen: Bergen (Limburg);Bergen (Hollands Noorderkwartier)
+Berkelland: Berkelland (Rijn en IJssel);Berkelland (Vechtstromen)
+Bodegraven-Reeuwijk: Bodegraven-Reeuwijk (Rijnland);Bodegraven-Reeuwijk (De Strichtse Rijnlanden)
+Borger-Odoorn: Borger-Odoorn (Hunze en Aa's);Border-Odoorn (Vechtstromen)
+Coevorden: Coevorden (Vechtstromen);Coevorden (Hunze en Aa's);Coevorden (Drents Overijsselse Delta)
+De Bilt: De Bilt (Vallei en Veluwe);De Bilt (De Strichtse Rijnlanden);De Bilt (Amstel, Goot en Vecht)
+De Fryske Marren: De Fryske Marren (Fryslân);De Fryske Marren (Zuiderzeeland)
+De Wolden: De Wolden (Vechtstromen);De Wolden (Drents Overijsselse Delta)
+Delfzijl: Delfzijl (Hunze en Aa's);Delfzijl (Noorderzijlvest)
+Deventer: Deventer (Drents Overijsselse Delta); Deventer (Rijn en IJssel);Deventer (Vallei en Veluwe)
+Drimmelen: Drimmelen (Rivierenland);Drimmelen (Brabantse Delta)
+Emmen: Emmen (Vechtstromen);Emmen (Hunze en Aa's)
+Geldrop-Mierlo: Geldrop-Mierlo (De Dommel);Geldrop-Mierlo (Aa en Maas)
+Goirle: Goirle (Brabantse Delta);Goirle (De Dommel)
+Gouda: Gouda (Schieland en de Krimpenerwaard);Gouda (Rijnland)
+Groningen: Groningen (Hunze en Aa's);Groningen (Noorderzijlvest)
+Haaksbergen: Haaksbergen (Rijn en IJssel);Haaksbergen (Vechtstromen)
+Haarlemmermeer: Haarlemmermeer (Rijnland); Haarlemmermeer (Amstel, Gooi en Vecht)
+Hardenberg: Hardenberg (Drents Overijsselse Delta);Hardenberg (Vechtstromen)
+Heeze-Leende: Heeze-Leende (Aa en Maas);Heeze-Leende (De Dommel)
+Hellendoorn: Hellendoorn (Vechtstromen);Hellendoorn (Drents Overijsselse Delta)
+Helmond: Helmond (Aa en Maas);Helmond (De Dommel)
+Heusden: Heusden (De Dommel);Heusden (Aa en Maas)
+Hof van Twente: Hof van Twente (Vechtstromen);Hof van Twente (Rijn en IJssel)
+Hoogeveen: Hoogeveen (Vechtstromen);Hoogeveen (Drents Overijsselse Delta)
+Kaag en Braassem: Kaag en Braassem (Amstel, Gooi en Vecht);Kaag en Braassem (Rijnland)
+Krimpenerwaard: Krimpenerwaard (Schieland en de Krimpenerwaard);Krimpenerwaard (Rijnland);Krimpenerwaard (De Stichtse Rijnlanden)
+Laarbeek: Laarbeek (Aa en Maas);Laarbeek (De Dommel)
+Lansingerland: Lansingerland (Schieland en de Krimpenerwaard);Lansingerland (Delfland)
+Leidschendam-Voorburg: Leidschendam-Voorburg (Rijnland);Leidschendam-Voorburg (Delfland)
+Lingewaard: Lingewaard (Rijn en IJssel);Lingewaard (Rivierenland)
+Loon op Zand: Loon op Zand (Brabantse Delta);Loon op Zand (De Dommen)
+Meierijstad: Meierijstad (De Dommel);Meierijstad (Aa en Maas)
+Midden-Drenthe: Midden-Drenthe (Vechtstromen);Midden-Drenthe (Noorderzijlvest);Midden-Drenthe (Hunze en Aa's);Midden-Drenthe (Drents Overijsselse Delta)
+Nieuwkoop: Nieuwkoop (De Stichtse Rijnlanden);Nieuwkoop (Amstel, Gooi en Vecht);Nieuwkoop (Rijnland)
+Noardeast-Fryslân: Noardeast-Fryslân (Noorderzijlvest);Noardeast-Fryslân (Frieslân)
+Noordenveld: Noordenveld (Drents Overijsselse Delta);Noordenveld (Noorderzijlvest)
+Nuenen, Gerwen en Nederwetten: Nuenen, Gerwen en Nederwetten (Aa en Maas);Nuenen, Gerwen en Nederwetten (De Dommel)
+Olst-Wijhe: Olst-Wijhe (Vallei en Veluwe);Olst-Wijhe (Drents Overijsselse Delta)
+Ommen: Ommen (Drents Overijsselse Delta);Ommen (Vechtstromen)
+Rheden: Rheden (Vallei en Veluwe);Rheden (Rijn en IJssel)
+Rhenen: Rhenen (De Stichtse Rijnlanden);Rhenen (Vallei en Veluwe)
+Rijssen-Holten: Rijssen-Holten (Rijn en IJssel);Rijssen-Holten (Vichtstromen);Rijssen-Holten (Drents Overijsselse Delta)
+Rotterdam: Rotterdam (Delfland);Rotterdam (Schieland en de Krimpenerwaard);Rotterdam (Hollandse Delta)
+Rozendaal: Rozendaal (Rijn en IJssel);Rozendaal (Vallei en Veluwe)
+'s-Hertogenbosch: 's-Hertogenbosch (De Dommel);'s-Hertogenbosch (Aa en Maas)
+Sint-Michielsgestel: Sint-Michielsgestel (Aa en Maas);Sint-Michielsgestel (De Dommel)
+Someren: Someren (Aa en Maas);Someren (De Dommel)
+Steenwijkerland: Steenwijkerland (Drents Overijsselse Delta);Steenwijkerland (Zuiderzeeland)
+Stichtse Vecht: Stichtse Vecht (Amstel, Gooi en Vecht);Stichtse Vecht (De Strichtse Rijnlanden)
+Tilburg: Tilburg (Brabantse Delta);Tilburg (De Dommel)
+Tynaarlo: Tynaarlo (Noorderzijlvest);Tynaarlo (Hunze en Aa's)
+Utrecht: Utrecht (Amstel, Gooi en Vecht);Utrecht (De Strichtse Rijnlanden)
+Utrechtse Heuvelrug: Utrechtse Heuvelrug (De Stichtse Rijnlanden);Utrechtse Heuvelrug (Vallei en Veluwe)
+Velsen: Velsen (Rijnland);Velsen (Hollands Noorderkwartier)
+Vught: Vught (Aa en Maas);Vught (De Dommel)
+Waalwijk: Waalwijk (Aa en Maas);Waalwijk (Brabantse Delta)
+Waddinxveen: Waddinxveen (Rijnland);Waddinxveen (Schieland en de Krimpenerwaard)
+Wageningen: Wageningen (Rivierenland);Wageningen (Vallei en Veluwe)
+Wassenaar: Wassenaar (Delfland);Wassenaar (Rijnland)
+Westerkwartier: Westerkwartier (Noorderzijlvest);Westerkwartier (Fryslân)
+Woensdrecht: Woensdrecht (Scheldestromen);Woensdrecht (Brabantse Delta)
+Woerden: Woerden (De Stichtse Rijnlanden);Woerden (Rijnland)
+Zeist: Zeist (Vallei en Veluwe);Zeist (De Stichtse Rijnlanden)
+Zoetermeer: Zoetermeer (Rijnland);Zoetermeer (Delfland);Zoetermeer (Schieland en de Krimpernerwaard)
+Zutphen: Zutphen (Rijn en IJssel);Zutphen (Vallei en Veluwe)
+
+Eemsdelta: Appingedam;Delfzijl;Loppersum
+
+Kieskring Groningen: Eemsdelta;Groningen;Het Hogeland;Midden-Groningen;Oldambt;Pekela;Stadskanaal;Veendam;Westerkwartier;Westerwolde
+Kieskring Leeuwarden: Achtkarspelen;Ameland;Dantumadiel;De Fryske Marren;Harlingen;Heerenveen;Leeuwarden;Noardeast-Fryslân;Ooststellingwerf;Opsterland;Schiermonnikoog;Smallingerland;Súdwest-Fryslân;Terschelling;Tytsjerksteradiel;Vlieland;Waadhoeke;Weststellingwerf
+Kieskring Assen: Aa en Hunze;Assen;Borger-Odoorn;Coevorden;De Wolden;Emmen;Hoogeveen;Meppel;Midden-Drenthe;Noordenveld;Tynaarlo;Westerveld
+Kieskring Zwolle: Almelo;Borne;Dalfsen;Deventer;Dinkelland;Enschede;Haaksbergen;Hardenberg;Hellendoorn;Hengelo;Hof van Twente;Kampen;Losser;Oldenzaal;Olst-Wijhe;Ommen;Raalte;Rijssen-Holten;Staphorst;Steenwijkerland;Tubbergen;Twenterand;Wierden;Zwartewaterland;Zwolle
+Kieskring Lelystad: Almere;Dronten;Lelystad;Noordoostpolder;Urk;Zeewolde
+Kieskring Arnhem: Aalten;Apeldoorn;Arnhem;Barneveld;Berkelland;Bronckhorst;Brummen;Doesburg;Doetinchem;Duiven;Ede;Elburg;Epe;Ermelo;Harderwijk;Hattem;Heerde;Lingewaard;Lochem;Montferland;Nijkerk;Nunspeet;Oldebroek;Oost Gelre;Oude IJsselstreek;Overbetuwe;Putten;Renkum;Rheden;Rozendaal;Scherpenzeel;Voorst;Wageningen;Westervoort;Winterswijk;Zevenaar;Zutphen
+Kieskring Nijmegen: Berg en Dal;Beuningen;Buren;Culemborg;Druten;Heumen;Maasdriel;Neder-Betuwe;Nijmegen;Tiel;West Betuwe;West Maas en Waal;Wijchen;Zaltbommel
+Kieskring Utrecht: Amersfoort;Baarn;Bunnik;Bunschoten;De Bilt;De Ronde Venen;Eemnes;Houten;IJsselstein;Leusden;Lopik;Montfoort;Nieuwegein;Oudewater;Renswoude;Rhenen;Soest;Stichtse Vecht;Utrecht;Utrechtse Heuvelrug;Veenendaal;Vijfheerenlanden;Wijk bij Duurstede;Woerden;Woudenberg;Zeist
+Kieskring Amsterdam: Amsterdam
+Kieskring Haarlem: Aalsmeer;Amstelveen;Beverwijk;Blaricum;Bloemendaal;Diemen;Gooise Meren;Haarlem;Haarlemmermeer;Heemskerk;Heemstede;Hilversum;Huizen;Laren;Ouder-Amstel;Uithoorn;Velsen;Weesp;Wijdemeren;Zandvoort
+Kieskring Den Helder: Alkmaar;Beemster;Bergen (NH);Castricum;Den Helder;Drechterland;Edam-Volendam;Enkhuizen;Heerhugowaard;Heiloo;Hollands Kroon;Hoorn;Koggenland;Landsmeer;Langedijk;Medemblik;Oostzaan;Opmeer;Purmerend;Schagen;Stede Broec;Texel;Uitgeest;Waterland;Wormerland;Zaanstad
+Kieskring Den Haag: 's-Gravenhage
+Kieskring Rotterdam: Rotterdam
+Kieskring Dordrecht: Alblasserdam;Albrandswaard;Barendrecht;Brielle;Delft;Dordrecht;Goeree-Overflakkee;Gorinchem;Hardinxveld-Giessendam;Hellevoetsluis;Hendrik-Ido-Ambacht;Hoeksche Waard;Maassluis;Midden-Delfland;Molenlanden;Nissewaard;Papendrecht;Ridderkerk;Rijswijk;Schiedam;Sliedrecht;Vlaardingen;Westland;Westvoorne;Zwijndrecht
+Kieskring Leiden: Alphen aan den Rijn;Bodegraven-Reeuwijk;Capelle aan den IJssel;Gouda;Hillegom;Kaag en Braassem;Katwijk;Krimpen aan den IJssel;Krimpenerwaard;Lansingerland;Leiden;Leiderdorp;Leidschendam-Voorburg;Lisse;Nieuwkoop;Noordwijk;Oegstgeest;Pijnacker-Nootdorp;Teylingen;Voorschoten;Waddinxveen;Wassenaar;Zoetermeer;Zoeterwoude;Zuidplas
+Kieskring Tilburg: Alphen-Chaam;Altena;Baarle-Nassau;Bergen op Zoom;Breda;Dongen;Drimmelen;Etten-Leur;Geertruidenberg;Gilze en Rijen;Goirle;Halderberge;Hilvarenbeek;Loon op Zand;Moerdijk;Oisterwijk;Oosterhout;Roosendaal;Rucphen;Steenbergen;Tilburg;Waalwijk;Woensdrecht;Zundert
+Kieskring 's-Hertogenbosch: 's-Hertogenbosch;Asten;Bergeijk;Bernheze;Best;Bladel;Boekel;Boxmeer;Boxtel;Cranendonck;Cuijk;Deurne;Eersel;Eindhoven;Geldrop-Mierlo;Gemert-Bakel;Grave;Heeze-Leende;Helmond;Heusden;Laarbeek;Landerd;Meierijstad;Mill en Sint Hubert;Nuenen, Gerwen en Nederwetten;Oirschot;Oss;Reusel-De Mierden;Sint Anthonis;Sint-Michielsgestel;Someren;Son en Breugel;Uden;Valkenswaard;Veldhoven;Vught;Waalre
+Kieskring Maastricht: Beek;Beekdaelen;Beesel;Bergen (LI);Brunssum;Echt-Susteren;Eijsden-Margraten;Gennep;Gulpen-Wittem;Heerlen;Horst aan de Maas;Kerkrade;Landgraaf;Leudal;Maasgouw;Maastricht;Meerssen;Mook en Middelaar;Nederweert;Peel en Maas;Roerdalen;Roermond;Simpelveld;Sittard-Geleen;Stein;Vaals;Valkenburg aan de Geul;Venlo;Venray;Voerendaal;Weert
+Kieskring Middelburg: Borsele;Goes;Hulst;Kapelle;Middelburg;Noord-Beveland;Reimerswaal;Schouwen-Duiveland;Sluis;Terneuzen;Tholen;Veere;Vlissingen
+Kieskring Bonaire: Bonaire;Saba;Sint Eustatius;Manual adjustments
+
+Provincie Groningen: Kieskring Groningen
+Provincie Frieslân: Kieskring Leeuwarden
+Provincie Drenthe: Kieskring Assen
+Provincie Overijssel: Kieskring Zwolle
+Provincie Flevoland: Kieskring Lelystad
+Provincie Gelderland: Kieskring Nijmegen; Kieskring Arnhem
+Provincie Utrecht: Kieskring Utrecht
+Provincie Noord-Holland: Kieskring Amsterdam; Kieskring Haarlem; Kieskring Den Helder
+Provincie Zuid-Holland: Kieskring Den Haag; Kieskring Rotterdam; Kieskring Dordrecht; Kieskring Leiden
+Provincie Zeeland: Kieskring Middelburg
+Provincie Noord-Brabant: Kieskring Tilburg;Kieskring 's-Hertogenbosch
+Provincie Limburg: Kieskring Maastricht
+Caribisch Nederland: Kieskring Bonaire
+
+Nederland: Provincie Groningen; Provincie Frieslân; Provincie Drenthe; Provincie Overijssel; Provincie Flevoland; Provincie Gelderland; Provincie Utrecht; Provincie Noord-Holland; Provincie Zuid-Holland; Provincie Zeeland; Provincie Noord-Brabant; Provincie Limburg; Caribisch Nederland; Waterschap Aa en Maas; Waterschap Amstel, Gooi en Vecht; Waterschap Brabantse Delta; Waterschap De Dommel; Waterschap De Stichtse Rijnlanden; Waterschap Delfland; Waterschap Drents Overijsselse Delta; Waterschap Fryslân; Waterschap Hollands Noorderkwartier; Waterschap Hollandse Delta; Waterschap Hunze en Aa's; Waterschap Limburg; Waterschap Noorderzijlvest; Waterschap Rijn en IJssel; Waterschap Rijnland; Waterschap Rivierenland; Waterschap Scheldestromen; Waterschap Schieland en de Krimpenerwaard; Waterschap Vallei en Veluwe; Waterschap Vechtstromen; Waterschap Zuiderzeeland
+
+Waterschap Aa en Maas: Asten;Bernheze;Boekel;Boxmeer;Cuijk;Deurne;Geldrop-Mierlo (Aa en Maas);Gemert-Bakel;Grave;Heeze-Leende (Aa en Maas);Helmond (Aa en Maas);Heusden (Aa en Maas);Laarbeek (Aa en Maas);Landerd;Meierijstad (Aa en Maas);Mill en Sint Hubert;Nuenen, Gerwen en Nederwetten (Aa en Maas);Oss;'s-Hertogenbosch (Aa en Maas);Sint Anthonis;Sint-Michielsgestel (Aa en Maas);Someren (Aa en Maas);Uden;Vught (Aa en Maas);Waalwijk (Aa en Maas)
+Waterschap Amstel, Gooi en Vecht: Aalsmeer (Amstel, Gooi en Vecht);Amstelveen (Amstel, Gooi en Vecht);Amsterdam (Amstel, Gooi en Vecht);Blaricum;De Bilt (Amstel, Gooi en Vecht);De Ronde Venen;Diemen;Gooise Meren;Haarlemmermeer (Amstel, Gooi en Vecht);Hilversum;Huizen;Kaag en Braassem (Amstel, Gooi en Vecht);Laren;Nieuwkoop (Amstel, Gooi en Vecht);Ouder-Amstel;Stichtse Vecht (Amstel, Gooi en Vecht);Uithoorn;Utrecht (Amstel, Gooi en Vecht);Weesp;Wijdemeren
+Waterschap Brabantse Delta: Alphen-Chaam (Brabantse Delta);Baarle-Nassau (Brabantse Delta);Bergen op Zoom;Breda;Dongen;Drimmelen (Brabantse Delta);Etten-Leur;Geertruidenberg;Gilze en Rijen;Goirle (Brabantse Delta);Halderberge;Loon op Zand (Brabantse Delta);Moerdijk;Oosterhout;Roosendaal;Rucphen;Steenbergen;Tilburg (Brabantse Delta);Waalwijk (Brabantse Delta);Woensdrecht (Brabantse Delta);Zundert
+Waterschap De Dommel: Alphen-Chaam (De Dommel);Baarle-Nassau (De Dommel);Bergeijk;Best;Bladel;Boxtel;Cranendonck;Eersel;Eindhoven;Geldrop-Mierlo (De Dommel);Goirle (De Dommel);Haaren;Heeze-Leende (De Dommel);Helmond (De Dommel);Heusden (De Dommel);Hilvarenbeek;Laarbeek (De Dommel);Loon op Zand (De Dommel);Meierijstad (De Dommel);Nuenen, Gerwen en Nederwetten (De Dommel);Oirschot;Oisterwijk;Reusel-De Mierden;'s-Hertogenbosch (De Dommel);Sint-Michielsgestel (De Dommel);Someren (De Dommel);Son en Breugel;Tilburg (De Dommel);Valkenswaard;Veldhoven;Vught (De Dommel);Waalre
+Waterschap De Stichtse Rijnlanden: Alphen aan den Rijn (De Stichtse Rijnlanden);Bodegraven-Reeuwijk (De Stichtse Rijnlanden);Bunnik;De Bilt (De Stichtse Rijnlanden);Houten;IJsselstein;Krimpenerwaard (De Stichtse Rijnlanden);Lopik;Montfoort;Nieuwegein;Nieuwkoop (De Stichtse Rijnlanden);Oudewater;Rhenen (De Stichtse Rijnlanden);Stichtse Vecht (De Stichtse Rijnlanden);Utrecht (De Stichtse Rijnlanden);Utrechtse Heuvelrug (De Stichtse Rijnlanden);Wijk bij Duurstede;Woerden (De Stichtse Rijnlanden);Zeist (De Stichtse Rijnlanden)
+Waterschap Delfland: Delft;Lansingerland (Delfland);Leidschendam-Voorburg (Delfland);Maassluis;Midden-Delfland;Pijnacker-Nootdorp;Rijswijk;Rotterdam (Delfland);Schiedam;'s-Gravenhage;Vlaardingen;Wassenaar (Delfland);Westland;Zoetermeer (Delfland)
+Waterschap Drents Overijsselse Delta: Aa en Hunze (Drents Overijsselse Delta);Assen (Drents Overijsselse Delta);Coevorden (Drents Overijsselse Delta);Dalfsen;De Wolden (Drents Overijsselse Delta);Deventer (Drents Overijsselse Delta);Hardenberg (Drents Overijsselse Delta);Hellendoorn (Drents Overijsselse Delta);Hoogeveen (Drents Overijsselse Delta);Kampen;Meppel;Midden-Drenthe (Drents Overijsselse Delta);Noordenveld (Drents Overijsselse Delta);Olst-Wijhe (Drents Overijsselse Delta);Ommen (Drents Overijsselse Delta);Raalte;Rijssen-Holten (Drents Overijsselse Delta);Staphorst;Steenwijkerland (Drents Overijsselse Delta);Westerveld;Zwartewaterland;Zwolle
+Waterschap Fryslân: Achtkarspelen;Ameland;Dantumadiel;De Fryske Marren (Fryslân);Harlingen;Heerenveen;Leeuwarden;Noardeast-Fryslân (Fryslân);Ooststellingwerf;Opsterland;Schiermonnikoog;Smallingerland;Súdwest-Fryslân;Terschelling;Tytsjerksteradiel;Vlieland;Waadhoeke;Westerkwartier (Fryslân);Weststellingwerf
+Waterschap Hollands Noorderkwartier: Alkmaar;Amsterdam (Hollands Noorderkwartier);Beemster;Bergen (Hollands Noorderkwartier);Beverwijk;Castricum;Den Helder;Drechterland;Edam-Volendam;Enkhuizen;Heemskerk;Heerhugowaard;Heiloo;Hollands Kroon;Hoorn;Koggenland;Landsmeer;Langedijk;Medemblik;Oostzaan;Opmeer;Purmerend;Schagen;Stede Broec;Texel;Uitgeest;Velsen (Hollands Noorderkwartier);Waterland;Wormerland;Zaanstad
+Waterschap Hollandse Delta: Albrandswaard;Barendrecht;Brielle;Dordrecht;Goeree-Overflakkee;Hellevoetsluis;Hendrik-Ido-Ambacht;Hoeksche Waard;Nissewaard;Ridderkerk;Rotterdam (Hollandse Delta);Westvoorne;Zwijndrecht
+Waterschap Hunze en Aa's: Aa en Hunze (Hunze en Aa's);Appingedam (Hunze en Aa's);Assen (Hunze en Aa's);Borger-Odoorn (Hunze en Aa's);Coevorden (Hunze en Aa's);Delfzijl (Hunze en Aa's);Emmen (Hunze en Aa's);Groningen (Hunze en Aa's);Midden-Drenthe (Hunze en Aa's);Midden-Groningen;Oldambt;Pekela;Stadskanaal;Tynaarlo (Hunze en Aa's);Veendam;Westerwolde
+Waterschap Limburg: Beek;Beekdaelen;Beesel;Bergen (Limburg);Brunssum;Echt-Susteren;Eijsden-Margraten;Gennep;Gulpen-Wittem;Heerlen;Horst aan de Maas;Kerkrade;Landgraaf;Leudal;Maasgouw;Maastricht;Meerssen;Mook en Middelaar;Nederweert;Peel en Maas;Roerdalen;Roermond;Simpelveld;Sittard-Geleen;Stein;Vaals;Valkenburg aan de Geul;Venlo;Venray;Voerendaal;Weert
+Waterschap Noorderzijlvest: Appingedam (Noorderzijlvest);Assen (Noorderzijlvest);Delfzijl (Noorderzijlvest);Groningen (Noorderzijlvest);Het Hogeland ;Loppersum;Midden-Drenthe (Noorderzijlvest);Noardeast-Fryslân (Noorderzijlvest);Noordenveld (Noorderzijlvest);Tynaarlo (Noorderzijlvest);Westerkwartier (Noorderzijlvest)
+Waterschap Rijn en IJssel: Aalten;Arnhem (Rijn en IJssel);Berkelland (Rijn en IJssel);Bronckhorst;Deventer (Rijn en IJssel);Doesburg;Doetinchem;Duiven;Haaksbergen (Rijn en IJssel);Hof van Twente (Rijn en IJssel);Lingewaard (Rijn en IJssel);Lochem;Montferland;Oost Gelre;Oude IJsselstreek;Rheden (Rijn en IJssel);Rijssen-Holten (Rijn en IJssel);Rozendaal (Rijn en IJssel);Westervoort;Winterswijk;Zevenaar;Zutphen (Rijn en IJssel)
+Waterschap Rijnland: Aalsmeer (Rijnland);Alphen aan den Rijn (Rijnland);Amstelveen (Rijnland);Amsterdam (Rijnland);Bloemendaal;Bodegraven-Reeuwijk (Rijnland);Gouda (Rijnland);Haarlem;Haarlemmermeer (Rijnland);Heemstede;Hillegom;Kaag en Braassem (Rijnland);Katwijk;Krimpenerwaard (Rijnland);Leiden;Leiderdorp;Leidschendam-Voorburg (Rijnland);Lisse;Nieuwkoop (Rijnland);Noordwijk;Oegstgeest;Teylingen;Velsen (Rijnland);Voorschoten;Waddinxveen (Rijnland);Wassenaar (Rijnland);Woerden (Rijnland);Zandvoort;Zoetermeer (Rijnland);Zoeterwoude
+Waterschap Rivierenland: Alblasserdam;Altena;Arnhem (Rivierenland);Berg en Dal;Beuningen;Buren;Culemborg;Drimmelen (Rivierenland);Druten;Gorinchem;Hardinxveld-Giessendam;Heumen;Lingewaard (Rivierenland);Maasdriel;Molenlanden;Neder-Betuwe;Nijmegen;Overbetuwe;Papendrecht;Sliedrecht;Tiel;Vijfheerenlanden;Wageningen (Rivierenland);West Betuwe;West Maas en Waal;Wijchen;Zaltbommel
+Waterschap Scheldestromen: Borsele;Goes;Hulst;Kapelle;Middelburg;Noord-Beveland;Reimerswaal;Schouwen-Duiveland;Sluis;Terneuzen;Tholen;Veere;Vlissingen;Woensdrecht (Scheldestromen)
+Waterschap Schieland en de Krimpenerwaard: Capelle aan den IJssel;Gouda (Schieland en de Krimpenerwaard);Krimpen aan den IJssel;Krimpenerwaard (Schieland en de Krimpenerwaard);Lansingerland (Schieland en de Krimpenerwaard);Rotterdam (Schieland en de Krimpenerwaard);Waddinxveen (Schieland en de Krimpenerwaard);Zoetermeer (Schieland en de Krimpenerwaard);Zuidplas
+Waterschap Vallei en Veluwe: Amersfoort;Apeldoorn;Arnhem (Vallei en Veluwe);Baarn;Barneveld;Brummen;Bunschoten;De Bilt (Vallei en Veluwe);Deventer (Vallei en Veluwe);Ede;Eemnes;Elburg;Epe;Ermelo;Harderwijk;Hattem;Heerde;Leusden;Nijkerk;Nunspeet;Oldebroek;Olst-Wijhe (Vallei en Veluwe);Putten;Renkum;Renswoude;Rheden (Vallei en Veluwe);Rhenen (Vallei en Veluwe);Rozendaal (Vallei en Veluwe);Scherpenzeel;Soest;Utrechtse Heuvelrug (Vallei en Veluwe);Veenendaal;Voorst;Wageningen (Vallei en Veluwe);Woudenberg;Zeist (Vallei en Veluwe);Zutphen (Vallei en Veluwe)
+Waterschap Vechtstromen: Almelo;Berkelland (Vechtstromen);Borger-Odoorn (Vechtstromen);Borne;Coevorden (Vechtstromen);De Wolden (Vechtstromen);Dinkelland;Emmen (Vechtstromen);Enschede;Haaksbergen (Vechtstromen);Hardenberg (Vechtstromen);Hellendoorn (Vechtstromen);Hengelo;Hof van Twente (Vechtstromen);Hoogeveen (Vechtstromen);Losser;Midden-Drenthe (Vechtstromen);Oldenzaal;Ommen (Vechtstromen);Rijssen-Holten (Vechtstromen);Tubbergen;Twenterand;Wierden
+Waterschap Zuiderzeeland: Almere;De Fryske Marren (Zuiderzeeland);Dronten;Lelystad;Noordoostpolder;Steenwijkerland (Zuiderzeeland);Urk;Zeewolde
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

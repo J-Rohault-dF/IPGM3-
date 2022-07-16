@@ -13,7 +13,7 @@ from mapdrawer.mapper import *
 #	ringsDataTemp = [y.split(';') for y in [x for x in seatsDataFile.read().split('\n')]]
 #	ringsData = {x[0]: dict(zip(ringsDataTemp[0][1:], [toFloatOrStr(y) for y in x[1:]])) for x in ringsDataTemp[1:]}
 
-allDivs = AllDivs('data/divs_nl.txt')
+allDivs = AllDivs('data/divs_nl_ws.txt')
 
 ws_2019 = loadDataTable('data/stats_nl/2019WS.csv', allDivs)
 
@@ -25,13 +25,6 @@ ws_2019 = loadDataTable('data/stats_nl/2019WS.csv', allDivs)
 
 candidaciesData: Candidacies = importCandidacies(srcParties='data/parties_nl.csv')#, srcCandidates='data/candidates_fr.csv')
 parties = [x.abbr for x in candidaciesData.listOfParties]
-
-#exportMap(tk_2021, 'data/basemap_nl_provinces.svg', 'nl/nl_p.svg', candidaciesData=candidaciesData)
-#exportMap(tk_2021, 'data/basemap_nl_gemeinden_2021.svg', 'nl/nl_g.svg', candidaciesData=candidaciesData)
-#exportMap(tk_2021, 'data/basemap_nl_provinces.svg', 'nl/nl_r.svg', candidaciesData=candidaciesData, doRings=True, ringsData=ringsData, outerRadius=(5*10), innerRadius=(3*10))
-
-#exportMap(ep_2019, 'data/basemap_nl_provinces.svg', 'nl/nl_ep_p.svg', candidaciesData=candidaciesData)
-#exportMap(ep_2019, 'data/basemap_nl_gemeinden_2021.svg', 'nl/nl_ep_g.svg', candidaciesData=candidaciesData)
 
 exportMap(ws_2019, 'data/basemap_nl_provinces.svg', 'nl/nl_ws_p.svg', candidaciesData=candidaciesData)
 exportMap(ws_2019, 'data/basemap_nl_gemeinden_2021.svg', 'nl/nl_ws_g.svg', candidaciesData=candidaciesData)
