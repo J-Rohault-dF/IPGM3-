@@ -39,7 +39,7 @@ def getWinningColorShade(color: Color, score: float) -> Color:
 
 
 
-def getWinningColorP(d: dict[str, float], candidaciesData: Candidacies, sameParty: bool) -> str:
+def getWinningColorP(d: dict[str, float], candidaciesData: Candidacies) -> str:
 	if d == None: return '000000'
 
 	#k1, m = getProbsFromResDictDiff(d)
@@ -54,7 +54,7 @@ def getWinningColorP(d: dict[str, float], candidaciesData: Candidacies, samePart
 	else: return '000000'
 
 	if candidaciesData.contains(k1):
-		return getShadeFromIndex(candidaciesData.getShadeColor(k1, inParty=sameParty), indexInTable).hex_l[1:]
+		return getShadeFromIndex(candidaciesData.getShadeColor(k1), indexInTable).hex_l[1:]
 	else:
 		print('missing color for {0} ({1}%)'.format(k1, d[k1]))
 		return '000000'
@@ -63,7 +63,7 @@ def getWinningColorP(d: dict[str, float], candidaciesData: Candidacies, samePart
 
 
 
-def mapColorerPercs(div: Div, candidaciesData: Candidacies, xmlR: etree.ElementTree, multiplier: float = 1, isInSameParty: bool = False):
+def mapColorerPercs(div: Div, candidaciesData: Candidacies, xmlR: etree.ElementTree, multiplier: float = 1):
 	"""Colors a map based on the results.
 	
 	Args:
@@ -71,7 +71,6 @@ def mapColorerPercs(div: Div, candidaciesData: Candidacies, xmlR: etree.ElementT
 	candidaciesData -- stores data about the candidacies including colors
 	xmlR -- the map xml object
 	multiplier -- multiplier for the score shades (default 1)
-	isInSameParty -- whether the same-party colors are used
 	"""
 
 	colorsUsed = {}
@@ -83,7 +82,7 @@ def mapColorerPercs(div: Div, candidaciesData: Candidacies, xmlR: etree.ElementT
 			winningParty, winningScore = getWinningScore(div.get(i.get('id')).result.toPercentages().removedAbs().results)
 			
 			try: #Gets the winning color, if not present print something and take a fallback color
-				winningColor = candidaciesData.getShadeColor(winningParty, inParty=isInSameParty)
+				winningColor = candidaciesData.getShadeColor(winningParty)
 			except:
 				winningColor = Color('#ffffff')
 				print('missing color for {0}'.format(winningParty))
@@ -97,13 +96,13 @@ def mapColorerPercs(div: Div, candidaciesData: Candidacies, xmlR: etree.ElementT
 			i.set('style', i.get('style').replace('000000', winningShade))
 	print(colorsUsed)
 
-def mapColorerProbs(probs: dict[str, dict[str, float]], candidaciesData: Candidacies, xmlR: etree.ElementTree, sameParty: bool = False):
+def mapColorerProbs(probs: dict[str, dict[str, float]], candidaciesData: Candidacies, xmlR: etree.ElementTree):
 	for i in xmlR.getroot().find('{http://www.w3.org/2000/svg}g'):
 		#If id is in the deps list, replace the fill
 		if i.get('id') in probs.keys():
-			i.set('style', i.get('style').replace('000000', getWinningColorP(probs[i.get('id')], candidaciesData, sameParty)))
+			i.set('style', i.get('style').replace('000000', getWinningColorP(probs[i.get('id')], candidaciesData)))
 
-def mapRinger(xmlL: etree.Element, xmlD: etree.Element, percs: dict[str, dict[str, float]], divsData: dict[str, dict[str, str|int]], outerRadius: float, innerRadius: float, candidaciesData: Candidacies, sameParty: bool = False):
+def mapRinger(xmlL: etree.Element, xmlD: etree.Element, percs: dict[str, dict[str, float]], divsData: dict[str, dict[str, str|int]], outerRadius: float, innerRadius: float, candidaciesData: Candidacies):
 	rings = etree.Element('{http://www.w3.org/2000/svg}g', attrib={'id': 'rings-{gid}'.format(gid=getRandomAlphanumeric(4))})
 
 	for dk, dv in percs.items():
@@ -141,24 +140,12 @@ def loadMap(mapSrc: str) -> etree.ElementTree:
 	with open(mapSrc, 'r', encoding='utf8') as originalMap:
 		return etree.parse(originalMap)
 
-def convertMap(mapTarget, mapScaling):
-
-	#Lines running inkscape commented out until I can get it to work on Linux
-	pass
-
-    #mapWidth = int(float(subprocess.run(['inkscape', '--query-width', mapTarget], check=True, stdout=subprocess.PIPE).stdout))
-    #command = ['inkscape', '--export-type=png', '--export-width={0}'.format(mapWidth*mapScaling), '--export-background-opacity=0', mapTarget]
-    #print(' '.join(command))
-
-    #t = subprocess.run(command, shell=True)
-
-	#print('Opening map...')
-	#os.system(mapTarget.replace('.svg','.png').replace('/','\\'))
 
 
+def exportMap(div: Div, mapSrc: str, mapTarget: str, candidaciesData: Candidacies, ringsData: None|dict[str, dict[str, str|int]] = None, outerRadius: float = 0, innerRadius: float = 0, scoreMultiplier: float = 1):
+	"""Exports map based on all the data provided.
 
-def exportMap(div: Div, mapSrc: str, mapTarget: str, candidaciesData: Candidacies, doRings: bool = False, ringsData: dict[str, dict[str, str|int]] = {}, outerRadius: float = 0, innerRadius: float = 0, mapScaling: float = 1, multiplier: float = 1, sameParty: bool = False):
-	"""Exports map based on all the data provided
+	Will draw rings if ringsData is provided (arguments needed are marked with *)
 	
 	Args:
 	div -- the master Div of results
@@ -166,49 +153,47 @@ def exportMap(div: Div, mapSrc: str, mapTarget: str, candidaciesData: Candidacie
 	mapTarget -- file path of the target for the produced map
 	candidaciesData -- Candidacies object
 	doRings -- whether rings are drawn or not (default no)
-	ringsData -- data for the rings
-	outerRadius -- outer radius for the rings
-	innerRadius -- inner radius for the rings
+	ringsData -- data for the rings (*)
+	outerRadius -- outer radius for the rings (*)
+	innerRadius -- inner radius for the rings (*)
 	mapScaling -- scale multiplication of the map when automatically converting it to raster
-	sameParty -- whether same-party colors are used
+	scoreMultiplier -- multiplication for the scores values
 	"""
 
 	mapTarget = 'exports/'+mapTarget
 	xmlR = loadMap(mapSrc)
 	
-	mapColorerPercs(div, candidaciesData, xmlR, multiplier, sameParty)
+	mapColorerPercs(div, candidaciesData, xmlR, scoreMultiplier)
 
-	if doRings:
-		mapRinger(xmlR.getroot().find('{http://www.w3.org/2000/svg}g'), xmlR.getroot().find('{http://www.w3.org/2000/svg}defs'), {x.name: x.result.toPercentages().removedAbs().results for x in div.allSubDivs()}, ringsData, outerRadius, innerRadius, candidaciesData, sameParty)
-	
+	if ringsData != None:
+		mapRinger(xmlR.getroot().find('{http://www.w3.org/2000/svg}g'), xmlR.getroot().find('{http://www.w3.org/2000/svg}defs'), {x.name: x.result.toPercentages().removedAbs().results for x in div.allSubDivs()}, ringsData, outerRadius, innerRadius, candidaciesData)
+
 	xmlR.write(mapTarget)
-	convertMap(mapTarget, mapScaling)
 
 
 
-def exportMapProbs(probs: dict[str, dict[str, float]], mapSrc: str, mapTarget: str, allDivs: AllDivs, candidaciesData: Candidacies, doRings: bool = False, divsData: dict[str, dict[str, str|int]] = {}, outerRadius: float = 0, innerRadius: float = 0, doTexts: bool = False, texts: dict[str, str] = {}, fontSize: float = 8, fontUsed: str = '', mapScaling: float = 1, sameParty: bool = False):
+def exportMapProbs(probs: dict[str, dict[str, float]], mapSrc: str, mapTarget: str, allDivs: AllDivs, candidaciesData: Candidacies, doRings: bool = False, divsData: dict[str, dict[str, str|int]] = {}, outerRadius: float = 0, innerRadius: float = 0, doTexts: bool = False, texts: dict[str, str] = {}, fontSize: float = 8, fontUsed: str = ''):
 	mapTarget = 'exports/'+mapTarget
 	xmlR = loadMap(mapSrc)
 	
-	mapColorerProbs(probs, candidaciesData, xmlR, sameParty)
+	mapColorerProbs(probs, candidaciesData, xmlR)
 
 	if doRings:
-		mapRinger(xmlR.getroot().find('{http://www.w3.org/2000/svg}g'), xmlR.getroot().find('{http://www.w3.org/2000/svg}defs'), probs, divsData, outerRadius, innerRadius, candidaciesData, sameParty)
+		mapRinger(xmlR.getroot().find('{http://www.w3.org/2000/svg}g'), xmlR.getroot().find('{http://www.w3.org/2000/svg}defs'), probs, divsData, outerRadius, innerRadius, candidaciesData)
 	
 	if doTexts:
 		mapTexter(xmlR.getroot().find('{http://www.w3.org/2000/svg}g'), texts, divsData, fontSize, fontUsed)
 
 	xmlR.write(mapTarget)
-	convertMap(mapTarget, mapScaling)
 
 
 
-def exportSeatsMap(div: Div, seatsParties: dict[str, dict[str, int]], divsData: dict[str, dict[str, any]], mapSrc: str, mapTarget: str, allDivs: AllDivs, candidaciesData: Candidacies, seatsScale: float = 1, mapScaling: float = 1, multiplier: float = 1, sameParty: bool = False):
+def exportSeatsMap(div: Div, seatsParties: dict[str, dict[str, int]], divsData: dict[str, dict[str, any]], mapSrc: str, mapTarget: str, allDivs: AllDivs, candidaciesData: Candidacies, seatsScale: float = 1, multiplier: float = 1):
 	mapTarget = 'exports/'+mapTarget
 	xmlR = loadMap(mapSrc)
 	
 	#Color in the map
-	mapColorerPercs(div, candidaciesData, xmlR, multiplier, sameParty)
+	mapColorerPercs(div, candidaciesData, xmlR, multiplier)
 
 	#Put the seats & color them - TODO: Put this into its own function
 	group = etree.Element('{http://www.w3.org/2000/svg}g', attrib={'id': 'allSeats-{id}'.format(id=getRandomAlphanumeric(4))})
@@ -222,4 +207,3 @@ def exportSeatsMap(div: Div, seatsParties: dict[str, dict[str, int]], divsData: 
 	xmlR.getroot().find('{http://www.w3.org/2000/svg}g').append(group)
 	
 	xmlR.write(mapTarget)
-	convertMap(mapTarget, mapScaling)
