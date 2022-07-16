@@ -28,13 +28,13 @@ class Candidacies:
 
 	def getShadeColor(self, cand: str, inParty: bool = False) -> Color:
 		for p in self.listOfParties:
-			if cand in p.getFullName() or cand in p.getShortName() or cand in p.getAbbr():
+			if cand == p.getFullName() or cand == p.getShortName() or cand == p.getAbbr():
 				return p.getShadeColor()
 		for c in self.listOfCandidates:
 			if cand == c.getFullName():
 				if inParty: return c.getShadeColorInParty()
 				else: return c.getShadeColor()
-		return Color('#ffffff') #fallback if absent
+		raise Exception(cand+': Party or candidate not found')
 		
 	def get(self, cand: str) -> Party|Candidate:
 		for p in self.listOfParties:
