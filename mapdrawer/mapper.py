@@ -8,9 +8,11 @@ from mapdrawer.colors import *
 from mapdrawer.seatsdrawer import *
 from mapdrawer.keydrawer import *
 
-def getWinningColor(d: dict, candidaciesData: Candidacies, multiplier: float, sameParty: bool) -> str:
+def getWinningScore(d: dict[str, float]) -> tuple[str, float]:
 
-	#Get the highest-performing party
+	if d == None: return ('',0)
+
+	#Get the highest-performing party, returns its name and score
 	km = ''
 	vm = 0
 	for k,v in d.items():
@@ -18,23 +20,11 @@ def getWinningColor(d: dict, candidaciesData: Candidacies, multiplier: float, sa
 			vm = v
 			km = k
 		elif v == vm: km = ''
+	return (km, vm)
 
-	#If 0 votes or empty dict
-	if vm == 0: return 'ffffff'
-	
-	#Get color
-	indexInTable = math.floor(vm*20*multiplier)-2
-	if candidaciesData.contains(km):
-		return getShadeFromIndex(candidaciesData.getShadeColor(km, inParty=sameParty), indexInTable).hex_l[1:]
-	elif km == '':
-		return getShadeFromIndex(Color('#ffffff'), indexInTable).hex_l[1:]
-	else:
-		print('missing color for {0}'.format(km))
-		return getShadeFromIndex(Color('#000000'), indexInTable).hex_l[1:]
-
-def getWinningColorR(res: Result, candidaciesData: Candidacies, multiplier: float, sameParty: bool) -> str:
-	if res == None: return '000000'
-	else: return getWinningColor(res.toPercentages().removedAbs().results, candidaciesData, multiplier, sameParty)
+def getWinningColorShade(color: Color, score: float) -> str:
+	if score == 0: return 'ffffff'
+	return getShadeFromIndex(color, (math.floor(score*20)-2) ).hex_l[1:]
 
 def getWinningColorP(d: dict[str, float], candidaciesData: Candidacies, sameParty: bool) -> str:
 	if d == None: return '000000'
@@ -61,10 +51,22 @@ def getWinningColorP(d: dict[str, float], candidaciesData: Candidacies, samePart
 
 
 def mapColorerPercs(div: Div, candidaciesData: Candidacies, xmlR: etree.ElementTree, multiplier: float = 1, sameParty: bool = False):
+	colorsUsed = {}
+
 	for i in xmlR.getroot().find('{http://www.w3.org/2000/svg}g'):
 		#If id is in the deps list, replace the fill
 		if i.get('id') in [x.name for x in div.allSubDivs()]:
-			i.set('style', i.get('style').replace('000000', getWinningColorR(div.get(i.get('id')).result, candidaciesData, multiplier, sameParty)))
+			
+			winningParty, winningScore = getWinningScore(div.get(i.get('id')).result.toPercentages().removedAbs().results)
+			
+			winningColor = candidaciesData.getShadeColor(winningParty, inParty=sameParty)
+			
+			if not candidaciesData.contains(winningParty): #Inefficient
+				print('missing color for {0}'.format(winningParty))
+		
+			winningShade = getWinningColorShade(winningColor, (winningScore*multiplier))
+
+			i.set('style', i.get('style').replace('000000', winningShade))
 
 def mapColorerProbs(probs: dict[str, dict[str, float]], candidaciesData: Candidacies, xmlR: etree.ElementTree, sameParty: bool = False):
 	for i in xmlR.getroot().find('{http://www.w3.org/2000/svg}g'):

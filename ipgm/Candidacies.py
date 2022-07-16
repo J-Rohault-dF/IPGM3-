@@ -34,6 +34,7 @@ class Candidacies:
 			if cand == c.getFullName():
 				if inParty: return c.getShadeColorInParty()
 				else: return c.getShadeColor()
+		return Color('#ffffff') #fallback if absent
 		
 	def get(self, cand: str) -> Party|Candidate:
 		for p in self.listOfParties:
