@@ -64,10 +64,15 @@ def mapColorerPercs(div: Div, candidaciesData: Candidacies, xmlR: etree.ElementT
 			except:
 				winningColor = Color('#ffffff')
 				print('missing color for {0}'.format(winningParty))
-		
+
+			#Log color usage
+			if winningParty not in colorsUsed: colorsUsed[winningParty] = [None] * 20
+			colorsUsed[winningParty][math.floor(100*winningScore/5)] = winningColor
+
 			winningShade = getWinningColorShade(winningColor, (winningScore*multiplier)).hex_l[1:]
 
 			i.set('style', i.get('style').replace('000000', winningShade))
+	print(colorsUsed)
 
 def mapColorerProbs(probs: dict[str, dict[str, float]], candidaciesData: Candidacies, xmlR: etree.ElementTree, sameParty: bool = False):
 	for i in xmlR.getroot().find('{http://www.w3.org/2000/svg}g'):
