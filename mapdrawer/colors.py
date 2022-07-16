@@ -2,7 +2,7 @@ import copy
 
 from colour import *
 
-def getShade(color: Color, thisShade: int):
+def getShadeFromIndex(color: Color, thisShade: int):
 	numShades = 16
 	#Inputs: 
 	#-1: 5% (special)

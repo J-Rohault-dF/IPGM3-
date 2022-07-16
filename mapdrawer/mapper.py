@@ -1,6 +1,5 @@
 from __future__ import annotations
 import math
-from tkinter import dnd
 import xml.etree.ElementTree as etree
 from ipgm.Candidacies import *
 from ipgm.Div import *
@@ -9,19 +8,9 @@ from mapdrawer.colors import *
 from mapdrawer.seatsdrawer import *
 from mapdrawer.keydrawer import *
 
-def getMaxK(d: dict):
-	k = ''
-	v = float('-inf')
-	for i in d.keys():
-		if d[i] > v:
-			v = d[i]
-			k = i
-	return k
-
 def getWinningColor(d: dict, candidaciesData: Candidacies, multiplier: float, sameParty: bool) -> str:
 
-	if d == {}: return 'ffffff'
-
+	#Get the highest-performing party
 	km = ''
 	vm = 0
 	for k,v in d.items():
@@ -30,22 +19,18 @@ def getWinningColor(d: dict, candidaciesData: Candidacies, multiplier: float, sa
 			km = k
 		elif v == vm: km = ''
 
+	#If 0 votes or empty dict
 	if vm == 0: return 'ffffff'
 	
+	#Get color
 	indexInTable = math.floor(vm*20*multiplier)-2
-
-	#k = getMaxK(d)
-	#if k == '': k = getMaxK({k: v for i,v in d.items() if k != ''})
-	#kp = d[k]
-	#indexInTable = math.floor(kp*20)-2
-
 	if candidaciesData.contains(km):
-		return getShade(candidaciesData.getShadeColor(km, inParty=sameParty), indexInTable).hex_l[1:]
+		return getShadeFromIndex(candidaciesData.getShadeColor(km, inParty=sameParty), indexInTable).hex_l[1:]
 	elif km == '':
-		return getShade(Color('#ffffff'), indexInTable).hex_l[1:]
+		return getShadeFromIndex(Color('#ffffff'), indexInTable).hex_l[1:]
 	else:
 		print('missing color for {0}'.format(km))
-		return getShade(Color('#000000'), indexInTable).hex_l[1:]
+		return getShadeFromIndex(Color('#000000'), indexInTable).hex_l[1:]
 
 def getWinningColorR(res: Result, candidaciesData: Candidacies, multiplier: float, sameParty: bool) -> str:
 	if res == None: return '000000'
@@ -66,7 +51,7 @@ def getWinningColorP(d: dict[str, float], candidaciesData: Candidacies, samePart
 	else: return '000000'
 
 	if candidaciesData.contains(k1):
-		return getShade(candidaciesData.getShadeColor(k1, inParty=sameParty), indexInTable).hex_l[1:]
+		return getShadeFromIndex(candidaciesData.getShadeColor(k1, inParty=sameParty), indexInTable).hex_l[1:]
 	else:
 		print('missing color for {0} ({1}%)'.format(k1, d[k1]))
 		return '000000'
