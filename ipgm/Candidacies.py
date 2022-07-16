@@ -28,7 +28,7 @@ class Candidacies:
 
 	def getShadeColor(self, cand: str, inParty: bool = False) -> Color:
 		for p in self.listOfParties:
-			if cand in [p.getFullName(), p.getShortName(), p.getAbbr()]:
+			if cand in p.getFullName() or cand in p.getShortName() or cand in p.getAbbr():
 				return p.getShadeColor()
 		for c in self.listOfCandidates:
 			if cand == c.getFullName():

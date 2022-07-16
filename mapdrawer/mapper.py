@@ -22,9 +22,9 @@ def getWinningScore(d: dict[str, float]) -> tuple[str, float]:
 		elif v == vm: km = ''
 	return (km, vm)
 
-def getWinningColorShade(color: Color, score: float) -> str:
-	if score == 0: return 'ffffff'
-	return getShadeFromIndex(color, (math.floor(score*20)-2) ).hex_l[1:]
+def getWinningColorShade(color: Color, score: float) -> Color:
+	if score == 0: return Color('ffffff')
+	return getShadeFromIndex(color, (math.floor(score*20)-2) )
 
 def getWinningColorP(d: dict[str, float], candidaciesData: Candidacies, sameParty: bool) -> str:
 	if d == None: return '000000'
@@ -64,7 +64,7 @@ def mapColorerPercs(div: Div, candidaciesData: Candidacies, xmlR: etree.ElementT
 			if not candidaciesData.contains(winningParty): #Inefficient
 				print('missing color for {0}'.format(winningParty))
 		
-			winningShade = getWinningColorShade(winningColor, (winningScore*multiplier))
+			winningShade = getWinningColorShade(winningColor, (winningScore*multiplier)).hex_l[1:]
 
 			i.set('style', i.get('style').replace('000000', winningShade))
 
