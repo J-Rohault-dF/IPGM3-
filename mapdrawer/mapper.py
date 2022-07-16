@@ -9,6 +9,10 @@ from mapdrawer.seatsdrawer import *
 from mapdrawer.keydrawer import *
 
 def getWinningScore(d: dict[str, float]) -> tuple[str, float]:
+	"""Returns the winning party and its score from a dict.
+	
+	Checks isCandidate() on the party, does not reweight the scores (outputs raw numbers as inputted).
+	"""
 
 	if d == None: return ('',0)
 
@@ -22,9 +26,18 @@ def getWinningScore(d: dict[str, float]) -> tuple[str, float]:
 		elif v == vm: km = ''
 	return (km, vm)
 
+
+
 def getWinningColorShade(color: Color, score: float) -> Color:
+	"""Returns the shade of a color based on its score.
+	
+	The score has to be between 0 and 1, and can be multiplied beforehand.
+	"""
+
 	if score == 0: return Color('ffffff')
 	return getShadeFromIndex(color, (math.floor(score*20)-2) )
+
+
 
 def getWinningColorP(d: dict[str, float], candidaciesData: Candidacies, sameParty: bool) -> str:
 	if d == None: return '000000'
@@ -50,7 +63,17 @@ def getWinningColorP(d: dict[str, float], candidaciesData: Candidacies, samePart
 
 
 
-def mapColorerPercs(div: Div, candidaciesData: Candidacies, xmlR: etree.ElementTree, multiplier: float = 1, sameParty: bool = False):
+def mapColorerPercs(div: Div, candidaciesData: Candidacies, xmlR: etree.ElementTree, multiplier: float = 1, isInSameParty: bool = False):
+	"""Colors a map based on the results.
+	
+	Args:
+	div -- the master div of results
+	candidaciesData -- stores data about the candidacies including colors
+	xmlR -- the map xml object
+	multiplier -- multiplier for the score shades (default 1)
+	isInSameParty -- whether the same-party colors are used
+	"""
+
 	colorsUsed = {}
 
 	for i in xmlR.getroot().find('{http://www.w3.org/2000/svg}g'):
@@ -60,7 +83,7 @@ def mapColorerPercs(div: Div, candidaciesData: Candidacies, xmlR: etree.ElementT
 			winningParty, winningScore = getWinningScore(div.get(i.get('id')).result.toPercentages().removedAbs().results)
 			
 			try: #Gets the winning color, if not present print something and take a fallback color
-				winningColor = candidaciesData.getShadeColor(winningParty, inParty=sameParty)
+				winningColor = candidaciesData.getShadeColor(winningParty, inParty=isInSameParty)
 			except:
 				winningColor = Color('#ffffff')
 				print('missing color for {0}'.format(winningParty))
@@ -135,6 +158,21 @@ def convertMap(mapTarget, mapScaling):
 
 
 def exportMap(div: Div, mapSrc: str, mapTarget: str, candidaciesData: Candidacies, doRings: bool = False, ringsData: dict[str, dict[str, str|int]] = {}, outerRadius: float = 0, innerRadius: float = 0, mapScaling: float = 1, multiplier: float = 1, sameParty: bool = False):
+	"""Exports map based on all the data provided
+	
+	Args:
+	div -- the master Div of results
+	mapSrc -- file path of the base map
+	mapTarget -- file path of the target for the produced map
+	candidaciesData -- Candidacies object
+	doRings -- whether rings are drawn or not (default no)
+	ringsData -- data for the rings
+	outerRadius -- outer radius for the rings
+	innerRadius -- inner radius for the rings
+	mapScaling -- scale multiplication of the map when automatically converting it to raster
+	sameParty -- whether same-party colors are used
+	"""
+
 	mapTarget = 'exports/'+mapTarget
 	xmlR = loadMap(mapSrc)
 	
