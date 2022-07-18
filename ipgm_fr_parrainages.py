@@ -18,10 +18,10 @@ with open('data/seats_fr_parrainages.csv','r',encoding='utf8') as seatsDataFile:
 
 allDivs = AllDivs('data/divs_fr.txt')
 
-t1 = loadDataTable('data/stats_fr/2017T1.csv', allDivs)
-t2 = loadDataTable('data/stats_fr/2017T2.csv', allDivs)
-te = loadDataTable('data/stats_fr/2019TE.csv', allDivs)
-parrainages = loadDataTable('data/stats_fr/parrainages.csv', allDivs)
+t1 = importDataTable('data/stats_fr/2017T1.csv', allDivs)
+t2 = importDataTable('data/stats_fr/2017T2.csv', allDivs)
+te = importDataTable('data/stats_fr/2019TE.csv', allDivs)
+parrainages = importDataTable('data/stats_fr/parrainages.csv', allDivs)
 
 #poll = 'fr/Elabe_20211220'
 

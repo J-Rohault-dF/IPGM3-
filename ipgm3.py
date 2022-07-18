@@ -15,11 +15,11 @@ with open('data/fr/rings/depts.csv','r',encoding='utf8') as seatsDataFile:
 
 allDivs = AllDivs('data/fr/divs/fr.txt')
 
-t1_2017 = loadDataTable('data/fr/stats/2017T1.csv', allDivs)
-t2_2017 = loadDataTable('data/fr/stats/2017T2.csv', allDivs)
-te_2019 = loadDataTable('data/fr/stats/2019TE.csv', allDivs)
-t1_2022 = loadDataTable('data/fr/stats/2022T1.csv', allDivs)
-t2_2022 = loadDataTable('data/fr/stats/2022T2.csv', allDivs)
+t1_2017 = importDataTable('data/fr/stats/2017T1.csv', allDivs)
+t2_2017 = importDataTable('data/fr/stats/2017T2.csv', allDivs)
+te_2019 = importDataTable('data/fr/stats/2019TE.csv', allDivs)
+t1_2022 = importDataTable('data/fr/stats/2022T1.csv', allDivs)
+t2_2022 = importDataTable('data/fr/stats/2022T2.csv', allDivs)
 
 poll = 'old/Elabe_20220405'
 

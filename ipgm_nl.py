@@ -15,9 +15,9 @@ from mapdrawer.mapper import *
 
 allDivs = AllDivs('data/nl/divs/nl.txt')
 
-tk_2021 = loadDataTable('data/nl/stats/2021TK.csv', allDivs)
-ep_2019 = loadDataTable('data/nl/stats/2019EP.csv', allDivs)
-ps_2019 = loadDataTable('data/nl/stats/2019PS.csv', allDivs)
+tk_2021 = importDataTable('data/nl/stats/2021TK.csv', allDivs)
+ep_2019 = importDataTable('data/nl/stats/2019EP.csv', allDivs)
+ps_2019 = importDataTable('data/nl/stats/2019PS.csv', allDivs)
 
 #poll = 'fr/Elabe_20220405'
 

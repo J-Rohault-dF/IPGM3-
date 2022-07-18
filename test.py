@@ -26,5 +26,5 @@ import xml.etree.ElementTree as etree
 #res = Result('test', {'a': 2836, 'b': 2763, 'c': 1203, 'd': 16})
 
 #from ipgm.port import *
-#t1 = loadDataTable('data/2017T1.csv')
+#t1 = importDataTable('data/2017T1.csv')
 

@@ -40,11 +40,11 @@ seatsPerRegion = {k: v['seats'] for k,v in seatsDataRegions.items()}
 
 allDivs = AllDivs('data/divs_fr_prop.txt')
 
-t1_2017 = loadDataTable('data/stats_fr/2017T1.csv', allDivs)
-t2_2017 = loadDataTable('data/stats_fr/2017T2.csv', allDivs)
-te_2019 = loadDataTable('data/stats_fr/2019TE.csv', allDivs)
-t1_2022 = loadDataTable('data/stats_fr/2022T1.csv', allDivs)
-t2_2022 = loadDataTable('data/stats_fr/2022T2.csv', allDivs)
+t1_2017 = importDataTable('data/stats_fr/2017T1.csv', allDivs)
+t2_2017 = importDataTable('data/stats_fr/2017T2.csv', allDivs)
+te_2019 = importDataTable('data/stats_fr/2019TE.csv', allDivs)
+t1_2022 = importDataTable('data/stats_fr/2022T1.csv', allDivs)
+t2_2022 = importDataTable('data/stats_fr/2022T2.csv', allDivs)
 
 poll = 'fr/Harris_20220425'
 
