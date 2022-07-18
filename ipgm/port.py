@@ -6,8 +6,8 @@ from ipgm.Div import *
 from ipgm.VTM import *
 from divsHandler import *
 
-#Fonction pour charger un tableau de données en classe [FORMAT: CSV with SEMICOLONS]
-def loadDataTable(src: str, allDivs: AllDivs) -> Div:
+#Function to load a data table [FORMAT: CSV with SEMICOLONS]
+def importDataTable(src: str, allDivs: AllDivs) -> Div:
 	#Open the datatable and dump it into a python tab
 	with open(src,'r',encoding='utf8') as dataTable:
 		txt = dataTable.read()
