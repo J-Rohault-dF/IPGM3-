@@ -62,7 +62,7 @@ def saveDataTable(src: str, dv: Div):
 
 
 
-def importMatricesJson(src: str):
+def importMatrices(src: str):
 	with open(src, 'r', encoding='utf8') as defsFile:
 		obj = json.load(defsFile)
 	
@@ -118,7 +118,7 @@ def importMatricesJson(src: str):
 		appendDictInDict(allReturning, label, 'scores_{0}'.format(final), scores)
 
 		appendDictInDict(allReturning, label, 'sampleSize', (sampleSizeD if sampleSizeD != None else sampleSize))
+
+
 	
-
-
 	return allReturning

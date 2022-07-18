@@ -23,7 +23,7 @@ t1_2022 = importDataTable('data/stats_fr/2022T1_communes.csv', allDivsC)
 
 poll = 'fr/Elabe_20220405'
 
-mx = importMatricesJson('data/pollDefs/{0}.json'.format(poll))
+mx = importMatrices('data/pollDefs/{0}.json'.format(poll))
 if not os.path.exists('exports/{path}'.format(path=poll)):
 	os.makedirs('exports/{path}'.format(path=poll))
 

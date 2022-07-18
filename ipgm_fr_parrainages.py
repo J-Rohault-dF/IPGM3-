@@ -25,7 +25,7 @@ parrainages = importDataTable('data/stats_fr/parrainages.csv', allDivs)
 
 #poll = 'fr/Elabe_20211220'
 
-#mx = importMatricesJson('data/pollDefs/{0}.json'.format(poll))
+#mx = importMatrices('data/pollDefs/{0}.json'.format(poll))
 #if not os.path.exists('exports/{path}'.format(path=poll)):
 #	os.makedirs('exports/{path}'.format(path=poll))
 
