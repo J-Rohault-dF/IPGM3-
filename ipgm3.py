@@ -9,25 +9,25 @@ from divsHandler import *
 from mapdrawer.mapper import *
 
 #Get divs data
-with open('data/rings_fr.csv','r',encoding='utf8') as seatsDataFile:
+with open('data/fr/rings/depts.csv','r',encoding='utf8') as seatsDataFile:
 	ringsDataTemp = [y.split(';') for y in [x for x in seatsDataFile.read().split('\n')]]
 	ringsData = {x[0]: dict(zip(ringsDataTemp[0][1:], [toFloatOrStr(y) for y in x[1:]])) for x in ringsDataTemp[1:]}
 
-allDivs = AllDivs('data/divs_fr.txt')
+allDivs = AllDivs('data/fr/divs/fr.txt')
 
-t1_2017 = loadDataTable('data/stats_fr/2017T1.csv', allDivs)
-t2_2017 = loadDataTable('data/stats_fr/2017T2.csv', allDivs)
-te_2019 = loadDataTable('data/stats_fr/2019TE.csv', allDivs)
-t1_2022 = loadDataTable('data/stats_fr/2022T1.csv', allDivs)
-t2_2022 = loadDataTable('data/stats_fr/2022T2.csv', allDivs)
+t1_2017 = loadDataTable('data/fr/stats/2017T1.csv', allDivs)
+t2_2017 = loadDataTable('data/fr/stats/2017T2.csv', allDivs)
+te_2019 = loadDataTable('data/fr/stats/2019TE.csv', allDivs)
+t1_2022 = loadDataTable('data/fr/stats/2022T1.csv', allDivs)
+t2_2022 = loadDataTable('data/fr/stats/2022T2.csv', allDivs)
 
-poll = 'fr/Elabe_20220405'
+poll = 'old/Elabe_20220405'
 
-mx = importMatricesJson('data/pollDefs/{0}.json'.format(poll))
+mx = importMatricesJson('data/fr/polls/{0}.json'.format(poll))
 if not os.path.exists('exports/{path}'.format(path=poll)):
 	os.makedirs('exports/{path}'.format(path=poll))
 
-candidaciesData: Candidacies = importCandidacies(srcParties='data/parties_fr.csv', srcCandidates='data/candidates_fr.csv')
+candidaciesData: Candidacies = importCandidacies(src='data/fr/cands/2022P.csv')
 
 
 
@@ -71,8 +71,8 @@ for hk, hv in {k: v for k,v in mx.items() if k != 'sampleSize'}.items():
 	#Export and map
 	if doExportCsv: saveDataTable('exports/{path}/{h}.csv'.format(h=hk, path=poll), r)
 	if doExportMap:
-		exportMap(r, 'data/basemap_fr_collectivites_gparis.svg', '{path}/{h}.svg'.format(h=hk, path=poll), candidaciesData=candidaciesData)
-		exportMap(r, 'data/basemap_fr_collectivites_gparis.svg', '{path}/{h}_r.svg'.format(h=hk, path=poll), candidaciesData=candidaciesData, ringsData=ringsData, outerRadius=(5*10), innerRadius=(3*10))
+		exportMap(r, 'data/fr/maps/collectivites_gparis.svg', '{path}/{h}.svg'.format(h=hk, path=poll), candidaciesData=candidaciesData)
+		exportMap(r, 'data/fr/maps/collectivites_gparis.svg', '{path}/{h}_r.svg'.format(h=hk, path=poll), candidaciesData=candidaciesData, ringsData=ringsData, outerRadius=(5*10), innerRadius=(3*10))
 
 if doExportTxt:
 	with open('exports/{path}/tweetText.txt'.format(path=poll),'w',encoding='utf8') as txtFile:
