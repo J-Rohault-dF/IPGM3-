@@ -9,34 +9,34 @@ from divsHandler import *
 from mapdrawer.mapper import *
 
 #Get divs data
-#with open('data/rings_fr.csv','r',encoding='utf8') as seatsDataFile:
+#with open('data/nl/rings/provinces.csv','r',encoding='utf8') as seatsDataFile:
 #	ringsDataTemp = [y.split(';') for y in [x for x in seatsDataFile.read().split('\n')]]
 #	ringsData = {x[0]: dict(zip(ringsDataTemp[0][1:], [toFloatOrStr(y) for y in x[1:]])) for x in ringsDataTemp[1:]}
 
-allDivs = AllDivs('data/divs_nl.txt')
+allDivs = AllDivs('data/nl/divs/nl.txt')
 
-tk_2021 = loadDataTable('data/stats_nl/2021TK.csv', allDivs)
-ep_2019 = loadDataTable('data/stats_nl/2019EP.csv', allDivs)
-ps_2019 = loadDataTable('data/stats_nl/2019PS.csv', allDivs)
+tk_2021 = loadDataTable('data/nl/stats/2021TK.csv', allDivs)
+ep_2019 = loadDataTable('data/nl/stats/2019EP.csv', allDivs)
+ps_2019 = loadDataTable('data/nl/stats/2019PS.csv', allDivs)
 
 #poll = 'fr/Elabe_20220405'
 
-#mx = importMatricesJson('data/pollDefs/{0}.json'.format(poll))
+#mx = importMatricesJson('data/nl/polls/{0}.json'.format(poll))
 #if not os.path.exists('exports/{path}'.format(path=poll)):
 #	os.makedirs('exports/{path}'.format(path=poll))
 
-candidaciesData: Candidacies = importCandidacies(srcParties='data/parties_nl.csv')#, srcCandidates='data/candidates_fr.csv')
-parties = [x.abbr for x in candidaciesData.listOfParties]
+candidaciesData: Candidacies = importCandidacies(src='data/nl/cands/parties.csv')
+parties = [x.shortName for x in candidaciesData.listOfCands]
 
-exportMap(tk_2021, 'data/basemap_nl_provinces.svg', 'nl/nl_tk_p.svg', candidaciesData=candidaciesData)
-exportMap(tk_2021, 'data/basemap_nl_gemeinden_2021.svg', 'nl/nl_tk_g.svg', candidaciesData=candidaciesData)
-#exportMap(tk_2021, 'data/basemap_nl_provinces.svg', 'nl/nl_tk_p_r.svg', candidaciesData=candidaciesData, ringsData=ringsData, outerRadius=(5*10), innerRadius=(3*10))
+exportMap(tk_2021, 'data/nl/maps/provinces.svg', 'nl/tk_p.svg', candidaciesData=candidaciesData)
+exportMap(tk_2021, 'data/nl/maps/gemeinden_2021.svg', 'nl/tk_g.svg', candidaciesData=candidaciesData)
+#exportMap(tk_2021, 'data/nl/maps/provinces.svg', 'nl/tk_p_r.svg', candidaciesData=candidaciesData, ringsData=ringsData, outerRadius=(5*10), innerRadius=(3*10))
 
-#exportMap(ep_2019, 'data/basemap_nl_provinces.svg', 'nl/nl_ep_p.svg', candidaciesData=candidaciesData)
-#exportMap(ep_2019, 'data/basemap_nl_gemeinden_2021.svg', 'nl/nl_ep_g.svg', candidaciesData=candidaciesData)
+#exportMap(ep_2019, 'data/nl/maps/provinces.svg', 'nl/ep_p.svg', candidaciesData=candidaciesData)
+#exportMap(ep_2019, 'data/nl/maps/gemeinden_2021.svg', 'nl/ep_g.svg', candidaciesData=candidaciesData)
 
-#exportMap(ps_2019, 'data/basemap_nl_provinces.svg', 'nl/nl_ps_p.svg', candidaciesData=candidaciesData)
-#exportMap(ps_2019, 'data/basemap_nl_gemeinden_2021.svg', 'nl/nl_ps_g.svg', candidaciesData=candidaciesData)
+#exportMap(ps_2019, 'data/nl/maps/provinces.svg', 'nl/ps_p.svg', candidaciesData=candidaciesData)
+#exportMap(ps_2019, 'data/nl/maps/gemeinden_2021.svg', 'nl/ps_g.svg', candidaciesData=candidaciesData)
 
 #Get maps for the individual parties
 #t = deepcopy(tk_2021)
@@ -44,7 +44,7 @@ exportMap(tk_2021, 'data/basemap_nl_gemeinden_2021.svg', 'nl/nl_tk_g.svg', candi
 #for i in [x for x in parties]:
 #	t.renameCandidate('#'+i, i)
 #	print(i)
-#	exportMap(t, 'data/basemap_nl_gemeinden_2021.svg', 'nl/nl_g_'+i+'.svg', candidaciesData=candidaciesData, multiplier=(0.5/(tk_2021.result.results[i]/tk_2021.result.getSumOfVotes())))
+#	exportMap(t, 'data/nl/gemeinden_2021.svg', 'nl/g_'+i+'.svg', candidaciesData=candidaciesData, multiplier=(0.5/(tk_2021.result.results[i]/tk_2021.result.getSumOfVotes())))
 #	t.renameCandidate(i, '#'+i)
 
 #doExportTxt = True
