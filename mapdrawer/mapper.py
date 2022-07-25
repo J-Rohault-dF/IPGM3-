@@ -34,7 +34,7 @@ def getWinningColorShade(color: Color, score: float) -> Color:
 	The score has to be between 0 and 1, and can be multiplied beforehand.
 	"""
 
-	if score == 0: return Color('ffffff')
+	if score == 0: return Color('#ffffff')
 	return getShadeFromIndex(color, (math.floor(score*20)-2) )
 
 
