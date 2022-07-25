@@ -87,11 +87,11 @@ def mapColorerPercs(div: Div, candidaciesData: Candidacies, xmlR: etree.ElementT
 				winningColor = Color('#ffffff')
 				print('missing color for {0}'.format(winningParty))
 
+			winningShade = getWinningColorShade(winningColor, (winningScore*multiplier)).hex_l[1:]
+
 			#Log color usage
 			if winningParty not in colorsUsed: colorsUsed[winningParty] = [None] * 20
-			colorsUsed[winningParty][math.floor(100*winningScore/5)] = winningColor
-
-			winningShade = getWinningColorShade(winningColor, (winningScore*multiplier)).hex_l[1:]
+			colorsUsed[winningParty][math.floor(100*winningScore/5)] = winningShade
 
 			i.set('style', i.get('style').replace('000000', winningShade))
 	print(colorsUsed)
