@@ -84,6 +84,10 @@ class Result:
 		
 		del self.results[cand]
 		return self.results
+
+	def popCandidate(self, cand: str):
+		if cand not in self.results.keys(): return 0
+		return self.results.pop(cand)
 	
 	def selectCandidates(self, cands: list[str]):
 		self.results = {k: v for k,v in self.results.items() if (k in cands)}
@@ -98,6 +102,27 @@ class Result:
 		if mergedInto in self.results: self.results[mergedInto] += candVotes
 		else: self.results[mergedInto] = candVotes
 		return self
+	
+	def coalition(self, coalObj: dict[str, list[str]]) -> Result:
+		"""
+		Merges candidates in coalitions
+		coalObj must be in the form {'coal1': ['list1', 'list2'],…}
+		"""
+		for coal in coalObj.keys():
+			coalV = None
+
+			for p in coalObj[coal]:
+
+				if self.hasCandidate(p):
+					if coalV == None: coalV = 0
+					coalV += self.popCandidate(p)
+			
+			if coalV != None:
+				self.results[coal] = coalV
+		
+		return self
+
+
 
 	def checkEqualParty(self, candidaciesData: Candidacies) -> bool:
 

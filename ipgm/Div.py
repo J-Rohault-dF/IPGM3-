@@ -112,6 +112,16 @@ class Div:
 			d.result.mergeCandidates(cand, mergedInto)
 		self.recalculateAll()
 		return self
+	
+	def coalition(self, coalObj: list[dict[str, list[str]]]) -> Div:
+		"""
+		Merges candidates in coalitions
+		coalObj must be in the form {'coal1': ['list1', 'list2'],…}
+		"""
+		for d in self.allBaseSubDivs():
+			d.result.coalition(coalObj)
+		self.recalculateAll()
+		return self
 
 
 
