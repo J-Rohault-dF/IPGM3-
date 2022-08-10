@@ -1,0 +1,14 @@
+Italia: Nord-Ovest; Sud; Isole; Nord-Est; Centro
+
+Nord-Ovest: Piemonte; Lombardia; Liguria; Aosta
+Sud: Abruzzo; Molise; Campania; Puglia; Basilicata; Calabria
+Isole: Sicilia; Sardegna
+Nord-Est: Trentino-Alto Adige/Südtirol; Veneto; Friuli-Venezia Giulia; Emilia-Romagna
+Centro: Toscana; Umbria; Marche; Lazio
+
+Piemonte: Piemonte 1; Piemonte 2
+Lombardia: Lombardia 1; Lombardia 2; Lombardia 3; Lombardia 4
+Veneto: Veneto 1; Veneto 2
+Lazio: Lazio 1; Lazio 2
+Campania: Campania 1; Campania 2
+Sicilia: Sicilia 1; Sicilia 2

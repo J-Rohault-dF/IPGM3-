@@ -1,0 +1,109 @@
+Italia: Nord-Ovest; Sud; Isole; Nord-Est; Centro
+
+Nord-Ovest: Piemonte; Lombardia; Liguria; Aosta
+Sud: Abruzzo; Molise; Campania; Puglia; Basilicata; Calabria
+Isole: Sicilia; Sardegna
+Nord-Est: Trentino-Alto Adige/Südtirol; Veneto; Friuli-Venezia Giulia; Emilia-Romagna
+Centro: Toscana; Umbria; Marche; Lazio
+
+Piemonte: Piemonte 1; Piemonte 2
+Lombardia: Lombardia 1; Lombardia 2; Lombardia 3; Lombardia 4
+Veneto: Veneto 1; Veneto 2
+Lazio: Lazio 1; Lazio 2
+Campania: Campania 1; Campania 2
+Sicilia: Sicilia 1; Sicilia 2
+
+Piemonte 1: Piemonte 1 - 01; Piemonte 1 - 02
+Piemonte 2: Piemonte 2 - 01; Piemonte 2 - 02
+Lombardia 1: Lombardia 1 - 01; Lombardia 1 - 02; Lombardia 1 - 03; Lombardia 1 - 04
+Lombardia 2: Lombardia 2 - 01; Lombardia 2 - 02
+Lombardia 3: Lombardia 3 - 01; Lombardia 3 - 02
+Lombardia 4: Lombardia 4 - 01; Lombardia 4 - 02
+Veneto 1: Veneto 1 - 01; Veneto 1 - 02
+Veneto 2: Veneto 2 - 01; Veneto 2 - 02; Veneto 2 - 03
+Friuli-Venezia Giulia: Friuli-Venezia Giulia - 01
+Liguria: Liguria - 01; Liguria - 02
+Emilia-Romagna: Emilia-Romagna - 01; Emilia-Romagna - 02; Emilia-Romagna - 03; Emilia-Romagna - 04
+Toscana: Toscana - 01; Toscana - 02; Toscana - 03; Toscana - 04
+Umbria: Umbria - 01
+Marche: Marche - 01; Marche - 02
+Lazio 1: Lazio 1 - 01; Lazio 1 - 02; Lazio 1 - 03
+Lazio 2: Lazio 2 - 01; Lazio 2 - 02
+Abruzzo: Abruzzo - 01; Abruzzo - 02
+Molise: Molise - 01
+Campania 1: Campania 1 - 01; Campania 1 - 02; Campania 1 - 03
+Campania 2: Campania 2 - 01; Campania 2 - 02; Campania 2 - 03
+Puglia: Puglia - 01; Puglia - 02; Puglia - 03; Puglia - 04
+Basilicata: Basilicata - 01
+Calabria: Calabria - 01; Calabria - 02
+Sicilia 1: Sicilia 1 - 01; Sicilia 1 - 02; Sicilia 1 - 03
+Sicilia 2: Sicilia 2 - 01; Sicilia 2 - 02; Sicilia 2 - 03
+Sardegna: Sardegna - 01; Sardegna - 02
+Trentino-Alto Adige/Südtirol: Trentino-Alto Adige/Südtirol - 01
+Aosta: Aosta_CP
+
+Piemonte 1 - 01: 01 TORINO - ZONA STATISTICA 16; 02 TORINO - ZONA STATISTICA 38; 03 TORINO - ZONA STATISTICA 48; 04 TORINO - ZONA STATISTICA 61; 06 COLLEGNO
+Piemonte 2 - 01: 07 - CUNEO; 05 - ALESSANDRIA; 06 - ASTI; 08 - ALBA
+Piemonte 1 - 02: 05 - IVREA; 07 - SETTIMO TORINESE; 08 - MONCALIERI; 09 - PINEROLO
+Piemonte 2 - 02: 01 - VERBANIA; 02 - NOVARA; 03 - BIELLA; 04 - VERCELLI
+Lombardia 1 - 01: 04 - SEREGNO; 05 - MONZA; 06 - GORGONZOLA
+Lombardia 1 - 02: 03 - BOLLATE; 07 - CINISELLO BALSAMO; 09 - MILANO - SESTO SAN GIOVANNI; 10 - COLOGNO MONZESE
+Lombardia 1 - 03: 08 - MILANO AREA STATISTICA 117; 11 - MILANO AREA STATISTICA 74; 12 - MILANO AREA STATISTICA 84; 13 - MILANO AREA STATISTICA 105; 14 - MILANO AREA STATISTICA 144
+Lombardia 1 - 04: 01 - ABBIATEGRASSO; 02 - LEGNANO; 15 - ROZZANO
+Lombardia 2 - 01: 02 - VARESE; 03 - GALLARATE; 04 - BUSTO ARSIZIO
+Lombardia 2 - 02: 01 - SONDRIO; 05 - COMO; 06 - CANT+;07 - MERATE; 08 - LECCO
+Lombardia 3 - 01: 01 - BRESCIA; 02 - LUMEZZANE; 03 - DESENZANO DEL GARDA; 04 - PALAZZOLO SULL'OGLIO
+Lombardia 3 - 02: 05 - BERGAMO; 06 - ALBINO; 07 - TREVIGLIO; 08 - ROMANO DI LOMBARDIA
+Lombardia 4 - 01: 01 - VIGEVANO; 02 - PAVIA; 03 - LODI
+Lombardia 4 - 02: 04 - CREMONA; 05 - SUZZARA; 06 - MANTOVA
+Veneto 1 - 01: 01 - VENEZIA; 02 - SAN DONA' DI PIAVE; 03 - CHIOGGIA; 04 - CASTELFRANCO VENETO
+Veneto 1 - 02: 05 - MONTEBELLUNA; 06 - CONEGLIANO; 07 - BELLUNO; 08 - TREVISO
+Veneto 2 - 01: 02 - PADOVA; 03 - VIGONZA; 04 - ABANO TERME
+Veneto 2 - 02: 05 - VICENZA; 06 - BASSANO DEL GRAPPA; 07 - SCHIO
+Veneto 2 - 03: 01 - ROVIGO; 08 - SAN BONIFACIO; 09 - VERONA; 10 - LEGNAGO; 11 - VILLAFRANCA DI VERONA
+Friuli-Venezia Giulia - 01: 01 - TRIESTE; 02 - GORIZIA; 03 - UDINE; 04 - CODROIPO; 05 - PORDENONE
+Liguria - 01: 01 - SANREMO; 02 - SAVONA; 03 - GENOVA - UNITA' URBANISTICA SESTRI
+Liguria - 02: 04 - GENOVA - UNIT+ URBANISTICA SAN FRUTTUOSO; 05 - GENOVA - RAPALLO; 06 - LA SPEZIA
+Emilia-Romagna - 01: 02 - CESENA; 03 - RAVENNA; 15 - RIMINI; 16 - FORL¦
+Emilia-Romagna - 02: 04 - FERRARA; 08 - CENTO; 09 - MODENA; 10 - SASSUOLO
+Emilia-Romagna - 03: 01 - IMOLA; 05 - SAN GIOVANNI IN PERSICETO; 06 - BOLOGNA - ZONA URBANA MAZZINI; 07 - BOLOGNA - CASALECCHIO DI RENO
+Emilia-Romagna - 04: 11 - SCANDIANO; 12 - PARMA; 13 - FIDENZA; 14 - PIACENZA; 17 - REGGIO NELL'EMILIA
+Toscana - 01: 05 - PRATO; 06 - PISTOIA; 08 - MASSA; 09 - LUCCA
+Toscana - 02: 10 - PISA; 11 - POGGIBONSI; 13 - LIVORNO
+Toscana - 03: 01 - FIRENZE - QUARTIERE VECCHIO NOVOLI-PERETOLA; 02 - FIRENZE - SCANDICCI; 03 - SESTO FIORENTINO; 04 - EMPOLI
+Toscana - 04: 07 - AREZZO; 12 - SIENA; 14 - GROSSETO
+Umbria - 01: 01 - PERUGIA; 02 - FOLIGNO; 03 - TERNI
+Marche - 01: 01 - ASCOLI PICENO; 02 - CIVITANOVA MARCHE; 03 - MACERATA
+Marche - 02: 04 - ANCONA; 05 - FANO; 06 - PESARO
+Lazio 1 - 01: 01 - ROMA - QUARTIERE TRIONFALE; 02 - ROMA - QUARTIERE MONTESACRO; 03 - ROMA - ZONA CASTEL GIUBILEO; 04 - ROMA - QUARTIERE COLLATINO; 05 - ROMA - ZONA TORRE ANGELA
+Lazio 1 - 02: 06 - ROMA - QUARTIERE TUSCOLANO; 08 - ROMA - QUARTIERE ARDEATINO; 09 - ROMA - FIUMICINO; 10 - ROMA - QUARTIERE GIANICOLENSE; 11 - ROMA - QUARTIERE PRIMAVALLE
+Lazio 1 - 03: 07 - ROMA - POMEZIA; 12 - GUIDONIA MONTECELIO; 13 - VELLETRI; 14 - MARINO
+Lazio 2 - 01: 01 - VITERBO; 02 - CIVITAVECCHIA; 03 - RIETI
+Lazio 2 - 02: 04 - FROSINONE; 05 - CASSINO; 06 - TERRACINA; 07 - LATINA
+Abruzzo - 01: 03 - PESCARA; 04 - CHIETI; 05 - VASTO
+Abruzzo - 02: 01 - L'AQUILA; 02 - TERAMO
+Molise - 01: 01 - ISERNIA; 02 - CAMPOBASSO
+Campania 1 - 01: 01 - GIUGLIANO IN CAMPANIA; 03 - ACERRA; 04 - CASORIA; 09 - POZZUOLI
+Campania 1 - 02: 05 - NAPOLI - CIRCOSCRIZIONE 7 SAN CARLO ALL'ARENA; 06 - NAPOLI - CIRCOSCRIZIONE 28 PONTICELLI; 07 - NAPOLI - CIRCOSCRIZIONE 9 SAN LORENZO; 08 - NAPOLI - CIRCOSCRIZIONE 19 FUORIGROTTA
+Campania 1 - 03: 02 - NOLA; 10 - PORTICI; 11 - TORRE DEL GRECO; 12 - CASTELLAMMARE DI STABIA
+Campania 2 - 01: 01 - BENEVENTO; 02 - ARIANO IRPINO; 06 - AVELLINO
+Campania 2 - 02: 03 - CASERTA; 04 - SANTA MARIA CAPUA VETERE; 05 - AVERSA
+Campania 2 - 03: 07 - SCAFATI; 08 - SALERNO; 09 - BATTIPAGLIA; 10 - AGROPOLI
+Puglia - 01: 01 - BARI - CIRCOSCRIZIONE 8 LIBERT+-MARCONI-SAN GIROLAMO-FESCA; 02 - BARI - BITONTO; 03 - MOLFETTA; 05 - ALTAMURA
+Puglia - 02: 07 - LECCE; 08 - NARDÊ;09 - CASARANO; 12 - FRANCAVILLA FONTANA
+Puglia - 03: 06 - MONOPOLI; 10 - TARANTO; 11 - MARTINA FRANCA; 13 - BRINDISI
+Puglia - 04: 04 - ANDRIA; 14 - SAN SEVERO; 15 - CERIGNOLA; 16 - FOGGIA
+Basilicata - 01: 01 - POTENZA; 02 - MATERA
+Calabria - 01: 01 - CASTROVILLARI; 02 - CORIGLIANO CALABRO; 03 - COSENZA; 05 - CROTONE
+Calabria - 02: 04 - CATANZARO; 06 - VIBO VALENTIA; 07 - GIOIA TAURO; 08 - REGGIO DI CALABRIA
+Sicilia 1 - 01: 01 - PALERMO - RESUTTANA-SAN LORENZO; 02 - PALERMO - LIBERT+;03 - PALERMO - SETTECANNOLI
+Sicilia 1 - 02: 05 - BAGHERIA; 06 - MONREALE; 08 - MARSALA
+Sicilia 1 - 03: 04 - GELA; 07 - AGRIGENTO; 09 - MAZARA DEL VALLO
+Sicilia 2 - 01: 01 - MESSINA; 02 - BARCELLONA POZZO DI GOTTO; 03 - ENNA
+Sicilia 2 - 02: 04 - ACIREALE; 05 - CATANIA; 06 - MISTERBIANCO
+Sicilia 2 - 03: 07 - PATERNÊ;08 - RAGUSA; 09 - AVOLA; 10 - SIRACUSA
+Sardegna - 01: 01 - CAGLIARI; 03 - CARBONIA; 06 - ORISTANO
+Sardegna - 02: 02 - NUORO; 04 - SASSARI; 05 - OLBIA
+Trentino-Alto Adige/Südtirol - 01: 01 - BOLZANO/BOZEN; 02 - MERANO/MERAN; 03 - BRESSANONE/BRIXEN; 04 - TRENTO; 05 - ROVERETO; 06 - PERGINE VALSUGANA
+Aosta_CP: Aosta_CU
+

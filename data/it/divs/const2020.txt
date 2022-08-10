@@ -1,0 +1,95 @@
+Italia: Nord-Ovest; Sud; Isole; Nord-Est; Centro
+
+Nord-Ovest: Piemonte; Lombardia; Liguria; Aosta
+Sud: Abruzzo; Molise; Campania; Puglia; Basilicata; Calabria
+Isole: Sicilia; Sardegna
+Nord-Est: Trentino-Alto Adige/Südtirol; Veneto; Friuli-Venezia Giulia; Emilia-Romagna
+Centro: Toscana; Umbria; Marche; Lazio
+
+Piemonte: Piemonte 1; Piemonte 2
+Lombardia: Lombardia 1; Lombardia 2; Lombardia 3; Lombardia 4
+Veneto: Veneto 1; Veneto 2
+Lazio: Lazio 1; Lazio 2
+Campania: Campania 1; Campania 2
+Sicilia: Sicilia 1; Sicilia 2
+
+Piemonte 1: Piemonte 1 - P01; Piemonte 1 - P02
+Piemonte 2: Piemonte 2 - P01; Piemonte 2 - P02
+Lombardia 1: Lombardia 1 - P01; Lombardia 1 - P02
+Lombardia 2: Lombardia 2 - P01; Lombardia 2 - P02
+Lombardia 3: Lombardia 3 - P01; Lombardia 3 - P02
+Lombardia 4: Lombardia 4 - P01
+Veneto 1: Veneto 1 - P01
+Veneto 2: Veneto 2 - P01; Veneto 2 - P02; Veneto 2 - P03
+Friuli-Venezia Guilia: Friuli-Venezia Guilia - P01
+Liguria: Liguria - P01
+Emilia-Romagna: Emilia-Romagna - P01; Emilia-Romagna - P02; Emilia-Romagna - P03
+Toscana: Toscana - P01; Toscana - P02; Toscana - P03
+Umbria: Umbria - P01
+Marche: Marche - P01
+Lazio 1: Lazio 1 - P01; Lazio 1 - P02; Lazio 1 - P03
+Lazio 2: Lazio 2 - P01; Lazio 2 - P02
+Abruzzo: Abruzzo - P01
+Molise: Molise - P01
+Campania 1: Campania 1 - P01; Campania 1 - P02
+Campania 2: Campania 2 - P01; Campania 2 - P02
+Puglia: Puglia - P01; Puglia - P02; Puglia - P03
+Basilicata: Basilicata - P01
+Calabria: Calabria - P01
+Sicilia 1: Sicilia 1 - P01; Sicilia 1 - P02
+Sicilia 2: Sicilia 2 - P01; Sicilia 2 - P02; Sicilia 2 - P03
+Sardegna: Sardegna - P01
+Trentino-Alto Adige/Südtirol: Trentino-Alto Adige/Südtirol - P01
+Aosta: Aosta_CP
+
+Piemonte 1 - P01: U01 Torino Circoscrizione 2 - Santa Rita-Mirafiori Nord-Mirafiori Sud; U02 Torino Circoscrizione 3 - San Paolo-Cenisia-Pozzo Strada-CitTurin-Borgata Lesna; U03 Collegno
+Piemonte 1 - P02: U04 Chieri; U05 Moncalieri
+Piemonte 2 - P01: U02 Novara; U03 Vercelli
+Piemonte 2 - P02: U01 Alessandria; U04 Asti; U05 Cuneo
+Lombardia 1 - P01: U04 Rozzano; U05 Legnano; U07 Milano NIL 20 - Loreto; U08 Milano NIL 52 - Bande Nere; U09 Venezia
+Lombardia 1 - P02: U01 Monza; U02 Seragno; U03 Cologno Monzese; U06 Sesto San Giovanni
+Lombardia 2 - P01: U01 Varese; U02 Busto Arsizio
+Lombardia 2 - P02: U03 Como; U04 Sondrio; U05 Lecco
+Lombardia 3 - P01: U01 Treviglio; U02 Bergamo
+Lombardia 3 - P02: U03 Lumezzane; U04 Brescia; U05 Desenzano del Garda
+Lombardia 4 - P01: U01 Pavia; U02 Lodi; U05 Cremona; U04 Mantova
+Veneto 1 - P01: U01 Venezia; U02 Chioggia; U03 Treviso; U04 Castelfranco Veneto; U05 Belluno
+Veneto 2 - P01: U01 Rovigo; U02 Selvazzano Dentro; U03 Padova
+Veneto 2 - P02: U04 Bassano del Grappa; U05 Vicenza
+Veneto 2 - P03: U06 Verona; U07 Villafranca di Verona
+Friuli-Venezia Guilia - P01: U01 Pordenone; U02 Udine; U03 Trieste
+Liguria - P01: U01 Savona; U02 Genova Municipio VII - Ponente; U03 Genova Municipio I - Centro Est; U04 La Spezia
+Emilia-Romagna - P01: U01 Piacenza; U02 Parma; U03 Reggio nell'Emilia
+Emilia-Romagna - P02: U04 Modena; U05 Imola; U06 Bologna; U07 Carpi
+Emilia-Romagna - P03: U08 Ravenna; U09 Ferrara; U10 Forlì; U11 Rimini
+Toscana - P01: U02 Massa; U03 Lucca; U06 Prato
+Toscana - P02: U01 Grosseto; U05 Livorno; U09 Arezzo
+Toscana - P03: U04 Pisa; U07 Firenze; U08 Scandi
+Umbria - P01: U01 Terni; U02 Perigua
+Marche - P01: U01 Ascoli Piceno; U02 Macerata; U03 Ancona; U04 Pesaro
+Lazio 1 - P01: U01 Roma Municipio I; U02 Roma Municipio III; U03 Roma Municipio V
+Lazio 1 - P02: U04 Roma Municipio VII; U08 Velletri; U09 Guidonia Montecelio
+Lazio 1 - P03: U05 Roma Municipio X; U06 Roma Municipio XI; U07 Roma Municipio XIV
+Lazio 2 - P01: U01 Viterbo; U02 Rieti
+Lazio 2 - P02: U03 Latina; U04 Frosinone; U05 Terracina
+Abruzzo - P01: U01 Chieti; U02 Pescara; U03 L'Aquila
+Molise - P01: U01 Campobasso
+Campania 1 - P01: U01 Guigliano in Campania; Napooli Quartiere 19 - Fuorigrotta; U03 all'Arena
+Campania 1 - P02: U04 Casoria; U05 Acerra; U06 Somma Vesuviana; U07 Torre del Greco
+Campania 2 - P01: U01 Aversa; U02 Caserta; U03 Benevento
+Campania 2 - P02: U04 Avellino; U05 Scafati; U06 Salerno; U07 Eboli
+Puglia - P01: U01 Foggia; U02 Cerignola; U03 Andria
+Puglia - P02: U04 Molfetta; U05 Bari
+Puglia - P03: U06 Altamura; U08 Taranto
+Puglia - P04: U07 Brindisi; U09 Lecce; U10 Galatina
+Basilicata - P01: U01 Potenza
+Calabria - P01: U01 Corigliano-Rossano; U02 Cosenza; U03 Catanzaro; U04 Vibo Valentia; U05 Reggio di Calabria
+Sicilia 1 - P01: U01 Settecannoli; U02 Palermo Quartiere 20 - Resuttana - S.Lorenzo; U03 Bagheria
+Sicilia 1 - P02: U04 Gela; U05 Agrigento; U06 Marsala
+Sicilia 2 - P01: U05 Barcellona Pozzo de Gotto; U06 Messina
+Sicilia 2 - P02: U02 Catania; U03 Acireale
+Sicilia 2 - P03: U01 Regusa; U04 Siracusa
+Sardegna - P01: U01 Cagliari; U02 Carbonia; U03 Nuoro; U04 Sassari
+Trentino-Alto Adige/Südtirol - P01: U01 Trento; U02 Rovereto; U03 Bolzano/Bozen; U04 Bressanone/Brixen
+Aosta_CP: Aosta_CU
+
