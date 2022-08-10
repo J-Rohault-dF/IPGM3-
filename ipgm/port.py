@@ -1,5 +1,4 @@
 import json
-from pickletools import unicodestringnl
 from ipgm.utils import *
 from ipgm.Result import *
 from ipgm.Div import *
@@ -20,17 +19,20 @@ def importDataTable(src: str, allDivs: AllDivs) -> Div:
 		listDivs.append(Div([], [], l[0], Result.fromLists(tab[0][1:], l[1:])))
 	
 	#Run through the divs to add the dependencies
-	for k,v in allDivs.overLevel.items():
+	for overDiv,subDivs in allDivs.overLevel.items():
+
+		if overDiv in subDivs:
+			raise Exception('{overDivs} present in its own subdivs: {subDivs}'.format(overDiv=overDiv, subDivs=subDivs))
 		
-		over = findLambda(listDivs, k, lambda x: x.name)
+		over = findLambda(listDivs, overDiv, lambda x: x.name)
 		if over == None:
-			over = Div([], [], k, Result())
+			over = Div([], [], overDiv, Result())
 			listDivs.append(over)
 
-		for vv in v:
-			under = findLambda(listDivs, vv, lambda x: x.name)
+		for subDiv in subDivs:
+			under = findLambda(listDivs, subDiv, lambda x: x.name)
 			if under == None:
-				under = Div([], [], vv, Result())
+				under = Div([], [], subDiv, Result())
 				listDivs.append(under)
 			over.insert(under)
 	
