@@ -59,6 +59,16 @@ def getWinningColorP(d: dict[str, float], candidaciesData: Candidacies) -> str:
 		print('missing color for {0} ({1}%)'.format(k1, d[k1]))
 		return '000000'
 
+def getWinningColorShadeL(color: Color, score: float) -> Color:
+	"""Returns the shade of a color based on its score.
+	
+	The score has to be between 0 and 1, and can be multiplied beforehand.
+	"""
+
+	if score == 0: return Color('#ffffff')
+	color.set_luminance(1-score)
+	return color
+
 
 
 
@@ -206,4 +216,42 @@ def exportSeatsMap(div: Div, seatsParties: dict[str, dict[str, int]], divsData: 
 
 	xmlR.getroot().find('{http://www.w3.org/2000/svg}g').append(group)
 	
+	xmlR.write(mapTarget)
+
+
+
+
+def mapColorerExporterRaw(dat: list[str, float], candidaciesData: Candidacies, mapSrc: str, mapTarget: str):
+	"""
+
+	"""
+
+	mapTarget = 'exports/'+mapTarget
+	xmlR = loadMap(mapSrc)
+
+	colorsUsed = {}
+
+	for i in xmlR.getroot().find('{http://www.w3.org/2000/svg}g'):
+		#If id is in the deps list, replace the fill
+		if i.get('id') in [x[0] for x in dat]:
+
+			row = [x for x in dat if x[0] == i.get('id')][0] #Finds the row with the right div
+			
+			winningParty, winningScore = row[1], row[2]
+			
+			try: #Gets the winning color, if not present print something and take a fallback color
+				winningColor = candidaciesData.getShadeColor(winningParty)
+			except:
+				winningColor = Color('#ffffff')
+				print('missing color for {0}'.format(winningParty))
+
+			winningShade = getWinningColorShade(winningColor, (winningScore)).hex_l[1:]
+
+			#Log color usage
+			if winningParty not in colorsUsed: colorsUsed[winningParty] = [None] * 20
+			colorsUsed[winningParty][math.floor(100*winningScore/5)] = winningShade
+
+			i.set('style', i.get('style').replace('000000', winningShade))
+	print(colorsUsed)
+
 	xmlR.write(mapTarget)
