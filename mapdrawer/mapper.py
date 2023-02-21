@@ -229,7 +229,7 @@ def mapColorerExporterRaw(dat: list[str, float], candidaciesData: Candidacies, m
 	mapTarget = 'exports/'+mapTarget
 	xmlR = loadMap(mapSrc)
 
-	colorsUsed = {}
+	#colorsUsed = {}
 
 	for i in xmlR.getroot().find('{http://www.w3.org/2000/svg}g'):
 		#If id is in the deps list, replace the fill
@@ -245,13 +245,43 @@ def mapColorerExporterRaw(dat: list[str, float], candidaciesData: Candidacies, m
 				winningColor = Color('#ffffff')
 				print('missing color for {0}'.format(winningParty))
 
-			winningShade = getWinningColorShade(winningColor, (winningScore)).hex_l[1:]
+			winningShade = getWinningColorShadeL(winningColor, (winningScore)).hex_l[1:]
 
 			#Log color usage
-			if winningParty not in colorsUsed: colorsUsed[winningParty] = [None] * 20
-			colorsUsed[winningParty][math.floor(100*winningScore/5)] = winningShade
+			#if winningParty not in colorsUsed: colorsUsed[winningParty] = [None] * 20
+			#colorsUsed[winningParty][math.floor(100*winningScore/5)] = winningShade
 
 			i.set('style', i.get('style').replace('000000', winningShade))
-	print(colorsUsed)
+	#print(colorsUsed)
+
+	xmlR.write(mapTarget)
+
+
+
+def mapColorerExporterStraight(dat: list[str, float], candidaciesData: Candidacies, mapSrc: str, mapTarget: str):
+	"""
+
+	"""
+
+	mapTarget = 'exports/'+mapTarget
+	xmlR = loadMap(mapSrc)
+
+	#colorsUsed = {}
+
+	for i in xmlR.getroot().find('{http://www.w3.org/2000/svg}g'):
+		#If id is in the deps list, replace the fill
+		if i.get('id') in [x[0] for x in dat]:
+
+			row = [x for x in dat if x[0] == i.get('id')][0] #Finds the row with the right div
+			
+			winningParty = row[1]
+			
+			try: #Gets the winning color, if not present print something and take a fallback color
+				winningColor = candidaciesData.getShadeColor(winningParty)
+			except:
+				winningColor = Color('#ffffff')
+				print('missing color for {0}'.format(winningParty))
+
+			i.set('style', i.get('style').replace('000000', winningColor.hex_l[1:]))
 
 	xmlR.write(mapTarget)

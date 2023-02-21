@@ -1,0 +1,45 @@
+Zürich, Kreis 1 und 2
+Zürich, Kreis 3 und 9: Zürich, Kreis 3; Zürich, Kreis 9
+Zürich, Kreis 4 und 5
+Zürich, Kreis 6 und 10: Zürich, Kreis 6; Zürich, Kreis 10
+Zürich, Kreis 7 und 8
+Zürich, Kreis 11 und 12: Zürich, Kreis 11; Zürich, Kreis 12
+
+Stadt Winterthur: Winterthur Altstadt; Winterthur Wülflingen; Winterthur Mattenbach; Winterthur Veltheim; W'thur Oberwinterthur; Winterthur Seen; Winterthur Töss
+Winterthur-Land: Altikon; Bertschikon; Brütten; Dägerlen; Dättlikon; Dinhard; Elgg; Ellikon a.d.Thur; Elsau; Hagenbuch; Hettlingen; Hofstetten ZH; Neftenbach; Pfungen; Rickenbach; Schlatt; Seuzach; Turbenthal; Wiesendangen; Zell
+
+Bezirk Dietikon: Aesch b. Birmensdorf; Birmensdorf; Dietikon; Geroldswil; Oberengstringen; Oetwil an der Limmat; Schlieren; Uitikon; Unterengstringen; Urdorf; Weiningen
+Bezirk Affoltern: Aeugst am Albis; Affoltern am Albis; Bonstetten; Hausen am Albis; Hedingen; Kappel am Albis; Knonau; Maschwanden; Mettmenstetten; Obfelden; Ottenbach; Rifferswil; Stallikon; Wettswil am Albis
+Bezirk Horgen: Adliswil; Hirzel; Horgen; Hütten; Kilchberg; Langnau am Albis; Oberrieden; Richterswil; Rüschlikon; Schönenberg; Thalwil; Wädenswil
+Bezirk Meilen: Erlenbach; Herrliberg; Hombrechtikon; Küsnacht; Männedorf; Meilen; Oetwil am See; Stäfa; Uetikon am See; Zumikon; Zollikon
+Bezirk Hinwil: Bäretswil; Bubikon; Dürnten; Fischenthal; Gossau; Grüningen; Hinwil; Rüti; Seegräben; Wald; Wetzikon
+Bezirk Uster: Dübendorf; Egg; Fällanden; Greifensee; Maur; Mönchaltorf; Schwerzenbach; Uster; Volketswil; Wangen-Brüttisellen
+Bezirk Pfäffikon: Bauma; Fehraltorf; Hittnau; Illnau-Effretikon; Kyburg; Lindau; Pfäffikon; Russikon; Sternenberg; Weisslingen; Wila; Wildberg
+Bezirk Winterthur: Stadt Winterthur; Winterthur-Land
+Bezirk Andelfingen: Adlikon; Benken; Berg am Irchel; Buch am Irchel; Dachsen; Dorf; Feuerthalen; Flaach; Flurlingen; Andelfingen; Henggart; Humlikon; Kleinandelfingen; Laufen-Uhwiesen; Marthalen; Oberstammheim; Ossingen; Rheinau; Thalheim an der Thur; Trüllikon; Truttikon; Unterstammheim; Volken; Waltalingen
+Bezirk Bülach: Bachenbülach; Bassersdorf; Bülach; Dietlikon; Eglisau; Embrach; Freienstein-Teufen; Glattfelden; Hochfelden; Höri; Hüntwangen; Kloten; Lufingen; Nürensdorf; Oberembrach; Opfikon; Rafz; Rorbas; Wallisellen; Wasterkingen; Wil; Winkel
+Bezirk Dielsdorf: Bachs; Boppelsen; Buchs; Dällikon; Dänikon; Dielsdorf; Hüttikon; Neerach; Niederglatt; Niederhasli; Niederweningen; Oberglatt; Oberweningen; Otelfingen; Regensberg; Regensdorf; Rümlang; Schleinikon; Schöfflisdorf; Stadel; Steinmaur; Weiach
+
+Stadt Zürich: Zürich, Kreis 1 und 2; Zürich, Kreis 3 und 9; Zürich, Kreis 4 und 5; Zürich, Kreis 6 und 10; Zürich, Kreis 7 und 8; Zürich, Kreis 11 und 12
+
+Wahlkreis I: Zürich, Kreis 1 und 2
+Wahlkreis II: Zürich, Kreis 3 und 9
+Wahlkreis III: Zürich, Kreis 4 und 5
+Wahlkreis IV: Zürich, Kreis 6 und 10
+Wahlkreis V: Zürich, Kreis 7 und 8
+Wahlkreis VI: Zürich, Kreis 11 und 12
+Wahlkreis VII: Bezirk Dietikon
+Wahlkreis VIII: Bezirk Affoltern
+Wahlkreis IX: Bezirk Horgen
+Wahlkreis X: Bezirk Meilen
+Wahlkreis XI: Bezirk Hinwil
+Wahlkreis XII: Bezirk Uster
+Wahlkreis XIII: Bezirk Pfäffikon
+Wahlkreis XIV: Stadt Winterthur
+Wahlkreis XV: Winterthur-Land
+Wahlkreis XVI: Bezirk Andelfingen
+Wahlkreis XVII: Bezirk Bülach
+Wahlkreis XVIII: Bezirk Dielsdorf
+
+
+Kanton Zürich: Bezirk Dietikon; Bezirk Affoltern; Bezirk Horgen; Bezirk Meilen; Bezirk Hinwil; Bezirk Uster; Bezirk Pfäffikon; Bezirk Winterthur; Bezirk Andelfingen; Bezirk Bülach; Bezirk Dielsdorf; Wahlkreis I; Wahlkreis II; Wahlkreis III; Wahlkreis IV; Wahlkreis V; Wahlkreis VI; Wahlkreis VII; Wahlkreis VIII; Wahlkreis IX; Wahlkreis X; Wahlkreis XI; Wahlkreis XII; Wahlkreis XIII; Wahlkreis XIV; Wahlkreis XV; Wahlkreis XVI; Wahlkreis XVII; Wahlkreis XVIII
