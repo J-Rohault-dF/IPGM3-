@@ -35,7 +35,10 @@ def getWinningColorShade(color: Color, score: float) -> Color:
 	"""
 
 	if score == 0: return Color('#ffffff')
-	return getShadeFromIndex(color, (math.floor(score*20)-2) )
+
+	score = (math.floor(score*100/5)*5 + 2.5) / 100 # Group by 5%
+	
+	return getShadeFromBrightness(color, (1-score))
 
 
 

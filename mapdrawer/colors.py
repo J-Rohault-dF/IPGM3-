@@ -35,3 +35,8 @@ def getPartyColor(cand: str, partiesColors: dict) -> str:
 
 def hasPartyColor(cand: str, partiesColors: dict) -> bool:
 	return cand in partiesColors.keys()
+
+def getShadeFromBrightness(color: Color, brightness: float):
+	color = copy.deepcopy(color)
+	color.set_luminance(brightness)
+	return color
