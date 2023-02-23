@@ -1,45 +1,15 @@
-Kieskring Groningen: Eemsdelta;Groningen;Het Hogeland;Midden-Groningen;Oldambt;Pekela;Stadskanaal;Veendam;Westerkwartier;Westerwolde
-Kieskring Leeuwarden: Achtkarspelen;Ameland;Dantumadiel;De Fryske Marren;Harlingen;Heerenveen;Leeuwarden;Noardeast-Fryslân;Ooststellingwerf;Opsterland;Schiermonnikoog;Smallingerland;Súdwest-Fryslân;Terschelling;Tytsjerksteradiel;Vlieland;Waadhoeke;Weststellingwerf
-Kieskring Assen: Aa en Hunze;Assen;Borger-Odoorn;Coevorden;De Wolden;Emmen;Hoogeveen;Meppel;Midden-Drenthe;Noordenveld;Tynaarlo;Westerveld
-Kieskring Zwolle: Almelo;Borne;Dalfsen;Deventer;Dinkelland;Enschede;Haaksbergen;Hardenberg;Hellendoorn;Hengelo;Hof van Twente;Kampen;Losser;Oldenzaal;Olst-Wijhe;Ommen;Raalte;Rijssen-Holten;Staphorst;Steenwijkerland;Tubbergen;Twenterand;Wierden;Zwartewaterland;Zwolle
-Kieskring Lelystad: Almere;Dronten;Lelystad;Noordoostpolder;Urk;Zeewolde
-Kieskring Arnhem: Aalten;Apeldoorn;Arnhem;Barneveld;Berkelland;Bronckhorst;Brummen;Doesburg;Doetinchem;Duiven;Ede;Elburg;Epe;Ermelo;Harderwijk;Hattem;Heerde;Lingewaard;Lochem;Montferland;Nijkerk;Nunspeet;Oldebroek;Oost Gelre;Oude IJsselstreek;Overbetuwe;Putten;Renkum;Rheden;Rozendaal;Scherpenzeel;Voorst;Wageningen;Westervoort;Winterswijk;Zevenaar;Zutphen
-Kieskring Nijmegen: Berg en Dal;Beuningen;Buren;Culemborg;Druten;Heumen;Maasdriel;Neder-Betuwe;Nijmegen;Tiel;West Betuwe;West Maas en Waal;Wijchen;Zaltbommel
-Kieskring Utrecht: Amersfoort;Baarn;Bunnik;Bunschoten;De Bilt;De Ronde Venen;Eemnes;Houten;IJsselstein;Leusden;Lopik;Montfoort;Nieuwegein;Oudewater;Renswoude;Rhenen;Soest;Stichtse Vecht;Utrecht;Utrechtse Heuvelrug;Veenendaal;Vijfheerenlanden;Wijk bij Duurstede;Woerden;Woudenberg;Zeist
-Kieskring Amsterdam: Amsterdam
-Kieskring Haarlem: Aalsmeer;Amstelveen;Beverwijk;Blaricum;Bloemendaal;Diemen;Gooise Meren;Haarlem;Haarlemmermeer;Heemskerk;Heemstede;Hilversum;Huizen;Laren;Ouder-Amstel;Uithoorn;Velsen;Weesp;Wijdemeren;Zandvoort
-Kieskring Den Helder: Alkmaar;Beemster;Bergen (NH);Castricum;Den Helder;Drechterland;Edam-Volendam;Enkhuizen;Heerhugowaard;Heiloo;Hollands Kroon;Hoorn;Koggenland;Landsmeer;Langedijk;Medemblik;Oostzaan;Opmeer;Purmerend;Schagen;Stede Broec;Texel;Uitgeest;Waterland;Wormerland;Zaanstad
-Kieskring Den Haag: 's-Gravenhage
-Kieskring Rotterdam: Rotterdam
-Kieskring Dordrecht: Alblasserdam;Albrandswaard;Barendrecht;Brielle;Delft;Dordrecht;Goeree-Overflakkee;Gorinchem;Hardinxveld-Giessendam;Hellevoetsluis;Hendrik-Ido-Ambacht;Hoeksche Waard;Maassluis;Midden-Delfland;Molenlanden;Nissewaard;Papendrecht;Ridderkerk;Rijswijk;Schiedam;Sliedrecht;Vlaardingen;Westland;Westvoorne;Zwijndrecht
-Kieskring Leiden: Alphen aan den Rijn;Bodegraven-Reeuwijk;Capelle aan den IJssel;Gouda;Hillegom;Kaag en Braassem;Katwijk;Krimpen aan den IJssel;Krimpenerwaard;Lansingerland;Leiden;Leiderdorp;Leidschendam-Voorburg;Lisse;Nieuwkoop;Noordwijk;Oegstgeest;Pijnacker-Nootdorp;Teylingen;Voorschoten;Waddinxveen;Wassenaar;Zoetermeer;Zoeterwoude;Zuidplas
-Kieskring Tilburg: Alphen-Chaam;Altena;Baarle-Nassau;Bergen op Zoom;Breda;Dongen;Drimmelen;Etten-Leur;Geertruidenberg;Gilze en Rijen;Goirle;Halderberge;Hilvarenbeek;Loon op Zand;Moerdijk;Oisterwijk;Oosterhout;Roosendaal;Rucphen;Steenbergen;Tilburg;Waalwijk;Woensdrecht;Zundert
-Kieskring 's-Hertogenbosch: 's-Hertogenbosch;Asten;Bergeijk;Bernheze;Best;Bladel;Boekel;Boxmeer;Boxtel;Cranendonck;Cuijk;Deurne;Eersel;Eindhoven;Geldrop-Mierlo;Gemert-Bakel;Grave;Heeze-Leende;Helmond;Heusden;Laarbeek;Landerd;Meierijstad;Mill en Sint Hubert;Nuenen, Gerwen en Nederwetten;Oirschot;Oss;Reusel-De Mierden;Sint Anthonis;Sint-Michielsgestel;Someren;Son en Breugel;Uden;Valkenswaard;Veldhoven;Vught;Waalre
-Kieskring Maastricht: Beek;Beekdaelen;Beesel;Bergen (LI);Brunssum;Echt-Susteren;Eijsden-Margraten;Gennep;Gulpen-Wittem;Heerlen;Horst aan de Maas;Kerkrade;Landgraaf;Leudal;Maasgouw;Maastricht;Meerssen;Mook en Middelaar;Nederweert;Peel en Maas;Roerdalen;Roermond;Simpelveld;Sittard-Geleen;Stein;Vaals;Valkenburg aan de Geul;Venlo;Venray;Voerendaal;Weert
-Kieskring Middelburg: Borsele;Goes;Hulst;Kapelle;Middelburg;Noord-Beveland;Reimerswaal;Schouwen-Duiveland;Sluis;Terneuzen;Tholen;Veere;Vlissingen
-Kieskring Bonaire: Bonaire;Saba;Sint Eustatius;Manual adjustments
-
-Provincie Groningen: Kieskring Groningen
-Provincie Frieslân: Kieskring Leeuwarden
-Provincie Drenthe: Kieskring Assen
-Provincie Overijssel: Kieskring Zwolle
-Provincie Flevoland: Kieskring Lelystad
-Provincie Gelderland: Kieskring Nijmegen; Kieskring Arnhem
-Provincie Utrecht: Kieskring Utrecht
-Provincie Noord-Holland: Kieskring Amsterdam; Kieskring Haarlem; Kieskring Den Helder
-Provincie Zuid-Holland: Kieskring Den Haag; Kieskring Rotterdam; Kieskring Dordrecht; Kieskring Leiden
-Provincie Zeeland: Kieskring Middelburg
-Provincie Noord-Brabant: Kieskring Tilburg;Kieskring 's-Hertogenbosch
-Provincie Limburg: Kieskring Maastricht
-Caribisch Nederland: Kieskring Bonaire
+Provincie Groningen: Groningen-G0014;Westerkwartier-G1969;Het Hogeland-G1966;Eemsdelta-G1979;Midden-Groningen-G1952;Oldambt-G1895;Veendam-G0047;Pekela-G0765;Stadskanaal-G0037;Westerwolde-G1950;Appingedam-G0003;Delfzijl-G0010;Loppersum-G0024
+Provincie Frieslân: Achtkarspelen-G0059;Ameland-G0060;Schiermonnikoog-G0088;Terschelling-G0093;Vlieland-G0096;Noardeast-Fryslân-G1970;Dantumadiel-G1891;Tytsjerksteradiel-G0737;Leeuwarden-G0080;Waadhoeke-G1949;Harlingen-G0072;Smallingerland-G0090;Súdwest-Fryslân-G1900;De Fryske Marren-G1940;Heerenveen-G0074;Opsterland-G0086;Ooststellingwerf-G0085;Weststellingwerf-G0098
+Provincie Drenthe: Noordenveld-G1699;Tynaarlo-G1730;Assen-G0106;Aa en Hunze-G1680;Borger-Odoorn-G1681;Emmen-G0114;Midden-Drenthe-G1731;Coevorden-G0109;Westerveld-G1701;Hoogeveen-G0118;De Wolden-G1690;Meppel-G0119
+Provincie Overijssel: Steenwijkerland-G1708;Zwartewaterland-G1896;Kampen-G0166;Staphorst-G0180;Zwolle-G0193;Dalfsen-G0148;Ommen-G0175;Hardenberg-G0160;Olst-Wijhe-G1773;Raalte-G0177;Deventer-G0150;Hellendoorn-G0163;Rijssen-Holten-G1742;Wierden-G0189;Twenterand-G1700;Almelo-G0141;Hof van Twente-G1735;Tubbergen-G0183;Dinkelland-G1774;Borne-G0147;Hengelo-G0164;Oldenzaal-G0173;Losser-G0168;Enschede-G0153;Haaksbergen-G0158
+Provincie Flevoland: Almere-G0034;Dronten-G0303;Zeewolde-G0050;Lelystad-G0995;Urk-G0184;Noordoostpolder-G0171
+Provincie Gelderland: Oldebroek-G0269;Hattem-G0244;Heerde-G0246;Elburg-G0230;Nunspeet-G0302;Harderwijk-G0243;Ermelo-G0233;Putten-G0273;Nijkerk-G0267;Epe-G0232;Barneveld-G0203;Scherpenzeel-G0279;Ede-G0228;Apeldoorn-G0200;Voorst-G0285;Lochem-G0262;Zutphen-G0301;Brummen-G0213;Bronckhorst-G1876;Berkelland-G1859;Oost Gelre-G1586;Winterswijk-G0294;Aalten-G0197;Oude IJsselstreek-G1509;Doetinchem-G0222;Montferland-G1955;Zevenaar-G0299;Doesburg-G0221;Rheden-G0275;Rozendaal-G0277;Arnhem-G0202;Westervoort-G0293;Duiven-G0226;Renkum-G0274;Wageningen-G0289;Lingewaard-G1705;Berg en Dal-G1945;Nijmegen-G0268;Heumen-G0252;Wijchen-G0296;Beuningen-G0209;Overbetuwe-G1734;Neder-Betuwe-G1740;Druten-G0225;West Maas en Waal-G0668;Tiel-G0281;Buren-G0214;West Betuwe-G1960;Culemborg-G0216;Maasdriel-G0263;Zaltbommel-G0297
+Provincie Utrecht: Bunschoten-G0313;Eemnes-G0317;De Bilt-G0310;Zeist-G0355;Soest-G0342;Amersfoort-G0307;Leusden-G0327;Woudenberg-G0351;Renswoude-G0339;Veenendaal-G0345;Rhenen-G0340;Utrechtse Heuvelrug-G1581;Wijk bij Duurstede-G0352;Bunnik-G0312;Houten-G0321;Utrecht-G0344;Stichtse Vecht-G1904;De Ronde Venen-G0736;Woerden-G0632;Montfoort-G0335;Oudewater-G0589;Lopik-G0331;IJsselstein-G0353;Nieuwegein-G0356;Vijfheerenlanden-G1961;Baarn-G0308
+Provincie Noord-Holland: Hilversum-G0402;Wijdemeren-G1696;Laren-G0417;Blaricum-G0376;Huizen-G0406;Gooise Meren-G1942;Weesp-G0457;Diemen-G0384;Ouder-Amstel-G0437;Amstelveen-G0362;Uithoorn-G0451;Aalsmeer-G0358;Amsterdam-G0363;Waterland-G0852;Landsmeer-G0415;Oostzaan-G0431;Purmerend-G0439;Edam-Volendam-G0385;Koggenland-G1598;Hoorn-G0405;Drechterland-G0498;Stede Broec-G0532;Enkhuizen-G0388;Medemblik-G0420;Hollands Kroon-G1911;Texel-G0448;Den Helder-G0400;Schagen-G0441;Opmeer-G0432;Heerhugowaard-G0398;Langedijk-G0416;Beemster-G0370;Alkmaar-G0361;Bergen-G0373;Heiloo-G0399;Castricum-G0383;Wormerland-G0880;Uitgeest-G0450;Zaanstad-G0479;Heemskerk-G0396;Beverwijk-G0375;Velsen-G0453;Bloemendaal-G0377;Zandvoort-G0473;Heemstede-G0397;Haarlem-G0392;Haarlemmermeer-G0394
+Provincie Zuid-Holland: Goeree-Overflakkee-G1924;Westvoorne-G0614;Hellevoetsluis-G0530;Brielle-G0501;Nissewaard-G1930;Hoeksche Waard-G1963;Dordrecht-G0505;Rotterdam-G0599;Albrandswaard-G0613;Barendrecht-G0489;Zwijndrecht-G0642;Ridderkerk-G0597;Hendrik-Ido-Ambacht-G0531;Alblasserdam-G0482;Papendrecht-G0590;Sliedrecht-G0610;Hardinxveld-Giessendam-G0523;Gorinchem-G0512;Molenlanden-G1978;Krimpenerwaard-G1931;Krimpen aan den IJssel-G0542;Capelle aan den IJssel-G0502;Zuidplas-G1892;Waddinxveen-G0627;Gouda-G0513;Bodegraven-Reeuwijk-G1901;Schiedam-G0606;Vlaardingen-G0622;Maassluis-G0556;Westland-G1783;Midden-Delfland-G1842;'s-Gravenhage-G0518;Rijswijk-G0603;Delft-G0503;Pijnacker-Nootdorp-G1926;Lansingerland-G1621;Zoetermeer-G0637;Leidschendam-Voorburg-G1916;Wassenaar-G0629;Voorschoten-G0626;Alphen aan den Rijn-G0484;Nieuwkoop-G0569;Zoeterwoude-G0638;Leiden-G0546;Leiderdorp-G0547;Katwijk-G0537;Oegstgeest-G0579;Kaag en Braassem-G1884;Teylingen-G1525;Noordwijk-G0575;Hillegom-G0534;Lisse-G0553
+Provincie Zeeland: Schouwen-Duiveland-G1676;Wissenkerke-G0727;Serooskerke (Walcheren)-G1176;Arnemuiden-G0649;Vlissingen-G0718;Goes-G0664;Borsele-G0654;Kapelle-G0678;Sluis-G1714;Terneuzen-G0715;Hulst-G0677;Reimerswaal-G0703;Tholen-G0716
+Provincie Noord-Brabant: Boxmeer-G0756;Cuijk-G1684;Grave-G0786;Mill en Sint Hubert-G0815;Sint Anthonis-G1702;Landerd-G1685;Uden-G0856;Boekel-G0755;Oss-G0828;Bernheze-G1721;'s-Hertogenbosch-G0796;Sint-Michielsgestel-G0845;Meierijstad-G1948;Laarbeek-G1659;Gemert-Bakel-G1652;Deurne-G0762;Asten-G0743;Someren-G0847;Helmond-G0794;Nuenen, Gerwen en Nederwetten-G0820;Geldrop-Mierlo-G1771;Heeze-Leende-G1658;Cranendonck-G1706;Valkenswaard-G0858;Bergeijk-G1724;Waalre-G0866;Eindhoven-G0772;Veldhoven-G0861;Eersel-G0770;Bladel-G1728;Reusel-De Mierden-G1667;Son en Breugel-G0848;Best-G0753;Oirschot-G0823;Hilvarenbeek-G0798;Boxtel-G0757;Oisterwijk-G0824;Vught-G0865;Heusden-G0797;Altena-G1959;Waalwijk-G0867;Geertruidenberg-G0779;Loon op Zand-G0809;Dongen-G0766;Tilburg-G0855;Goirle-G0785;Alphen-Chaam-G1723;Baarle-Nassau-G0744;Gilze en Rijen-G0784;Oosterhout-G0826;Drimmelen-G1719;Breda-G0758;Zundert-G0879;Etten-Leur-G0777;Moerdijk-G1709;Halderberge-G1655;Rucphen-G0840;Roosendaal-G1674;Steenbergen-G0851;Bergen op Zoom-G0748;Woensdrecht-G0873;Haaren-G0788
+Provincie Limburg: Mook en Middelaar-G0944;Gennep-G0907;Bergen-G0893;Venray-G0984;Horst aan de Maas-G1507;Venlo-G0983;Peel en Maas-G1894;Beesel-G0889;Roermond-G0957;Leudal-G1640;Nederweert-G0946;Weert-G0988;Maasgouw-G1641;Roerdalen-G1669;Echt-Susteren-G1711;Sittard-Geleen-G1883;Stein-G0971;Beekdaelen-G1954;Brunssum-G0899;Heerlen-G0917;Landgraaf-G0882;Kerkrade-G0928;Beek-G0888;Meerssen-G0938;Maastricht-G0935;Valkenburg aan de Geul-G0994;Voerendaal-G0986;Simpelveld-G0965;Eijsden-Margraten-G1903;Gulpen-Wittem-G1729;Vaals-G0981
+Caribisch Nederland:Bonaire-O9001;Saba-O9003;Sint Eustatius-O9002
 
 Nederland: Provincie Groningen; Provincie Frieslân; Provincie Drenthe; Provincie Overijssel; Provincie Flevoland; Provincie Gelderland; Provincie Utrecht; Provincie Noord-Holland; Provincie Zuid-Holland; Provincie Zeeland; Provincie Noord-Brabant; Provincie Limburg; Caribisch Nederland
-
-
-
-
-
-
-
-
-
