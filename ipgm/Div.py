@@ -72,6 +72,7 @@ class Div:
 	def recalculate(self) -> None: #Calculate recursive sum of all subdivs under
 		if self.subset == []:
 			return None
+		self.subset = sorted(self.subset, key=lambda x: x.name)
 		ls = [d.result for d in self.allBaseSubDivs()]
 		#Sum all res
 		rz = ls.pop()

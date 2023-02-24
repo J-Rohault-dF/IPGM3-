@@ -107,7 +107,7 @@ def mapColorerPercs(div: Div, candidaciesData: Candidacies, xmlR: etree.ElementT
 			colorsUsed[winningParty][math.floor(100*winningScore/5)] = winningShade
 
 			i.set('style', i.get('style').replace('000000', winningShade))
-	print(colorsUsed)
+	#print(colorsUsed)
 
 def mapColorerProbs(probs: dict[str, dict[str, float]], candidaciesData: Candidacies, xmlR: etree.ElementTree):
 	for i in xmlR.getroot().find('{http://www.w3.org/2000/svg}g'):
