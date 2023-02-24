@@ -13,12 +13,13 @@ from mapdrawer.mapper import *
 #	ringsDataTemp = [y.split(';') for y in [x for x in seatsDataFile.read().split('\n')]]
 #	ringsData = {x[0]: dict(zip(ringsDataTemp[0][1:], [toFloatOrStr(y) for y in x[1:]])) for x in ringsDataTemp[1:]}
 
-allDivs = AllDivs('data/nl/divs/nl.txt')
+allDivs = AllDivs('data/nl/divs/nl_2002-.txt')
 
 
 candidaciesData: Candidacies = importCandidacies(src='data/nl/cands/parties.csv')
 parties = [x.shortName for x in candidaciesData.listOfCands]
 
+#Note: Vianen was in Zuid-Holland until 2002-01-01
 
 #tk_2021 = importDataTable('data/nl/stats/2021TK.csv', allDivs)
 #tk_2017 = importDataTable('data/nl/stats/TK20170315.csv', allDivs)
@@ -26,7 +27,7 @@ parties = [x.shortName for x in candidaciesData.listOfCands]
 #ps_2019 = importDataTable('data/nl/stats/2019PS.csv', allDivs)
 list_elections = [(importDataTable('data/nl/stats/'+election+'.csv', allDivs), election) for election in [
 #	'TK20210317',
-#	'TK20170315',
+	'TK20170315',
 #	'TK20120912',
 #	'TK20100609',
 #	'TK20061122',
@@ -62,7 +63,7 @@ list_elections = [(importDataTable('data/nl/stats/'+election+'.csv', allDivs), e
 #	'EP20040610',
 #	'EP20090604',
 #	'EP20140522',
-	'EP20190523',
+#	'EP20190523',
 #	'PS19310422',
 #	'PS19350417',
 #	'PS19390419',
@@ -91,3 +92,4 @@ for election, name in list_elections:
 	print(name)
 	exportMap(election, 'data/nl/maps/provinces.svg', 'nl/'+name+'_p.svg', candidaciesData=candidaciesData)
 	exportMap(election, 'data/nl/maps/gemeenten_'+name[2:6]+'.svg', 'nl/'+name+'_g.svg', candidaciesData=candidaciesData)
+	print(election)
