@@ -27,7 +27,7 @@ parties = [x.shortName for x in candidaciesData.listOfCands]
 #ps_2019 = importDataTable('data/nl/stats/2019PS.csv', allDivs)
 list_elections = [(importDataTable('data/nl/stats/'+election+'.csv', allDivs), election) for election in [
 #	'TK20210317',
-	'TK20170315',
+#	'TK20170315',
 #	'TK20120912',
 #	'TK20100609',
 #	'TK20061122',
@@ -62,7 +62,7 @@ list_elections = [(importDataTable('data/nl/stats/'+election+'.csv', allDivs), e
 #	'EP19990610',
 #	'EP20040610',
 #	'EP20090604',
-#	'EP20140522',
+	'EP20140522',
 #	'EP20190523',
 #	'PS19310422',
 #	'PS19350417',
@@ -86,6 +86,9 @@ list_elections = [(importDataTable('data/nl/stats/'+election+'.csv', allDivs), e
 #	'PS20110302',
 #	'PS20150318',
 #	'PS20190320',
+#	'NR20180321',
+#	'NR20160406',
+#	'NR20050601',
 ]]
 
 for election, name in list_elections:
