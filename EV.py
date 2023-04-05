@@ -13,7 +13,7 @@ partiesColors = {
 	'Emmanuel Macron': Color('#ffeb00'),
 	'Xavier Bertrand': Color('#0066cc'),
 	'Valérie Pécresse': Color('#0066cc'),
-	'Marine Le Pen': Color('#627cad'), #not same as wp
+	'Marine Le Pen': Color('#475e88'), #not same as wp
 	'Éric Zemmour': Color('#d99536'),
 	
 	'François Fillon': Color('#0066cc'),
@@ -34,7 +34,7 @@ partiesColors = {
 
 
 #Get divs data
-with open('data/rings_fr.csv','r',encoding='utf8') as seatsDataFile:
+with open('data/fr/rings/depts.csv','r',encoding='utf8') as seatsDataFile:
 	ringsDataTemp = [y.split(';') for y in [x for x in seatsDataFile.read().split('\n')]]
 	ringsData = {x[0]: dict(zip(ringsDataTemp[0][1:], [toFloatOrStr(y) for y in x[1:]])) for x in ringsDataTemp[1:]}
 
@@ -108,8 +108,7 @@ electoralVotes = {
 	'Pyrénées-Orientales': 6,
 	'Bas-Rhin': 14,
 	'Haut-Rhin': 10,
-	'Rhône': 6,
-	'Métropole de Lyon': 15,
+	'Rhône': 21,
 	'Haute-Saône': 4,
 	'Saône-et-Loire': 8,
 	'Sarthe': 8,
@@ -221,7 +220,6 @@ abbr = {
 	'Bas-Rhin': 'BR',
 	'Haut-Rhin': 'HR',
 	'Rhône': 'RH',
-	'Métropole de Lyon': 'LY',
 	'Haute-Saône': 'HN',
 	'Saône-et-Loire': 'SL',
 	'Sarthe': 'SA',
@@ -265,19 +263,19 @@ abbr = {
 
 
 
-allDivs = AllDivs('data/divs_fr.txt')
+allDivs = AllDivs('data/fr/divs/fr.txt')
 
-candidaciesData: Candidacies = importCandidacies(srcParties='data/parties_fr.csv', srcCandidates='data/candidates_fr.csv')
+candidaciesData: Candidacies = importCandidacies('data/fr/cands/2027P.csv')
 
 #Load table
-r = importDataTable('exports/fr/Elabe_20220405/1_CC.csv', allDivs)
+r = importDataTable('exports/Elabe_20230405/1_base.csv', allDivs)
 
 #s = simulOneNat(r, 1.96, 1000, allDivs)
 #showRes(s.get('National', allDivs))
 #exportMap(s, 'basemap_fr_collectivites.svg', 'stupidSim_.svg', allDivs=allDivs, partiesColors=partiesColors)
 
 #Simulate many and export map
-sm = simulMany(r, 5000, 4, 2000, listSim = [x for x in electoralVotes.keys()])
+sm = simulMany(r, 50, 4, 2000, listSim = [x for x in electoralVotes.keys()])
 
 #Compute potential electoral college
 EV = {k: [0, 0, 0] for k in r.result.getCandidates()}
@@ -296,4 +294,4 @@ for i in sm.keys():
 
 print({k: v for k,v in EV.items() if v != [0,0,0]})
 
-exportMapProbs(sm, 'data/basemap_fr_collectivites_gparis.svg', 'manySims.svg', allDivs=allDivs, candidaciesData=candidaciesData, doRings=True, divsData=ringsData, outerRadius=(5*10), innerRadius=(3*10), doTexts=True, texts={k: '{0}\n{1}'.format(abbr[k], electoralVotes[k]) for k in ringsData.keys()}, fontSize=24, fontUsed='Century Gothic')
+exportMapProbs(sm, 'data/fr/maps/depts.svg', 'manySims.svg', allDivs=allDivs, candidaciesData=candidaciesData, doRings=True, divsData=ringsData, outerRadius=(5*10), innerRadius=(3*10), doTexts=True, texts={k: '{0}\n{1}'.format(abbr[k], electoralVotes[k]) for k in abbr.keys()}, fontSize=24, fontUsed='Century Gothic')

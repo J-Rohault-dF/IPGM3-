@@ -1,0 +1,85 @@
+{
+    "pollFirm": "Elabe",
+    "dateStarted": "2023-04-03",
+    "dateFinished": "2023-04-05",
+    "sampleSize": 1808,
+    
+    "hypotheses": [
+        {
+            "label": "1_base",
+            "final": "2027T1",
+            "candidates": ["Philippe Poutou", "Nathalie Arthaud", "Fabien Roussel", "Jean-Luc Mélenchon", "Anne Hidalgo", "Yannick Jadot", "Emmanuel Macron", "Valérie Pécresse", "Nicolas Dupont-Aignan", "Marine Le Pen", "Éric Zemmour", "Jean Lassalle", "@abs"],
+            "matrices": [
+                {
+                    "original": "2022T1",
+                    "externalAbs": true,
+                    "vtm": {
+                        "Jean-Luc Mélenchon":    [2, 0, 5,81, 1, 1, 2, 0, 1, 6, 1, 0, 9],
+                        "Yannick Jadot":         [0, 0, 2, 9, 1,81, 3, 0, 2, 2, 0, 0, 8],
+                        "Emmanuel Macron":       [0, 0, 1, 3, 1, 2,83, 1, 1, 7, 0, 1,11],
+                        "Valérie Pécresse":      [0, 0, 0, 0, 0, 1, 3,64, 4,19, 8, 1, 7],
+                        "Marine Le Pen":         [0, 0, 1, 0, 0, 0, 1, 1, 1,94, 2, 0, 3],
+                        "Éric Zemmour":          [0, 0, 0, 0, 0, 1, 0, 0, 1,21,76, 1, 3],
+                        "@abs":                  [0, 3, 8,14, 2, 5, 2, 2, 2,55, 2, 5,69]
+                    }
+                }
+            ],
+            "totals": {
+                "externalAbs": true,
+                "list": {
+                    "Île-de-France": [1, 1, 4, 22, 1, 7, 22, 5, 2, 27, 4, 4, 20],
+                    "Nord-Est":      [1, 0, 4, 18, 2, 4, 23, 3, 3, 32, 8, 2, 17],
+                    "Nord-Ouest":    [0, 0, 3, 17, 2, 4, 29, 4, 3, 32, 6, 0, 19],
+                    "Sud-Ouest":     [1, 1, 6, 17, 2, 4, 16, 3, 3, 33, 8, 6, 23],
+                    "Sud-Est":       [1, 1, 4, 18, 1, 3, 24, 3, 3, 31, 9, 2, 13],
+                    "National": [1, 0.5, 4, 18.5, 1.5, 5, 23, 3.5, 2.5, 31, 7, 2.5, 18]
+                }
+            }
+        },
+        {
+            "label": "2_EM_MLP",
+            "final": "2027T2",
+            "candidates": ["Emmanuel Macron", "Marine Le Pen", "@"],
+            "matrices": [
+                {
+                    "original": "2022T1",
+                    "externalAbs": true,
+                    "vtm": {
+                        "Jean-Luc Mélenchon": [50,50,54],
+                        "Yannick Jadot":      [81,19,42],
+                        "Emmanuel Macron":    [92, 8, 8],
+                        "Valérie Pécresse":   [43,57,34],
+                        "Marine Le Pen":      [ 2,98, 3],
+                        "Éric Zemmour":       [ 4,96, 9],
+                        "@abs":               [36,64,58]
+                    }
+                },
+                {
+                    "original": "2027T1",
+                    "based_on": "1_base",
+                    "externalAbs": false,
+                    "vtm": {
+                        "Jean-Luc Mélenchon": [29,19,52],
+                        "Yannick Jadot":      [52, 9,39],
+                        "Emmanuel Macron":    [98, 2, 0],
+                        "Valérie Pécresse":   [37,27,36],
+                        "Marine Le Pen":      [ 1,98, 1],
+                        "Éric Zemmour":       [ 6,85, 9],
+                        "@abs":               [22,10,68]
+                    }
+                }
+            ],
+            "totals": {
+                "externalAbs": true,
+                "list": {
+                    "Île-de-France": [52, 48, 33],
+                    "Nord-Est":      [48, 52, 26],
+                    "Nord-Ouest":    [42, 58, 29],
+                    "Sud-Ouest":     [42, 58, 34],
+                    "Sud-Est":       [44, 56, 24],
+                    "National": [45, 55, 29]
+                }
+            }
+        }
+    ]
+}

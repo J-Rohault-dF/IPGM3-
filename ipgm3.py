@@ -15,19 +15,16 @@ with open('data/fr/rings/depts.csv','r',encoding='utf8') as seatsDataFile:
 
 allDivs = AllDivs('data/fr/divs/fr.txt')
 
-t1_2017 = importDataTable('data/fr/stats/2017T1.csv', allDivs)
-t2_2017 = importDataTable('data/fr/stats/2017T2.csv', allDivs)
-te_2019 = importDataTable('data/fr/stats/2019TE.csv', allDivs)
 t1_2022 = importDataTable('data/fr/stats/2022T1.csv', allDivs)
 t2_2022 = importDataTable('data/fr/stats/2022T2.csv', allDivs)
 
-poll = 'old/Elabe_20220405'
+poll = 'Elabe_20230405'
 
 mx = importMatrices('data/fr/polls/{0}.json'.format(poll))
 if not os.path.exists('exports/{path}'.format(path=poll)):
 	os.makedirs('exports/{path}'.format(path=poll))
 
-candidaciesData: Candidacies = importCandidacies(src='data/fr/cands/2022P.csv')
+candidaciesData: Candidacies = importCandidacies(src='data/fr/cands/2027P.csv')
 
 
 
@@ -46,19 +43,19 @@ for hk, hv in {k: v for k,v in mx.items() if k != 'sampleSize'}.items():
 	#Extrapolate rs
 	rl = []
 	if tn == 1:
-		if 'matrix_2017T1_2022T1' in hv: rl.append(extrapolateResults(t1_2017, hv['matrix_2017T1_2022T1']))
-		if 'matrix_2017T2_2022T1' in hv: rl.append(extrapolateResults(t2_2017, hv['matrix_2017T2_2022T1']))
-		if 'matrix_2019TE_2022T1' in hv: rl.append(extrapolateResults(te_2019, hv['matrix_2019TE_2022T1']))
+		if 'matrix_2022T1_2027T1' in hv: rl.append(extrapolateResults(t1_2022, hv['matrix_2022T1_2027T1']))
+		if 'matrix_2022T2_2027T1' in hv: rl.append(extrapolateResults(t2_2022, hv['matrix_2022T2_2027T1']))
+		#if 'matrix_2024TE_2027T1' in hv: rl.append(extrapolateResults(te_2019, hv['matrix_2019TE_2027T1']))
 	elif tn == 2:
-		if 'matrix_2017T1_2022T2' in hv: rl.append(extrapolateResults(t1_2017, hv['matrix_2017T1_2022T2']))
-		if 'matrix_2017T2_2022T2' in hv: rl.append(extrapolateResults(t2_2017, hv['matrix_2017T2_2022T2']))
-		if 'matrix_2019TE_2022T2' in hv: rl.append(extrapolateResults(te_2019, hv['matrix_2019TE_2022T2']))
-		#if 'matrix_2022T1_2022T2' in hv: rl.append(extrapolateResults(allRounds[hv['based_on']], hv['matrix_2022T1_2022T2']))
+		if 'matrix_2022T1_2027T2' in hv: rl.append(extrapolateResults(t1_2022, hv['matrix_2022T1_2027T2']))
+		if 'matrix_2022T2_2027T2' in hv: rl.append(extrapolateResults(t2_2022, hv['matrix_2022T2_2027T2']))
+		#if 'matrix_2024TE_2027T2' in hv: rl.append(extrapolateResults(te_2019, hv['matrix_2019TE_2027T2']))
+		#if 'matrix_2027T1_2027T2' in hv: rl.append(extrapolateResults(allRounds[hv['based_on']], hv['matrix_2027T1_2027T2']))
 	rs = averageDivs(rl)
 
 	#Redresse R1
 	r = deepcopy(rs)
-	curScores = hv[('scores_2022T{n}'.format(n=tn))]
+	curScores = hv[('scores_2027T{n}'.format(n=tn))]
 	for i in sorted(curScores, key=lambda x: allDivs.getSortingKeys(x)):
 		r = redressementResults(r, curScores[i], weight = (1 if i == 'National' else 0.75 if i == 'Province' else 0.5))
 	
@@ -71,8 +68,8 @@ for hk, hv in {k: v for k,v in mx.items() if k != 'sampleSize'}.items():
 	#Export and map
 	if doExportCsv: saveDataTable('exports/{path}/{h}.csv'.format(h=hk, path=poll), r)
 	if doExportMap:
-		exportMap(r, 'data/fr/maps/collectivites_gparis.svg', '{path}/{h}.svg'.format(h=hk, path=poll), candidaciesData=candidaciesData)
-		exportMap(r, 'data/fr/maps/collectivites_gparis.svg', '{path}/{h}_r.svg'.format(h=hk, path=poll), candidaciesData=candidaciesData, ringsData=ringsData, outerRadius=(5*10), innerRadius=(3*10))
+		exportMap(r, 'data/fr/maps/depts.svg', '{path}/{h}.svg'.format(h=hk, path=poll), candidaciesData=candidaciesData)
+		exportMap(r, 'data/fr/maps/depts.svg', '{path}/{h}_r.svg'.format(h=hk, path=poll), candidaciesData=candidaciesData, ringsData=ringsData, outerRadius=(5*10), innerRadius=(3*10))
 
 if doExportTxt:
 	with open('exports/{path}/tweetText.txt'.format(path=poll),'w',encoding='utf8') as txtFile:
