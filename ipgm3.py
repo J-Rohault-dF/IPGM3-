@@ -18,7 +18,7 @@ allDivs = AllDivs('data/fr/divs/fr.txt')
 t1_2022 = importDataTable('data/fr/stats/2022T1.csv', allDivs)
 t2_2022 = importDataTable('data/fr/stats/2022T2.csv', allDivs)
 
-poll = 'Elabe_20230405'
+poll = 'Ifop_20230331'
 
 mx = importMatrices('data/fr/polls/{0}.json'.format(poll))
 if not os.path.exists('exports/{path}'.format(path=poll)):
