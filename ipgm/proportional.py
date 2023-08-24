@@ -24,7 +24,7 @@ def proportionalLargestRemainder(r: dict[str, float], sn: int, quotaType: str) -
 	seats = {k: math.floor(v/quota) for k,v in r.items() if isCandidate(k)}
 
 	#Second pass
-	remaining = sn - sum(seats.values())
+	remaining = int(sn - sum(seats.values()))
 	remainders = ((k, (v-quota*seats[k])) for k,v in r.items() if isCandidate(k))
 	remainders = sorted(remainders, key=lambda x: x[1], reverse=True)
 	for k in remainders[:remaining]:
