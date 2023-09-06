@@ -169,7 +169,6 @@ def exportMap(div: Div, mapSrc: str, mapTarget: str, candidaciesData: Candidacie
 	ringsData -- data for the rings (*)
 	outerRadius -- outer radius for the rings (*)
 	innerRadius -- inner radius for the rings (*)
-	mapScaling -- scale multiplication of the map when automatically converting it to raster
 	scoreMultiplier -- multiplication for the scores values
 	"""
 

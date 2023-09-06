@@ -124,16 +124,7 @@ class Result:
 
 
 
-	def checkEqualParty(self, candidaciesData: Candidacies) -> bool:
 
-		toCheck = [x for x in self.results.keys() if x in candidaciesData.getAllCandidates()]
-		if len(toCheck) == 0: return False
-
-		firstParty = candidaciesData.getPartyFromCandName(toCheck[0]).getFullName()
-
-		for c in toCheck[1:]:
-			if candidaciesData.getPartyFromCandName(c).getFullName() != firstParty: return False
-		return True
 	
 	def sortByVotes(self, doRandom: bool = False):
 		import random

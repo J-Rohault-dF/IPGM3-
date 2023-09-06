@@ -1,8 +1,15 @@
 from __future__ import annotations
 from ipgm.Result import *
+import ipgm.Div
 import math
 
 def filterThreshold(res: Result, threshold: float = 0) -> dict[str, float]:
+
+	#really ugly fix but i don't have the energy to rewrite everything
+	if res == None: return {}
+	if type(res) == ipgm.Div.Div: res = res.result
+	#
+
 	r = res.getCleanResults()
 	return {k: v for k,v in sorted(r.items(), key=lambda x: x[1], reverse=True) if (v/sum(r.values()) > threshold)}
 
@@ -43,6 +50,8 @@ def getDivisor(seats: int, methodType: str) -> float:
 	elif methodType == 'Adams': return (seats)
 
 def proportionalHighestAverage(r: dict[str, float], sn: int, methodType: str) -> dict[str, int]:
+	
+	if r == {}: return {}
 
 	seats = {x[0]: (0 if methodType not in ['Huntington-Hill', 'Adams'] else 1) for x in sorted(r.items(), key=lambda x: x[1], reverse=True) if isCandidate(x[0])}
 

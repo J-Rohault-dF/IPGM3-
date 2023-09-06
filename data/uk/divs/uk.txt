@@ -739,7 +739,7 @@ Borough of Sutton:Carshalton and Wallington;Sutton and Cheam
 Borough of Tower Hamlets:Bethnal Green and Bow;Poplar and Limehouse
 Borough of Wandsworth:Battersea;Putney;Tooting
 
-Greater London County:Boroughs of Bromley and Lewisham;Boroughs of Richmond upon Thames and Kingston upon Thames;Borough of Croydon;Borough of Sutton;Borough of Merton;Borough of Wandsworth;Boroughs of Lambeth and Southwark;Boroughs of Greenwich and Bexley;Borough of Hounslow;Borough of Ealing;Borough of Brent;Boroughs of Harrow and Hillingdon;Boroughs of Kensington and Chelsea and Hammersmith and Fulham;Boroughs of City of London and Westminster;Borough of Camden;Borough of Islington;Borough of Tower Hamlets;Borough of Hackney;Boroughs of Havering and Barking and Dagenham;Borough of Newham;Borough of Haringey;Borough of Barnet;Borough of Enfield
+Greater London County:Borough of Barnet;Borough of Brent;Boroughs of Bromley and Lewisham;Borough of Camden;Boroughs of City of London and Westminster;Borough of Croydon;Borough of Ealing;Borough of Enfield;Boroughs of Greenwich and Bexley;Borough of Hackney;Boroughs of Harrow and Hillingdon;Borough of Haringey;Boroughs of Havering and Barking and Dagenham;Borough of Hounslow;Borough of Islington;Boroughs of Kensington and Chelsea and Hammersmith and Fulham;Boroughs of Lambeth and Southwark;Borough of Merton;Borough of Newham;Boroughs of Redbridge and Waltham Forest;Boroughs of Richmond upon Thames and Kingston upon Thames;Borough of Sutton;Borough of Tower Hamlets;Borough of Wandsworth
 
 North East England Region:Cleveland County;County Durham;Northumberland County;Tyne and Wear County
 North West England Region:Cheshire County;Cumbria County;Greater Manchester County;Lancashire County;Merseyside County
