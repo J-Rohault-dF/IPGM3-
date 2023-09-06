@@ -755,6 +755,10 @@ Scotland:Aberdeen and Aberdeenshire Counties;Angus and Dundee Counties;Argyll an
 Wales:Clwyd;Dyfed;Gwent;Gwynedd;Mid Glamorgan;Powys;South Glamorgan;West Glamorgan
 Northern Ireland
 
-England:North East England Region;North West England Region;Yorkshire and the Humber Region;West Midlands Region;East Midlands Region;South West England Region;South East England Region;Greater London Region;East of England Region
+North England Megaregion: North East England Region;North West England Region;Yorkshire and the Humber Region
+Midlands Megaregion: West Midlands Region;East Midlands Region
+Rest of South Megaregion: South West England Region;South East England Region;East of England Region
+
+England:North England Megaregion;Midlands Megaregion;Rest of South Megaregion;Greater London Region
 Great Britain:England;Wales;Scotland
 National:Great Britain;Northern Ireland

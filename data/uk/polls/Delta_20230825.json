@@ -1,0 +1,36 @@
+{
+    "pollFirm": "Deltapoll",
+    "date": "2023-08-25",
+    "sampleSize": 2009,
+    
+    "hypotheses": [
+        {
+            "label": "1_GE",
+            "final": "2024GE",
+            "candidates": ["Conservative", "Labour", "Liberal Democrats", "UKIP", "Reform", "SNP", "Plaid Cymru", "Green", "Others", "@"],
+            "matrices": [
+                {
+                    "original": "2019GE",
+                    "externalAbs": false,
+                    "vtm": {
+                        "Conservative":      [67,16, 2, 1,11, 0, 0, 2, 0, 0],
+                        "Labour":            [ 1,91, 2, 0, 1, 0, 0, 6, 0, 0],
+                        "Liberal Democrats": [ 3,36,59, 1, 0, 0, 0, 0, 1, 0]
+                    }
+                }
+            ],
+            "totals": {
+                "externalAbs": false,
+                "list": {
+                    "Great Britain":            [28, 46, 10, 1, 7, 3, 1, 5, 0, 0],
+                    "Greater London Region":    [24, 42, 16, 1, 8, 0, 0, 8, 0, 0],
+                    "Rest of South Megaregion": [37, 41, 11, 1, 5, 0, 0, 5, 1, 0],
+                    "Midlands Megaregion":      [26, 46, 12, 1, 6, 0, 0, 7, 0, 0],
+                    "North England Megaregion": [24, 56,  7, 1, 8, 0, 0, 3, 0, 0],
+                    "Wales":                    [15, 38,  7, 0,15, 0,16,10, 0, 0],
+                    "Scotland":                 [17, 43,  4, 0, 1,31, 0, 4, 0, 0]
+                }
+            }
+        }
+    ]
+}
