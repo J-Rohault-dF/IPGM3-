@@ -13,7 +13,7 @@ allDivs = AllDivs('data/ch/divs/ch.txt')
 
 nrw_2019 = importDataTable('data/ch/stats/2019NRW.csv', allDivs)
 
-poll = 'ch/Sotomo_20230305'
+poll = 'ch/Leewas_20230726'
 
 #mx = importMatrices('data/ch/polls/{0}.json'.format(poll))
 #if not os.path.exists('exports/{path}'.format(path=poll)):
@@ -38,8 +38,19 @@ doExportCsv = True
 
 #Redresse R1
 nrw_2023 = deepcopy(nrw_2019)
-pollScores = ResultPerc('Switzerland', {'SVP': 26.6, 'SP': 17.8, 'FDP': 15.6, 'Die Mitte': 13.3, 'Grüne': 10.7, 'GLP': 8.3, 'EVP': 2.1, 'EDU': 1.05, 'EàG': 1.05, 'Lega': 0.75, 'AL': 0.32, 'Piraten': 0.27, 'CSP': 0.26, 'MCG': 0.22, 'SD': 0.13, 'Others': 1.55}, totalVotes=None)
+nrw_2023.mergeCandidates('BDP', 'CVP')
+nrw_2023.renameCandidate('CVP', 'DM')
+nrw_2023.renameCandidate('GPS', 'Grüne')
+pollScores = ResultPerc.fromVotelessDict('Switzerland', {'SVP': 27.9, 'SP': 17.3, 'FDP': 14.3, 'DM': 13.9, 'Grüne': 10.7, 'GLP': 8.2, 'EVP': 2.1, 'EDU': 1.05, 'EàG': 1.05, 'Lega': 0.75, 'AL': 0.32, 'Piraten': 0.27, 'CSP': 0.26, 'MCR': 0.22, 'SD': 0.13, 'Others': 1.55})
 nrw_2023 = redressementResults(nrw_2023, pollScores, weight = 1)
+
+apparentements = {
+	x: [
+		['SP', 'Grüne', 'EàG'],
+		['SVP', 'FDP', 'EDU'],
+		['DM', 'GLP', 'EVP'],
+	] for x in seatsPerCanton.keys()
+}
 
 #Tweet text
 #if doExportTxt: allTexts.append('HYPOTHESIS {h}\n'.format(h=hk)+makeTweetText(r.result.toPercentages(), hv['sampleSize'], top=(2 if tn==1 else 1), nbSimulated=15000, candidaciesData=candidaciesData, threshold=0.05))

@@ -2,6 +2,7 @@ from __future__ import annotations
 from ipgm.Result import *
 import ipgm.Div
 import math
+import unittest
 
 def filterThreshold(res: Result, threshold: float = 0) -> dict[str, float]:
 
@@ -99,3 +100,50 @@ def twoRoundProportional(d1: dict[str, float], d2: dict[str, float], sn: int) ->
 		seats[kM] += 1 #Add the excess seat
 	
 	return seats
+
+
+
+def apparentementsProportional(votes: dict[str, float], sn: int, quotaType: str, apparentements: list[str]):
+	
+	#Make list of apparentements
+	apparentementsList = {party: [[party], votes] for party,votes in votes.items()}
+	
+	for party in votes.keys():
+		for i,apparentement in enumerate(apparentements):
+			if party in apparentement:
+				apparentementName = '-'.join(apparentement)
+				if apparentementName not in apparentementsList: apparentementsList[apparentementName] = [[], 0]
+				apparentementsList[apparentementName] = [apparentementsList[apparentementName][0]+[party], apparentementsList[apparentementName][1]+apparentementsList[party][1]]
+				del apparentementsList[party]
+				break
+
+	#Distribute seats
+	print(apparentementsList)
+	seatsTotal = proportionalLargestRemainder({k: v[1] for k,v in apparentementsList.items()}, sn, quotaType)
+
+	#Distribute seats within apparentements
+	for apparentementName, apparentement in apparentementsList.items():
+		apparentedParties, apparentementVotes = apparentement[0], apparentement[1]
+
+		apparentementResults = {p: v for p,v in votes.items() if p in apparentedParties}
+
+		print(seatsTotal[apparentementName], apparentementResults)
+		seatsInApparentement = proportionalLargestRemainder(apparentementResults, seatsTotal[apparentementName], quotaType)
+
+		seatsTotal = seatsTotal | seatsInApparentement
+		del seatsTotal[apparentementName]
+
+	return seatsTotal
+
+
+
+class TestApparentementsProportional(unittest.TestCase):
+
+	def test_apparentementsProportional(self):
+		self.assertEqual(
+			apparentementsProportional(votes={'A': 1, 'B': 2, 'C': 3}, sn=2, quotaType='Hare', apparentements=[['A', 'B']]),
+			{'B': 1, 'C': 1}
+		)
+
+if __name__ == '__main__':
+	unittest.main()
