@@ -1,4 +1,3 @@
-from __future__ import annotations
 from ipgm.Result import *
 from ipgm.ResultPerc import *
 from ipgm.Div import *
@@ -46,7 +45,7 @@ def redressementResults(div: Div, targetRes: ResultPerc, weight: float = 1) -> D
 	diffV = multiplyDict(diffV, weight)
 
 	if div.subset == []:
-		div.result = div.result.getAdded(diffVL) #TODO: (Result).zipZeroes
+		div.result = div.result.addDict(diffV) #TODO: (Result).zipZeroes
 	else:
 		#For every subdivision:
 		for subdiv in div.allBaseSubDivs():

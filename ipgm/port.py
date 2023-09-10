@@ -19,23 +19,27 @@ def importDataTable(src: str, allDivs: AllDivs) -> Div:
 		listDivs.append(Div([], [], l[0], Result.fromLists(tab[0][1:], l[1:])))
 	
 	#Run through the divs to add the dependencies
+	over = None
+	
 	for overDiv,subDivs in allDivs.overLevel.items():
 
 		if overDiv in subDivs:
 			raise Exception('{overDivs} present in its own subdivs: {subDivs}'.format(overDiv=overDiv, subDivs=subDivs))
 		
-		over = findLambda(listDivs, overDiv, lambda x: x.name)
-		if over == None:
+		over = findWithLambda(listDivs, overDiv, lambda x: x.name)
+		if over is None:
 			over = Div([], [], overDiv, Result())
 			listDivs.append(over)
 
 		for subDiv in subDivs:
-			under = findLambda(listDivs, subDiv, lambda x: x.name)
-			if under == None:
+			under = findWithLambda(listDivs, subDiv, lambda x: x.name)
+			if under is None:
 				under = Div([], [], subDiv, Result())
 				listDivs.append(under)
 			over.insert(under)
 	
+	if over is None: raise Exception()
+
 	while over.superset != []:
 		over = over.superset[0]
 	
@@ -89,7 +93,7 @@ def importMatrices(src: str):
 			original = m['original']
 			based_on = m['based_on'] if 'based_on' in m else None
 
-			if based_on != None: appendDictInDict(allReturning, label, 'based_on', based_on)
+			if based_on is not None: appendDictInDict(allReturning, label, 'based_on', based_on)
 
 			#Handle externalAbs
 			if hasNonExpressed(final) and externalAbs:
@@ -119,7 +123,7 @@ def importMatrices(src: str):
 			
 		appendDictInDict(allReturning, label, 'scores_{0}'.format(final), scores)
 
-		appendDictInDict(allReturning, label, 'sampleSize', (sampleSizeD if sampleSizeD != None else sampleSize))
+		appendDictInDict(allReturning, label, 'sampleSize', (sampleSizeD if sampleSizeD is not None else sampleSize))
 
 
 	

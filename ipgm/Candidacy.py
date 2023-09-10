@@ -1,4 +1,4 @@
-from colour import *
+from colour import Color
 
 class Candidacy:
 	fullName: str

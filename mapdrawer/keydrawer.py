@@ -1,4 +1,3 @@
-from __future__ import annotations
 from math import pi
 from mapdrawer.colors import *
 from ipgm.utils import *
@@ -61,7 +60,7 @@ def drawCandidate(name: str, score: float):
 	pass
 
 #Draw score ring behind
-def drawPercRingBehind(centerPoint: set[float, float], innerRadius: float, outerRadius: float, factor: float, fillColor: Color = Color('#000000')):
+def drawPercRingBehind(centerPoint: tuple[float, float], innerRadius: float, outerRadius: float, factor: float, fillColor: Color = Color('#000000')):
 	
 	margin = (outerRadius-innerRadius)*factor
 	innerRadius -= margin
@@ -87,7 +86,7 @@ def drawPercRingBehind(centerPoint: set[float, float], innerRadius: float, outer
 
 
 #Draw score ring
-def drawPercRing(centerPoint: set[float, float], outerRadius: float, innerRadius: float, percs: list[float], colors: list[Color]) -> set[list[etree.Element], etree.Element]:
+def drawPercRing(centerPoint: tuple[int|float, int|float], outerRadius: float, innerRadius: float, percs: list[float], colors: list[Color]) -> tuple[list[etree.Element], etree.Element]:
 	percs = list(reversed(percentList(percs)))
 	colors = list(reversed(colors))
 
@@ -134,7 +133,7 @@ def drawPercRing(centerPoint: set[float, float], outerRadius: float, innerRadius
 
 
 
-def createMask(centerPoint: set[float, float], innerRadius: float, outerRadius: float):
+def createMask(centerPoint: tuple[float, float], innerRadius: float, outerRadius: float):
 	
 	cx,cy = centerPoint[0],centerPoint[1]
 

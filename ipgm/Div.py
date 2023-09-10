@@ -1,9 +1,9 @@
-from __future__ import annotations
+import typing
 from ipgm.Result import *
 
 
 
-
+Div = typing.TypeVar('Div')
 class Div:
 	superset: list[Div]
 	subset: list[Div]
@@ -17,7 +17,7 @@ class Div:
 		self.result = result
 	
 	def __repr__(self):
-		return '<{0}: {1}, contains {2}, part of {3}>'.format(self.name, (self.result.results if self.result != None else 'None'), [x.name for x in self.subset], [x.name for x in self.superset])
+		return '<{0}: {1}, contains {2}, part of {3}>'.format(self.name, (self.result.results if self.result is not None else 'None'), [x.name for x in self.subset], [x.name for x in self.superset])
 	
 	def getTree(self):
 		return {x.name: x.getTree() for x in self.subset}
@@ -32,21 +32,29 @@ class Div:
 	#Returns component given its name
 	def get(self, name: str) -> Div:
 
+		gotten = self.__getRecursive(name)
+
+		if gotten is None: raise Exception(f'Div {name} not found in {self.name}')
+
+		return gotten
+
+		#TODO: Check the auto-update (right now, a result isn't updated based on the results below)
+	
+	def __getRecursive(self, name: str) -> Div|None:
 		if self.name == name:
 			return self
 		else:
 			for i in self.subset:
-				ig = i.get(name)
-				if ig != None:
+				ig = i.__getRecursive(name)
+				if ig is not None:
 					return ig
 			return None
-		#TODO: Check the auto-update (right now, a result isn't updated based on the results below)
 	
 	def exportDict(self):
 		d = {}
 		d[self.name] = self.result.results
 		for x in self.subset:
-			d = appendDict(d, x.exportDict)
+			d = appendDict(d, x.exportDict())
 		return d
 	
 	def recalculateAll(self): #Recursive recalculate() call in all subdivs
@@ -63,7 +71,7 @@ class Div:
 			ls = mergeSetLists(ls, d.allBaseSubDivs())
 		return ls
 	
-	def allSubDivs(self) -> list[Div]: #Calculates recursively the list of all subdivs (not only base)
+	def allSubDivs(self) -> list: #Calculates recursively the list of all subdivs (not only base)
 		ls = [self]
 		for d in self.subset:
 			ls = mergeSetLists(ls, d.allSubDivs())
@@ -85,7 +93,7 @@ class Div:
 		sub.superset.append(self)
 	
 	def clear(self):
-		self.result = None
+		self.result = Result.createEmpty()
 		for sd in self.subset:
 			sd.clear()
 		return self
@@ -114,7 +122,7 @@ class Div:
 		self.recalculateAll()
 		return self
 	
-	def coalition(self, coalObj: list[dict[str, list[str]]]) -> Div:
+	def coalition(self, coalObj: dict[str, list[str]]) -> Div:
 		"""
 		Merges candidates in coalitions
 		coalObj must be in the form {'coal1': ['list1', 'list2'],…}
@@ -129,7 +137,7 @@ class Div:
 def averageDivs(divs: list[Div], superset: list[Div] = []) -> Div:
 	if len(divs) == 1: return divs[0]
 	
-	if not allValuesEqual([x.name for x in divs]): raise Exception('Attemps averaging different levels: {0}'.format([x.name for x in divs]))
+	if not allValuesEqual([x.name for x in divs]): raise Exception('Attempts averaging different levels: {0}'.format([x.name for x in divs]))
 
 	#Get the list and average
 	divA = copy.deepcopy(divs[0]).clear()

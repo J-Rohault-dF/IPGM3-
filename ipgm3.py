@@ -1,5 +1,5 @@
 import os
-from copy import *
+import copy
 
 from ipgm.utils import *
 from ipgm.port import *
@@ -54,7 +54,7 @@ for hk, hv in {k: v for k,v in mx.items() if k != 'sampleSize'}.items():
 	rs = averageDivs(rl)
 
 	#Redresse R1
-	r = deepcopy(rs)
+	r = copy.deepcopy(rs)
 	curScores = hv[('scores_2027T{n}'.format(n=tn))]
 	for i in sorted(curScores, key=lambda x: allDivs.getSortingKeys(x)):
 		r = redressementResults(r, curScores[i], weight = (1 if i == 'National' else 0.75 if i == 'Province' else 0.5))

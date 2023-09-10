@@ -1,6 +1,8 @@
-from __future__ import annotations
-from ipgm.Candidacy import *
+import typing
+from colour import Color
+from ipgm.Candidacy import Candidacy
 
+Candidacies = typing.TypeVar('Candidacies')
 class Candidacies:
 	listOfCands: list[Candidacy] = []
 
@@ -25,11 +27,13 @@ class Candidacies:
 		for c in self.listOfCands:
 			if cand == c.getFullName() or cand == c.getShortName():
 				return c
+		raise Exception(f'Candidate {cand} not found')
 	
 	def getCircleColor(self, cand: str) -> Color:
 		for c in self.listOfCands:
 			if cand == c.getFullName() or cand == c.getShortName():
 				return c.getCircleColor()
+		raise Exception(f'No circle color for {cand}')
 
 
 

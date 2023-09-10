@@ -1,10 +1,10 @@
-from __future__ import annotations
 from ipgm.ResultPerc import *
 from ipgm.utils import *
 from ipgm.Candidacies import *
 import copy
 
 #Single line of results
+Result = typing.TypeVar('Result')
 class Result:
 	results = {}
 
@@ -12,16 +12,16 @@ class Result:
 		self.results = results
 
 	@classmethod
-	def fromLists(self, candidates: list, results: list):
-		return Result({k: toFloat(v) for k,v in zip(candidates, results) if v != ''})
+	def fromLists(cls, candidates: list, results: list):
+		return cls({k: toFloat(v) for k,v in zip(candidates, results) if v != ''})
 
 	@classmethod
-	def fromDict(self, results: dict):
-		return Result(results)
+	def fromDict(cls, results: dict):
+		return cls(results)
 	
 	@classmethod
-	def createEmpty(self):
-		return Result('', {})
+	def createEmpty(cls):
+		return cls({})
 
 	def __repr__(self):
 		return '<Results {0}>'.format(self.results)
@@ -46,7 +46,7 @@ class Result:
 			self.results[k] += v
 		return self
 	
-	def addDict(self, other: Dict) -> Result:
+	def addDict(self, other: typing.Dict) -> Result:
 		for k,v in other.items():
 			if k not in self.results.keys():
 				self.results[k] = 0
@@ -57,8 +57,14 @@ class Result:
 		return ResultPerc.fromVotesDict(newName, self.results)
 	
 	@classmethod
-	def fromPercentages(self, percs: ResultPerc, totalVotes: int = None):
-		return Result({k: v*(totalVotes if totalVotes != None else percs.totalVotes) for k,v in percs.results.items()})
+	def fromPercentages(cls, percs: ResultPerc, totalVotes: float|None = None):
+		if totalVotes is None:
+			if percs.totalVotes is None:
+				return cls({k: v for k,v in percs.results.items()})
+			else:
+				return cls({k: v*percs.totalVotes for k,v in percs.results.items()})
+		else:
+			return cls({k: v*totalVotes for k,v in percs.results.items()})
 	
 	def hasCandidate(self, cand: str) -> bool:
 		return cand in self.getCandidates()
@@ -114,10 +120,10 @@ class Result:
 			for p in coalObj[coal]:
 
 				if self.hasCandidate(p):
-					if coalV == None: coalV = 0
+					if coalV is None: coalV = 0
 					coalV += self.popCandidate(p)
 			
-			if coalV != None:
+			if coalV is not None:
 				self.results[coal] = coalV
 		
 		return self
@@ -134,7 +140,7 @@ class Result:
 			self.results = {k: self.results[k] for k in ks}
 		self.results = {k: v for k,v in sorted(self.results.items(), key=lambda x: x[1], reverse=True)}
 	
-	def getSubstractedDict(self, other: Result) -> dict[str, int]:
+	def getSubstractedDict(self, other: Result) -> dict[str, float]:
 		candidates = getSetList(self.getCandidates(), other.getCandidates())
 		return {k: (self.results[k] if k in self.results else 0)-(other.results[k] if k in other.results else 0) for k in candidates}
 

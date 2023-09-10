@@ -1,7 +1,6 @@
-from __future__ import annotations
 import xml.etree.ElementTree as etree
 from ipgm.utils import *
-from colour import *
+from colour import Color
 import math
 
 seatsArrangements: dict[int, dict[str, list[int]]] = {
@@ -29,9 +28,9 @@ seatsArrangements: dict[int, dict[str, list[int]]] = {
 	52: {'Regular': [8, 9, 9, 9, 9, 8]},
 }
 
-def findSeatsArrangement(totalSeats: int, layout: str, ratio: float = 1):
+def findSeatsArrangement(totalSeats: int, layout: str, ratio: float|None = 1):
 
-	if ratio == None: ratio = 1
+	if ratio is None: ratio = 1
 	if ratio < 0: ratio = 1/(-ratio)
 
 	if totalSeats in seatsArrangements and layout in seatsArrangements[totalSeats]:
@@ -46,19 +45,23 @@ def findSeatsArrangement(totalSeats: int, layout: str, ratio: float = 1):
 
 
 
-def argsFind(l: list[list], s: str) -> int:
+def argsFind(l: list[list], s: str) -> int|None:
 	for i in range(len(l)):
 		if l[i][0] == s: return i
 	return None
 
 def replaceFill(s: str, f: Color) -> str:
 	args = [l.split(':') for l in s.split(';')]
-	args[argsFind(args, 'fill')] = ['fill', str(f)]
+	argFill = argsFind(args, 'fill')
+	if argFill is not None:
+		args[argFill] = ['fill', str(f)]
+	else:
+		args.append(['fill', str(f)])
 	return ';'.join([':'.join(x) for x in args])
 
 
 #Function to draw 1 circle (with given id)
-def drawOneCircle(pos: set[float, float], givenId: str, radius: float, strokeWidth, fillColor: Color = Color('#c0c0c0'), strokeColor: Color = Color('#000000')) -> etree.Element:
+def drawOneCircle(pos: tuple[float, float], givenId: str, radius: float, strokeWidth, fillColor: Color = Color('#c0c0c0'), strokeColor: Color = Color('#000000')) -> etree.Element:
 	circle = etree.Element('{http://www.w3.org/2000/svg}circle', attrib={
 		'style': 'fill:{fillColor};fill-opacity:1;stroke:{strokeColor};stroke-width:{strokeWidth};stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1'.format(fillColor=fillColor, strokeColor=strokeColor, strokeWidth=strokeWidth),
 		'id': givenId,
@@ -85,17 +88,17 @@ def genAlternating(layout: list[int], reverse: bool = False): #Terrible implemen
 
 
 #Function to draw N circles (with given dept id)
-def drawCircles(seatsData: dict[str, str|int], givenId: str, circlesSize: float, strokeSize: float, distanceBetweenCenters: float) -> etree.Element:
+def drawCircles(seatsData: dict[str, str|int|float], givenId: str, circlesSize: float, strokeSize: float, distanceBetweenCenters: float) -> etree.Element:
 	circles = etree.Element('{http://www.w3.org/2000/svg}g', attrib={'id': 'seats-circles-{gid}'.format(gid=givenId)})
 	
-	cx, cy = seatsData['cx'], seatsData['cy']
+	cx, cy = float(seatsData['cx']), float(seatsData['cy'])
 	orient = seatsData['orientation']
 	ratio = float(seatsData['ratio'])
 	if ratio == 0: ratio = None
 	totalSeats = int(seatsData['seats'])
 	
 	#Find the seats layout
-	seatsLayout = findSeatsArrangement(totalSeats, seatsData['layout'], ratio)
+	seatsLayout = findSeatsArrangement(totalSeats, str(seatsData['layout']), ratio)
 	fullHeight = (len(seatsLayout)-1)*distanceBetweenCenters
 	counter = 0
 
@@ -121,9 +124,9 @@ def drawCircles(seatsData: dict[str, str|int], givenId: str, circlesSize: float,
 
 	return circles
 
-def colorCircles(seats: etree.Element, searchId: str, data: list[set[Color, int]]) -> etree.Element:
+def colorCircles(seats: etree.Element, searchId: str, data: list[tuple[Color, int]]) -> etree.Element:
 
-	colors = unpackPairSets(data)
+	colors = unpackPairTuples(data)
 
 	if sum([x[1] for x in data]) != len(seats):
 		#TODO: Implement this
@@ -132,11 +135,20 @@ def colorCircles(seats: etree.Element, searchId: str, data: list[set[Color, int]
 	counter = 0
 	for i in range(len([x for x in seats.iter()][1:])):
 		s = [x for x in seats.iter() if x.get('id') == 'circle-{gid}-{n}'.format(gid=searchId.replace(' ','-'), n=i)][0]
-		s.set('style', replaceFill(s.get('style'), colors[counter]))
+
+		style = s.get('style')
+		if style is not None:
+			s.set('style', replaceFill(style, colors[counter]))
+		else:
+			s.set('style', f'fill:#{colors[counter]}')
 		counter += 1
 	
 	return seats
 
-def getCenter(e: etree.Element) -> set[float, float]:
-	if e.get('{http://en.wikipedia.org/wiki/Main_Page}cx') == None: return (0, 0)
-	return (float(e.get('{http://en.wikipedia.org/wiki/Main_Page}cx')), float(e.get('{http://en.wikipedia.org/wiki/Main_Page}cy')))
+def getCenter(e: etree.Element) -> tuple[float, float]:
+
+	cx = e.get('{http://en.wikipedia.org/wiki/Main_Page}cx')
+	cy = e.get('{http://en.wikipedia.org/wiki/Main_Page}cy')
+	if cx is None or cy is None: return (0, 0)
+
+	return (float(cx), float(cy))

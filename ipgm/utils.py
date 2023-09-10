@@ -1,5 +1,5 @@
-from __future__ import annotations
 import random
+import typing
 
 def sumProductDict(a: dict, b: dict) -> float:
 	allKeys = unionLists(list(a.keys()), list(b.keys()))
@@ -12,7 +12,7 @@ def sumProductDict(a: dict, b: dict) -> float:
 def sumDict(d: dict) -> float:
 	return sum(d.values())
 
-def multiplyDict(d: dict, n: float) -> dict:
+def multiplyDict(d: dict[str, float], n: float) -> dict[str, float]:
 	return {k: v*n for k,v in d.items()}
 
 #Multiplies all values in a 2d matrix by 0.01
@@ -21,10 +21,10 @@ def percentMatrix(m: list) -> list:
 		m[i] = [x*0.01 for x in m[i]]
 	return m
 
-def mean(l: list) -> float:
+def meanList(l: list | dict) -> float:
 	return sum(l)/len(l)
 
-def mean(d: dict) -> float:
+def meanDict(d: dict) -> float:
 	return sum(d.values())/len(d)
 
 #Unpacks divisions from otherCollectivites
@@ -75,9 +75,9 @@ def getSetList(*ll: list) -> list:
 	return lf
 
 def formatPerc(n: float) -> str:
-	n = str(round(float(n)*100, 1))
-	if '.' not in n: n+='.0'
-	return n+'%'
+	nString = str(round(float(n)*100, 1))
+	if '.' not in nString: nString+='.0'
+	return nString+'%'
 
 def averageList(l: list) -> float:
 	return sum(l)/len(l)
@@ -114,7 +114,7 @@ def getRankInDict(d: dict, s: str):
 	ls = [k for k in sorted(d.keys(), key=lambda x: d[x], reverse=True)]
 	return ls.index(s)
 
-def appendInDict(d: dict[str, list[any]], k: str, v: any):
+def appendInDict(d: dict[str, list[typing.Any]], k: str, v: typing.Any):
 	if k in d.keys(): d[k].append(v)
 	else: d[k] = [v]
 
@@ -126,9 +126,9 @@ def appendDictInDict(d: dict[str, dict], dk, k, v):
 	if dk in d.keys(): d[dk][k] = v
 	else: d[dk] = {k: v}
 
-def unpackPairSets(s: set) -> list:
+def unpackPairTuples(lt: list[tuple]) -> list:
 	l = []
-	for k,v in s:
+	for k,v in lt:
 		l += [k]*int(v)
 	return l
 
@@ -168,7 +168,8 @@ def allValuesEqual(l: list):
 		if e != l[0]: return False
 	return True
 
-def findLambda(l: list, a, f: function):
+def findWithLambda(l: list, a: typing.Any, f: typing.Callable):
+	'''Finds an item i in list l such as f(i) == l'''
 	for i in l:
 		if f(i) == a:
 			return i
@@ -176,7 +177,7 @@ def findLambda(l: list, a, f: function):
 def mergeSetLists(l1: list, l2: list) -> list:
 	return l1 + [x for x in l2 if x not in l1]
 
-def fold(l: list, f: function):
+def fold(l: list, f: typing.Callable):
 	if l == []: return None
 	if len(l) == 1: return l[0]
 	er = l[0]
@@ -189,7 +190,7 @@ def isExpressed(c: str) -> bool:
 	if c[0] == '@': return False;
 	return True;
 
-def hasNonExpressed(l: list) -> bool:
+def hasNonExpressed(l: list[str] | dict[str, float]) -> bool:
 	for k in l:
 		if not isExpressed(k): return True
 	return False
@@ -197,7 +198,7 @@ def hasNonExpressed(l: list) -> bool:
 def nonExpressed(d: dict[str, int|float]) -> int|float:
 	return sum([v for k,v in d.items() if not isExpressed(k)])
 
-def allNonExpressed(l: list) -> list[str]:
+def allNonExpressed(l: list[str] | dict[str, float]) -> list[str]:
 	return [x for x in l if not isExpressed(x)]
 
 def isCandidate(c: str) -> bool:

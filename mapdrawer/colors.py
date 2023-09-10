@@ -1,6 +1,6 @@
 import copy
 
-from colour import *
+from colour import Color
 
 def getShadeFromIndex(color: Color, thisShade: int):
 	numShades = 16

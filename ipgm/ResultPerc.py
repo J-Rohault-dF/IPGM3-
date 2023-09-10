@@ -1,7 +1,7 @@
-from __future__ import annotations
-from typing import Dict
+import typing
 from ipgm.utils import *
 
+ResultPerc = typing.TypeVar('ResultPerc')
 class ResultPerc:
 	name: str = ''
 	results: dict[str, float] = {}
@@ -13,16 +13,16 @@ class ResultPerc:
 		self.totalVotes = totalVotes
 	
 	@classmethod
-	def fromVotesDict(self, name: str, resDict: Dict):
-		return ResultPerc(name, resDict, sum([x for x in resDict.values()]))
+	def fromVotesDict(cls, name: str, resDict: typing.Dict):
+		return cls(name, resDict, sum([x for x in resDict.values()]))
 	
 	@classmethod
-	def fromVotelessDict(self, name: str, resDict: dict, votesCount: int|float|None = None):
-		return ResultPerc(name, resDict, votesCount)
+	def fromVotelessDict(cls, name: str, resDict: dict, votesCount: int|float|None = None):
+		return cls(name, resDict, votesCount)
 	
 	@classmethod
-	def createEmpty(self):
-		return ResultPerc('', {}, None)
+	def createEmpty(cls):
+		return cls('', {}, None)
 
 	def __repr__(self):
 		return '<{0}: {1} votes, {2}>'.format(self.name, self.totalVotes, self.results)
@@ -38,7 +38,7 @@ class ResultPerc:
 	def getCandidates(self) -> list[str]:
 		return [x for x in self.results.keys()]
 		
-	def getSumOfVotes(self) -> float:
+	def getSumOfVotes(self) -> float|None:
 		return self.totalVotes
 	
 	def hasCandidate(self, cand: str) -> bool:
@@ -52,11 +52,11 @@ class ResultPerc:
 		for k in allKeys:
 			finalRes[k] = ( self.results[k] if self.hasCandidate(k) else 0 ) + ( other.results[k] if other.hasCandidate(k) else 0 )
 		
-		votes = (self.totalVotes if self.totalVotes != None else 0) + (other.totalVotes if other.totalVotes != None else 0)
+		votes = (self.totalVotes if self.totalVotes is not None else 0) + (other.totalVotes if other.totalVotes is not None else 0)
 		return ResultPerc(self.name, finalRes, votes)
 
 	def getAddedDict(self, other: dict[str, float]) -> ResultPerc:
-		allKeys = unionLists(self.getCandidates(), other)
+		allKeys = unionLists(self.getCandidates(), list(other.keys()))
 		finalRes = {}
 		for k in allKeys:
 			finalRes[k] = ( self.results[k] if self.hasCandidate(k) else 0 ) + ( other[k] if k in other.keys() else 0 )
@@ -64,13 +64,18 @@ class ResultPerc:
 		return ResultPerc(self.name, finalRes, self.totalVotes)
 
 	def getMultipliedDict(self, other: dict[str, float], doReweight: bool = False) -> ResultPerc:
-		allKeys = unionLists(self.getCandidates(), other)
+		allKeys = unionLists(self.getCandidates(), list(other.keys()))
 		finalRes = {}
 		for k in allKeys:
 			finalRes[k] = ( self.results[k] if self.hasCandidate(k) else 0 ) * ( other[k] if k in other.keys() else 0 )
 		
-		if doReweight: return ResultPerc(self.name, percentDict(finalRes), self.totalVotes)
-		else: return ResultPerc(self.name, percentDict(finalRes), self.totalVotes*mean(finalRes))
+		if doReweight:
+			return ResultPerc(self.name, percentDict(finalRes), self.totalVotes)
+		else:
+			if self.totalVotes is not None:
+				return ResultPerc(self.name, percentDict(finalRes), self.totalVotes*meanDict(finalRes))
+			else:
+				return ResultPerc(self.name, percentDict(finalRes), None)
 
 	def getSubstracted(self, other: ResultPerc) -> dict[str, float]:
 		allKeys = unionLists(self.getCandidates(), other.getCandidates())
@@ -97,11 +102,24 @@ class ResultPerc:
 		print('{0}: {1} total votes - '.format(self.name, self.totalVotes) + ', '.join(['{0}: {1}'.format(x, formatPerc(self.results[x])) for x in sorted(self.results, key=self.results.__getitem__, reverse=True)]))
 	
 	def removedAbs(self):
-		if hasNonExpressed(self.results): return ResultPerc(self.name, {k:v for k,v in self.results.items() if isExpressed(k)}, self.totalVotes*(1-nonExpressed(self.results)))
+		if hasNonExpressed(self.results):
+			if self.totalVotes is not None:
+				return ResultPerc(self.name, {k:v for k,v in self.results.items() if isExpressed(k)}, self.totalVotes*(1-nonExpressed(self.results)))
+			else:
+				return ResultPerc(self.name, {k:v for k,v in self.results.items() if isExpressed(k)}, None)
 		else: return self
 	
+	def removeCrazy(self):
+		'''
+		Puts all scores between 0 and 1
+		'''
+		return ResultPerc(self.name, {k:(0 if v<0 else 1 if v>1 else v) for k,v in self.results.items()}, self.totalVotes)
+	
 	def removedCand(self, cand: str):
-		return ResultPerc(self.name, {k:v for k,v in self.results.items() if k != cand}, self.totalVotes*(1-self.get(cand)))
+		if self.totalVotes is not None:
+			return ResultPerc(self.name, {k:v for k,v in self.results.items() if k != cand}, self.totalVotes*(1-self.get(cand)))
+		else:
+			return ResultPerc(self.name, {k:v for k,v in self.results.items() if k != cand}, None)
 
 	def zipZeroes(self):
 		self.results = {k: max(v,0) for k,v in self.results.items()}

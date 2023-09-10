@@ -1,4 +1,4 @@
-from __future__ import annotations
+
 from ipgm.utils import *
 
 class AllDivs:

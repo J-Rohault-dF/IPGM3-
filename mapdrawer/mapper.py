@@ -1,4 +1,3 @@
-from __future__ import annotations
 import math
 import xml.etree.ElementTree as etree
 from ipgm.Candidacies import *
@@ -14,7 +13,7 @@ def getWinningScore(d: dict[str, float]) -> tuple[str, float]:
 	Checks isCandidate() on the party, does not reweight the scores (outputs raw numbers as inputted).
 	"""
 
-	if d == None: return ('',0)
+	if d is None: return ('',0)
 
 	#Get the highest-performing party, returns its name and score
 	km = ''
@@ -43,7 +42,7 @@ def getWinningColorShade(color: Color, score: float) -> Color:
 
 
 def getWinningColorP(d: dict[str, float], candidaciesData: Candidacies) -> str:
-	if d == None: return '000000'
+	if d is None: return '000000'
 
 	#k1, m = getProbsFromResDictDiff(d)
 	k1, v1 = getProbsFromResDict(d)
@@ -88,11 +87,16 @@ def mapColorerPercs(div: Div, candidaciesData: Candidacies, xmlR: etree.ElementT
 
 	colorsUsed = {}
 
-	for i in xmlR.getroot().find('{http://www.w3.org/2000/svg}g'):
+	divisions = xmlR.getroot().find('{http://www.w3.org/2000/svg}g')
+	if divisions is None: return;
+	for i in divisions:
 		#If id is in the deps list, replace the fill
-		if i.get('id') in [x.name for x in div.allSubDivs()]:
+		id = i.get('id')
+		if id is not None and id in [x.name for x in div.allSubDivs()]:
+			curDiv = div.get(id)
+			if curDiv is None: raise Exception(f'Cannot find {curDiv}')
 			
-			winningParty, winningScore = getWinningScore(div.get(i.get('id')).result.toPercentages().removedAbs().results)
+			winningParty, winningScore = getWinningScore(curDiv.result.toPercentages().removedAbs().removeCrazy().results)
 			
 			try: #Gets the winning color, if not present print something and take a fallback color
 				winningColor = candidaciesData.getShadeColor(winningParty)
@@ -106,16 +110,29 @@ def mapColorerPercs(div: Div, candidaciesData: Candidacies, xmlR: etree.ElementT
 			if winningParty not in colorsUsed: colorsUsed[winningParty] = [None] * 20
 			colorsUsed[winningParty][math.floor(100*winningScore/5)] = winningShade
 
-			i.set('style', i.get('style').replace('000000', winningShade))
+			style = i.get('style')
+			if style is not None:
+				i.set('style', style.replace('000000', winningShade))
+			else:
+				i.set('style', f'fill:#{winningShade}')
 	#print(colorsUsed)
 
 def mapColorerProbs(probs: dict[str, dict[str, float]], candidaciesData: Candidacies, xmlR: etree.ElementTree):
-	for i in xmlR.getroot().find('{http://www.w3.org/2000/svg}g'):
-		#If id is in the deps list, replace the fill
-		if i.get('id') in probs.keys():
-			i.set('style', i.get('style').replace('000000', getWinningColorP(probs[i.get('id')], candidaciesData)))
+	divisions = xmlR.getroot().find('{http://www.w3.org/2000/svg}g')
+	if divisions is None: return;
+	for i in divisions:
 
-def mapRinger(xmlL: etree.Element, xmlD: etree.Element, percs: dict[str, dict[str, float]], divsData: dict[str, dict[str, str|int]], outerRadius: float, innerRadius: float, candidaciesData: Candidacies):
+		#If id is in the deps list, replace the fill
+		id = i.get('id')
+		if id is not None and id in probs.keys():
+
+			style = i.get('style')
+			if style is not None:
+				i.set('style', style.replace('000000', getWinningColorP(probs[id], candidaciesData)))
+			else:
+				i.set('style', f"fill:#{getWinningColorP(probs[id], candidaciesData)}")
+
+def mapRinger(xmlL: etree.Element, xmlD: etree.Element, percs: dict[str, dict[str, float]], divsData: dict[str, dict[str, str|int|float]], outerRadius: float, innerRadius: float, candidaciesData: Candidacies):
 	rings = etree.Element('{http://www.w3.org/2000/svg}g', attrib={'id': 'rings-{gid}'.format(gid=getRandomAlphanumeric(4))})
 
 	for dk, dv in percs.items():
@@ -127,8 +144,8 @@ def mapRinger(xmlL: etree.Element, xmlD: etree.Element, percs: dict[str, dict[st
 		scores = [(dv[x] if dv[x] > 0 else 0) for x in parties]
 		colors = [candidaciesData.getCircleColor(x) for x in parties]
 
-		rD, rR = drawPercRing((dd['cx'], dd['cy']), outerRadius, innerRadius, scores, colors)
-		rBm, rB = drawPercRingBehind((dd['cx'], dd['cy']), innerRadius, outerRadius, (1/12))
+		rD, rR = drawPercRing((float(dd['cx']), float(dd['cy'])), outerRadius, innerRadius, scores, colors)
+		rBm, rB = drawPercRingBehind((float(dd['cx']), float(dd['cy'])), innerRadius, outerRadius, (1/12))
 		rR.insert(0, rB)
 
 		rings.append(rR)
@@ -137,14 +154,14 @@ def mapRinger(xmlL: etree.Element, xmlD: etree.Element, percs: dict[str, dict[st
 
 	xmlL.append(rings)
 
-def mapTexter(xmlL: etree.Element, texts: dict[str, str], divsData: dict[str, dict[str, str|int]], fontSize: float, font: str):
+def mapTexter(xmlL: etree.Element, texts: dict[str, str], divsData: dict[str, dict[str, str|int|float]], fontSize: float, font: str):
 	group = etree.Element('{http://www.w3.org/2000/svg}g', attrib={'id': 'texts-{gid}'.format(gid=getRandomAlphanumeric(4))})
 
 	for dk, dv in texts.items():
 		if dk not in divsData.keys(): continue
 		dd = divsData[dk]
 
-		t = drawCenteredText(dv, dd['cx'], dd['cy'], fontSize, font, fillColor=Color('#ffffff'), strokeColor=Color('#000000'), strokeWidth=0.5, bold=True)
+		t = drawCenteredText(dv, float(dd['cx']), float(dd['cy']), fontSize, font, fillColor=Color('#ffffff'), strokeColor=Color('#000000'), strokeWidth=0.5, bold=True)
 		group.append(t)
 	
 	xmlL.append(group)
@@ -155,7 +172,7 @@ def loadMap(mapSrc: str) -> etree.ElementTree:
 
 
 
-def exportMap(div: Div, mapSrc: str, mapTarget: str, candidaciesData: Candidacies, ringsData: None|dict[str, dict[str, str|int]] = None, outerRadius: float = 0, innerRadius: float = 0, scoreMultiplier: float = 1):
+def exportMap(div: Div, mapSrc: str, mapTarget: str, candidaciesData: Candidacies, ringsData: None|dict[str, dict[str, str|int|float]] = None, outerRadius: float = 0, innerRadius: float = 0, scoreMultiplier: float = 1):
 	"""Exports map based on all the data provided.
 
 	Will draw rings if ringsData is provided (arguments needed are marked with *)
@@ -177,30 +194,41 @@ def exportMap(div: Div, mapSrc: str, mapTarget: str, candidaciesData: Candidacie
 	
 	mapColorerPercs(div, candidaciesData, xmlR, scoreMultiplier)
 
-	if ringsData != None:
-		mapRinger(xmlR.getroot().find('{http://www.w3.org/2000/svg}g'), xmlR.getroot().find('{http://www.w3.org/2000/svg}defs'), {x.name: x.result.toPercentages().removedAbs().results for x in div.allSubDivs()}, ringsData, outerRadius, innerRadius, candidaciesData)
+	if ringsData is not None:
+		
+		docG = xmlR.getroot().find('{http://www.w3.org/2000/svg}g')
+		docDefs = xmlR.getroot().find('{http://www.w3.org/2000/svg}defs')
+		if docG is None: raise Exception
+		if docDefs is None: raise Exception
+		
+		mapRinger(docG, docDefs, {x.name: x.result.toPercentages().removedAbs().results for x in div.allSubDivs()}, ringsData, outerRadius, innerRadius, candidaciesData)
 
 	xmlR.write(mapTarget)
 
 
 
-def exportMapProbs(probs: dict[str, dict[str, float]], mapSrc: str, mapTarget: str, allDivs: AllDivs, candidaciesData: Candidacies, doRings: bool = False, divsData: dict[str, dict[str, str|int]] = {}, outerRadius: float = 0, innerRadius: float = 0, doTexts: bool = False, texts: dict[str, str] = {}, fontSize: float = 8, fontUsed: str = ''):
+def exportMapProbs(probs: dict[str, dict[str, float]], mapSrc: str, mapTarget: str, allDivs: AllDivs, candidaciesData: Candidacies, doRings: bool = False, divsData: dict[str, dict[str, str|int|float]] = {}, outerRadius: float = 0, innerRadius: float = 0, doTexts: bool = False, texts: dict[str, str] = {}, fontSize: float = 8, fontUsed: str = ''):
 	mapTarget = 'exports/'+mapTarget
 	xmlR = loadMap(mapSrc)
 	
 	mapColorerProbs(probs, candidaciesData, xmlR)
 
+	docG = xmlR.getroot().find('{http://www.w3.org/2000/svg}g')
+	docDefs = xmlR.getroot().find('{http://www.w3.org/2000/svg}defs')
+	if docG is None: raise Exception
+	if docDefs is None: raise Exception
+
 	if doRings:
-		mapRinger(xmlR.getroot().find('{http://www.w3.org/2000/svg}g'), xmlR.getroot().find('{http://www.w3.org/2000/svg}defs'), probs, divsData, outerRadius, innerRadius, candidaciesData)
+		mapRinger(docG, docDefs, probs, divsData, outerRadius, innerRadius, candidaciesData)
 	
 	if doTexts:
-		mapTexter(xmlR.getroot().find('{http://www.w3.org/2000/svg}g'), texts, divsData, fontSize, fontUsed)
+		mapTexter(docG, texts, divsData, fontSize, fontUsed)
 
 	xmlR.write(mapTarget)
 
 
 
-def exportSeatsMap(div: Div, seatsParties: dict[str, dict[str, int]], divsData: dict[str, dict[str, any]], mapSrc: str, mapTarget: str, allDivs: AllDivs, candidaciesData: Candidacies, seatsScale: float = 1, multiplier: float = 1):
+def exportSeatsMap(div: Div, seatsParties: dict[str, dict[str, int]], divsData: dict[str, dict[str, str|int|float]], mapSrc: str, mapTarget: str, allDivs: AllDivs, candidaciesData: Candidacies, seatsScale: float = 1, multiplier: float = 1):
 	mapTarget = 'exports/'+mapTarget
 	xmlR = loadMap(mapSrc)
 	
@@ -216,14 +244,16 @@ def exportSeatsMap(div: Div, seatsParties: dict[str, dict[str, int]], divsData: 
 		c = colorCircles(c, dn, colorsSeats)
 		group.append(c)
 
-	xmlR.getroot().find('{http://www.w3.org/2000/svg}g').append(group)
+	docG = xmlR.getroot().find('{http://www.w3.org/2000/svg}g')
+	if docG is None: raise Exception
+	docG.append(group)
 	
 	xmlR.write(mapTarget)
 
 
 
 
-def mapColorerExporterRaw(dat: list[str, float], candidaciesData: Candidacies, mapSrc: str, mapTarget: str):
+def mapColorerExporterRaw(dat: list[list[str|float]], candidaciesData: Candidacies, mapSrc: str, mapTarget: str):
 	"""
 
 	"""
@@ -233,13 +263,16 @@ def mapColorerExporterRaw(dat: list[str, float], candidaciesData: Candidacies, m
 
 	#colorsUsed = {}
 
-	for i in xmlR.getroot().find('{http://www.w3.org/2000/svg}g'):
+	docG = xmlR.getroot().find('{http://www.w3.org/2000/svg}g')
+	if docG is None: raise Exception
+
+	for i in docG:
 		#If id is in the deps list, replace the fill
 		if i.get('id') in [x[0] for x in dat]:
 
 			row = [x for x in dat if x[0] == i.get('id')][0] #Finds the row with the right div
 			
-			winningParty, winningScore = row[1], row[2]
+			winningParty, winningScore = str(row[1]), float(row[2])
 			
 			try: #Gets the winning color, if not present print something and take a fallback color
 				winningColor = candidaciesData.getShadeColor(winningParty)
@@ -253,14 +286,18 @@ def mapColorerExporterRaw(dat: list[str, float], candidaciesData: Candidacies, m
 			#if winningParty not in colorsUsed: colorsUsed[winningParty] = [None] * 20
 			#colorsUsed[winningParty][math.floor(100*winningScore/5)] = winningShade
 
-			i.set('style', i.get('style').replace('000000', winningShade))
+			style = i.get('style')
+			if style is not None:
+				i.set('style', style.replace('000000', winningShade))
+			else:
+				i.set('style', f'fill:#{winningShade}')
 	#print(colorsUsed)
 
 	xmlR.write(mapTarget)
 
 
 
-def mapColorerExporterStraight(dat: list[str, float], candidaciesData: Candidacies, mapSrc: str, mapTarget: str):
+def mapColorerExporterStraight(dat: list[list[str|float]], candidaciesData: Candidacies, mapSrc: str, mapTarget: str):
 	"""
 
 	"""
@@ -270,13 +307,16 @@ def mapColorerExporterStraight(dat: list[str, float], candidaciesData: Candidaci
 
 	#colorsUsed = {}
 
-	for i in xmlR.getroot().find('{http://www.w3.org/2000/svg}g'):
+	docG = xmlR.getroot().find('{http://www.w3.org/2000/svg}g')
+	if docG is None: raise Exception
+
+	for i in docG:
 		#If id is in the deps list, replace the fill
 		if i.get('id') in [x[0] for x in dat]:
 
 			row = [x for x in dat if x[0] == i.get('id')][0] #Finds the row with the right div
 			
-			winningParty = row[1]
+			winningParty = str(row[1])
 			
 			try: #Gets the winning color, if not present print something and take a fallback color
 				winningColor = candidaciesData.getShadeColor(winningParty)
@@ -284,6 +324,10 @@ def mapColorerExporterStraight(dat: list[str, float], candidaciesData: Candidaci
 				winningColor = Color('#ffffff')
 				print('missing color for {0}'.format(winningParty))
 
-			i.set('style', i.get('style').replace('000000', winningColor.hex_l[1:]))
+			style = i.get('style')
+			if style is not None:
+				i.set('style', style.replace('000000', winningColor.hex_l[1:]))
+			else:
+				i.set('style', f'fill:#{winningColor.hex_l[1:]}')
 
 	xmlR.write(mapTarget)

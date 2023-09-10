@@ -1,13 +1,12 @@
-from __future__ import annotations
 from ipgm.Result import *
 import ipgm.Div
 import math
-import unittest
+import typing
 
 def filterThreshold(res: Result, threshold: float = 0) -> dict[str, float]:
 
 	#really ugly fix but i don't have the energy to rewrite everything
-	if res == None: return {}
+	if res is None: return {}
 	if type(res) == ipgm.Div.Div: res = res.result
 	#
 
@@ -16,17 +15,22 @@ def filterThreshold(res: Result, threshold: float = 0) -> dict[str, float]:
 
 
 
-def proportionalLargestRemainder(r: dict[str, float], sn: int, quotaType: str) -> dict[str, int]:
+def getHareQuota(votes: float, seats: int) -> float: return votes/seats
+
+def getDroopQuota(votes: float, seats: int) -> float: return (votes/(seats+1)) + 1
+
+def getHagenbachBischoffQuota(votes: float, seats: int) -> float: return votes/(seats+1)
+
+def getImperialiQuota(votes: float, seats: int) -> float: return votes/(seats+2)
+
+def proportionalLargestRemainder(r: dict[str, float], sn: int, quotaMethod: typing.Callable[[float, int], float]) -> dict[str, int]:
 	if hasNonExpressed(r):
 		for i in allNonExpressed(r):
 			del r[i]
 
 	vn = sum(r.values())
-
-	if quotaType == 'Hare': quota = vn / sn
-	elif quotaType == 'Droop': quota = (vn / (sn + 1)) + 1
-	elif quotaType == 'HB' or quotaType == 'Hagenbach-Bischoff': quota = vn / (sn + 1)
-	elif quotaType == 'Imperiali': quota = vn / (sn + 2)
+	
+	quota = quotaMethod(vn, sn)
 
 	#First pass
 	seats = {k: math.floor(v/quota) for k,v in r.items() if isCandidate(k)}
@@ -42,27 +46,31 @@ def proportionalLargestRemainder(r: dict[str, float], sn: int, quotaType: str) -
 
 
 
-def getDivisor(seats: int, methodType: str) -> float:
-	if methodType == 'D\'Hondt': return (seats+1)
-	elif methodType == 'Webster' or methodType == 'Sainte-Laguë': return (seats+0.5)
-	elif methodType == 'Imperiali': return (seats+2)
-	elif methodType == 'Huntington-Hill': return (seats*(seats+1)) ** 0.5
-	elif methodType == 'Danish': return (seats+(1/3))
-	elif methodType == 'Adams': return (seats)
+def getDHondtDivisor(seats: int) -> float: return (seats+1)
 
-def proportionalHighestAverage(r: dict[str, float], sn: int, methodType: str) -> dict[str, int]:
+def getWebsterDivisor(seats: int) -> float: return (seats+0.5)
+
+def getImperialiDivisor(seats: int) -> float: return (seats+2)
+
+def getHuntingtonHillDivisor(seats: int) -> float: return (seats*(seats+1)) ** 0.5
+
+def getDanishDivisor(seats: int) -> float: return (seats+(1/3))
+
+def getAdamsDivisor(seats: int) -> float: return seats
+
+def proportionalHighestAverage(r: dict[str, float], sn: int, divisor: typing.Callable[[int], float]) -> dict[str, int]:
 	
 	if r == {}: return {}
 
-	seats = {x[0]: (0 if methodType not in ['Huntington-Hill', 'Adams'] else 1) for x in sorted(r.items(), key=lambda x: x[1], reverse=True) if isCandidate(x[0])}
+	seats = {x[0]: (0 if divisor not in [getHuntingtonHillDivisor, getAdamsDivisor] else 1) for x in sorted(r.items(), key=lambda x: x[1], reverse=True) if isCandidate(x[0])}
 
-	averages = {k: (v/getDivisor(seats[k], methodType)) for k,v in r.items() if isCandidate(k)}
+	averages = {k: (v/divisor(seats[k])) for k,v in r.items() if isCandidate(k)}
 
 	while sum(seats.values()) < sn:
 
 		highest = sorted(averages.items(), key=lambda x: x[1], reverse=True)[0][0]
 		seats[highest] += 1
-		averages[highest] = (r[highest]/getDivisor(seats[highest], methodType))
+		averages[highest] = (r[highest]/divisor(seats[highest]))
 	
 	return seats
 
@@ -74,8 +82,8 @@ def twoRoundProportional(d1: dict[str, float], d2: dict[str, float], sn: int) ->
 
 	#Run both rounds
 	if halfSeats > 0:
-		t1 = proportionalLargestRemainder(d1, halfSeats, 'Hare')
-		t2 = proportionalLargestRemainder(d2, halfSeats, 'Hare')
+		t1 = proportionalLargestRemainder(d1, halfSeats, getHareQuota)
+		t2 = proportionalLargestRemainder(d2, halfSeats, getHareQuota)
 	else:
 		t1,t2 = {k: 0 for k in d1.keys()}, {k: 0 for k in d2.keys()}
 
@@ -103,7 +111,7 @@ def twoRoundProportional(d1: dict[str, float], d2: dict[str, float], sn: int) ->
 
 
 
-def apparentementsProportional(votes: dict[str, float], sn: int, quotaType: str, apparentements: list[str]):
+'''def apparentementsProportional(votes: dict[str, float], sn: int, quotaType: str, apparentements: list[str]):
 	
 	#Make list of apparentements
 	apparentementsList = {party: [[party], votes] for party,votes in votes.items()}
@@ -146,4 +154,4 @@ class TestApparentementsProportional(unittest.TestCase):
 		)
 
 if __name__ == '__main__':
-	unittest.main()
+	unittest.main()'''

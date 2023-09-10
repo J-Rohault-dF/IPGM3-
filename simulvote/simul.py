@@ -1,4 +1,3 @@
-from __future__ import annotations
 from ipgm.Result import *
 from ipgm.Div import *
 import random
@@ -60,7 +59,7 @@ def simulOneNat(odiv: Div, stdev: float, sampleSize: int) -> Div:
 def simulMany(div: Div, amountOfSims: int, stdev: float, sampleSize: int, listSim: list[str] = None) -> dict:
 	timeStart = time.time()
 	
-	if listSim == None: listSim = [x.name for x in div.allBaseSubDivs()]
+	if listSim is None: listSim = [x.name for x in div.allBaseSubDivs()]
 	ls = {k: {} for k in listSim}
 
 	candidates = [x for x in div.result.getCandidates() if isExpressed(x)]
