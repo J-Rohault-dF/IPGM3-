@@ -1,6 +1,5 @@
-import os
 import copy
-from ipgm.proportional import filterThreshold, getHagenbachBischoffQuota, proportionalLargestRemainder
+from ipgm.proportional import apparentementsProportional, filterThreshold, getHagenbachBischoffQuota, proportionalLargestRemainder
 
 from ipgm.utils import *
 from ipgm.port import *
@@ -60,7 +59,10 @@ apparentements = {
 #Compute the seats count
 #for x in seatsPerCanton.keys():
 #	print(nrw_2023.get(x))
-seatsPartiesCantons = {x: proportionalLargestRemainder(filterThreshold(nrw_2023.get(x).result), seatsPerCanton[x], getHagenbachBischoffQuota) for x in seatsPerCanton.keys()}
+seatsPartiesCantons = {
+	canton: apparentementsProportional(filterThreshold(nrw_2023.get(canton).result), seatsPerCanton[canton], proportionalLargestRemainder, getHagenbachBischoffQuota, apparentements[canton])
+	for canton in seatsPerCanton.keys()
+}
 #print(nrw_2023, 'seatsPartiesCantons', {k: sum([(xv[k] if k in xv else 0) for xk,xv in seatsPartiesCantons.items()]) for k,v in nrw_2023.result.results.items() if isCandidate(k)})
 
 #Export and map

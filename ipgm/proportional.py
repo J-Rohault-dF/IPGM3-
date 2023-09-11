@@ -27,6 +27,8 @@ def proportionalLargestRemainder(r: dict[str, float], sn: int, quotaMethod: typi
 	if hasNonExpressed(r):
 		for i in allNonExpressed(r):
 			del r[i]
+	
+	if len(r) == 1: return {k: sn for k in r.keys()}
 
 	vn = sum(r.values())
 	
@@ -111,47 +113,38 @@ def twoRoundProportional(d1: dict[str, float], d2: dict[str, float], sn: int) ->
 
 
 
-'''def apparentementsProportional(votes: dict[str, float], sn: int, quotaType: str, apparentements: list[str]):
+def apparentementsProportional(votes: dict[str, float], sn: int, proportionalMethod: typing.Callable[[dict[str, float], int, typing.Callable], dict[str, int]], quotaMethod: typing.Callable, apparentements: list[list[str]]):
+	#absolutely horrendous code i know but i spent four days on this i have no idea how to make it better
 	
-	#Make list of apparentements
-	apparentementsList = {party: [[party], votes] for party,votes in votes.items()}
+	listOfApparentements = {k: [[k, v]] for k,v in votes.items()}
+
+	for apparentementParties in apparentements:
+		apparentement = []
+		for _,app in listOfApparentements.items(): #put these parties in the apparentement
+			if len(app) == 1 and app[0][0] in apparentementParties:
+				apparentement.append(app[0])
+		
+		for party in apparentementParties:
+			for k,app in listOfApparentements.items(): #remove these parties from the main list
+				if len(app) == 1 and app[0][0] == party:
+					del listOfApparentements[k]
+					break
+
+		listOfApparentements['-'.join(apparentementParties)] = apparentement
+
+	higherList = {k: float(sum([y[1] for y in v])) for k,v in listOfApparentements.items()}
+
+	# Higher-pass proportional
+	apparentementsSeats = proportionalMethod(higherList, sn, quotaMethod)
+
+	partiesSeats = {}
+
+	for appKey in apparentementsSeats.keys():
+
+		if apparentementsSeats[appKey] > 0:
+			apparentementSeats = proportionalMethod({x[0]: x[1] for x in listOfApparentements[appKey]}, apparentementsSeats[appKey], quotaMethod)
+
+			for k,s in apparentementSeats.items():
+				if s > 0: partiesSeats[k] = s
 	
-	for party in votes.keys():
-		for i,apparentement in enumerate(apparentements):
-			if party in apparentement:
-				apparentementName = '-'.join(apparentement)
-				if apparentementName not in apparentementsList: apparentementsList[apparentementName] = [[], 0]
-				apparentementsList[apparentementName] = [apparentementsList[apparentementName][0]+[party], apparentementsList[apparentementName][1]+apparentementsList[party][1]]
-				del apparentementsList[party]
-				break
-
-	#Distribute seats
-	print(apparentementsList)
-	seatsTotal = proportionalLargestRemainder({k: v[1] for k,v in apparentementsList.items()}, sn, quotaType)
-
-	#Distribute seats within apparentements
-	for apparentementName, apparentement in apparentementsList.items():
-		apparentedParties, apparentementVotes = apparentement[0], apparentement[1]
-
-		apparentementResults = {p: v for p,v in votes.items() if p in apparentedParties}
-
-		print(seatsTotal[apparentementName], apparentementResults)
-		seatsInApparentement = proportionalLargestRemainder(apparentementResults, seatsTotal[apparentementName], quotaType)
-
-		seatsTotal = seatsTotal | seatsInApparentement
-		del seatsTotal[apparentementName]
-
-	return seatsTotal
-
-
-
-class TestApparentementsProportional(unittest.TestCase):
-
-	def test_apparentementsProportional(self):
-		self.assertEqual(
-			apparentementsProportional(votes={'A': 1, 'B': 2, 'C': 3}, sn=2, quotaType='Hare', apparentements=[['A', 'B']]),
-			{'B': 1, 'C': 1}
-		)
-
-if __name__ == '__main__':
-	unittest.main()'''
+	return partiesSeats
