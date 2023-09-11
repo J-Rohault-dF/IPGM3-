@@ -53,14 +53,15 @@ def saveDataTable(src: str, dv: Div):
 	ls = []
 	next = []
 	done = []
-	ls.append(';'.join([''] + [str(x) for x in dv.result.results.keys()]))
+	keys = dv.result.results.keys()
+	ls.append(';'.join([''] + [str(x) for x in keys]))
 
 	next.append(dv)
 	while next != []: #For each div, add its results in ls and add its subdivs in next
 		dv = next.pop()
 		if dv.name in done: continue
 		next += dv.subset
-		ls.append(';'.join([dv.name] + [str(x) for x in dv.result.results.values()]))
+		ls.append(';'.join([dv.name] + [str(dv.result.results[k]) for k in keys]))
 		done.append(dv.name)
 
 	with open(src, 'w', encoding='utf8') as exportFile:
