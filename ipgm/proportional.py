@@ -147,4 +147,6 @@ def apparentementsProportional(votes: dict[str, float], sn: int, proportionalMet
 			for k,s in apparentementSeats.items():
 				if s > 0: partiesSeats[k] = s
 	
+	partiesSeats = dict(sorted(partiesSeats.items(), reverse=True, key=lambda x: votes[x[0]]))
+	
 	return partiesSeats
