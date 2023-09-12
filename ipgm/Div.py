@@ -122,6 +122,12 @@ class Div:
 		self.recalculateAll()
 		return self
 	
+	def multiply(self, factor: float):
+		for sd in self.allBaseSubDivs():
+			if sd == self: continue
+			sd.result.multiply(factor)
+		self.recalculate()
+	
 	def coalition(self, coalObj: dict[str, list[str]]) -> Div:
 		"""
 		Merges candidates in coalitions

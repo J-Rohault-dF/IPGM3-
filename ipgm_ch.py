@@ -12,7 +12,7 @@ allDivs = AllDivs('data/ch/divs/ch.txt')
 
 nrw_2019 = importDataTable('data/ch/stats/2019NRW.csv', allDivs)
 
-poll = 'ch/Leewas_20230726'
+poll = 'ch/Sotomo_20230825'
 
 #mx = importMatrices('data/ch/polls/{0}.json'.format(poll))
 #if not os.path.exists('exports/{path}'.format(path=poll)):
@@ -26,6 +26,19 @@ with open('data/ch/seats/cantons.csv','r',encoding='utf8') as seatsDataFile:
 	seatsDataCantons = {x[0]: dict(zip(seatsDataTemp[0][1:], [toFloatOrStr(y) for y in x[1:]])) for x in seatsDataTemp[1:]}
 seatsPerCanton = {k: int(v['seats']) for k,v in seatsDataCantons.items()}
 
+
+# Fix the fact that the 2019 results are in *suffrages*, not electors
+nrw_2019.removeCandidate('@blank')
+nrw_2019.removeCandidate('@invalid')
+nrw_2019.removeCandidate('@abstension')
+
+seatsPerCanton2019 = copy.deepcopy(seatsPerCanton)
+seatsPerCanton2019['Kanton Basel-Stadt'] -= 1; seatsPerCanton2019['Kanton Zürich'] += 1
+
+for canton,seats in seatsPerCanton2019.items():
+	nrw_2019.get(canton).multiply(1/seats)
+
+nrw_2019.recalculateAll()
 
 
 
@@ -42,15 +55,19 @@ nrw_2023.renameCandidate('CVP', 'DM')
 nrw_2023.renameCandidate('GPS', 'Grüne')
 nrw_2023.renameCandidate('MCG', 'MCR')
 nrw_2023.renameCandidate('Übrige', 'Others')
-pollScores = ResultPerc.fromVotelessDict('Switzerland', {'SVP': 27.9, 'SP': 17.3, 'FDP': 14.3, 'DM': 13.9, 'Grüne': 10.7, 'GLP': 8.2, 'EVP': 2.1, 'EDU': 1.05, 'EàG': 1.05, 'Lega': 0.75, 'AL': 0.32, 'Piraten': 0.27, 'CSP': 0.26, 'MCR': 0.22, 'SD': 0.13, 'Others': 1.55})
+pollScores = ResultPerc.fromVotelessDict('Switzerland', {'SVP': 27.6, 'SP': 17.3, 'DM': 14.8, 'FDP': 14.6, 'Grüne': 10.7, 'GLP': 7.3, 'EVP': 2.1, 'EDU': 1.05, 'EàG': 1.05, 'Lega': 0.75, 'AL': 0.32, 'Piraten': 0.27, 'CSP': 0.26, 'MCR': 0.22, 'SD': 0.13, 'Others': 1.55})
 nrw_2023 = redressementResults(nrw_2023, pollScores, weight = 1)
+nrw_2023.renameCandidate('Others', '#Others')
 
 apparentements = {
 	x: [
 		['SP', 'Grüne', 'EàG'],
-		['SVP', 'FDP', 'EDU'],
-		['DM', 'GLP', 'EVP'],
-	] for x in seatsPerCanton.keys()
+		['DM', 'GLP', 'EVP', 'CSP'],
+		['SVP', 'FDP', 'EDU', 'Lega', 'LPS'],
+	]
+	if x not in ['Kanton Uri', 'Kanton Obwalden', 'Kanton Nidwalden', 'Kanton Glarus', 'Kanton Appenzell Innerrhoden', 'Kanton Appenzell Ausserrhoden']
+	else []
+	for x in seatsPerCanton.keys()
 }
 
 #Tweet text
@@ -70,4 +87,4 @@ if doExportCsv: saveDataTable('exports/{path}/c.csv'.format(path=poll), nrw_2023
 if doExportMap:
 	#exportMap(nrw_2023, 'data/ch/maps/cantons.svg', '{path}/{h}.svg'.format(h=nrw_2023, path=poll), candidaciesData=candidaciesData)
 	#exportMap(nrw_2023, 'data/ch/maps/cantons.svg', '{path}/{h}_r.svg'.format(h=nrw_2023, path=poll), candidaciesData=candidaciesData, ringsData=ringsData, outerRadius=(5*10), innerRadius=(3*10))
-	exportSeatsMap(nrw_2023, seatsPartiesCantons, seatsDataCantons, 'data/ch/maps/cantons.svg', '{path}/c_.svg'.format(path=poll), allDivs=allDivs, candidaciesData=candidaciesData, seatsScale=5)
+	exportSeatsMap(nrw_2023, seatsPartiesCantons, seatsDataCantons, 'data/ch/maps/cantons.svg', '{path}/c.svg'.format(path=poll), allDivs=allDivs, candidaciesData=candidaciesData, seatsScale=5)

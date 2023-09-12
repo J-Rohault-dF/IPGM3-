@@ -52,6 +52,12 @@ class Result:
 				self.results[k] = 0
 			self.results[k] += v
 		return self
+
+	def multiply(self, n: float) -> None:
+		self.results = multiplyDict(self.results, n)
+
+	def getMultiplied(self, n: float) -> Result:
+		return Result(multiplyDict(self.results, n))
 	
 	def toPercentages(self, newName: str = '') -> ResultPerc:
 		return ResultPerc.fromVotesDict(newName, self.results)
