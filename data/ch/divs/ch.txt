@@ -11,8 +11,9 @@ Bezirk Winterthur: Altikon; Brütten; Dägerlen; Dättlikon; Dinhard; Ellikon an
 Bezirk Dietikon: Aesch (ZH); Birmensdorf (ZH); Dietikon; Geroldswil; Oberengstringen; Oetwil an der Limmat; Schlieren; Uitikon; Unterengstringen; Urdorf; Weiningen (ZH)
 Bezirk Zürich: Zürich
 
+Thurnen: Kirchenthurnen; Lohnstorf; Mühlethurnen
 Arrondissement administratif Jura bernois: Corgémont; Cormoret; Cortébert; Courtelary; La Ferrière; Mont-Tramelan; Orvin; Renan (BE); Romont (BE); Saint-Imier; Sonceboz-Sombeval; Sonvilier; Tramelan; Villeret; Sauge; Péry-La Heutte; Belprahon; Champoz; Corcelles (BE); Court; Crémines; Eschert; Grandval; Loveresse; Moutier; Perrefitte; Reconvilier; Roches (BE); Saicourt; Saules (BE); Schelten; Seehof; Sorvilier; Tavannes; Rebévelier; Petit-Val; Valbirse; La Neuveville; Nods; Plateau de Diesse
-Verwaltungskreis Bern-Mittelland: Meikirch; Bern; Bolligen; Bremgarten bei Bern; Kirchlindach; Köniz; Muri bei Bern; Oberbalm; Stettlen; Vechigen; Wohlen bei Bern; Zollikofen; Ittigen; Ostermundigen; Bäriswil; Diemerswil; Fraubrunnen; Jegenstorf; Iffwil; Mattstetten; Moosseedorf; Münchenbuchsee; Urtenen-Schönbühl; Wiggiswil; Zuzwil (BE); Arni (BE); Biglen; Bowil; Brenzikofen; Freimettigen; Grosshöchstetten; Häutligen; Herbligen; Kiesen; Konolfingen; Landiswil; Linden; Mirchel; Münsingen; Niederhünigen; Oberdiessbach; Oberthal; Oppligen; Rubigen; Walkringen; Worb; Zäziwil; Oberhünigen; Allmendingen; Wichtrach; Ferenbalm; Frauenkappelen; Gurbrü; Kriechenwil; Laupen; Mühleberg; Münchenwiler; Neuenegg; Wileroltigen; Guggisberg; Rüschegg; Schwarzenburg; Belp; Gerzensee; Jaberg; Kaufdorf; Kehrsatz; Kirchdorf (BE); Kirchenthurnen; Lohnstorf; Mühlethurnen; Riggisberg; Rüeggisberg; Rümligen; Toffen; Wald (BE)
+Verwaltungskreis Bern-Mittelland: Meikirch; Bern; Bolligen; Bremgarten bei Bern; Kirchlindach; Köniz; Muri bei Bern; Oberbalm; Stettlen; Vechigen; Wohlen bei Bern; Zollikofen; Ittigen; Ostermundigen; Bäriswil; Diemerswil; Fraubrunnen; Jegenstorf; Iffwil; Mattstetten; Moosseedorf; Münchenbuchsee; Urtenen-Schönbühl; Wiggiswil; Zuzwil (BE); Arni (BE); Biglen; Bowil; Brenzikofen; Freimettigen; Grosshöchstetten; Häutligen; Herbligen; Kiesen; Konolfingen; Landiswil; Linden; Mirchel; Münsingen; Niederhünigen; Oberdiessbach; Oberthal; Oppligen; Rubigen; Walkringen; Worb; Zäziwil; Oberhünigen; Allmendingen; Wichtrach; Ferenbalm; Frauenkappelen; Gurbrü; Kriechenwil; Laupen; Mühleberg; Münchenwiler; Neuenegg; Wileroltigen; Guggisberg; Rüschegg; Schwarzenburg; Belp; Gerzensee; Jaberg; Kaufdorf; Kehrsatz; Kirchdorf (BE); Riggisberg; Rüeggisberg; Rümligen; Toffen; Wald (BE); Deisswil bei Münchenbuchsee; Thurnen
 Verwaltungskreis Biel/Bienne: Biel/Bienne; Evilard; Lengnau (BE); Meinisberg; Pieterlen; Aegerten; Bellmund; Brügg; Ipsach; Ligerz; Mörigen; Nidau; Orpund; Port; Safnern; Scheuren; Schwadernau; Sutz-Lattrigen; Twann-Tüscherz
 Verwaltungskreis Emmental: Aefligen; Alchenstorf; Burgdorf; Ersigen; Hasle bei Burgdorf; Heimiswil; Hindelbank; Höchstetten; Kernenried; Kirchberg (BE); Koppigen; Krauchthal; Lyssach; Mötschwil; Oberburg; Rüdtligen-Alchenflüh; Rumendingen; Willadingen; Wynigen; Bätterkinden; Utzenstorf; Wiler bei Utzenstorf; Zielebach; Eggiwil; Langnau im Emmental; Lauperswil; Röthenbach im Emmental; Rüderswil; Schangnau; Signau; Trub; Trubschachen; Affoltern im Emmental; Dürrenroth; Lützelflüh; Rüegsau; Sumiswald; Trachselwald
 Verwaltungskreis Frutigen-Niedersimmental: Adelboden; Aeschi bei Spiez; Frutigen; Kandergrund; Kandersteg; Krattigen; Reichenbach im Kandertal; Därstetten; Diemtigen; Erlenbach im Simmental; Oberwil im Simmental; Spiez; Wimmis
@@ -24,9 +25,10 @@ Verwaltungskreis Thun: Reutigen; Stocken-Höfen; Burgistein; Gurzelen; Seftigen;
 
 Wahlkreis Entlebuch: Doppleschwand; Entlebuch; Flühli; Hasle (LU); Romoos; Schüpfheim; Werthenstein; Escholzmatt-Marbach; Wolhusen
 Wahlkreis Hochdorf: Aesch (LU); Altwis; Ballwil; Emmen; Ermensee; Eschenbach (LU); Hitzkirch; Hochdorf; Hohenrain; Inwil; Rain; Römerswil; Rothenburg; Schongau
-Wahlkreis Luzern-Land: Adligenswil; Buchrain; Dierikon; Ebikon; Gisikon; Greppen; Honau; Horw; Kriens; Luzern; Malters; Meggen; Meierskappel; Root; Schwarzenberg; Udligenswil; Vitznau; Weggis
+Wahlkreis Luzern-Land: Adligenswil; Buchrain; Dierikon; Ebikon; Gisikon; Greppen; Honau; Horw; Kriens; Malters; Meggen; Meierskappel; Root; Schwarzenberg; Udligenswil; Vitznau; Weggis
 Wahlkreis Sursee: Beromünster; Büron; Buttisholz; Eich; Geuensee; Grosswangen; Hildisrieden; Knutwil; Mauensee; Neuenkirch; Nottwil; Oberkirch; Rickenbach (LU); Ruswil; Schenkon; Schlierbach; Sempach; Sursee; Triengen
 Wahlkreis Willisau:  Alberswil; Altbüron; Altishofen; Dagmersellen; Ebersecken; Egolzwil; Ettiswil; Fischbach; Gettnau; Grossdietwil; Hergiswil bei Willisau; Luthern; Menznau; Nebikon; Pfaffnau; Reiden; Roggliswil; Schötz; Ufhusen; Wauwil; Wikon; Zell (LU); Willisau
+Wahlkreis Luzern-Stadt: Luzern
 
 Bezirk Einsiedeln: Einsiedeln
 Bezirk Gersau: Gersau
@@ -35,27 +37,32 @@ Bezirk Küssnacht (SZ): Küssnacht (SZ)
 Bezirk March: Altendorf; Galgenen; Innerthal; Lachen; Reichenburg; Schübelbach; Tuggen; Vorderthal; Wangen (SZ)
 Bezirk Schwyz: Alpthal; Arth; Illgau; Ingenbohl; Lauerz; Morschach; Muotathal; Oberiberg; Riemenstalden; Rothenthurm; Sattel; Schwyz; Steinen; Steinerberg; Unteriberg
 
+Villaz: Villaz-Saint-Pierre; La Folliaz
+Prez: Prez-vers-Noréaz; Noréaz; Corserey
+Bois-d'Amont: Arconciel; Ependes (FR); Senèdes
 District de la Broye: Châtillon (FR); Cheiry; Cugy (FR); Fétigny; Gletterens; Lully (FR); Ménières; Montagny (FR); Nuvilly; Prévondavaux; Saint-Aubin (FR); Sévaz; Surpierre; Vallon; Les Montets; Delley-Portalban; Belmont-Broye; Estavayer; Cheyres-Châbles
-District de la Glâne: Auboranges; Billens-Hennens; Chapelle (Glâne); Le Châtelard; Châtonnaye; Ecublens (FR); Grangettes; Massonnens; Mézières (FR); Montet (Glâne); Romont (FR); Rue; Siviriez; Ursy; Villaz-Saint-Pierre; Vuisternens-devant-Romont; Villorsonnens; Torny; La Folliaz
+District de la Glâne: Auboranges; Billens-Hennens; Chapelle (Glâne); Le Châtelard; Châtonnaye; Ecublens (FR); Grangettes; Massonnens; Mézières (FR); Montet (Glâne); Romont (FR); Rue; Siviriez; Ursy; Vuisternens-devant-Romont; Villorsonnens; Torny; Villaz
 District de la Gruyère: Haut-Intyamon; Pont-en-Ogoz; Botterens; Broc; Bulle; Châtel-sur-Montsalvens; Corbières; Crésuz; Echarlens; Grandvillard; Gruyères; Hauteville; Jaun; Marsens; Morlon; Le Pâquier (FR); Pont-la-Ville; Riaz; La Roche; Sâles; Sorens; Vaulruz; Vuadens; Bas-Intyamon; Val-de-Charmey
-District de la Sarine: Arconciel; Autigny; Avry; Belfaux; Chénens; Corminboeuf; Corserey; Cottens (FR); Ependes (FR); Ferpicloz; Fribourg; Givisiez; Granges-Paccot; Grolley; Marly; Matran; Neyruz (FR); Noréaz; Pierrafortscha; Ponthaux; Le Mouret; Prez-vers-Noréaz; Senèdes; Treyvaux; Villars-sur-Glâne; Villarsel-sur-Marly; Hauterive (FR); La Brillaz; La Sonnaz; Gibloux
+District de la Sarine: Autigny; Avry; Belfaux; Chénens; Corminboeuf; Cottens (FR); Ferpicloz; Fribourg; Givisiez; Granges-Paccot; Grolley; Marly; Matran; Neyruz (FR); Pierrafortscha; Ponthaux; Le Mouret; Treyvaux; Villars-sur-Glâne; Villarsel-sur-Marly; Hauterive (FR); La Brillaz; La Sonnaz; Gibloux; Prez; Bois-d'Amont
 Bezirk See / District du Lac: Courgevaux; Courtepin; Cressier (FR); Fräschels; Galmiz; Gempenach; Greng; Gurmels; Kerzers; Kleinbösingen; Meyriez; Misery-Courtion; Muntelier; Murten; Ried bei Kerzers; Ulmiz; Mont-Vully
 Bezirk Sense: Alterswil; Brünisried; Düdingen; Giffers; Bösingen; Heitenried; Plaffeien; Plasselb; Rechthalten; St. Antoni; St. Silvester; St. Ursen; Schmitten (FR); Tafers; Tentlingen; Ueberstorf; Wünnewil-Flamatt
 District de la Veveyse: Attalens; Bossonnens; Châtel-Saint-Denis; Granges (Veveyse); Remaufens; Saint-Martin (FR); Semsales; Le Flon; La Verrerie
 
+Welschenrohr-Gänsbrunnen: Welschenrohr; Gänsbrunnen
 Bezirk Gäu: Egerkingen; Härkingen; Kestenholz; Neuendorf; Niederbuchsiten; Oberbuchsiten; Oensingen; Wolfwil
-Bezirk Thal: Aedermannsdorf; Balsthal; Gänsbrunnen; Herbetswil; Holderbank (SO); Laupersdorf; Matzendorf; Mümliswil-Ramiswil; Welschenrohr
+Bezirk Thal: Aedermannsdorf; Balsthal; Herbetswil; Holderbank (SO); Laupersdorf; Matzendorf; Mümliswil-Ramiswil; Welschenrohr-Gänsbrunnen
 Bezirk Bucheggberg: Biezwil; Lüterkofen-Ichertswil; Lüterswil-Gächliwil; Messen; Schnottwil; Unterramsern; Lüsslingen-Nennigkofen; Buchegg
 Bezirk Dorneck: Bättwil; Büren (SO); Dornach; Gempen; Hochwald; Hofstetten-Flüh; Metzerlen-Mariastein; Nuglar-St. Pantaleon; Rodersdorf; Seewen; Witterswil
 Bezirk Gösgen: Hauenstein-Ifenthal; Kienberg; Lostorf; Niedergösgen; Obergösgen; Rohr (SO); Stüsslingen; Trimbach; Winznau; Wisen (SO); Erlinsbach (SO)
 Bezirk Wasseramt: Aeschi (SO); Biberist; Bolken; Deitingen; Derendingen; Etziken; Gerlafingen; Halten; Horriwil; Hüniken; Kriegstetten; Lohn-Ammannsegg; Luterbach; Obergerlafingen; Oekingen; Recherswil; Subingen; Zuchwil; Drei Höfe
 Bezirk Lebern: Balm bei Günsberg; Bellach; Bettlach; Feldbrunnen-St. Niklaus; Flumenthal; Grenchen; Günsberg; Hubersdorf; Kammersrohr; Langendorf; Lommiswil; Oberdorf (SO); Riedholz; Rüttenen; Selzach
 Bezirk Olten: Boningen; Däniken; Dulliken; Eppenberg-Wöschnau; Fulenbach; Gretzenbach; Gunzgen; Hägendorf; Kappel (SO); Olten; Rickenbach (SO); Schönenwerd; Starrkirch-Wil; Walterswil (SO); Wangen bei Olten
-Bezirk Thierstein: Solothurn; Bärschwil; Beinwil (SO); Breitenbach; Büsserach; Erschwil; Fehren; Grindel; Himmelried; Kleinlützel; Meltingen; Nunningen; Zullwil
+Bezirk Thierstein: Bärschwil; Beinwil (SO); Breitenbach; Büsserach; Erschwil; Fehren; Grindel; Himmelried; Kleinlützel; Meltingen; Nunningen; Zullwil
+Bezirk Solothurn: Solothurn
 
 Bezirk Arlesheim: Aesch (BL); Allschwil; Arlesheim; Biel-Benken; Binningen; Birsfelden; Bottmingen; Ettingen; Münchenstein; Muttenz; Oberwil (BL); Pfeffingen; Reinach (BL); Schönenbuch; Therwil
 Bezirk Laufen: Blauen; Brislach; Burg im Leimental; Dittingen; Duggingen; Grellingen; Laufen; Liesberg; Nenzlingen; Roggenburg; Röschenz; Wahlen; Zwingen
-Bezirk Liestal: Arisdorf: Augst: Bubendorf: Frenkendorf: Füllinsdorf: Giebenach: Hersberg: Lausen: Liestal: Lupsingen: Pratteln: Ramlinsburg: Seltisberg: Ziefen
+Bezirk Liestal: Arisdorf; Augst; Bubendorf; Frenkendorf; Füllinsdorf; Giebenach; Hersberg; Lausen; Liestal; Lupsingen; Pratteln; Ramlinsburg; Seltisberg; Ziefen
 Bezirk Sissach: Anwil; Böckten; Buckten; Buus; Diepflingen; Gelterkinden; Häfelfingen; Hemmiken; Itingen; Känerkinden; Kilchberg (BL); Läufelfingen; Maisprach; Nusshof; Oltingen; Ormalingen; Rickenbach (BL); Rothenfluh; Rümlingen; Rünenberg; Sissach; Tecknau; Tenniken; Thürnen; Wenslingen; Wintersingen; Wittinsburg; Zeglingen; Zunzgen
 Bezirk Waldenburg: Arboldswil; Bennwil; Bretzwil; Diegten; Eptingen; Hölstein; Lampenberg; Langenbruck; Lauwil; Liedertswil; Niederdorf; Oberdorf (BL); Reigoldswil; Titterten; Waldenburg
 
@@ -79,29 +86,34 @@ Wahlkreis See-Gaster: Amden; Benken (SG); Kaltbrunn; Schänis; Weesen; Schmeriko
 Wahlkreis Toggenburg: Ebnat-Kappel; Wildhaus-Alt St. Johann; Nesslau; Hemberg; Lichtensteig; Oberhelfenschwil; Neckertal; Wattwil; Kirchberg (SG); Lütisburg; Mosnang; Bütschwil-Ganterschwil
 Wahlkreis Wil: Degersheim; Flawil; Jonschwil; Oberuzwil; Uzwil; Niederbüren; Niederhelfenschwil; Oberbüren; Zuzwil (SG); Wil (SG)
 
+Muntogna da Schons: Casti-Wergenstein; Donat; Lohn (GR); Mathon
+Klosters: Klosters-Serneus
 Region Albula: Vaz/Obervaz; Lantsch/Lenz; Schmitten (GR); Albula/Alvra; Surses; Bergün Filisur
 Region Bernina: Brusio; Poschiavo
 Region Surselva: Falera; Laax; Sagogn; Schluein; Vals; Lumnezia; Ilanz/Glion; Safiental; Breil/Brigels; Disentis/Mustér; Medel (Lucmagn); Sumvitg; Tujetsch; Trun; Obersaxen Mundaun
-Region Viamala: Fürstenau; Rothenbrunnen; Scharans; Sils im Domleschg; Cazis; Flerden; Masein; Thusis; Tschappina; Urmein; Domleschg; Avers; Sufers; Andeer; Casti-Wergenstein; Donat; Lohn (GR); Mathon; Rongellen; Zillis-Reischen; Ferrera; Rheinwald
+Region Viamala: Fürstenau; Rothenbrunnen; Scharans; Sils im Domleschg; Cazis; Flerden; Masein; Thusis; Tschappina; Urmein; Domleschg; Avers; Sufers; Andeer; Rongellen; Zillis-Reischen; Ferrera; Rheinwald; Muntogna da Schons
 Region Imboden: Bonaduz; Domat/Ems; Rhäzüns; Felsberg; Flims; Tamins; Trin
 Region Engiadina Bassa / Val Müstair: Zernez; Samnaun; Scuol; Valsot;; Val Müstair
 Region Maloja: Bever; Celerina/Schlarigna; Madulain; Pontresina; La Punt-Chamues-ch; Samedan; St. Moritz; S-chanf; Sils im Engadin/Segl; Silvaplana; Zuoz; Bregaglia
 Region Moesa: Buseno; Castaneda; Rossa; Santa Maria in Calanca; Lostallo; Mesocco; Soazza; Cama; Grono; Roveredo (GR); San Vittore; Calanca
-Region Prättigau / Davos: Davos; Fideris; Furna; Jenaz; Klosters-Serneus; Conters im Prättigau; Küblis; Luzein; Grüsch; Schiers; Seewis im Prättigau
+Region Prättigau / Davos: Davos; Fideris; Furna; Jenaz; Klosters; Conters im Prättigau; Küblis; Luzein; Grüsch; Schiers; Seewis im Prättigau
 Region Plessur: Chur; Churwalden; Arosa; Maladers; Tschiertschen-Praden; Haldenstein
 Region Landquart: Trimmis; Untervaz; Zizers; Fläsch; Jenins; Maienfeld; Malans; Landquart
 
+Herznach-Ueken: Herznach; Ueken
+Böztal: Bözen; Effingen; Elfingen; Hornussen
+Zurzach: Baldingen; Böbikon; Kaiserstuhl; Rekingen (AG); Rietheim; Rümikon; Wislikofen; Bad Zurzach
 Bezirk Aarau: Aarau; Biberstein; Buchs (AG); Densbüren; Erlinsbach (AG); Gränichen; Hirschthal; Küttigen; Muhen; Oberentfelden; Suhr; Unterentfelden
 Bezirk Baden: Baden; Bellikon; Bergdietikon; Birmenstorf (AG); Ennetbaden; Fislisbach; Freienwil; Gebenstorf; Killwangen; Künten; Mägenwil; Mellingen; Neuenhof; Niederrohrdorf; Oberrohrdorf; Obersiggenthal; Remetschwil; Spreitenbach; Stetten (AG); Turgi; Untersiggenthal; Wettingen; Wohlenschwil; Würenlingen; Würenlos; Ehrendingen
 Bezirk Bremgarten: Arni (AG); Berikon; Bremgarten (AG); Büttikon; Dottikon; Eggenwil; Fischbach-Göslikon; Hägglingen; Jonen; Niederwil (AG); Oberlunkhofen; Oberwil-Lieli; Rudolfstetten-Friedlisberg; Sarmenstorf; Tägerig; Uezwil; Unterlunkhofen; Villmergen; Widen; Wohlen (AG); Zufikon; Islisberg
-Bezirk Brugg: Auenstein; Birr; Birrhard; Bözen; Brugg; Effingen; Elfingen; Habsburg; Hausen (AG); Lupfig; Mandach; Mönthal; Mülligen; Remigen; Riniken; Rüfenach; Schinznach-Bad; Thalheim (AG); Veltheim (AG); Villigen; Villnachern; Windisch; Bözberg; Schinznach
+Bezirk Brugg: Auenstein; Birr; Birrhard; Brugg; Habsburg; Hausen (AG); Lupfig; Mandach; Mönthal; Mülligen; Remigen; Riniken; Rüfenach; Schinznach-Bad; Thalheim (AG); Veltheim (AG); Villigen; Villnachern; Windisch; Bözberg; Schinznach; Böztal
 Bezirk Kulm: Beinwil am See; Birrwil; Burg (AG); Dürrenäsch; Gontenschwil; Holziken; Leimbach (AG); Leutwil; Menziken; Oberkulm; Reinach (AG); Schlossrued; Schmiedrued; Schöftland; Teufenthal (AG); Unterkulm; Zetzwil
-Bezirk Laufenburg: Eiken; Frick; Gansingen; Gipf-Oberfrick; Herznach; Hornussen; Kaisten; Laufenburg; Münchwilen (AG); Oberhof; Oeschgen; Schwaderloch; Sisseln; Ueken; Wittnau; Wölflinswil; Zeihen; Mettauertal
+Bezirk Laufenburg: Eiken; Frick; Gansingen; Gipf-Oberfrick; Kaisten; Laufenburg; Münchwilen (AG); Oberhof; Oeschgen; Schwaderloch; Sisseln; Wittnau; Wölflinswil; Zeihen; Mettauertal; Herznach-Ueken
 Bezirk Lenzburg: Ammerswil; Boniswil; Brunegg; Dintikon; Egliswil; Fahrwangen; Hallwil; Hendschiken; Holderbank (AG); Hunzenschwil; Lenzburg; Meisterschwanden; Möriken-Wildegg; Niederlenz; Othmarsingen; Rupperswil; Schafisheim; Seengen; Seon; Staufen
 Bezirk Muri: Abtwil; Aristau; Auw; Beinwil (Freiamt); Besenbüren; Bettwil; Boswil; Bünzen; Buttwil; Dietwil; Geltwil; Kallern; Merenschwand; Mühlau; Muri (AG); Oberrüti; Rottenschwil; Sins; Waltenschwil
 Bezirk Rheinfelden: Hellikon; Kaiseraugst; Magden; Möhlin; Mumpf; Obermumpf; Olsberg; Rheinfelden; Schupfart; Stein (AG); Wallbach; Wegenstetten; Zeiningen; Zuzgen
 Bezirk Zofingen: Aarburg; Bottenwil; Brittnau; Kirchleerau; Kölliken; Moosleerau; Murgenthal; Oftringen; Reitnau; Rothrist; Safenwil; Staffelbach; Strengelbach; Uerkheim; Vordemwald; Wiliberg; Zofingen
-Bezirk Zurzach: Baldingen; Böbikon; Böttstein; Döttingen; Endingen; Fisibach; Full-Reuenthal; Kaiserstuhl; Klingnau; Koblenz; Leibstadt; Lengnau (AG); Leuggern; Mellikon; Rekingen (AG); Rietheim; Rümikon; Schneisingen; Siglistorf; Tegerfelden; Wislikofen; Bad Zurzach
+Bezirk Zurzach: Böttstein; Döttingen; Endingen; Fisibach; Full-Reuenthal; Klingnau; Koblenz; Leibstadt; Lengnau (AG); Leuggern; Mellikon; Schneisingen; Siglistorf; Tegerfelden; Zurzach
 
 Bezirk Arbon: Arbon; Dozwil; Egnach; Hefenhofen; Horn; Kesswil; Roggwil (TG); Romanshorn; Salmsach; Sommeri; Uttwil; Amriswil
 Bezirk Weinfelden: Bischofszell; Erlen; Hauptwil-Gottshaus; Hohentannen; Kradolf-Schönenberg; Sulgen; Zihlschlacht-Sitterdorf; Affeltrangen; Schönholzerswilen; Wuppenau; Amlikon-Bissegg; Berg (TG); Birwinken; Bürglen (TG); Bussnang; Märstetten; Weinfelden; Wigoltingen
@@ -109,29 +121,37 @@ Bezirk Frauenfeld: Basadingen-Schlattingen; Diessenhofen; Schlatt (TG); Berlinge
 Bezirk Münchwilen: Aadorf; Felben-Wellhausen; Frauenfeld; Gachnang; Hüttlingen; Matzingen; Neunforn; Stettfurt; Thundorf; Uesslingen-Buch; Warth-Weiningen; Bettwiesen; Bichelsee-Balterswil; Braunau; Eschlikon; Fischingen; Lommis; Münchwilen (TG); Rickenbach (TG); Sirnach; Tobel-Tägerschen; Wängi; Wilen (TG)
 Bezirk Kreuzlingen: Altnau; Bottighofen; Ermatingen; Gottlieben; Güttingen; Kemmental; Kreuzlingen; Langrickenbach; Lengwil; Münsterlingen; Tägerwilen; Wäldi; Raperswilen; Salenstein
 
+Verzasca: Vogorno; Sonogno; Corippo; Brione (Verzasca); Frasco
+Val Mara: Maroggia; Melano; Rovio
+Tresa: Croglio; Monteggio; Ponte Tresa; Sessa
 Distretto di Bellinzona: Arbedo-Castione; Bellinzona; Cadenazzo; Isone; Lumino; Sant'Antonino
 Distretto di Blenio: Acquarossa; Blenio; Serravalle
 Distretto di Leventina: Airolo; Bedretto; Bodio; Dalpe; Faido; Giornico; Personico; Pollegio; Prato (Leventina); Quinto
-Distretto di Locarno: Ascona; Brione (Verzasca); Brione sopra Minusio; Brissago; Corippo; Frasco; Gordola; Lavertezzo; Locarno; Losone; Mergoscia; Minusio; Muralto; Orselina; Ronco sopra Ascona; Sonogno; Tenero-Contra; Vogorno; Onsernone; Terre di Pedemonte; Centovalli; Gambarogno
-Distretto di Lugano: Agno; Aranno; Arogno; Astano; Bedano; Bedigliora; Bioggio; Bissone; Brusino Arsizio; Cademario; Cadempino; Canobbio; Caslano; Comano; Croglio; Cureglia; Curio; Grancia; Gravesano; Lamone; Lugano; Magliaso; Manno; Maroggia; Massagno; Melano; Melide; Mezzovico-Vira; Miglieglia; Monteggio; Morcote; Muzzano; Neggio; Novaggio; Origlio; Paradiso; Ponte Capriasca; Ponte Tresa; Porza; Pura; Rovio; Savosa; Sessa; Sorengo; Capriasca; Torricella-Taverne; Vernate; Vezia; Vico Morcote; Collina d'Oro; Alto Malcantone; Monteceneri
+Distretto di Locarno: Ascona; Brione sopra Minusio; Brissago; Gordola; Lavertezzo; Locarno; Losone; Mergoscia; Minusio; Muralto; Orselina; Ronco sopra Ascona; Tenero-Contra; Onsernone; Terre di Pedemonte; Centovalli; Gambarogno; Verzasca
+Distretto di Lugano: Agno; Aranno; Arogno; Astano; Bedano; Bedigliora; Bioggio; Bissone; Brusino Arsizio; Cademario; Cadempino; Canobbio; Caslano; Comano; Cureglia; Curio; Grancia; Gravesano; Lamone; Lugano; Magliaso; Manno; Massagno; Melide; Mezzovico-Vira; Miglieglia; Morcote; Muzzano; Neggio; Novaggio; Origlio; Paradiso; Ponte Capriasca; Porza; Pura; Savosa; Sorengo; Capriasca; Torricella-Taverne; Vernate; Vezia; Vico Morcote; Collina d'Oro; Alto Malcantone; Monteceneri; Val Mara; Tresa
 Distretto di Mendrisio: Balerna; Castel San Pietro; Chiasso; Coldrerio; Mendrisio; Morbio Inferiore; Novazzano; Riva San Vitale; Stabio; Vacallo; Breggia
 Distretto di Riviera: Biasca; Riviera
 Distretto di Vallemaggia: Bosco/Gurin; Campo (Vallemaggia); Cerentino; Cevio; Linescio; Maggia; Lavizzara; Avegno Gordevio
 
+Hautemorges: Apples; Bussy-Chardonney; Cottens (VD); Pampigny; Reverolle; Sévery
+Crans (VD): Crans-près-Céligny
+Blonay - Saint-Légier: Blonay; Saint-Légier-La Chiésaz
 District d'Aigle: Aigle; Bex; Chessel; Corbeyrier; Gryon; Lavey-Morcles; Leysin; Noville; Ollon; Ormont-Dessous; Ormont-Dessus; Rennaz; Roche (VD); Villeneuve (VD); Yvorne
 District de l'Ouest lausannois: Crissier; Prilly; Renens (VD); Bussigny; Chavannes-près-Renens; Ecublens (VD); Saint-Sulpice (VD); Villars-Sainte-Croix
 District de la Broye-Vully: Avenches; Cudrefin; Faoug; Vully-les-Lacs; Bussy-sur-Moudon; Chavannes-sur-Moudon; Curtilles; Dompierre (VD); Hermenches; Lovatens; Lucens; Moudon; Prévonloup; Rossenges; Syens; Villars-le-Comte; Vucherens; Corcelles-le-Jorat; Ropraz; Vulliens; Champtauroz; Chevroux; Corcelles-près-Payerne; Grandcour; Henniez; Missy; Payerne; Trey; Treytorrens (Payerne); Villarzel; Valbroye
-District de la Riviera-Pays-d'Enhaut: Château-d'Oex; Rossinière; Rougemont; Blonay; Chardonne; Corseaux; Corsier-sur-Vevey; Jongny; Montreux; Saint-Légier-La Chiésaz; La Tour-de-Peilz; Vevey; Veytaux
+District de la Riviera-Pays-d'Enhaut: Château-d'Oex; Rossinière; Rougemont; Chardonne; Corseaux; Corsier-sur-Vevey; Jongny; Montreux; La Tour-de-Peilz; Vevey; Veytaux; Blonay - Saint-Légier
 District de Lausanne: Cheseaux-sur-Lausanne; Epalinges; Jouxtens-Mézery; Lausanne; Le Mont-sur-Lausanne; Romanel-sur-Lausanne
 District de Lavaux-Oron: Belmont-sur-Lausanne; Paudex; Pully; Chexbres; Forel (Lavaux); Lutry; Puidoux; Rivaz; Saint-Saphorin (Lavaux); Savigny; Bourg-en-Lavaux; Essertes; Maracon; Montpreveyres; Servion; Oron; Jorat-Mézières
-District de Morges: Apples; Aubonne; Ballens; Berolle; Bière; Bougy-Villars; Féchy; Gimel; Mollens (VD); Montherod; Saint-Livres; Saint-Oyens; Saubraz; La Chaux (Cossonay); Chavannes-le-Veyron; Chevilly; Cossonay; Cottens (VD); Cuarnens; Dizy; Eclépens; Ferreyres; Gollion; Grancy; L'Isle; Mauraz; Moiry; Mont-la-Ville; Montricher; Orny; Pampigny; Pompaples; La Sarraz; Senarclens; Sévery; Aclens; Bremblens; Buchillon; Bussy-Chardonney; Chigny; Clarmont; Denens; Denges; Echandens; Echichens; Etoy; Lavigny; Lonay; Lully (VD); Lussy-sur-Morges; Morges; Préverenges; Reverolle; Romanel-sur-Morges; Saint-Prex; Tolochenaz; Vaux-sur-Morges; Villars-sous-Yens; Vufflens-le-Château; Vullierens; Yens; Allaman
-District de Nyon: Longirod; Marchissy; Saint-George; Arnex-sur-Nyon; Arzier-Le Muids; Bassins; Begnins; Bogis-Bossey; Borex; Chavannes-de-Bogis; Chavannes-des-Bois; Chéserex; Coinsins; Commugny; Coppet; Crans-près-Céligny; Crassier; Duillier; Eysins; Founex; Genolier; Gingins; Givrins; Gland; Grens; Mies; Nyon; Prangins; La Rippe; Saint-Cergue; Signy-Avenex; Tannay; Trélex; Le Vaud; Vich; Bursinel; Bursins; Burtigny; Dully; Essertines-sur-Rolle; Gilly; Luins; Mont-sur-Rolle; Perroy; Rolle; Tartegnin; Vinzel
+District de Morges: Aubonne; Ballens; Berolle; Bière; Bougy-Villars; Féchy; Gimel; Mollens (VD); Montherod; Saint-Livres; Saint-Oyens; Saubraz; La Chaux (Cossonay); Chavannes-le-Veyron; Chevilly; Cossonay; Cuarnens; Dizy; Eclépens; Ferreyres; Gollion; Grancy; L'Isle; Mauraz; Moiry; Mont-la-Ville; Montricher; Orny; Pompaples; La Sarraz; Senarclens; Aclens; Bremblens; Buchillon; Chigny; Clarmont; Denens; Denges; Echandens; Echichens; Etoy; Lavigny; Lonay; Lully (VD); Lussy-sur-Morges; Morges; Préverenges; Romanel-sur-Morges; Saint-Prex; Tolochenaz; Vaux-sur-Morges; Villars-sous-Yens; Vufflens-le-Château; Vullierens; Yens; Allaman; Hautemorges
+District de Nyon: Longirod; Marchissy; Saint-George; Arnex-sur-Nyon; Arzier-Le Muids; Bassins; Begnins; Bogis-Bossey; Borex; Chavannes-de-Bogis; Chavannes-des-Bois; Chéserex; Coinsins; Commugny; Coppet; Crans (VD); Crassier; Duillier; Eysins; Founex; Genolier; Gingins; Givrins; Gland; Grens; Mies; Nyon; Prangins; La Rippe; Saint-Cergue; Signy-Avenex; Tannay; Trélex; Le Vaud; Vich; Bursinel; Bursins; Burtigny; Dully; Essertines-sur-Rolle; Gilly; Luins; Mont-sur-Rolle; Perroy; Rolle; Tartegnin; Vinzel
 District du Gros-de-Vaud: Bettens; Bournens; Boussens; Daillens; Lussery-Villars; Mex (VD); Penthalaz; Penthaz; Sullens; Vufflens-la-Ville; Assens; Bercher; Bioley-Orjulaz; Bottens; Bretigny-sur-Morrens; Cugy (VD); Echallens; Essertines-sur-Yverdon; Etagnières; Fey; Froideville; Morrens (VD); Oulens-sous-Echallens; Pailly; Penthéréaz; Poliez-Pittet; Rueyres; Saint-Barthélemy (VD); Villars-le-Terroir; Vuarrens; Montilliez; Goumoëns; Boulens; Ogens; Montanaire; Jorat-Menthue; Oppens
 District du Jura-Nord vaudois: Bonvillars; Bullet; Champagne; Concise; Corcelles-près-Concise; Fiez; Fontaines-sur-Grandson; Giez; Grandevent; Grandson; Mauborget; Mutrux; Novalles; Onnens (VD); Provence; Sainte-Croix; Tévenon; L'Abergement; Agiez; Arnex-sur-Orbe; Ballaigues; Baulmes; Bavois; Bofflens; Bretonnières; Chavornay; Les Clées; Croy; Juriens; Lignerolle; Montcherand; Orbe; La Praz; Premier; Rances; Romainmôtier-Envy; Sergey; Valeyres-sous-Rances; Vallorbe; Vaulion; Vuiteboeuf; L'Abbaye; Le Chenit; Le Lieu; Belmont-sur-Yverdon; Bioley-Magnoux; Chamblon; Champvent; Chavannes-le-Chêne; Chêne-Pâquier; Cheseaux-Noréaz; Cronay; Cuarny; Démoret; Donneloye; Ependes (VD); Mathod; Molondin; Montagny-près-Yverdon; Orges; Orzens; Pomy; Rovray; Suchy; Suscévaz; Treycovagnes; Ursins; Valeyres-sous-Montagny; Valeyres-sous-Ursins; Villars-Epeney; Vugelles-La Mothe; Yverdon-les-Bains; Yvonand
 
+Val de Bagnes: Bagnes; Vollèges
+Noble-Contrée: Miège; Venthône; Veyras
 Bezirk Brig: Brig-Glis; Eggerberg; Naters; Ried-Brig; Simplon; Termen; Zwischbergen
 District de Conthey: Ardon; Chamoson; Conthey; Nendaz; Vétroz
-District d'Entremont: Bagnes; Bourg-Saint-Pierre; Liddes; Orsières; Sembrancher; Vollèges
+District d'Entremont: Val de Bagnes; Bourg-Saint-Pierre; Liddes; Orsières; Sembrancher
 Bezirk Goms: Bellwald; Binn; Ernen; Fiesch; Fieschertal; Lax; Obergoms; Goms
 District d'Hérens: Ayent; Evolène; Hérémence; Saint-Martin (VS); Vex; Mont-Noble
 Bezirk Leuk: Agarn; Albinen; Ergisch; Inden; Leuk; Leukerbad; Oberems; Salgesch; Varen; Guttet-Feschel; Gampel-Bratsch; Turtmann-Unterems
@@ -139,40 +159,42 @@ District de Martigny: Bovernier; Charrat; Fully; Isérables; Leytron; Martigny; 
 District de Monthey: Champéry; Collombey-Muraz; Monthey; Port-Valais; Saint-Gingolph; Troistorrents; Val-d'Illiez; Vionnaz; Vouvry
 Bezirk Raron: Bister; Bitsch; Grengiols; Riederalp; Ausserberg; Blatten; Bürchen; Eischoll; Ferden; Kippel; Niedergesteln; Raron; Unterbäch; Wiler (Lötschen); Mörel-Filet; Steg-Hohtenn; Bettmeralp
 District de Saint-Maurice: Collonges; Dorénaz; Evionnaz; Finhaut; Massongex; Saint-Maurice; Salvan; Vernayaz; Vérossaz
-District de Sierre: Chalais; Chippis; Grône; Icogne; Lens; Miège; Saint-Léonard; Sierre; Venthône; Veyras; Anniviers; Crans-Montana
+District de Sierre: Chalais; Chippis; Grône; Icogne; Lens; Saint-Léonard; Sierre; Anniviers; Crans-Montana; Noble-Contrée
 District de Sion: Arbaz; Grimisuat; Savièse; Sion; Veysonnaz
 Bezirk Visp: Baltschieder; Eisten; Embd; Grächen; Lalden; Randa; Saas-Almagell; Saas-Balen; Saas-Fee; Saas-Grund; St. Niklaus; Stalden (VS); Staldenried; Täsch; Törbel; Visp; Visperterminen; Zeneggen; Zermatt
 
+Damphreux-Lugnez: Damphreux; Lugnez
 District de Delémont: Boécourt; Bourrignon; Châtillon (JU); Courchapoix; Courrendlin; Courroux; Courtételle; Delémont; Develier; Ederswiler; Mervelier; Mettembert; Movelier; Pleigne; Rossemaison; Saulcy; Soyhières; Haute-Sorne; Val Terbi
 District des Franches-Montagnes: Le Bémont (JU); Les Bois; Les Breuleux; La Chaux-des-Breuleux; Les Enfers; Les Genevez (JU); Lajoux (JU); Montfaucon; Muriaux; Le Noirmont; Saignelégier; Saint-Brais; Soubey
-District de Porrentruy: Alle; Beurnevésin; Boncourt; Bonfol; Bure; Coeuve; Cornol; Courchavon; Courgenay; Courtedoux; Damphreux; Fahy; Fontenais; Grandfontaine; Lugnez; Porrentruy; Vendlincourt; Basse-Allaine; Clos du Doubs; Haute-Ajoie; La Baroche
+District de Porrentruy: Alle; Beurnevésin; Boncourt; Bonfol; Bure; Coeuve; Cornol; Courchavon; Courgenay; Courtedoux; Damphreux-Lugnez; Fahy; Fontenais; Grandfontaine; Porrentruy; Vendlincourt; Basse-Allaine; Clos du Doubs; Haute-Ajoie; La Baroche
 
+Schwende-Rüte: Schwende; Rüte
 Kanton Uri: Altdorf (UR); Andermatt; Attinghausen; Bauen; Bürglen (UR); Erstfeld; Flüelen; Göschenen; Gurtnellen; Hospental; Isenthal; Realp; Schattdorf; Seedorf (UR); Seelisberg; Silenen; Sisikon; Spiringen; Unterschächen; Wassen; UR-Ausland-CH
 Kanton Obwalden: Alpnach; Engelberg; Giswil; Kerns; Lungern; Sachseln; Sarnen
 Kanton Nidwalden: Beckenried; Buochs; Dallenwil; Emmetten; Ennetbürgen; Ennetmoos; Hergiswil (NW); Oberdorf (NW); Stans; Stansstad; Wolfenschiessen
 Kanton Glarus: Glarus Nord; Glarus Süd; Glarus
 Kanton Zug: Baar; Cham; Hünenberg; Menzingen; Neuheim; Oberägeri; Risch; Steinhausen; Unterägeri; Walchwil; Zug
 Kanton Basel-Stadt: Basel; Bettingen; Riehen; BS-Ausland-CH
-Kanton Appenzell Innerrhoden: Appenzell; Gonten; Rüte; Schlatt-Haslen; Schwende; Oberegg; AI-Ausland-CH
+Kanton Appenzell Innerrhoden: Appenzell; Gonten; Schlatt-Haslen; Schwende-Rüte; Oberegg; AI-Ausland-CH
 Canton de Neuchâtel: Boudry; Corcelles-Cormondrèche; Cortaillod; Peseux; Rochefort; Milvignes; La Grande Béroche; La Chaux-de-Fonds; Les Planchettes; La Sagne; Les Brenets; La Brévine; Brot-Plamboz; Le Cerneux-Péquignot; La Chaux-du-Milieu; Le Locle; Les Ponts-de-Martel; Cornaux; Cressier (NE); Enges; Hauterive (NE); Le Landeron; Lignières; Neuchâtel; Saint-Blaise; La Tène; Valangin; Val-de-Ruz; La Côte-aux-Fées; Les Verrières; Val-de-Travers
 Canton de Genève: Aire-la-Ville; Anières; Avully; Avusy; Bardonnex; Bellevue; Bernex; Carouge (GE); Cartigny; Céligny; Chancy; Chêne-Bougeries; Chêne-Bourg; Choulex; Collex-Bossy; Collonge-Bellerive; Cologny; Confignon; Corsier (GE); Dardagny; Genève; Genthod; Le Grand-Saconnex; Gy; Hermance; Jussy; Laconnex; Lancy; Meinier; Meyrin; Onex; Perly-Certoux; Plan-les-Ouates; Pregny-Chambésy; Presinge; Puplinge; Russin; Satigny; Soral; Thônex; Troinex; Vandoeuvres; Vernier; Versoix; Veyrier; GE-CH de l'étranger
 
 Kanton Zürich: Bezirk Affoltern; Bezirk Andelfingen; Bezirk Bülach; Bezirk Dielsdorf; Bezirk Hinwil; Bezirk Horgen; Bezirk Meilen; Bezirk Pfäffikon; Bezirk Uster; Bezirk Winterthur; Bezirk Dietikon; Bezirk Zürich; ZH-Ausland-CH
 Kanton Bern: Arrondissement administratif Jura bernois; Verwaltungskreis Bern-Mittelland; Verwaltungskreis Biel/Bienne; Verwaltungskreis Emmental; Verwaltungskreis Frutigen-Niedersimmental; Verwaltungskreis Interlaken-Oberhasli; Verwaltungskreis Oberaargau; Verwaltungskreis Obersimmental-Saanen; Verwaltungskreis Seeland; Verwaltungskreis Thun
-Kanton Luzern: Wahlkreis Entlebuch; Wahlkreis Hochdorf; Wahlkreis Luzern-Land; Wahlkreis Sursee; Wahlkreis Willisau; LU-Ausland-CH
+Kanton Luzern: Wahlkreis Entlebuch; Wahlkreis Hochdorf; Wahlkreis Luzern-Land; Wahlkreis Sursee; Wahlkreis Willisau; Wahlkreis Luzern-Stadt; LU-Ausland-CH
 Kanton Schwyz: Bezirk Einsiedeln; Bezirk Gersau; Bezirk Höfe; Bezirk Küssnacht (SZ); Bezirk March; Bezirk Schwyz
 Canton de Fribourg: District de la Broye; District de la Glâne; District de la Gruyère; District de la Sarine; Bezirk See / District du Lac; Bezirk Sense; District de la Veveyse; FR-CH de l'étranger
-Kanton Solothurn: Bezirk Gäu; Bezirk Thal; Bezirk Bucheggberg; Bezirk Dorneck; Bezirk Gösgen; Bezirk Wasseramt; Bezirk Lebern; Bezirk Olten; Bezirk Thierstein
+Kanton Solothurn: Bezirk Gäu; Bezirk Thal; Bezirk Bucheggberg; Bezirk Dorneck; Bezirk Gösgen; Bezirk Wasseramt; Bezirk Lebern; Bezirk Olten; Bezirk Thierstein; Bezirk Solothurn
 Kanton Basel-Landschaft: Bezirk Arlesheim; Bezirk Laufen; Bezirk Liestal; Bezirk Sissach; Bezirk Waldenburg
-Kanton Schaffhausen: Bezirk Oberklettgau; Bezirk Reiat; Bezirk Schaffhausen; Bezirk Schleitheim
+Kanton Schaffhausen: Bezirk Oberklettgau; Bezirk Reiat; Bezirk Schaffhausen; Bezirk Schleitheim; Bezirk Unterklettgau; Bezirk Stein
 Kanton Appenzell Ausserrhoden: Bezirk Hinterland; Bezirk Mittelland; Bezirk Vorderland
 Kanton St. Gallen: Wahlkreis St. Gallen; Wahlkreis Rorschach; Wahlkreis Rheintal; Wahlkreis Werdenberg; Wahlkreis Sarganserland; Wahlkreis See-Gaster; Wahlkreis Toggenburg; Wahlkreis Wil; SG-Ausland-CH
 Kanton Graubünden: Region Albula; Region Bernina; Region Surselva; Region Viamala; Region Imboden; Region Engiadina Bassa / Val Müstair; Region Maloja; Region Moesa; Region Prättigau / Davos; Region Plessur; Region Landquart
 Kanton Aargau: Bezirk Aarau; Bezirk Baden; Bezirk Bremgarten; Bezirk Brugg; Bezirk Kulm; Bezirk Laufenburg; Bezirk Lenzburg; Bezirk Muri; Bezirk Rheinfelden; Bezirk Zofingen; Bezirk Zurzach; AG-Ausland-CH
 Kanton Thurgau: Bezirk Arbon; Bezirk Weinfelden; Bezirk Frauenfeld; Bezirk Münchwilen; Bezirk Kreuzlingen; TG-Ausland-CH
 Cantone Ticino: Distretto di Bellinzona; Distretto di Blenio; Distretto di Leventina; Distretto di Locarno; Distretto di Lugano; Distretto di Mendrisio; Distretto di Riviera; Distretto di Vallemaggia
-Canton du Vaud: District d'Aigle; District de l'Ouest lausannois; District de la Broye-Vully; District de la Riviera-Pays-d'Enhaut; District de Lausanne; District de Lavaux-Oron; District de Morges; District de Nyon; District du Gros-de-Vaud; District du Jura-Nord vaudois; VD-CH de l'étranger
+Canton de Vaud: District d'Aigle; District de l'Ouest lausannois; District de la Broye-Vully; District de la Riviera-Pays-d'Enhaut; District de Lausanne; District de Lavaux-Oron; District de Morges; District de Nyon; District du Gros-de-Vaud; District du Jura-Nord vaudois; VD-CH de l'étranger
 Canton du Valais: Bezirk Brig; District de Conthey; District d'Entremont; Bezirk Goms; District d'Hérens; Bezirk Leuk; District de Martigny; District de Monthey; Bezirk Raron; District de Saint-Maurice; District de Sierre; District de Sion; Bezirk Visp; VS-CH de l'étranger
 Canton du Jura: District de Delémont; District des Franches-Montagnes; District de Porrentruy
 
-Switzerland: Kanton Uri; Kanton Obwalden; Kanton Nidwalden; Kanton Glarus; Kanton Zug; Kanton Basel-Stadt; Kanton Appenzell Innerrhoden; Canton de Neuchâtel; Canton de Genève; Kanton Zürich; Kanton Bern; Kanton Luzern; Kanton Schwyz; Canton de Fribourg; Kanton Solothurn; Kanton Basel-Landschaft; Kanton Schaffhausen; Kanton Appenzell Ausserrhoden; Kanton St. Gallen; Kanton Graubünden; Kanton Aargau; Kanton Thurgau; Cantone Ticino; Canton du Vaud; Canton du Valais; Canton du Jura
+Switzerland: Kanton Uri; Kanton Obwalden; Kanton Nidwalden; Kanton Glarus; Kanton Zug; Kanton Basel-Stadt; Kanton Appenzell Innerrhoden; Canton de Neuchâtel; Canton de Genève; Kanton Zürich; Kanton Bern; Kanton Luzern; Kanton Schwyz; Canton de Fribourg; Kanton Solothurn; Kanton Basel-Landschaft; Kanton Schaffhausen; Kanton Appenzell Ausserrhoden; Kanton St. Gallen; Kanton Graubünden; Kanton Aargau; Kanton Thurgau; Cantone Ticino; Canton de Vaud; Canton du Valais; Canton du Jura

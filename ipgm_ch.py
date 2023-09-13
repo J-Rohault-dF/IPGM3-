@@ -83,8 +83,14 @@ seatsPartiesCantons = {
 #print(nrw_2023, 'seatsPartiesCantons', {k: sum([(xv[k] if k in xv else 0) for xk,xv in seatsPartiesCantons.items()]) for k,v in nrw_2023.result.results.items() if isCandidate(k)})
 
 #Export and map
-if doExportCsv: saveDataTable('exports/{path}/c.csv'.format(path=poll), nrw_2023)
+if doExportCsv: saveDataTable(f'exports/{poll}/c.csv', nrw_2023)
 if doExportMap:
-	#exportMap(nrw_2023, 'data/ch/maps/cantons.svg', '{path}/{h}.svg'.format(h=nrw_2023, path=poll), candidaciesData=candidaciesData)
-	#exportMap(nrw_2023, 'data/ch/maps/cantons.svg', '{path}/{h}_r.svg'.format(h=nrw_2023, path=poll), candidaciesData=candidaciesData, ringsData=ringsData, outerRadius=(5*10), innerRadius=(3*10))
-	exportSeatsMap(nrw_2023, seatsPartiesCantons, seatsDataCantons, 'data/ch/maps/cantons.svg', '{path}/c.svg'.format(path=poll), allDivs=allDivs, candidaciesData=candidaciesData, seatsScale=5)
+	#exportMap(nrw_2023, 'data/ch/maps/cantons.svg', f'{poll}/{"nrw_2023"}_r.svg', candidaciesData=candidaciesData, ringsData=ringsData, outerRadius=(5*10), innerRadius=(3*10))
+	exportMap(nrw_2023, 'data/ch/maps/cantons.svg', f'{poll}/{"nrw_2023"}_cantons.svg', candidaciesData=candidaciesData)
+	print('Canton map exported')
+	exportMap(nrw_2023, 'data/ch/maps/districts.svg', f'{poll}/{"nrw_2023"}_districts.svg', candidaciesData=candidaciesData)
+	print('District map exported')
+	exportMap(nrw_2023, 'data/ch/maps/gemeinds.svg', f'{poll}/{"nrw_2023"}_gemeinds.svg', candidaciesData=candidaciesData)
+	print('Gemeind map exported')
+	exportSeatsMap(nrw_2023, seatsPartiesCantons, seatsDataCantons, 'data/ch/maps/cantons.svg', f'{poll}/c.svg', allDivs=allDivs, candidaciesData=candidaciesData, seatsScale=5)
+	print('Cantonal seats map exported')

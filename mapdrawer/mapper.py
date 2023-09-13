@@ -96,6 +96,7 @@ def mapColorerPercs(div: Div, candidaciesData: Candidacies, xmlR: etree.ElementT
 			curDiv = div.get(id)
 			if curDiv is None: raise Exception(f'Cannot find {curDiv}')
 			
+			if curDiv.result.getSumOfVotes() == 0: continue
 			winningParty, winningScore = getWinningScore(curDiv.result.toPercentages().removedAbs().removeCrazy().results)
 			
 			try: #Gets the winning color, if not present print something and take a fallback color
@@ -115,7 +116,8 @@ def mapColorerPercs(div: Div, candidaciesData: Candidacies, xmlR: etree.ElementT
 				i.set('style', style.replace('000000', winningShade))
 			else:
 				i.set('style', f'fill:#{winningShade}')
-	#print(colorsUsed)
+	
+	print(colorsUsed)
 
 def mapColorerProbs(probs: dict[str, dict[str, float]], candidaciesData: Candidacies, xmlR: etree.ElementTree):
 	divisions = xmlR.getroot().find('{http://www.w3.org/2000/svg}g')
