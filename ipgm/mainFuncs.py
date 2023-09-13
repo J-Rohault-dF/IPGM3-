@@ -40,17 +40,26 @@ def redressementResults(div: Div, targetRes: ResultPerc, weight: float = 1) -> D
 
 	div.recalculateAll()
 	nationalVotes = div.result.getSumOfVotes()
-	diffV = Result.fromPercentages(targetRes, nationalVotes).getSubstractedDict(div.result)
+	diffVotes = Result.fromPercentages(targetRes, nationalVotes).getSubstractedDict(div.result)
 
-	diffV = multiplyDict(diffV, weight)
+	diffVotes = multiplyDict(diffVotes, weight)
 
 	if div.subset == []:
-		div.result = div.result.addDict(diffV) #TODO: (Result).zipZeroes
-	else:
-		#For every subdivision:
-		for subdiv in div.allBaseSubDivs():
-			diffVL = multiplyDict(diffV, (subdiv.result.getSumOfVotes()/nationalVotes))
-			subdiv.result = subdiv.result.addDict(diffVL)
+		div.result = div.result.addDict(diffVotes) #TODO: (Result).zipZeroes
+		return div
+	
+	#todo: split allBaseSubDivs into those that *have* the party and those that don't, count votes for each, multiply diffV, add it
+	#totalsPresent = {}
+	#for subdiv in div.allBaseSubDivs():
+	#	for party in subdiv.result.results.keys():
+	#		if party not in totalsPresent:
+	#			totalsPresent[party] = 0
+	#		totalsPresent[party] += subdiv.result.getSumOfVotes()
+	
+	#For every subdivision:
+	for subdiv in div.allBaseSubDivs():
+		diffVotesLocal = multiplyDict(diffVotes, (subdiv.result.getSumOfVotes()/nationalVotes))
+		subdiv.result = subdiv.result.addDict(diffVotesLocal)
 	
 	div.recalculateAll()
 	return div
