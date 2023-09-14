@@ -33,7 +33,7 @@ nrw_2019.removeCandidate('@invalid')
 nrw_2019.removeCandidate('@abstension')
 
 seatsPerCanton2019 = copy.deepcopy(seatsPerCanton)
-seatsPerCanton2019['Kanton Basel-Stadt'] -= 1; seatsPerCanton2019['Kanton Zürich'] += 1
+seatsPerCanton2019['Kanton Basel-Stadt'] += 1; seatsPerCanton2019['Kanton Zürich'] -= 1
 
 for canton,seats in seatsPerCanton2019.items():
 	nrw_2019.get(canton).multiply(1/seats)
@@ -92,5 +92,5 @@ if doExportMap:
 	print('District map exported')
 	exportMap(nrw_2023, 'data/ch/maps/gemeinds.svg', f'{poll}/{"nrw_2023"}_gemeinds.svg', candidaciesData=candidaciesData)
 	print('Gemeind map exported')
-	exportSeatsMap(nrw_2023, seatsPartiesCantons, seatsDataCantons, 'data/ch/maps/cantons.svg', f'{poll}/c.svg', allDivs=allDivs, candidaciesData=candidaciesData, seatsScale=5)
+	exportSeatsMap(nrw_2023, seatsPartiesCantons, seatsDataCantons, 'data/ch/maps/cantons.svg', f'{poll}/nrw_2023_seats.svg', allDivs=allDivs, candidaciesData=candidaciesData, seatsScale=3)
 	print('Cantonal seats map exported')

@@ -1,27 +1,27 @@
 div;seats;layout;orientation;ratio;cx;cy
-Kanton Uri;1;Regular;;;782.724;451.820
-Kanton Obwalden;1;Regular;;;673.747;419.353
-Kanton Nidwalden;1;Regular;;;724.807;396.649
-Kanton Glarus;1;Regular;;;899.250;372.708
-Kanton Zug;3;Regular;;;755.506;312.095
-Kanton Basel-Stadt;4;Regular;;;532.161;72.223
-Kanton Appenzell Innerrhoden;1;Regular;;;988.923;247.274
-Canton de Neuchâtel;4;Regular;;;281.790;361.851
-Canton de Genève;12;Regular;;;147.228;682.696
-Kanton Zürich;36;Regular;;;780.601;180.336
-Kanton Bern;24;Regular;;;513.480;438.964
-Kanton Luzern;9;Regular;;;650.715;328.011
-Kanton Schwyz;4;Regular;;;820.329;349.917
-Canton de Fribourg;7;Regular;;;374.746;485.561
-Kanton Solothurn;6;Regular;;;497.374;268.759
-Kanton Basel-Landschaft;7;Regular;;;533.950;193.279
-Kanton Schaffhausen;2;Regular;;;767.727;71.530
-Kanton Appenzell Ausserrhoden;1;Regular;;;949.537;229.613
-Kanton St. Gallen;12;Regular;;;988.774;315.985
-Kanton Graubünden;5;Regular;;;1005.289;491.176
-Kanton Aargau;16;Regular;;;636.259;198.232
-Kanton Thurgau;6;Regular;;;915.944;141.591
-Cantone Ticino;8;Regular;;;826.209;627.333
-Canton de Vaud;19;Regular;;;201.930;523.896
-Canton du Valais;8;Regular;;;501.413;685.256
-Canton du Jura;2;Regular;;;396.597;228.408
+Kanton Uri;1;Regular;;;469.006;266.796
+Kanton Obwalden;1;Regular;;;397.283;246.020
+Kanton Nidwalden;1;Regular;;;432.797;227.042
+Kanton Glarus;1;Regular;;;549.548;211.730
+Kanton Zug;3;Regular;;;454.431;168.212
+Kanton Basel-Stadt;4;Regular;;;283.071;37.436
+Kanton Appenzell Innerrhoden;1;Regular;;;606.645;131.601
+Canton de Neuchâtel;4;Regular;;;146.681;207.239
+Canton de Genève;12;Regular;;;61.348;419.072
+Kanton Zürich;36;Regular;;;474.598;90.775
+Kanton Bern;24;Regular;;;293.444;252.038
+Kanton Luzern;9;Regular;;;380.201;180.923
+Kanton Schwyz;4;Regular;;;497.439;194.008
+Canton de Fribourg;7;Regular;;;202.743;285.283
+Kanton Solothurn;6;Regular;;;302.266;130.773
+Kanton Basel-Landschaft;7;Wide;;2;305.926;86.700
+Kanton Schaffhausen;2;Regular;;;462.873;22.728
+Kanton Appenzell Ausserrhoden;1;Regular;;;582.816;120.915
+Kanton St. Gallen;12;Regular;R;;595.206;180.139
+Kanton Graubünden;5;Regular;;;612.485;288.098
+Kanton Aargau;16;Regular;;;386.073;102.236
+Kanton Thurgau;6;Regular;;;561.988;58.317
+Cantone Ticino;8;Regular;;;499.296;380.339
+Canton de Vaud;19;Regular;;;99.849;314.457
+Canton du Valais;8;Regular;;;286.198;420.829
+Canton du Jura;2;Regular;;;215.355;115.143
