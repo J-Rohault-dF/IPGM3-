@@ -39,7 +39,7 @@ candidaciesData: Candidacies = importCandidacies(src='data/uk/parties_uk.csv')
 
 doExportTxt = False
 doExportMap = True
-doExportCsv = True
+doExportCsv = False
 
 doExportPropMap = True
 
@@ -62,8 +62,8 @@ for hk, hv in {k: v for k,v in mx.items() if k != 'sampleSize'}.items():
 	
 	#if tn == 1: r.replaceCand('Scotland', 'Green', 'Scottish Greens')
 	
-	seatsPartiesRegions = {x: proportionalHighestAverage(filterThreshold(r.get(x), 0.05), seatsPerRegion[x], 'D\'Hondt') for x in allDivs.allDivs if x in seatsPerRegion}
-	seatsPartiesCounties = {x: proportionalHighestAverage(filterThreshold(r.get(x), 0.05), seatsPerCounty[x], 'D\'Hondt') for x in allDivs.allDivs if x in seatsPerCounty}
+	seatsPartiesRegions = {x: proportionalHighestAverage(filterThreshold(r.get(x), 0.05), seatsPerRegion[x], getDHondtDivisor) for x in allDivs.allDivs if x in seatsPerRegion}
+	seatsPartiesCounties = {x: proportionalHighestAverage(filterThreshold(r.get(x), 0.05), seatsPerCounty[x], getDHondtDivisor) for x in allDivs.allDivs if x in seatsPerCounty}
 
 	#Put it in allRounds
 	allRounds[hk] = r
