@@ -24,7 +24,7 @@ def importDataTable(src: str, allDivs: AllDivs) -> Div:
 	for overDiv,subDivs in allDivs.overLevel.items():
 
 		if overDiv in subDivs:
-			raise Exception('{overDivs} present in its own subdivs: {subDivs}'.format(overDiv=overDiv, subDivs=subDivs))
+			raise Exception('{overDiv} present in its own subdivs: {subDivs}'.format(overDiv=overDiv, subDivs=subDivs))
 		
 		over = findWithLambda(listDivs, overDiv, lambda x: x.name)
 		if over is None:
