@@ -33,7 +33,8 @@ def getWinningColorShade(color: Color, score: float) -> Color:
 	The score has to be between 0 and 1, and can be multiplied beforehand.
 	"""
 
-	if score == 0: return Color('#ffffff')
+	if score <= 0: return Color('#ffffff')
+	if score >= 1: return Color('#000000')
 
 	score = (math.floor(score*100/5)*5 + 2.5) / 100 # Group by 5%
 	
@@ -109,7 +110,10 @@ def mapColorerPercs(div: Div, candidaciesData: Candidacies, xmlR: etree.ElementT
 
 			#Log color usage
 			if winningParty not in colorsUsed: colorsUsed[winningParty] = [None] * 20
-			colorsUsed[winningParty][math.floor(100*winningScore/5)] = winningShade
+
+			winningCell = math.floor(100*winningScore/5)
+			if winningCell >= 0 and winningCell < 20:
+				colorsUsed[winningParty][winningCell] = winningShade
 
 			style = i.get('style')
 			if style is not None:
