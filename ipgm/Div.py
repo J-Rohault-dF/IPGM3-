@@ -138,6 +138,19 @@ class Div:
 		self.recalculateAll()
 		return self
 
+	def maximumScore(self, party) -> float:
+		currentMaximum: float = 0
+		for sd in self.allBaseSubDivs():
+			if sd == self: continue
+			score = sd.maximumScore(party)
+			if score > currentMaximum: currentMaximum = score
+		
+		if party in self.result.results:
+			score = self.result.results[party] / self.result.getSumOfVotes()
+			if score > currentMaximum: currentMaximum = score
+
+		return currentMaximum
+
 
 
 def averageDivs(divs: list[Div], superset: list[Div] = []) -> Div:
