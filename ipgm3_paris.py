@@ -69,9 +69,9 @@ for hk, hv in {k: v for k,v in mx.items() if k != 'sampleSize'}.items():
 	#Export and map
 	if doExportCsv: saveDataTable('exports/{path}/{h}.csv'.format(h=hk, path=poll), r)
 	if doExportMap:
-		exportMap(r, 'data/paris/maps/bureaux_de_vote.svg', '{path}/{h}_b.svg'.format(h=hk, path=poll), candidaciesData=candidaciesData)
-		exportMap(r, 'data/paris/maps/quartiers.svg',       '{path}/{h}_q.svg'.format(h=hk, path=poll), candidaciesData=candidaciesData)
-		exportMap(r, 'data/paris/maps/arrondissements.svg', '{path}/{h}_a.svg'.format(h=hk, path=poll), candidaciesData=candidaciesData)
+		exportMap(r, 'data/paris/maps/bureaux_de_vote_2020.svg', '{path}/{h}_b.svg'.format(h=hk, path=poll), candidaciesData=candidaciesData)
+		exportMap(r, 'data/paris/maps/quartiers.svg',            '{path}/{h}_q.svg'.format(h=hk, path=poll), candidaciesData=candidaciesData)
+		exportMap(r, 'data/paris/maps/arrondissements.svg',      '{path}/{h}_a.svg'.format(h=hk, path=poll), candidaciesData=candidaciesData)
 		#exportMap(r, 'data/paris/maps/arrondissements.svg', '{path}/{h}_r.svg'.format(h=hk, path=poll), candidaciesData=candidaciesData, ringsData=ringsData, outerRadius=(5*10), innerRadius=(3*10))
 
 if doExportTxt:
