@@ -26,13 +26,6 @@ if not os.path.exists('exports/{path}'.format(path=poll)):
 
 candidaciesData: Candidacies = importCandidacies(src='data/paris/cands/2026.csv')
 
-candidaciesData2020: Candidacies = importCandidacies(src='data/paris/cands/2020.csv')
-exportMap(t1_2020, 'data/paris/maps/bureaux_de_vote.svg', '{path}/2020T1_b.svg'.format(path=poll), candidaciesData=candidaciesData2020)
-exportMap(t1_2020, 'data/paris/maps/quartiers.svg',       '{path}/2020T1_q.svg'.format(path=poll), candidaciesData=candidaciesData2020)
-exportMap(t1_2020, 'data/paris/maps/arrondissements.svg', '{path}/2020T1_a.svg'.format(path=poll), candidaciesData=candidaciesData2020)
-
-raise Exception()
-
 
 
 doExportTxt = True
