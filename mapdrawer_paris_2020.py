@@ -31,7 +31,7 @@ for candidate in candidatesList:
 
 for candidate in candidatesList:
 	print(candidate)
-	if candidate not in t1_2020.result.results: continue
+	if '#'+candidate not in t1_2020.result.results: continue
 	t1_2020.renameCandidate('#'+candidate, candidate)
 	scoreMultiplier = 1 / t1_2020.maximumScore(candidate)
 	exportMap(t1_2020, 'data/paris/maps/bureaux_de_vote_2020.svg', 'Paris_2020/{candidate}_b.svg'.format(candidate=candidate), candidaciesData=candidaciesData, scoreMultiplier=scoreMultiplier)
