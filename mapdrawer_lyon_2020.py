@@ -13,7 +13,7 @@ from mapdrawer.mapper import *
 #	ringsDataTemp = [y.split(';') for y in [x for x in seatsDataFile.read().split('\n')]]
 #	ringsData = {x[0]: dict(zip(ringsDataTemp[0][1:], [toFloatOrStr(y) for y in x[1:]])) for x in ringsDataTemp[1:]}
 
-allDivs = AllDivs('data/lyon/divs/lyon.txt')
+allDivs = AllDivs('data/lyon/divs/lyon_2020.txt')
 
 t1_2020 = importDataTable('data/lyon/stats/2020T1.csv', allDivs)
 t2_2020 = importDataTable('data/lyon/stats/2020T2.csv', allDivs)
