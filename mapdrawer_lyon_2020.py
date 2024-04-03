@@ -15,7 +15,7 @@ from mapdrawer.mapper import *
 
 allDivs = AllDivs('data/lyon/divs/lyon.txt')
 
-t1_2020 = importDataTable('data/lyon/stats/2020T2.csv', allDivs)
+t1_2020 = importDataTable('data/lyon/stats/2020T1.csv', allDivs)
 t2_2020 = importDataTable('data/lyon/stats/2020T2.csv', allDivs)
 
 candidaciesData: Candidacies = importCandidacies(src='data/lyon/cands/2020.csv')
@@ -30,6 +30,7 @@ exportMap(t2_2020, 'data/lyon/maps/arrondissements.svg',      'lyon_2020/2020T2_
 candidatesList = [x.shortName for x in candidaciesData.listOfCands]
 for candidate in candidatesList:
 	t1_2020.renameCandidate(candidate, '#'+candidate)
+	t2_2020.renameCandidate(candidate, '#'+candidate)
 
 for candidate in candidatesList:
 	if '#'+candidate not in t1_2020.result.results: continue
