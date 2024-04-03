@@ -97,7 +97,14 @@ def mapColorerPercs(div: Div, candidaciesData: Candidacies, xmlR: etree.ElementT
 			curDiv = div.get(id)
 			if curDiv is None: raise Exception(f'Cannot find {curDiv}')
 			
-			if curDiv.result.getSumOfVotes() == 0: continue
+			if curDiv.result.getSumOfVotes() == 0: #If no votes, make white
+				style = i.get('style')
+				if style is not None:
+					i.set('style', style.replace('#000000', '#ffffff'))
+				else:
+					i.set('style', f'fill:#ffffff')
+				continue
+
 			winningParty, winningScore = getWinningScore(curDiv.result.toPercentages().removedAbs().removeCrazy().results)
 			
 			try: #Gets the winning color, if not present print something and take a fallback color
