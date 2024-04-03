@@ -18,7 +18,7 @@ allDivs = AllDivs('data/paris/divs/paris.txt')
 t1_2020 = importDataTable('data/paris/stats/2020T1.csv', allDivs)
 #t2_2020 = importDataTable('data/paris/stats/2020T2.csv', allDivs)
 
-poll = 'Ipsos_20240322'
+poll = 'Ifop_20240328'
 
 mx = importMatrices('data/paris/polls/{0}.json'.format(poll))
 if not os.path.exists('exports/{path}'.format(path=poll)):
