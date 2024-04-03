@@ -101,7 +101,10 @@ def mapColorerPercs(div: Div, candidaciesData: Candidacies, xmlR: etree.ElementT
 			winningParty, winningScore = getWinningScore(curDiv.result.toPercentages().removedAbs().removeCrazy().results)
 			
 			try: #Gets the winning color, if not present print something and take a fallback color
-				winningColor = candidaciesData.getShadeColor(winningParty)
+				if winningParty == '':
+					winningColor = Color('#ffffff')
+				else:
+					winningColor = candidaciesData.getShadeColor(winningParty)
 			except:
 				winningColor = Color('#ffffff')
 				print('missing color for {0}'.format(winningParty))
