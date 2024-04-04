@@ -111,6 +111,18 @@ def twoRoundProportional(d1: dict[str, float], d2: dict[str, float], sn: int) ->
 	
 	return seats
 
+def PLMProportional(votes: dict[str, float], sn: int) -> dict[str, int]:
+	if votes == {}: return {}
+	
+	halfSeatsCeil = math.ceil(sn/2)
+
+	winner = sorted(votes.items(), key=lambda x: x[1], reverse=True)[0][0]
+
+	seats = proportionalHighestAverage(votes, (sn-halfSeatsCeil), getDHondtDivisor) # TODO: Implement french-style dual-method proportional
+	seats[winner] += halfSeatsCeil
+
+	return seats
+
 
 
 def apparentementsProportional(votes: dict[str, float], sn: int, proportionalMethod: typing.Callable[[dict[str, float], int, typing.Callable], dict[str, int]], quotaMethod: typing.Callable, apparentements: list[list[str]]):
